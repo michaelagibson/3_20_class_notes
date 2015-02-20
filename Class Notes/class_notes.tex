@@ -16,19 +16,19 @@ To begin our journey, we will define some frequently used terms for convenience.
 \eqs
 \text{[environment]} = \text{[universe]} - \text{[system]}
 \eqe
-\item \un{Extensive Variables}: Variables that scale with the system size (i.e. volume, mass, number of particles, $e^-$, etc.).  If we bring two containers together, the volume is a sum of the individual volumes:
+\item \un{Extensive Variables}: Variables that scale with the system size (i.e. volume, mass, number of particles, $n_{e^-}$, etc.).  If we bring two containers together, the volume is a sum of the individual volumes:
 \begin{equation}
 V = V_1 + V_2
 \end{equation}
-\item \un{Intensive Variables}: Variables that do \emph{not} scale with system size (i.e. pressure, temperature, E-field, etc.).  For example, the sum of two system's pressures is not equal to the pressure of the sum of both systems:
+\item \un{Intensive Variables}: Variables that are independent of the system size. Intensive variables do \emph{not} scale with system size (i.e. pressure, temperature, E-field, etc.).  For example, the sum of two system's pressures is not equal to the pressure of the sum of both systems:
 \eqs
 P \neq P_1 + P_2
 \eqe
-\item \un{State Variables}: The variables required to fully characterize a system (T, P, n, ...).  These are \emph{not} equal to the \bold{state} of a system.
-\item \un{Boundaries}: Conditions that are defined for a system.  These strongly depend on the system of interest.  A boundary might describe if a system is permeable (open to matter, changing $n$), closed (closed to matter), adiabatic (lack of heat flow), athermal (no heat flow), rigid (non-deformable), deformable, etc.  They can speak about extensive variables and limit/confine the system.
+\item \un{State Variables}: The variables required to fully characterize a system (T, P, n, ...).  These are \emph{not} equal to the \bold{state} of a system. However, at equiliibrium, there is a one-to-one mapping between the macroscopic state of the system and the full set of state variables; the state variables fully define the macroscopic equilibrium state.
+\item \un{Boundaries}: Conditions that are defined for a system.  These strongly depend on the system of interest. Boundaries can have properties such as: permeable (open to mass flow, changing $n$), impermeable (closed to mass flow), adiabatic (closed to heat flow), diathermal (open to heat flow), rigid (constant volume), deformable, etc. The nature of the boundary defines how the system's state variables can change as it is subjected to different processes. For example, while a system with a rigid boundary is subject to possessing a constant volume during arbitrary processes, a system with a deformable boundary will, for sufficicently slow processes, have the same pressure as its surroundings.
 \end{enumerate}
 
-In 3.20 we will look at the transfer of energy at the borders.  Inside the system we have state variables (T, P, n, etc.) and we will ultimately create constitutive equations so that we may calculate unknowns.
+In thermodynamics, we will look at the transfer of energy and other extensive variables at the borders of systems as they undergo processes. Note that this approach treats the system as a black box; we have no idea what is going on microscopically inside the system. We will derive laws regarding the conservation and creation of the extensive variables. Using these laws of conservation, we will be able to define exactly how the macroscopic state of the system changes by only keeping track of what goes on at the boundaries of the system. We will then develop constitutive equations which relate changes in the thermodynamic state variables to one another during arbitrary processes. Integration of these constitutive equations is a powerful and general way to calculate changes in system processes during arbitrary processes. Last, we will use these constitutive relationships to look at a special set of processes; phase transitions, and derive laws for how the conditions under which these phase transitions should occur have to change as the boundary conditions on the system change.
 
 \subsection{Energy and Forces}
 What ``forms'' of energy do we have?
@@ -41,95 +41,112 @@ This energy can be manifest inside and outside the system.  Other examples of en
 %\Delta E = \Delta E_{ke} + \Delta E_{pe} + \Delta U
 %\end{equation}
 %where $\Delta U$ is the internal energy.  
-For 3.20, we will assume that changes in the total energy $E$ of our system are equal to the change in internal energy $U$.
+For 3.20, we will assume that changes in the total energy $E$ of our system are equal to changes in thr internal energy $U$ of the system.
 \begin{equation}
 \Delta E = \Delta U
 \end{equation}
-We assume that $U$ exists and it is a \un{state variable} that represents all types of energy exchange that can change the internal states of the system.
+This is tantamount to neglecting changes in the translational energy of the system as a whole. We assume that $U$ exists, that $U$ is a function of only the extensive thermodynamic variables ($U$ is a \un{state variable}), and that all types of energy exchange that can change the internal state of the system can be represented as work terms represent changes in $U$. We discuss this final assumption next.
+
+%I am not sure 'assumption' is right for some of these; they are not all assumptions... some are implied by others... I think it is fine for teach purposes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture 2: Heat and Work}
-Let's look at one form of energy transfer: \un{work}, which is equal to the force times the displacement.
+Let's look at one form of energy transfer: \un{work}. A differential amount of work is equal to the force dotted with the displacement:
 \eqs
-W = \vec{F} \cdot d\vec{r}
+\delta W = \vec{F} \cdot d\vec{r}
 \eqe
-The formalism for work is $\partial W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive).  Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
+The formalism for work is $\delta W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive). Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
 \subsection{Two examples of work}
 \bold{Example 1: Deformation of a material}: The work resulting from a change in strain energy is 
 \eqs
-\partial W = V \bar{\bar{\sigma}} \cdot \bar{\bar{d\epsilon}}
+\delta W = V \bar{\bar{\sigma}} \cdot d\bar{\bar{\epsilon}}
 \eqe 
-where the double overbars denote $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and volume element results in a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
+where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and volume element results in a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
 \eqs
-\partial W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
-&= -P V d\epsilon_{11}d\epsilon_{22}d\epsilon_{33}
+\delta W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
+&= -P V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33})
 \eqe
-We note that the strain is defined as $\epsilon_{11} \equiv \Delta l_1 / l_1^{(0)}$, and $l_1 l_2 l_3 = V$, so we can substitute $V d\epsilon_{11} d\epsilon_{22}d\epsilon_{33} = dV$:
+We note that the strain is defined as $\epsilon_{11} \equiv \Delta l_1 / l_1^{\text{initial}}$, and $l_1 l_2 l_3 = V$, so we can substitute $V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33}) = dV$:
 \begin{equation}
-\partial W_\text{pressure} = -P dV
+\delta W_\text{pressure} = -P dV
 \end{equation}
 To solve these, we need an equation of state $P(V)$ or $\sigma(\epsilon)$.  We also have
 \begin{equation}
 \frac{\partial \epsilon_{ij}}{\partial \sigma_{kl}} = c_{ijkl}
 \end{equation}
-where $c_{ijkl}$ is the generalized elastic constant.  If our material is \un{isotropic}, then we will see that $\frac{\partial V}{\partial P}|_T = V \cdot \beta_T$ where $\beta_T$ is the isothermal compressibility - a property of the material that describes volume changes at constant temperature.\\
+where $c_{ijkl}$ is the generalized elastic compliance.  If our material is \un{isotropic}, then we will see that $\frac{\partial V}{\partial P}|_T = V \cdot \beta_T$ where $\beta_T$ is the isothermal compressibility - a property of the material that describes volume changes at constant temperature. Hence, using this constitutive relation, $\beta_T(P,T)$, we can define the work done upon the system. \\
 
-\bold{Example 2: Electrical work on an isotropic dielectric medium}: The voltage between two sides of a dielectric is given by the internal electric field and the length as $V = E \cdot l$.  The energy stored in this capacitor is a product of the voltage and the charge.  If the charge changes, we can produce a work term:
+\bold{Example 2: Electrical work on an isotropic dielectric medium}: The voltage between two sides of a dielectric is given by the internal electric field and the length as $V = \mathcal{E} \cdot l$.  The energy stored in this capacitor is a product of the voltage and the charge.  If the charge, $q$, changes, we can produce a work term:
 \eqs
 \delta W = V dq
 \eqe
-Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsilon_0 E + \frac{P}{A\cdot l}$.  $P$ is the total polarization and it is normalized by the volume.
+Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{A\cdot l}$.  $\mathcal{P}$ is the total polarization and it is normalized by the volume, $A\cdot l$. We can do some algebra to arrive at a new expression for this work term:
 \eqs
-\delta W &= E l  \cdot d(A (\varepsilon_0 E + \frac{P}{lA}))\\
-&= ElA \cdot d(\varepsilon_0 E + \frac{P}{lA})\\
-&= V \varepsilon_0 E dE + E dP
+\delta W &= \mathcal{E} l  \cdot d(A (\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{lA}))\\
+&= \mathcal{E}lA \cdot d(\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{lA})\\
+&= V \varepsilon_0 \mathcal{E} d\mathcal{E} + \mathcal{E} d\mathcal{P}
 \eqe
 
-Next, we can relate this quantity to the characteristic potential energy function of our system.  We know that $\Delta U = U^\text{final} - U^\text{initial}$, and $\partial W = y_i dx_i = F d\vec{r}$.  The force from a potential energy function $\phi$ is $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$.  Therefore, we have
-\begin{align*}
-F_x &= -\frac{\partial \phi}{\partial x}|_y \\
-F_y &= -\frac{\partial \phi}{\partial y}|_x
-\end{align*}
-$\vec{F}d\vec{r}$ is an \un{exact} differential.  It's integral is path independent.  $\oint \vec{F} \cdot d\vec{r} = 0$.  Also, $\vec{F}$ is a conservative force.  It is like the ``vehicle'' that converts gravitational energy, $E_g$ to electricity.
-\begin{align*}
-\int_{r_1}^{r_2} \vec{F} d\vec{r} &= \int - \vec{\nabla} \phi(\vec{r})d\vec{r}\\
-&= [\phi(\vec{r_2}) - \phi(\vec{r_1})]
-\end{align*}
+Note how the $\delta W$ nicely seperates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. This implies that changes in the internal energy can be written as a sum over orthogonal work terms:
+\eqs
+dU = \sum_i y_i dx_i
+\eqe
+where each $y_i$ represents a generalized force, and each $x_i$ represents a generalized displacement.
+
+We will now discuss how we derive the form of this summation of orthogonal work terms. You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms are \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
+\begin{itemize}
+\item \un{exact differentials}: The integral of an exact differential path independent; it is only a function of the endpoints.
+\item \un{exact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints.
+\end{itemize}
+This is illustratted below with two examples.
+%%%%%%Next, we can relate this quantity to the characteristic potential energy function of our system.  We know that $\Delta U = U^\text{final} - U^\text{initial}$, and $\delta W = y_i dx_i = F d\vec{r}$.  The force from a potential energy function $\phi$ is $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$.  Therefore, we have
+%%%%%%\begin{align*}
+%%%%%%F_x &= -\frac{\partial \phi}{\partial x}|_y \\
+%%%%%%F_y &= -\frac{\partial \phi}{\partial y}|_x
+%%%%%%\end{align*}
+%%%%%%$\vec{F}d\vec{r}$ is an exact differential.  It's integral is path independent.  $\oint \vec{F} \cdot d\vec{r} = 0$.  Also, $\vec{F}$ is a conservative force.  It is like the ``vehicle'' that converts gravitational energy, $E_g$ to electricity.
+%%%%%%\begin{align*}
+%%%%%%\int_{r_1}^{r_2} \vec{F} d\vec{r} &= \int - \vec{\nabla} \phi(\vec{r})d\vec{r}\\
+%%%%%%&= [\phi(\vec{r_2}) - \phi(\vec{r_1})]
+%%%%%%\end{align*}
 
 \subsection{Practice with Differentials}
 \bold{Case 1, Exact Differentials:}
-Consider a contour of heights $h(x,y)$.  We will travel from some height $h_1 \rightarrow h_2$.  Anytime we move downwards, we will simply gain kinetic energy.  Anytime we move up a hill, we will first use any kinetic energy we have and then use some stored energy (say, from a battery).  Once we have reached $h_2$, we will give all our kinetic energy to the environment (say from some thermal energy dissipation, like brakes) and we will allow the environment to replenish the energy in our batteries.  The change in potential energy between the two heights is $\Delta E_\text{field}$ and the energy of the environment, i.e. the work required to move us to this new spot, is $\Delta E_\text{system}$.  From conservation of energy,
+Consider heights as a function of position, $h(x,y)$.  We will travel from some height $h_1 \rightarrow h_2$.  Anytime we move downwards, we will simply gain kinetic energy.  Anytime we move up a hill, we will first use any kinetic energy we have and then use some stored energy (say, from a battery).  Once we have reached $h_2$, we will give all our kinetic energy to the environment (say from some thermal energy dissipation, like brakes) and we will allow the environment to replenish the energy in our batteries.  The change in potential energy between the two heights is $\Delta E_\text{field}$ and the energy of the environment, i.e. the work required to move us to this new spot, is $\Delta E_\text{system}$.  From conservation of energy,
 \eqs
 \Delta E_\text{system} + \Delta E_\text{field} = 0
 \eqe
-Therefore, we can calculate the work required to move us to the new spot:
+Therefore, we can calculate the work required to move us to the new spot via integration of the differential of the gravitational energy with respect to the position (the gravitational force field):
 \eqs
 \Delta E_\text{field} = dW &= \int \vec{F} \cdot d\vec{r}\\
 & = -\int \nabla E_\text{field} \cdot dr\\
 & = - mg(h_2 - h_1)
 \eqe
-Ultimately, the energy change (or work required to move us) from $h_1 \rightarrow h_2$ is independent of the path taken.  This property manifests itself in the nature of the conservative vector field $F$.  The change in work may then be expressed as an exact differential.
+Ultimately, the energy change (or work required to move us) from $h_1 \rightarrow h_2$ is independent of the path taken.  Hence, $\vec{F}$ is an exact differential. Mathematicians would say that gravitational force fields are conservative vector fields. This is an equivalence; exact differentials define conservative vector fields.
 
-\bold{Case 2, Inexact Differentials:}  Consider now a system where the force $F$ is non-conservative.  The energy associated with moving through this kind of a vector field must then be described by an inexact differential.  For example, if we are missing a force, say $F_y'$, then the change in work when moving in three dimensions is:
-\begin{align*}
-\delta W_\text{new} = \delta W_x + \delta W_z
-\end{align*}
-Consider two different paths.  The amount of work done along the x-direction may be different between the two.  However, there is no work associated with moving along the y-direction connecting the two paths.  This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \partial W_x = \int F_x dx = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  
-
-Additionally, \un{dissipative forces} tend to make the force vector-feild non-conservative, resulting in path dependence.
+\bold{Case 2, Inexact Differentials:}  Consider now a system where the force $\vec{F}$ is non-conservative.  The work terms associated with moving through this kind of a vector field are then inexact differentials. \un{dissipative forces} tend to make the force vector-field non-conservative, resulting in path dependence. For example, moving in a gravitational field with a constant friction term would result in:
 \begin{align*}
 \vec{F} &= -\vec{\nabla}\vec{E} - f_\text{friction} | \vec{e_v}|\\
-\vec{F}\delta\vec{r} &= -mg\Delta h- f L_\text{path}
+\int \vec{F}\delta\vec{r} &= -mg\Delta h- f L_\text{path}
 \end{align*} 
 
-\subsection{Heat}
-Heat is energy transferred between two bodies.  This is strictly different from work and mass transfer.  The variable we will use to denote heat is $Q$.  A system that is adiabatic does not transfer heat, and so we say $\partial Q = 0$.  The \un{first postulate of thermodynamics} is
-\begin{equation}\boxed{
-dU = \partial W + \partial Q
-}\end{equation}
-$U$ is a property of a system - a function of the system's state.  On the contrary, $W$ and $Q$ are \un{not} (they refer to a transfer of energy).  Thompson (Rumford) measured mass change with varying temperature in water to help observe this phenomena.
+ In thermodynamics, you can get an inexact differential for two reasons. As described above, dissipation leads to inexact differentials. A second, related way, is simply not taking into account all of the forces during your integration. Such an incomplete description will result in path-dependent integrals, even if the underlieing vector field is conservative. For example, if we are moving in three dimensions and do not describe the force in the $y$-direction, $F_y'$, then we would (incorrectly) describe the work when moving in three dimensions as:
+\begin{align*}
+\delta W_\text{incomplete} = \delta W_x + \delta W_z = F_x \dot dx + F_z \dot dz 
+\end{align*}
+Consider two different paths in a conservative 3D vector field.  The integrated amount of work done due to the x- and z- forces may be different between the two paths, even though the total work is the same. This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \delta W_x + \delta W_z = \int F_x dx F_z dz = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  This is analogous to describing the changes in internal energy of a system through only work terms; we are missing an entire component of the internal energy change, the change to due to \un{heat} flow into a system.
 
-\bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states, and so we say it evolves quasistatically.  
+
+
+\subsection{Heat}
+Heat is energy transferred between two bodies not due to work or mass transfer.
+\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. Two heros of science helped disprove this crazy theory. First, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisble liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (AKA Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
+\begin{equation}\boxed{
+dU = \delta W + \delta Q
+}\end{equation}
+The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\delta$, but the sum of the two as $dU$.
+
+\bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, where in the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
 \eqs
 W = -\int P dV
 \eqe
@@ -139,19 +156,22 @@ W &= -nRT\int \frac{dV}{V}\\
 &= nRT \ln\Big(\frac{V_f}{V_i}\Big)
 \eqe
 It is often useful to think of these changes as paths in a pressure versus volume plot.  Let's consider a path $a$ where both the pressure and volume can change.  We will compress the gas isothermally from a volume $V_1$ to a final volume $V_f = V_1/2$.  Also, we are at room temperature, $T=298K$.
+%%%% We should insert the relevant P-V diagram here!
 \eqs
 W_a &= -nRT\int \frac{dV}{V}\\
 &= -nRT \ln(\frac{V_f}{V_i})\\
 &= nRT \ln(2)\\
 &= 1717 \frac{\text{J}}{\text{mol}}
 \eqe
-Let's now consider a separate path $b$ that is first isobarically compressed ($dP=0$), and then isochorically compressed ($dV = 0$), such that the final state is the same as the final state from path $a$.  For the constant volume pressure change, there will be no work done since $dV=0$ and $W=-PdV$.  Therefore all the work will come from the initial constant pressure process, or isobaric compression.
+Let's now consider a separate path $b$ that is first isobarically compressed ($dP=0$), and then isochorically warmed ($dV = 0$), such that both the initial and final states are the same as those in $a$.  For the constant volume pressure change, there will be no work done since $dV=0$ and $W=-PdV$.  Therefore all the work will come from the initial constant pressure process, or isobaric compression.
 \begin{align*}
 W_b &= -P_i \int dV\\
 &= \frac{P_i V_i}{2}\\
 &= \frac{nRT}{2}\\
 &= 1239 \frac{\text{J}}{\text{mol}}
 \end{align*}
+
+Clearly, the amount of work done when changing between two states can be different, although the change in internal energy must be the same. Thus, there must have been different amounts of heat transferred along each path as well; both work and heat are path-dependent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 8, 2014}
