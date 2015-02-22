@@ -1,11 +1,24 @@
 \documentclass[12pt]{article}
 \usepackage{class_notes}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+\graphicspath{ {figures/} }
+\def\dbar{{\mathchar'26\mkern-12mu d}}
 
 \begin{document}
 \includepdf[pages=-]{titlepage.pdf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture 1: Introduction and Preliminaries}
-Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics.  The material in this course is broadly applicable to all field of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
+%This is an inexact differential: $\dbar$
+
+Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics and an understanding of energy scales.  The material in this course is broadly applicable to all field of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
 
 \subsection{Definitions}
 To begin our journey, we will define some frequently used terms for convenience.
@@ -87,13 +100,14 @@ Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsil
 &= V \varepsilon_0 \mathcal{E} d\mathcal{E} + \mathcal{E} d\mathcal{P}
 \eqe
 
-Note how the $\delta W$ nicely seperates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. This implies that changes in the internal energy can be written as a sum over orthogonal work terms:
+Note how the $\delta W$ nicely seperates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of done upon a system can thus be written as a sum over orthogonal work terms:
 \eqs
-dU = \sum_i y_i dx_i
+\delta W = \sum_i y_i dx_i
 \eqe
 where each $y_i$ represents a generalized force, and each $x_i$ represents a generalized displacement.
 
-We will now discuss how we derive the form of this summation of orthogonal work terms. You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms are \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
+%We will now discuss how we derive the form of this summation of orthogonal work terms. 
+You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms are \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
 \begin{itemize}
 \item \un{exact differentials}: The integral of an exact differential path independent; it is only a function of the endpoints.
 \item \un{exact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints.
@@ -140,13 +154,13 @@ Consider two different paths in a conservative 3D vector field.  The integrated 
 
 \subsection{Heat}
 Heat is energy transferred between two bodies not due to work or mass transfer.
-\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. Two heros of science helped disprove this crazy theory. First, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisble liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (AKA Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
+\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisble liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (AKA Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
 \begin{equation}\boxed{
 dU = \delta W + \delta Q
 }\end{equation}
-The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\delta$, but the sum of the two as $dU$.
+where again, the work terms can be written as $\delta W = \sum_i y_i dx_i$.The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\delta$, but the sum of the two as $dU$. We illustrated this with an example:
 
-\bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, where in the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
+\bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, wherein the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
 \eqs
 W = -\int P dV
 \eqe
@@ -174,105 +188,154 @@ W_b &= -P_i \int dV\\
 Clearly, the amount of work done when changing between two states can be different, although the change in internal energy must be the same. Thus, there must have been different amounts of heat transferred along each path as well; both work and heat are path-dependent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 8, 2014}
-%Last time, we had $dU = \partial Q + \sum y_i dx_i$.  
+\section{Lecture - September 8, 2014}
+Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \partial Q + \sum y_i dx_i$.  
 %\subsection{Today}
-%We now want to quantify the first term, or \un{quantify heat exchange}.  We do this by defining a heat capacity in closed system (normalized by $n$) via
-%\begin{equation}
-%C_\text{path} = \frac{1}{n} \frac{(\partial Q)_\text{path}}{dT}
-%\end{equation}
-%This is the specific heat capacity.  If we consider a \un{simple system} with state variables $(P,V)$ or $(V,T)$, we can define
-%\begin{align*}
-%C_p &= \frac{1}{n} \frac{(\partial Q)_p}{dT}\\
-%C_v &=  \frac{1}{n} \frac{(\partial Q)_v}{dT}
-%\end{align*}
-%We can wonder what is larger, $C_p$ or $C_v$.  Look at Figure 1 on sheet.  At constant $V$, $\Delta U = Q$.  At constant $P$, $\Delta U = Q + W = Q - p dV$.  Both $\Delta U$ and $dT$ will be less.\\
-%
-%(a) \un{gases}: We assume they are ideal gases (non interacting, hard spheres).  We get $\frac{1}{2} R$ per degree of freedom.
-%\begin{equation}
-%C_v = \frac{3}{3} R
-%\end{equation}
-%for monoatomic gas.  $R = 8314 \text{J}/\text{mol}/\text{K}$ and $R = N_a \times k_B$.  For a diatomic gas, with two atoms attached by a spring, we have between 6 and 1 degrees of freedom.  We will get $C_v = \frac{5}{2} R$.
-%
-%\begin{align*}
-%C_p &= C_v + R\\
-%&= \frac{7}{2} R =  29 \text{J}/\text{mol}/\text{K}
-%\end{align*}
-%
-%(b) \un{solids}: At room temp., for an element, Dulong and Petit (1819) predicted
-%\begin{align*}
-%C_v &\approx 3 R = 25 \text{J}/\text{mol}/\text{K}\\
-%C_p & \approx C_v
-%\end{align*}
-%For a non metallic salt (i.e. MgO), $C_p \approx 6 R = 50\text{J}/\text{mol}/\text{K}$.  Now we look at the Practical $C_p$ from the handouts sheet.  We can see that at high T carbon reaches the 3 R.  It takes a while to reach this because of the nature of carbon's covalent bonds.  There are points in Fe's diagram at 1550 \degree C because at this point it melts.  Same with Hg, which becomes a gas at low T.  For H\2O at RT we have $C_p = 75 \text{J}/\text{mol}/\text{K}$.
-%
-%\subsection{We need another energy function}
-%Now, we will define a term called the \bold{enthalpy} $H$
-%\begin{align*}
-%H &= U + PV\\
-%dH &= dU + V dP + P dV
-%\end{align*}
-%and substitute $dU = \partial Q - P dV$
-%\begin{align*}
-%dH &= \partial Q + V dP\\
-%(dH)_p &= \partial Q
-%\end{align*}
-%and now we have a new function of state that describes the heat change at constant pressure.  With this we can perform \un{calorimetry} which is an indication of the heat exchange at constant P.  We can call this $(dH)_p$ the ``heat'' content.\\
-%
-%If we write down what $(dH)_p$ is, we get
-%\begin{align*}
-%(dH)_p &= n C_p (dT)_p\\
-%\frac{\partial H}{\partial T}|_p &= C_p\\
-%H(T) &= H(T_0) + n C_p \Delta T + \Delta H_{\phi T}
-%\end{align*}
-%where first term is the reference T from the reference state and $\phi T$ is ``phase transformation''.  By definition, $H=0$ for an element at atmospheric pressure ($P_0 = 101325$ Pa) and temperature ($T_0 = 298$ K).\\
-%
-%The standard state is the form most stable or common at room T or pressure (i.e. O\2(g), Hg(l), C(graphite)).
-%
-%On the second sheet of the handout (H\degree(Fe)) we see the standard molar enthalpy with changing T.  The slope of this chart is $\frac{(dH)_p}{dT}$ which is the heat capacity.  Beneath 900\degree C, we have $\alpha$ BCC phase, at $900^0 < T < 1400^0$ we have $\gamma$ FCC, then roughly to 1500\degree we have $\delta$ BCC and above this the liquid phase.
-%
-%$\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol.
-%
-%$\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  Richard's rule says that
-%\begin{equation}
-%\Delta H_\text{fusion} \approx 9 T_\text{fusion}
-%\end{equation}
-%with T in Kelvin.  In most elements this is around 10 kJ/mol.  The heat of vaporization follows roughly Trouton's rule
-%\begin{equation}
-%\Delta H_\text{vap} \approx 90 T_\text{vap}
-%\end{equation}
-%In most elements this is around 100 kJ/mol.  At these phase transformations, we are talking about binding energy, which can be roughly 1 eV/atom.  1 F $\cdot$ 1 eV is roughly 100 kJ/mol.\\
-%
-%Now, what about the significance of that PdV term?  Perform a phase transformation from phase I $\rightarrow$ phase II.  In a metal, $\rho \approx 10$ cm$^3$ / mol and we assume 10\% $\Delta V$.  P\degree = 101325 Pa and thus $P \Delta V = 10^5 \cdot 10^{-6} = 0.1$.
-%%
-%%(c) \un{compounds}: At RT and P\degree
-%%\begin{equation}
-%%2 Fe_{(s)} + \frac{3}{2} + O_{2 (g)} \rightarrow \alpha-Fe_2O_{3 (s)} + (\partial Q)_p
-%%\end{equation}
-%%with $(\partial Q)_p$ = -1963 kcal/mol.
-%%\begin{equation}
-%%\Delta_v H = \Delta H^0_{Fe_2O_3} - \Delta H^0_{Fe} - \frac{3}{2} \Delta H^0_{O_2}
-%%\end{equation}
-%%and
-%%\begin{align*}
-%%\Delta H^0_{Fe_2O_3} &= -820.5 \text{kJ}/\text{mol}\\
-%%\Delta H^0_{CO} &= -110.52 \text{kJ}/\text{mol}\\
-%%\Delta H^0_{CO_2} &= -393.51 \cdot \text{kJ}/\text{mol}
-%%\end{align*}
-%%
-%%There are plenty of references to get these values, such as \un{Janaf tables}.  Examples include FactSage \& Thermocalc and they provide $H^0$, $G^0$, $C_p^0$, etc.
-%%
-%%\begin{align*}
-%%C_{(s)} + O_{2 (g)} &\rightleftharpoons CO_{2 (g)}\\
-%%\Delta_r H^0 &= -393.52 \text{kJ}/\text{mol}\\
-%%C_{(s)} + \frac{1}{2} O_{2 (g)} &\rightleftharpoons CO_{(g)}\\
-%%\Delta_r H^0 &= -110.52 \text{kJ}/\text{mol}\\
-%%C_{(s)} + CO_{2 (g)} &\rightleftharpoons 2 CO_{(g)}\\
-%%\Delta_r H^0 &= +180 \text{kJ}/\text{mol}\\
-%%\end{align*}
-%%
-%%The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}.  Be careful with the idea of ``heat'' content.  Doesn't mean we're going to harvest this energy as heat.  The first law is also silent about the directions of change $\rightleftharpoons$.  The first of the three reactions above is exothermic and the last is endothermic.
-%%
+We now want to quantify the first term, or \un{quantify heat exchange}.  We do this by defining the \emph{heat capacity} for a system as:  %(normalized by $n$) 
+
+\begin{align*}
+C_\text{path} (T) &= \frac{(\delta Q)_\text{path}}{dT}\\
+c_\text{path} (T) &= \frac{C_\text{path}}{N} %\frac{(\partial Q)_\text{path}}{dT}
+\end{align*}
+where $C_\text{path}$ is the system heat capacity along a given path, and $c_\text{path}$ is the specific heat capacity; the system heat capacity divided by the number of moles, $N$.\footnote{This convention is used throughout: system quantities are uppercase, molar quantities are lowercase}   If we consider a \un{simple system}\footnote{In a simple system, work can only be done on the system via $PdV$ terms.} with state variables $(P,V)$ or $(V,T)$, we can define
+\begin{align*}
+c_p &= \frac{1}{N} \frac{(\delta Q)_p}{dT}\\
+c_v &=  \frac{1}{N} \frac{(\delta Q)_v}{dT}
+\end{align*}
+as the heat capacities at constant temperature and volume, respectively. The two quantities are related; it is natural to wonder what this relationship is. %can wonder what is larger, $C_p$ or $C_v$.  
+The table below shows the molar heat capacity for a set of substances.
+\begin{center}
+\begin{tabular}{ c|c|c } 
+ %\hline
+ Substance & $c_p$ (J/mol/K)& $c_v$ (J/mol/K) \\ 
+ \hline
+ Air (room) & 29.1 & 20.8 \\ 
+ Argon & 20.8 & 12.4717 \\ 
+ Carbon dioixide & 36.9 & 28.5\\
+ Liquid Water & 75.3 & 74.5\\
+ Octane (Gasoline) & 228 &  \\
+ %\hline
+\end{tabular}
+\end{center}
+
+You might notice a few things. First, that the heat capacity increases with increasing molecular weight; this is general. Next, that $c_p > c_v$ for all cases. Both of these phenomena are general. Last, you might see that $c_p \approx c_v$ for $H_2O$. This is also general for condensed phases. We will prove the generality of these statements. %A heuristic arugment is as follows: at constant $V$, $\Delta U = Q$.  At constant $P$, $\Delta U = Q + W = Q - p \Delta V$.  If you raise the temperature of the system, the amount you need to put in  $\Delta U$ and $T$ will be less.\\
+You can quickly estimate heat capacities for some substances using \href{http://en.wikipedia.org/wiki/Equipartition_theorem}{equipartition theory}, wherein each degree of freedom contributes $R/2$ to the molar heat capacity:
+
+(a) \un{Gases}: If we assume that an ideal, monatomic gas has a degree of freedom for every direction it can translate it, we get three degrees of freedom, so:
+\begin{equation}
+c_v^{\text{monatomic gas}} = \frac{3}{2} R = 12.471 \text{ J/mol/K}
+\end{equation}
+Note how close this is to the value for argon, which exists as a monatomic gas.   %$R = 8314 \text{J}/\text{mol}/\text{K}$ and $R = N_a \times k_B$.  
+A diatomic gas, can be modelled as two atoms are attached by a spring, free to rotate about their center of mass. At low temperatures, this gives 2 rotational degrees of freedom in addition to the original translational degrees of freedom, so at low temperatures, the heat capacity of a diatomic gas is: $c_v^{\text{diatomic, low }T} = \frac{5}{2} R$.
+at higher temperatures, the two vibrational degrees of freedom are excited, giving: $c_v^{\text{diatomic, high }T} = \frac{7}{2} R$
+This is borne out in the experimental data, as shown below:
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{DiatomicSpecHeat2}
+\caption{The specific heats of diatomic gases (normalized by R) as a function of temperature. The temperature at which the vibrational modes are excited is a function of the stiffness of the bond, with hydrogen exhibiting especially stiff bonds, and thus a late transition temperature.}
+\end{figure}
+
+\begin{align*}
+C_p &= C_v + R\\
+&= \frac{7}{2} R =  29 \text{J}/\text{mol}/\text{K}
+\end{align*}
+
+
+(b) \un{Solids}: At room temp., for an element, Dulong and Petit (1819) observed that
+\begin{align*}
+C_v &\approx 3 R = 25 \text{J}/\text{mol}/\text{K}\\
+C_p & \approx C_v
+\end{align*}
+We will talk in detail about solid-state heat capacities during statistical mechanics, but for now it is enough to know that each atom has 6 degrees of freedom for its vibrations: 3 translational and 3 positional. So, by equiparition, $c_v$ should be $~6 \frac{R}{2}=3R$. For a non-metallic salt such as Mg, there are twice as many atoms per formula unit, so $c_p \approx 6 R = 50\text{J}/\text{mol}/\text{K}$.   If we examine some measured  $c_p$, we see that at high T carbon reaches the 3 R.  It takes a while to reach this because of the nature of carbon's strong covalent bonds (we will explain this in detail in statistical mechanics as well).  There are discontinutities in Fe's diagram at 1550 \degree C because at this point it melts.  Same with Hg, which becomes a gas at low T.  For H\2O at RT we have $C_p = 75 \text{J}/\text{mol}/\text{K}$.
+
+\subsection{We need another energy function}
+While $c_v$ is naturally defined as the derivative of the internal energy with respect to temperature at constant volume: $c_v = \frac{1}{N} \left(\frac{\partial U}{\partial T}\right)_V$, the constant pressure heat capacity, $c_p$, is often what we meaure in the lab. It would be convenient to have a energy function for which $c_p$ is the derivative of the free energy with respect to temperature. The \bold{enthalpy}, $H$, is this function.
+\begin{align*}
+H &= U + PV\\
+dH &= dU + V dP + P dV
+\end{align*}
+and substitute $dU = \partial Q - P dV$
+\begin{align*}
+dH &= \partial Q + V dP\\
+(dH)_p &= \partial Q
+\end{align*}
+Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state funcitno. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experiemental technique.  $H$ is often called the ``heat'' content.\\
+
+If we write down what $(dH)_p$ is, we get
+\begin{align*}
+(dH)_p &= n C_p (dT)_p\\
+\frac{\partial H}{\partial T}|_p &= C_p\\
+\end{align*}
+If we heat a substance through a phase transition, the enthalpy of the system can be broken into three parts:
+\eqs
+H(T) &= H(T_0) +  \int_{T_0}^{T_f}C_p  dT + \Delta H_{\phi T}
+\eqe
+where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a funciton of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$.  As such, we often reference these state functions to their \emph{standard states}. Under the this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101325$ Pa) and temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is often exchanged when a chemical reaction takes place.\\
+
+%(H\degree(Fe))
+The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree C$. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
+\begin{figure}[h]
+\centering
+\includegraphics[width = \textwidth]{H_of_T_labeled.png}
+\caption{$H\degree (T)$ for Fe over two temperature scales.}
+\end{figure}
+The solid$\to$solid phase transitions' discontinuitites are barely visible on the left curve. This is because the latent heats of the different phase transitions differ by several orders of magnitude: $\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol. A large enthalpy for a solid$\to$solid phase transition is observed for zirconia's \href{http://en.wikipedia.org/wiki/Diffusionless_transformation#Martensitic_transformation}{martensitic phase transformation}, where $\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  
+
+The enthalpy of fusion (equivalently, the enthalpy of melting) is generally much higher. Richard's rule says that the enthalpy of fusion is proportional to the melting temperature of an element. 
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width = 12cm]{H_of_T_Fe_zoomed_out.png}
+%\caption{The correlation between the enthalpy of melting and the melting temperature for the elements.}
+%\end{figure}
+
+\begin{equation}
+\Delta H_\text{fusion} \text{ in J/mol } \approx 9 T_\text{fusion} \text{ in K}
+\end{equation}
+In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The elemental heat of vaporization follows a similar rule, Trouton's rule, which states that the the enthalpy of vaporization is proportional to the boiling temperature.\footnote{As we will learn later, these rules imply that the entropies of melting and boiling are approximately equivalent for all of the elements.}
+\begin{equation}
+\Delta H_\text{vap} \approx 90 T_\text{vap}
+\end{equation}
+In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The binding energies of metals are also on the order of 100 kJ/mol; you can intuitively think of evaporation as putting in the energy to break the bonds between atoms. We will emphasize understanding orders-of-magnitude of energy scales throughout, sticking to engineering units of kJ/mol.\footnote{Understanding in terms of atomic mechanisms is sometimes useful, wherein the natural units are eV/atom. $1 \text{ eV/atom}= 96.354\text{ kJ/mol}\approx 100\text{ kJ/mol}$}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 10cm]{Trouton_and_Richards_rules.png}
+\caption{Elemental phase transition temperatures and enthalpies on a log-log scale. The slope of this correlation (on a linear scale) gives the characteristic entropy of these phase transitions. The correlation is stronger for boiling as compared to melting because the liquid$\to$gas transition's entropy change is dominated by the gain of translational degrees of freedom, whereas the gain in entropy upon melting can be appreciably changed by the local interactions in the solids and liquids of the elements. Positive deviations from Richard's rule occur for heavy semimetals: Sb, Bi, Sn, Te have larger entropies of melting than expected. Negative deviations occur for elements with unfilled f-orbitals: Pu, Ce, Nd have smaller entropies of melting than expected. Simple metals and transition metals are well-behaved.}
+\end{figure}
+
+Now, what is the relative contribution of the PdV term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^-5 \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is ~ 10\% $\Delta V$.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, expect at very high pressures}.
+
+Just as it is useful to understand the energy scales associated with P-V work, it is also useful for us to understand the energy scales associated with chemical reactions. In chemistry, this is characterized by the enthalpy of formation of molecules, in the solid state, the relevant quantity is the enthalpy of formation of \emph{compounds}:\\
+At room temperature and pressure:
+%I am confused what you were trying to say here, any idea, Derek?
+\begin{equation}
+2 Fe_{(s)}^{\alpha} + \frac{3}{2}O_{2 (g)} \rightarrow Fe_2O_{3 (s)}^{\alpha} + (\partial Q)_p
+\end{equation}
+with $(\partial Q)_p$ = -1963 kcal/mol.
+\begin{equation}
+\Delta_v H = \Delta H^0_{Fe_2O_3} - \Delta H^0_{Fe} - \frac{3}{2} \Delta H^0_{O_2}
+\end{equation}
+and
+\begin{align*}
+\Delta H^0_{Fe_2O_3} &= -820.5 \text{kJ}/\text{mol}\\
+\Delta H^0_{CO} &= -110.52 \text{kJ}/\text{mol}\\
+\Delta H^0_{CO_2} &= -393.51 \cdot \text{kJ}/\text{mol}
+\end{align*}
+
+There are plenty of references to get these values, such as \un{Janaf tables}.  Examples include FactSage \& Thermocalc and they provide $H^0$, $G^0$, $C_p^0$, etc.
+
+\begin{align*}
+C_{(s)} + O_{2 (g)} &\rightleftharpoons CO_{2 (g)}\\
+\Delta_r H^0 &= -393.52 \text{kJ}/\text{mol}\\
+C_{(s)} + \frac{1}{2} O_{2 (g)} &\rightleftharpoons CO_{(g)}\\
+\Delta_r H^0 &= -110.52 \text{kJ}/\text{mol}\\
+C_{(s)} + CO_{2 (g)} &\rightleftharpoons 2 CO_{(g)}\\
+\Delta_r H^0 &= +180 \text{kJ}/\text{mol}\\
+\end{align*}
+
+The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}.  Be careful with the idea of ``heat'' content.  Doesn't mean we're going to harvest this energy as heat.  The first law is also silent about the directions of change $\rightleftharpoons$.  The first of the three reactions above is exothermic and the last is endothermic.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 9, 2014}
 %In previous lectures we worked with the first law with both the heat and work terms.  In continuation, imagine we have a lightbulb.  We can model the work as
