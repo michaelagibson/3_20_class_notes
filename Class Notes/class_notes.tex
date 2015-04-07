@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{class_notes}
 \usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array} % for better arrays (eg matrices) in maths
 
 \hypersetup{
     colorlinks=true,
@@ -189,7 +191,7 @@ Clearly, the amount of work done when changing between two states can be differe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 8, 2014}
-Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \partial Q + \sum y_i dx_i$.  
+Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \delta Q + \sum y_i dx_i$.  
 %\subsection{Today}
 We now want to quantify the first term, or \un{quantify heat exchange}.  We do this by defining the \emph{heat capacity} for a system as:  %(normalized by $n$) 
 
@@ -228,8 +230,9 @@ c_v^{\text{monatomic gas}} = \frac{3}{2} R = 12.471 \text{ J/mol/K}
 Note how close this is to the value for argon, which exists as a monatomic gas.   %$R = 8314 \text{J}/\text{mol}/\text{K}$ and $R = N_a \times k_B$.  
 A diatomic gas, can be modelled as two atoms are attached by a spring, free to rotate about their center of mass. At low temperatures, this gives 2 rotational degrees of freedom in addition to the original translational degrees of freedom, so at low temperatures, the heat capacity of a diatomic gas is: $c_v^{\text{diatomic, low }T} = \frac{5}{2} R$.
 at higher temperatures, the two vibrational degrees of freedom are excited, giving: $c_v^{\text{diatomic, high }T} = \frac{7}{2} R$
-This is borne out in the experimental data, as shown below:
+This is borne out in the experimental data, as shown in Figure \ref{CPofgases}:
 \begin{figure}[h]
+\label{CPofgases}
 \centering
 \includegraphics[width=\textwidth]{DiatomicSpecHeat2}
 \caption{The specific heats of diatomic gases (normalized by R) as a function of temperature. The temperature at which the vibrational modes are excited is a function of the stiffness of the bond, with hydrogen exhibiting especially stiff bonds, and thus a late transition temperature.}
@@ -254,10 +257,10 @@ While $c_v$ is naturally defined as the derivative of the internal energy with r
 H &= U + PV\\
 dH &= dU + V dP + P dV
 \end{align*}
-and substitute $dU = \partial Q - P dV$
+and substitute $dU = \delta Q - P dV$
 \begin{align*}
-dH &= \partial Q + V dP\\
-(dH)_p &= \partial Q
+dH &= \delta Q + V dP\\
+(dH)_p &= \delta Q
 \end{align*}
 Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state funcitno. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experiemental technique.  $H$ is often called the ``heat'' content.\\
 
@@ -275,6 +278,7 @@ where the first term is the enthalpy of the system in its initial state, the sec
 %(H\degree(Fe))
 The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree C$. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
 \begin{figure}[h]
+\label{enthalpy_vs_T}
 \centering
 \includegraphics[width = \textwidth]{H_of_T_labeled.png}
 \caption{$H\degree (T)$ for Fe over two temperature scales.}
@@ -296,10 +300,11 @@ In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The eleme
 \begin{equation}
 \Delta H_\text{vap} \approx 90 T_\text{vap}
 \end{equation}
-In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The binding energies of metals are also on the order of 100 kJ/mol; you can intuitively think of evaporation as putting in the energy to break the bonds between atoms. We will emphasize understanding orders-of-magnitude of energy scales throughout, sticking to engineering units of kJ/mol.\footnote{Understanding in terms of atomic mechanisms is sometimes useful, wherein the natural units are eV/atom. $1 \text{ eV/atom}= 96.354\text{ kJ/mol}\approx 100\text{ kJ/mol}$}
+In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The binding energies of metals are also on the order of 100 kJ/mol; you can intuitively think of evaporation as putting in the energy to break the bonds between atoms. We will emphasize understanding the orders-of-magnitude of energy scales in materials science throughout, sticking to engineering units of kJ/mol.\footnote{Understanding in terms of atomic mechanisms is sometimes useful, wherein the natural units are eV/atom. $1 \text{ eV/atom}= 96.354\text{ kJ/mol}\approx 100\text{ kJ/mol}$. An especially good article on energy scales in materials science is  \href{http://dx.doi.org/10.1080/14786430500155080}{Spaepen, Phil. Mag. 2005}}
 
 \begin{figure}[h]
 \centering
+\label{Trouton_Richard}
 \includegraphics[width = 10cm]{Trouton_and_Richards_rules.png}
 \caption{Elemental phase transition temperatures and enthalpies on a log-log scale. The slope of this correlation (on a linear scale) gives the characteristic entropy of these phase transitions. The correlation is stronger for boiling as compared to melting because the liquid$\to$gas transition's entropy change is dominated by the gain of translational degrees of freedom, whereas the gain in entropy upon melting can be appreciably changed by the local interactions in the solids and liquids of the elements. Positive deviations from Richard's rule occur for heavy semimetals: Sb, Bi, Sn, Te have larger entropies of melting than expected. Negative deviations occur for elements with unfilled f-orbitals: Pu, Ce, Nd have smaller entropies of melting than expected. Simple metals and transition metals are well-behaved.}
 \end{figure}
@@ -310,9 +315,9 @@ Just as it is useful to understand the energy scales associated with P-V work, i
 At room temperature and pressure:
 %I am confused what you were trying to say here, any idea, Derek?
 \begin{equation}
-2 Fe_{(s)}^{\alpha} + \frac{3}{2}O_{2 (g)} \rightarrow Fe_2O_{3 (s)}^{\alpha} + (\partial Q)_p
+2 Fe_{(s)}^{\alpha} + \frac{3}{2}O_{2 (g)} \rightarrow Fe_2O_{3 (s)}^{\alpha} + (\Delta Q)_p
 \end{equation}
-with $(\partial Q)_p$ = -1963 kcal/mol.
+with $(\Delta Q)_p$ = -1963 kcal/mol.
 \begin{equation}
 \Delta_v H = \Delta H^0_{Fe_2O_3} - \Delta H^0_{Fe} - \frac{3}{2} \Delta H^0_{O_2}
 \end{equation}
@@ -334,397 +339,595 @@ C_{(s)} + CO_{2 (g)} &\rightleftharpoons 2 CO_{(g)}\\
 \Delta_r H^0 &= +180 \text{kJ}/\text{mol}\\
 \end{align*}
 
-The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}.  Be careful with the idea of ``heat'' content.  Doesn't mean we're going to harvest this energy as heat.  The first law is also silent about the directions of change $\rightleftharpoons$.  The first of the three reactions above is exothermic and the last is endothermic.
+The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}. Exothermic reactions release heat, which tells you that a given reaction is favorable in terms of its bonding. The first two reactions are exothermic; carbon and oxygen prefer to bond to one another. The last reaction is endothermic, meaning that the formation of $CO_{(g)}$ is not energetically favorable from  $CO_{2 (g)}$ and $C_{(s)}$. However, enthalpy is not the whole story in determining the spontaneity of reactions: energy conservation alone cannot tell you in which direction a reaction will occur.
+%Be careful with the idea of ``heat'' content.  The fact that a reaction re't mean we're going to harvest this energy as heat. The first law is also silent about the directions of change $\rightleftharpoons$.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 9, 2014}
-%In previous lectures we worked with the first law with both the heat and work terms.  In continuation, imagine we have a lightbulb.  We can model the work as
-%\begin{align*}
-%W_\text{electric} = \partial Q + E_{\hbar v}
-%\end{align*}
-%If we have two compartments that are connected, one at $T_1$ and another at $T_2$ with $T_1 > T_2$ and $Q_1 < 0$ \& $Q_2 > 0$.
-%
-%\subsection{Different types of processes}
-%\bold{With ideal gas}:  This is nice because we can probe the internal energy U(T) by only looking at the temperature (the only ``state'' variable).  If we have a bike tube initially at RT with $P=4.4$atm (50 psi) and $T=298K$.  Now, we release the pressure from the bike tire and let air out.  What will happen to the temperature of the air right outside the nozzle.\\
-%
-%First, we have adiabatic expansion (not enough time for system to exchange heat).
-%\begin{align*}
-%dU_\text{gas} &= \partial Q + \partial W\\
-%&= -P dV\\
-%&= n C_V dT = -P dV
-%\end{align*}
-%Note that
-%\begin{align*}
-%V &= nR\frac{T}{P}\\
-%dV &= \frac{n R}{P} dT - nRT \frac{dP}{P^2}
-%\end{align*}
-%
-%So that
-%\begin{align*}
-%nC_V dT &= -nRdT + RT \frac{dP}{P}\\
-%(\frac{T_2}{T_1})^{C_P/ R} &= \frac{P_2}{P_1}\\
-%T_2 &= T_1 (\frac{P_1}{P_2})^{R/C_P}
-%\end{align*}
-%
-%And plugging in, we have $T_2 = 206$K = -67\degree C.  Why didn't we actually reach this temperature?  Well, the gas flowed through a nozzle instead of being simple allowed to expand.\\
-%
-%\bold{What is happening through the valve?}  \un{Joule-Thompson expansion} our system is the valve.  
-%\begin{equation}
-%dU_\text{valve} = U_\text{in} \partial n - U_\text{out} \partial n + \partial Q
-%\end{equation}
-%The gas enters with $P_\text{in}$ and a specific volume $V_\text{in}$ then leaves with $P_\text{out}$ and $V_\text{out}$.  Even though this is a constant volume system, the fact that we are flowing matter means we will have a work term.
-%\begin{equation}
-%dU_\text{valve} = \partial n (P_\text{in} V_\text{in} - P_\text{out} V_\text{out})
-%\end{equation}
-%The valve is an \un{open system} (can exchange particles with environment), and since it is in the steady state we have $dU_\text{valve} = 0$.
-%
-%\begin{align*}
-%(U_\text{in} - U_\text{out}) &= (P_\text{in} V_\text{in} - P_\text{out} V_\text{out})\\
-%n C_V dT &= nR(\Delta T)\\
-%\end{align*}
-%There is a problem with the above.  It says either $C_V = R$, or $\boxed{\Delta T=0}$.
-%
-%We have a Joule-Thompson, irreversible process.  It is dissipative and not at equilibrium with environment.
-%We need to know what kinds of processes are involved to appropriately treat our system.  Please refer to \bold{Callen pg. 95}.
-%
-%\begin{enumerate}[(I)]
-%\item Continuous and at equilibrium with environment (reversible). See Figure 2.
-%\item Continuous but not necessarily at equilibrium with environment.  This is considered \un{quasi-static}.  Can be both reversible and irreversible.  See Figure 3.
-%\item Discontinuous and not in equilibrium.  We can not do equilibrium thermodynamics for this.  (i.e. an explosion with H\2 + O\2 will proceed so fast we can not tell what is happening to get us to the final stage.  See Figure 4.
-%\end{enumerate}
-%
-%\subsection{Quasistatic Piston}
-%See Figure 5.  For our path,
-%\begin{equation}
-%\sum_{i=1}^2 \frac{\partial Q_i}{T} = \text{constant}
-%\end{equation}
-%Only depends on 1 (initial state) and 2 (final state).  The above is also our state function.\\
-%
-%Let's assume that $dS = \frac{\partial Q}{T}$.\\
-%\bold{Process 1}: Let's take a reservoir that is adiabatically isolated with $T_1$.  Let's transfer $\partial Q$ to the reservoir.  The resulting temperature will then be $T_2$.\\
-%\bold{Process 2:} Now we have a propeller going into our reservoir with adiabatic walls and $T_1$.  Here, we have $dS_1 = dS_2 \neq \frac{\partial Q}{T}$.\\
-%
-%Second Law of Thermodynamics:  There exists a state function (property S) for which holds (closed system)
-%\begin{equation}
-%dS_\text{system} \geq \frac{\partial Q}{T}
-%\end{equation}
-%it fixes the direction of change.  Forward ($1\rightarrow 2$) if $dS_f \geq \frac{\partial Q_f}{T}$ or backward ($2\rightarrow 1$) if $dS_b \geq \frac{\partial Q_b}{T}$.\\
-%
-%If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\partial Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\partial Q}{T}$ (or $dS_\text{rev} + \xi$ where $\xi >0$).  The first law said that $U$ exists and
-%\begin{equation}
-%dU = \partial Q + \sum y_i dx_i
-%\end{equation}
-%while the second law says $S$ exists and for a closed system
-%\begin{equation}
-%dS \geq \frac{\partial Q}{T}
-%\end{equation}
-%
-%Back to the example of two compartments that are connected (one at $T_1$ and the other at $T_2$), see Figure 6, we get
-%\begin{align*}
-%\partial Q_1 &= -\partial Q_2\\
-%dS_\text{system} &= dS_1 + dS_2\\
-%dS_\text{system} &= \frac{\partial Q_1}{T_1} + \frac{\partial Q_2}{T_2}\\
-%&= \frac{\partial Q_1}{T_1} - \frac{\partial Q_1}{T_2}\\
-%&= \partial Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
-%&= \partial Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
-%\end{align*}
-%If $T_2 > T_1$, $\partial Q_1 > 0$.  Or if $T_2 < T_1$, then $\partial Q_1 < 0$.  Heat flows from ``hot'' to ``cold''.
-%
+\section{Lecture - September 9, 2014}
+% In previous lectures we worked with the first law with both the heat and work terms.  In continuation, imagine we have a lightbulb.  We can model the work as
+% \begin{align*}
+% W_\text{electric} = \partial Q + E_{\hbar v}
+% \end{align*}
+% If we have two compartments that are connected, one at $T_1$ and another at $T_2$ with $T_1 > T_2$ and $Q_1 < 0$ \& $Q_2 > 0$.
+In previous lectures, we worked with the first law with both the heat and work terms.  In continuation, we examine how different processes can be modeled within this framework, and the importance of the proper definitions of systems and boundary conditions in obtaining the correct results. We do so by considering different processes that an ideal gas can undergo.
+
+\bold{An aside on the ideal gas}:  The ideal gas is a convenient system to examine thermodynamically because its internal energy can be defined in terms of just one state variable, the temperature: $U = U(T)$. Specifically, the internal of an ideal gas is:\footnote{We'll prove this in statistical mechanics, but it is proven from the ideal gas law \href{http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html}{here}.}
+\begin{align*}
+dU=C_V dT=(C_P-nR)dT\\
+\Delta U=C_V \Delta T = (C_P-nR) \Delta T
+\end{align*}
+In addition, we also have a nice \emph{equation of state} to relate changes in the thermodynamic state variables to one another, the ideal gas law, $PV=nRT$.
+
+\subsection{Throttling processes}
+
+ Consider a bike tube initially at room temperature ($T=298K$) with $P=4.4$atm (50 psi).  Now, we release the pressure from the bike tire and let air out, the air exiting the tube undergoes what is called a \emph{throttling process}. We are interested in how the thermodynamic state of the gas will change as it is released, in particular, what will be the temperature of the air right outside the nozzle?\\
+
+First, we define our system as the gas which is released. It undergoes a sufficiently rapid expansion that the process can be approximated as adiabatic (not enough time for system to exchange heat with its environment). Then:
+\begin{align*}
+dU_\text{gas} &= \delta Q + \delta W = \delta W \\
+&= -P dV\\
+&= n C_V dT = -P dV
+\end{align*}
+Note that $V = nR\frac{T}{P}$, taking the total differential of $V$:
+$$
+dV = \frac{n R}{P} dT - nRT \frac{dP}{P^2}
+$$
+
+% \begin{align*}
+% V &= nR\frac{T}{P}\\
+% dV &= \frac{n R}{P} dT - nRT \frac{dP}{P^2}
+% \end{align*}
+
+Plugging in this defintion of $dV$ above gives the final temperature in terms of the initial temperature and the ratio of the pressures:
+\begin{align*}
+nC_V dT &= -nRdT + RT \frac{dP}{P}\\
+(\frac{T_2}{T_1})^{C_P/ R} &= \frac{P_2}{P_1}\\
+T_2 &= T_1 (\frac{P_1}{P_2})^{R/C_P}
+\end{align*}
+
+For the bike tube, this gives $T_2 = 206$K = -67\degree C.  Why didn't we actually reach this temperature?  Well, the gas flowed through a nozzle instead of simply isotropically expanding, and the pressure outside the gas was not equal to the pressure inside the gas during the expansion. Clearly, we need to examine this process from a different perspective. Often, in thermodynamics, this means you need to re-define your system. We do so below.\\
+
+\bold{What is happening through the valve?}  %\un{Joule-Thompson expansion} 
+We now define our system as the valve. In this case, the system is at constant volume, and the key process taking place is that gas is flowing through the system. These gas molecules have some well-defined internal energy, so there is an energy flux through the system due to the mass flux through the system:
+\begin{equation}
+dU_\text{valve} = U_\text{in} d n - U_\text{out} d n + \delta Q
+\end{equation}
+The gas enters with $P_\text{in}$ and a specific volume $v_\text{in}$ then leaves with $P_\text{out}$ and $v_\text{out}$.  Even though the valve is a constant volume system, the mass flux implies that we will have a work term. The work done by the incoming gas is $P_\text{in} V_\text{in}$, the work done by the outgoing gas is $P_\text{out} V_\text{out}$. They have opposite signs due to the $dn$ term. $\delta Q$ is zero because the process is adiabatic, so:
+\begin{equation}
+dU_\text{valve} = \delta W = d n (P_\text{in} v_\text{in} - P_\text{out} v_\text{out})
+\end{equation}
+%The valve is an \un{open system} (can exchange particles with environment), and 
+Equating these two definitions of $dU_\text{valve}$ gives:
+
+$$
+(U_\text{in} - U_\text{out}) = (P_\text{in} V_\text{in} - P_\text{out} V_\text{out})\footnote{This is a statement that the enthalpy of the gas during the throttling process is constant: $U_\text{in}+P_\text{in} V_\text{in}=U_\text{out}+P_\text{out} V_\text{out}$, so $H_\text{in}=H_\text{out}$. Note that this doesn't need the ideal gas asssumption, it's general.}
+$$
+Using the ideal gas equations:
+$$
+n C_V \Delta T = nR(\Delta T)
+$$
+This implies that either $C_V = R$, or $\boxed{\Delta T=0}$. It turns out that an ideal gas undergoing this process should have $\Delta T = 0$. 
+
+Note how changing the way we interpet the process generally leads to a different answer. In this case, we needed to use an interpretation where the pressure on the gas during the expansion was not equal to its internal pressure. This means that the process is non-equilibrium and irreversible. This process is called a Joule-Thomson process. You can learn more about it on wikipedia, or refer to \bold{Callen pg. 95}.
+
+In general, we categorize processes in the following way: 
+
+\begin{enumerate}[(I)]
+\item Continuous and at equilibrium with environment (reversible). See Figure 2.
+\item Continuous but not necessarily at equilibrium with environment.  This is considered \un{quasi-static}.  Can be both reversible and irreversible.  See Figure 3.
+\item Discontinuous and not in equilibrium.  We can not do equilibrium thermodynamics for this.  (i.e. an explosion with H\2 + O\2 will proceed so fast we can not tell what is happening to get us to the final stage.  See Figure 4.
+\end{enumerate}
+
+\subsection{Quasistatic Piston}
+We now consider a piston slowly compressing a gas. See Callen Figure 5.  For our path,
+\begin{equation}
+\sum_{i=1}^2 \frac{\delta Q_i}{T} = \text{constant}
+\end{equation}
+Only depends on 1 (initial state) and 2 (final state).  The above is also our state function.\\
+
+Let's assume that $dS = \frac{\delta Q}{T}$.\\
+\bold{Process 1}: Let's take a reservoir that is adiabatically isolated with $T_1$.  Let's transfer $\delta Q$ to the reservoir.  The resulting temperature will then be $T_2$.\\
+\bold{Process 2:} Now we have a propeller going into our reservoir with adiabatic walls and $T_1$.  Here, we have $dS_1 = dS_2 \neq \frac{\delta Q}{T}$.\\
+
+Second Law of Thermodynamics:  There exists a state function (property S) for which holds (closed system)
+\begin{equation}
+dS_\text{system} \geq \frac{\delta Q}{T}
+\end{equation}
+it fixes the direction of change.  Forward ($1\rightarrow 2$) if $dS_f \geq \frac{\delta Q_f}{T}$ or backward ($2\rightarrow 1$) if $dS_b \geq \frac{\delta Q_b}{T}$.\\
+
+If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\delta Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\delta Q}{T}$ (or $dS_\text{rev} + \xi$ where $\xi >0$).  The first law said that $U$ exists and
+\begin{equation}
+dU = \delta Q + \sum y_i dx_i
+\end{equation}
+while the second law says $S$ exists and for a closed system
+\begin{equation}
+dS \geq \frac{\delta Q}{T}
+\end{equation}
+
+Back to the example of two compartments that are connected (one at $T_1$ and the other at $T_2$), see Figure 6, we get
+\begin{align*}
+\delta Q_1 &= -\delta Q_2\\
+dS_\text{system} &= dS_1 + dS_2\\
+dS_\text{system} &= \frac{\delta Q_1}{T_1} + \frac{\delta Q_2}{T_2}\\
+&= \frac{\delta Q_1}{T_1} - \frac{\delta Q_1}{T_2}\\
+&= \delta Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
+&= \delta Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
+\end{align*}
+If $T_2 > T_1$, $\delta Q_1 > 0$.  Or if $T_2 < T_1$, then $\delta Q_1 < 0$.  Heat flows from ``hot'' to ``cold''.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 10, 2014}
-%As a reminder, the 1st law stated that $U$ is a state function where
-%\beq
-%dU = \partial Q + \sum y_i dx_i
-%\ceq
-%The 2nd law states that $S$ is also a state function, and for a \emph{closed system}
-%\beq dS \geq \frac{\partial Q}{T} \ceq
-%If quasi static and reversible then it is equal.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
-%Key comments
-%\begin{enumerate}[(I)]
-%\item $S$ is not a conserved quantity.  Imagine the case where we stir an isolated bucket (with a propeller).
-%\item $S$ of an adiabatic system increases.  This is because the $\partial Q$ term is zero, so $dS \geq 0$.
-%\item $S$ \emph{can} decrease.  An example is allowing liquid iron to cool and form a solid phase.  In this case the entropy decreases.  The entropy of the environment, however, increases by an amount much greater than the decrease of iron entropy.  Thus, $dS_\text{universe}$ is positive.
-%\end{enumerate}
-%\subsection{Consequences of the 2nd law:}
-%\begin{enumerate}[(I)]
-%\item The work done for a reversible process is less than or equal to the work done for an irreversible process
-%\beq \partial W_\text{reversible} \leq \partial W_\text{irreversible} \ceq
-%For a reversible path, \beq dU_\text{reversible} = \partial Q_\text{reversible} + \partial W_\text{reversible} \ceq
-%and the second law allows us to replace $\partial Q_\text{reversible}$ by $TdS$.  For an irreversible path,
-%\beq dU_\text{irreversible} = dU_\text{reversible} = \partial Q_\text{irreversible} + \partial W_\text{irreversible} \ceq
-%Since $\partial Q_\text{irreversible} < T dS$ for an irreversible process, we have
-%\beq T dS + \partial W_\text{reversible} > T dS + \partial W_\text{irreversible}
-%\ceq
-%and 
-%\beq \boxed{\partial W_\text{reversible} > \partial W_\text{irreversible}}
-%\ceq
-%\item \un{limits to work conversion}: For a reversible process, we will get the most efficient conversion.
-%\begin{align*}
-%\Delta U = 0 &= Q + W\\
-%\Delta S = \oint \frac{\partial Q}{T}& = 0\\
-%&= \frac{Q_H}{T_H}
-%\end{align*}
-%\begin{align*}
-%\oint \frac{\partial Q}{T} &= 0\\
-%\Delta S &= \frac{Q_H}{T_H} + \frac{Q_L}{T_L}\\
-%&= 0\\
-%Q_H &= \frac{-T_L}{T_H} Q_L
-%\end{align*}
-%\begin{align*}
-%Q &= -W\\
-%Q_H + Q_L &= -W\\
-%Q_H - Q_H \frac{T_L}{T_H} = -W\\
-%Q_H (1 - \frac{T_L}{T_H}) = -W\\
-%\end{align*}
-%This gives us the Carnot efficiency $\eta = \frac{-W}{Q_H}$ and \beq \eta = 1 - \frac{T_L}{T_H} \ceq  Now, plugging in numbers, with $T_H = 100^0$ C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. and if $T_H$ = 550\degree C, $\eta \approx 63$\%.
-%
-%We use work to flow \un{heat}.  With $Q_H$ leaving we have a \un{heat pump} and $Q_L$ coming in we have a refrigerator.
-%\beq \eta_\text{heat pump} = \frac{-Q_H}{W} = \frac{T_H}{T_H - T_L} \ceq
-%With $T_H = 25$C and $T_C = 0$C, $\eta = 11\phi$ ($\phi$ is the ``coefficient of performance''?).
-%\end{enumerate}
-%
-%\un{Practically}, we use a fluid for heat transfer.  We add heat $Q_H$ to water that turns into steam and runs a turbine generating work $W$.  We take some heat $Q_L$ away from this so it can condense and we flow it back to the top.  We can have inefficiencies turning the turbine, condensing the steam back into water, etc.
-%
-%We will compute the entropy $S$ for materials.  We know the temperature dependence
-%\beq C_c = \frac{(\partial Q)_c}{dT} \ceq
-%Where the subscript c is for ``constant path''.
-%\begin{align*}
-%T(dS)_c &= (\partial Q)_c\\
-%T(\frac{\partial S}{\partial T})_p &= C_p\\
-%T(\frac{\partial S}{\partial T})_v &= C_v\\
-%\end{align*}
-%Fun fact: thermoelectrics will never be as efficient as steam engines (see Nature Materials Vol 8 Feb 2009 ``An inconvenient truth about thermoelectrics'').
-%
-%Ultimately, we need a reference state.  How do we come up with a reference entropy $S$?  Nernst got the Nobel prize for it in 1920.
-%
-%\subsection{The 3rd law}
-%\emph{As the temperature approaches zero, the magnitude of the entropy change in any reversible process is zero.}
-%We can then fix the entropy of the elements at 0K, in their \un{equilibrium} state, at zero. \beq S_{0\text{K}}^0 = 0 \ceq
+\section{Lecture - September 10, 2014}
+As a reminder, the 1st law stated that $U$ is a state function where
+\beq
+dU = \delta Q + \sum y_i dx_i
+\ceq
+The 2nd law states that $S$ is also a state function, and for a \emph{isolated system} under any arbitrary process,
+\beq dS \geq \frac{\delta Q}{T} \ceq
+If the process is reversible then, $TdS = \delta Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
+Key properties of entropy:
+\begin{enumerate}[(I)]
+\item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system by increasing the enreopy of the surroundings). 
+\item $S$ of the \emph{universe} is only conserved during reversible processes. Otherwise, $S_\text{universe}$ is an increasing quantity (Imagine the case where we stir an isolated bucket with a propeller).
+\item $S$ of an adiabatic system is constant or increases.  This is because the $\delta Q$ term is zero, so $dS \geq 0$. %This seems redundant to me...
+%\item $S$ \emph{can} decrease.  An example is allowing a liquid to cool and form a solid phase.  In this case the entropy of the system decreases.  The entropy of the environment, however, increases by an amount greater than or equal to the decrease of iron entropy.  Thus, $dS_\text{universe}$ is positive.
+\end{enumerate}
+\subsection{Consequences of the 2nd law:}
+\begin{enumerate}[(I)]
+\item \un{Irreversibility and 'lost work'}: For processes with the same initial and final states, the work done by a system upon its surroundings during a reversible process is greater than or equal to the work done by a system during an irreversible process.
+\beq \delta W_\text{reversible} \geq \delta W_\text{irreversible} \ceq
+For a reversible path, \beq dU_\text{reversible} = \delta Q_\text{reversible} + \delta W_\text{reversible} \ceq
+and the second law allows us to replace $\delta Q_\text{reversible}$ by $TdS$.  For an irreversible path, U is a state function, so $dU$ is the same:
+
+\beq dU_\text{reversible} = dU_\text{irreversible}  = \delta Q_\text{irreversible} + \delta W_\text{irreversible} \ceq
+Since $T dS > \delta Q_\text{irreversible} $ for an irreversible process, we have
+
+\begin{align} T dS + \delta W_\text{reversible} &= \delta Q_\text{irreversible} + \delta W_\text{irreversible}\\
+T dS -\delta Q_\text{irreversible}  = \delta W_\text{irreversible} - \delta W_\text{reversible} > 0
+\end{align}
+so
+\beq \boxed{\delta W_\text{reversible} < \delta W_\text{irreversible}}
+\ceq
+Note that our sign convention in these notes is $dU = \delta Q + \delta W$, so negative work is work done by the systems upon the surroundings. The important physical implication is that that if you want to extract work from a system, you get the most work out if the work is performed reversibly. Work that is not obtained from a process due to irreversibilities is sometimes called \emph{lost work}. Similarly, and perhaps more intuitively, if you want to do work upon a system, you will expend the least energy if the work is done reversibly: \\ \emph{The dissipation inherent in irreversible processes is bad for efficiency, regardless of whether work is done by a system, or work is performed upon system.} %\footnote{This has significant implications for the operation of batteries and the  materials production, wherein we are generally aiming to make things as reversible as possible}
+\item \un{Limits to heat-work conversion}: 
+Since a reversible process leads to the highest efficiencies, it is then logical to use a reversible process to set a limit on the amount of work that we can get from a heat source, i.e. by reversibly transfering heat from hot to cold. One can consider any process to do so, here we consider a non-specific process. The steps are worked out, but not explained. An animated explanation can be found on \href{https://www.khanacademy.org/science/physics/thermodynamics/v/efficiency-of-a-carnot-engine}{Khan Academy}\footnote{Sal Khan is an MIT alum!}, and a good written explanation is on \href{https://en.wikipedia.org/wiki/Carnot_cycle}{wikipedia}.
+\begin{align*}
+\Delta U = 0 &= Q + W\\
+\Delta S = \oint \frac{\delta Q}{T}& = 0\\
+&= \frac{Q_H}{T_H}
+\end{align*}
+\begin{align*}
+\oint \frac{\delta Q}{T} &= 0\\
+\Delta S &= \frac{Q_H}{T_H} + \frac{Q_L}{T_L}\\
+&= 0\\
+Q_H &= \frac{-T_L}{T_H} Q_L
+\end{align*}
+\begin{align*}
+Q &= -W\\
+Q_H + Q_L &= -W\\
+Q_H - Q_H \frac{T_L}{T_H} = -W\\
+Q_H (1 - \frac{T_L}{T_H}) = -W\\
+\end{align*}
+This gives us the Carnot efficiency $\eta = \frac{-W}{Q_H}$ and \beq \boxed{\eta_{\text{heat $\to$ work}} = 1 - \frac{T_L}{T_H}} \ceq  To give a sense of these efficiencies, with $T_H = 100^0$ C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. Significant gains in efficiency can be gained by going to higher temperatures: if $T_H$ = 550\degree C, $\eta \approx 63$\%.
+
+We can also use work to move heat.  This process is also limited by the second law, but is characterized by a different efficiency,. Moving heat from hot to cold is spontaneous, so we are usually concerned with how much heat we can move from cold to hot. When making something that is already warm warmer, we have a \un{heat pump} and when making something cold colder, we have a refrigerator (or an air conditioner). The logical way to characterize such an efficiency is the amount of heat moved per unit work used (this is often referred to as the ``coefficient of performance'', or COP of a heat pump). One can derive that:
+\beq COP_\text{heat pump} = \frac{-Q_H}{W} = \frac{T_H}{T_H - T_L} \ceq
+\beq COP_\text{refrigerator} = \frac{Q_L}{W} = \frac{T_L}{T_H - T_L} \ceq
+With $T_H = 25$C and $T_C = 0$C, $\eta = 11$.\footnote{This counterintuitively means that burning a fire is actually an extremely inefficient way to heat a home. You could get an order of magnitude more bang-for-your-Joule if you could convert that chemical energy to work, and use a heat pump!}
+
+Note that in the above derivation, no reference was made to a specific mechanism: \emph{the Carnot limit applies any time heat is being converted to work}. One example of an exotic device that does this is a thermoelectric. One can apply some basic thermoelectric theory to show that thermoelectrics will never be as efficient as steam engines unless the thermoelectric figure of merit, $ZT$, increases by around an order of magnitude.\footnote{See \href{http://dx.doi.org/10.1038/nmat2361}{Nature Materials Vol 8 Feb 2009 ``An inconvenient truth about thermoelectrics''}}. This is not to say that thermoelectrics are a bad topic to research, but that one should not believe that they will replace a conventional heat engine for turning heat into energy, unless the given application prohibits the use of a heat engine.
+
+\end{enumerate}
+
+
+
+%\un{Practically}, we use a fluid for heat transfer.  We add heat $Q_H$ to water that turns into steam and runs a turbine generating work $W$.  We take some heat $Q_L$ away from the  steam (often called a working fluid), causing the steam to condense. The cold condensate at $T_L$ is then flowed it back to the heat source.  We can have inefficiencies turning the turbine, condensing the steam back into water, and we can increase efficiency by going to higher temperatures. These are excellent and practical materials problems to work on in energy. % I would like to do a recitation on steam engines in the future.
+
+We now that we have an expression for a differential change in entropy, we can compute  entropy changes from arbitrary processes, $\Delta S_{\text{process}}$.  We know the temperature dependence of $S$:
+\beq C_c = \frac{(\delta Q)_c}{dT} \ceq
+Where the subscript c is for ``constant path''. A reversible process along such a path must have:
+\begin{align*}
+T(dS)_c &= (\delta Q)_c\\
+(\frac{\partial S}{\partial T})_c &= \frac{C_c}{T} \\
+(\frac{\partial S}{\partial T})_p &= \frac{C_p}{T}\\
+(\frac{\partial S}{\partial T})_v &= \frac{C_v}{T}\\
+\end{align*}
+
+Ultimately, because temperature has an absolute zero, entropy should also have some reference value when $T=0$ K.  How do we come up with a reference entropy $S$?  Nernst got the Nobel prize for it in 1920.
+
+\subsection{The 3rd law}
+\textbf{As the temperature approaches zero, the magnitude of the entropy change in any reversible process is zero.}
+
+We can then fix the entropy of the elements at 0K, in their \un{equilibrium} state, as being equal to zero.\footnote{We will show the physical meaning behind the third law during statistical mechanics. For now, we take it as a postulate.} \beq S_{0\text{K}}^\text{element} = 0 \ceq
+Because entropy is a state function, the entropy along different paths must converge to the same value as a system is cooled to absolute zero; the curves must look like the right of Figure \ref{ThirdLawConsistency}. Because compounds can be reversibly formed from their constituent elements, the entropy of any compounds must also be zero at 0K, as $\Delta S_{formation}=0$: $S_{AB}^\text{0K} = 0$. By extension, \emph{at equilibrium, the entropy of all materials at absolute zero is zero}. 
 %\beq A + B \rightarrow AB \text{  (at 0K})\ceq
-%With this process $\Delta S = 0$ (reversible path) and $S_{AB}^\text{0K} = 0$.  Alternatively, it can be said that ``The entropy of a system at 0K is 0''.  This statement, however,is true if we are at \un{equilibrium}.\\
-%
+\begin{figure}[h]
+\label{ThirdLawConsistency}
+\centering
+\includegraphics[width = 12cm]{thirdLawPlot_with_faces.pdf}
+\caption{An illustration of entropy as a function of temperature inconsistent and consistent with the third law.}
+\end{figure}
+
+%With this process $\Delta S = 0$ (reversible path) and .  Alternatively, it can be said that ``The entropy of a system at 0K is 0''.  This statement, however,is true if we are at \un{equilibrium}.
+
 %Looking at the Entropy vs. Temperature handout, we see that the phase transformation at $\sim 900$\degree C results in a jump in both entropy and enthalpy.  $S$ is an extensive property and a state function.  For the $\alpha \rightarrow \gamma$ phase transformation
 %\beq \Delta S_{\alpha \rightarrow \gamma} = \frac{\Delta H_{\alpha \rightarrow \gamma}}{T_{\phi T}} \ceq
 %Say that we go from liquid to vapor, what is $\Delta S_{(l) \rightarrow (v)}$?  T $\approx$ 3000.\\
-%
+
 %\un{Trouton's rules}: $\Delta H_\text{vaporization} = 90 \times T_\text{vaporization}$.  With this, $\Delta S_\text{vaporization} \approx 90 \frac{J}{\text{mol} K}$.
-%
-%\bold{Can we reach 0K?}
-%Consider $T_\text{outside}$ = 25\degree C and $T_\text{chamber} \approx  0.1$K.  We need to extract heat and place it in an adiabatic environment.  See Figure 5.1.  We can reduce the temperature by cycling between isothermal compression and isentropic (adiabatic?) expansion, but we can never practically use this method to get to 0K.
-%\begin{enumerate}[(I)]
-%\item \un{Adiabatic expansion} of an ideal gas.  How much entropy changes?
-%\beq T_2/T_1 = \frac{P_1}{P_2}^{R/C_v} \ceq
-%Don't do this.  Just look at the \un{adiabatic} part and jump to $dS = 0$
-%\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\partial Q}{T} = -\frac{\partial Q}{T} = \frac{PdV}{T} = nR \frac{dV}{V}$ (Know this since $U(T)$, with T constant means $\Delta U = 0 = Q + W$)
-%\beq \Delta S = nR\ln(\frac{V_2}{V_1}) \ceq
-%As volume goes up, entropy will too.
-%\item Arbitrary change of an ideal gas.  Since $S$ is a state function, we only need to find the reversible path.  We can break it up:
-%\beq dS = dS_\text{isobaric} + dS_\text{isothermal} = C_p \frac{dT}{T} - R\frac{dP}{P} \ceq
-%
-%\end{enumerate}
-%
+
+\bold{Can we reach 0K?}
+\begin{figure}[h]
+\label{Can_We_Reach_0_K}
+\centering
+\includegraphics[width = 10cm]{Can_We_achieve_0K.pdf}
+\caption{A T-S diagram illustrating the diminishing changes in temperature and entropy in a low-temperature, step-wise isothermal-isentropic cooling process. These changes become so small that an infinite steps are needed to reach 0K.}
+\end{figure}
+
+Consider trying to cool a material by extracting heat from the material and dumping it into a hotter reservoir. %$T_\text{outside}$ = 25\degree C and $T_\text{chamber} \approx  0.1$K.  
+We would first need to extract the heat during a process when the material is in contact with the environment (say, through an isothermal compression), and then perform an adiabatic process on the material such that no heat flows in, and we are in a position to repeat the previous heat removal process (say, via an adiabatic expansion).  Of course, this would only work if t=you could make a series of heat reverviors at lower and lower temperatures. See Figure \ref{Can_We_Reach_0_K}.  We can reduce the temperature by cycling between isothermal compression and isentropic (adiabatic) expansion, but we can never practically use this method to get to 0K, as it would take an infinite number of cycles to do so. We can illustrate this by looking at the different processes individually:
+\begin{enumerate}[(I)]
+\item \un{Adiabatic expansion} of an ideal gas.  How much does the entropy change? You could try integrating the heat capacity along the path:
+\beq T_2/T_1 = \frac{P_1}{P_2}^{R/C_v} \ceq
+But that's kind of silly. You know because it's adiabatic that $d S = 0$ since $\delta Q = 0$
+\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\partial Q}{T} = -\frac{\partial Q}{T} = \frac{PdV}{T} = nR \frac{dV}{V}$ (Know this since $U=U(T)$, and T constant means $\Delta U = 0 = Q + W$)
+\beq \Delta S = nR\ln(\frac{V_2}{V_1}) \ceq
+As volume goes up, entropy will too.
+\item Arbitrary change of an ideal gas.  Since $S$ is a state function, we only need to find the reversible path.  We can break it up:
+\beq dS = dS_\text{isobaric} + dS_\text{isothermal} = C_p \frac{dT}{T} - R\frac{dP}{P} \ceq
+
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 12, 2014}
-%We can perform a Legendre Transformation to come up with new representations of our system's energy
-%\eqs
-%dU = TdS + \sum_i y_i dx_i
-%\eqe
-%Lets consider a simple system.  We can write it in terms of several ``natural functions'' ($U(S,V)$ or $S(U,V)$)
-%\eqs
-%dU &= T dS - P dV\\
-%dS &= \frac{1}{T}dU + \frac{P}{T}dV
-%\eqe
-%also, we may integrate our function
-%\eqs
-%U(S,X_i) \rightarrow dU = \frac{\partial U}{\partial S}|_{X_i} dS + \frac{\partial U}{\partial X_j}|_{X_{i\neq j}} dX_j
-%\eqe
-%and thus we have relations for our equations of state
-%\eqs
-%T(S,X_i) &= \frac{\partial U}{\partial S}|_{X_i}\\
-%y_j(S,X_j) &= \frac{\partial U}{\partial X_j}|_{X_{i\neq j}} 
-%\eqe
-%If we just have one equation of state ($T(S,V)$), we can get
-%\eqs
-%U = \int dS T(S,V) + g_1(V)
-%\eqe
-%similarly if we only have $-P$
-%\eqs
-%U = -\int dV P(S,V) + g_2(S)
-%\eqe
-%The number of ways the system can exchange energy is equal to the number of equations of state (EOS).
-%\subsection{Mathematical Properties of $U$}
-%$U$ is a homogeneous function of first order in \emph{extensive} variables.
-%\eqs
-%f(\lambda x, \lambda ) = \lambda^r f(x,y)
-%\eqe
-%taking $r=1$ for $U$,
-%\eqs
-%f(\lambda x, \lambda y) = \lambda f(x,y)
-%\eqe
-%lets verify the result:
-%\eqs
-%\frac{\partial (U(\lambda S, \lambda X))}{\partial \lambda} &= \frac{\partial U}{\partial (\lambda S)} \frac{\partial (\lambda S)}{\partial \lambda} + \frac{\partial U}{\partial (\lambda X)} \frac{\partial (\lambda X)}{\partial \lambda}\\
-%&= \frac{\partial U}{\partial (\lambda S)} S + \frac{\partial U}{\partial (\lambda X)}X\\
-%&= \frac{\partial U}{\partial S} S + \frac{\partial U}{\partial X} X\\
-%&= U(S,X)
-%\eqe
-%Thus for $\lambda = 1$
-%\eqs
-%U = TS + yx
-%\eqe
-%\subsection{An open and isolated system}
-%Now we consider the chemical potential $\mu$, the intensive conjugate of $dN$ which is the change in number of particles:
-%\eqs
-%U &= TS - PV + \sum_i \mu_i N_i\\
-%dU &= SdT - VdP + N_i d\mu_i = 0
-%\eqe
-%where the above is called the ``Gibbs-Duhem equation''
-%
-%For an isolated system, we have no dV, no dU.  The 1st law says $U, V$ are constant (no energy flow) and the 2nd law says $dS \geq 0$ (i.e. S is maximized over the set of thermodynamic states that are consistent with the extensive variable constraints (boundaries).  The most probable thermodynamic state is then the one with the maximum S.\\
-%
-%Lets look at thermal equilibrium (Temperature differences) in a system with two containers that allow energy to flow $dU \neq 0$.
-%\eqs
-%dU_I &= -dU_{II}\\
-%dS &= dS_I + dS_{II}\\
-%dS &= \frac{dU_I}{T_I} + \frac{dU_{II}}{T_{II}}\\
-%dS &= dU_I (\frac{1}{T_I}+\frac{1}{T_{II}})
-%\eqe
-%Now, if $T_I < T_{II}$ and $dU_I > 0$, then $dS > 0$ and we are \bold{not at equilibrium}.  If $T_I > T_{II}$ and $dU_I < 0$, then $dS > 0$ and we are also \bold{not at equilibrium}.  Equilibrium then occurs when $\frac{1}{T_I}+\frac{1}{T_{II}} = 0$, or $T_I = T_{II}$.
-%
-%\subsection{Mechanical Equilibrium}
-%Consider two compartments of an isolated container separated by an athermal, moveable wall.  The volume of the left side is $V_1$ and the right is $V_2$.
-%\eqs
-%dU_1 &= -dU_2\\
-%dV_1 &= -dV_2\\
-%dS &= dU_1 (\frac{1}{T_1}+\frac{1}{T_{2}}) + dV_1 (\frac{P_1}{T_1}+\frac{P_2}{T_{2}})\\
-%\eqe
-%thus $S$ is maximal for $T_1 = T_2$ and $P_1 = P_2$.
-%\subsection*{Chemical Equilibrium}
-%Similarly, we can add a $\mu dN$ term to the energy change (or $-\frac{\mu}{T}dN$ in the entropy representation).  We then get an additional term to $dS$ of 
-%\eqs
-%dS = ... -(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2})dN_1
-%\eqe
-%which results in equilibrium so long as $\mu_1 = \mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$ (as we would expect from a potential).  A gradient of $\frac{\mu}{T}$ generates mass flow.
-%
-%\subsection{Chemical Reactions}
-%Given the reaction
-%\eqs
-%aA + bB \rightarrow cC + dD
-%\eqe
-%how can we maximize the entropy $S$?
-%\begin{itemize}
-%\item Write $dS$ as a function of the \emph{internal} variables
-%\item impose $dS_\text{system} = 0$ for all the variations
-%\end{itemize}
-%Thus, given appropriate internal variables, we can directly extrapolate the equilibrium conditions.  For $dU_{1\rightarrow 2}$ we get $T_1 = T_2$.  For $dU_{1\rightarrow 2}$ and $dV_{1\rightarrow 2}$, we have $T_1 = T_2$ and $P_1 = P_2$.  For $dq_{1\rightarrow 2}$ we get $\phi_1 = \phi_2$ (electrostatic potential).
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 15, 2014}
-%We have extensive boundary conditions for an isolated system with a wall that allows the volume and internal energies of each side to change.   When the internal energy $U$ and position $x$ is a constant, the entropy is maximum.  When the entropy $S$ is constant then the internal energy is minimum.
-%
-%\subsection{Equilibrium under the most general conditions}
-%If we have an insulated, very large system, with temperature $T^*$ (where the $^*$ denotes the environment), and a smaller system within (no $^*$), and we assume that all variations are quasi-static, then
-%\eqs
-%\Delta U^* &= T^* \Delta S^* + \sum y_i^* \Delta x_i^*\\
-%&= -\Delta U\\
-%&= T^* \Delta S^* - \sum y_i^* \Delta x_i\\
-%\Delta U - \sum y_i^* \Delta x_i &= -T^* \Delta S^*
-%\eqe
-%From the second law, we know that
-%\eqs
-%T^* (\Delta S* + \Delta S &\geq 0\\
-%T^*\Delta S^* &\geq -T^*\Delta S\\
-%-T^* \Delta S^* &\leq T^* \Delta S
-%\eqe
-%Therefore plugging into our previous result we have
-%\eqs \boxed{
-%\Delta U - \sum y_i^* \Delta x_i - T^* \Delta S \leq 0
-%}
-%\eqe
-%In the above the $\Delta U$, $\Delta x_i$, and $\Delta S$ are the constraints for the \emph{system} and the $y_i^*$ and $T^*$ are the constraints for the \emph{environment}.\\
-%
-%\bold{Example:} A system interacting with the environment.  Consider a spring with mass $m$ hanging from it under the influence of gravity $g$.
-%\eqs
-%U_\text{sys} &= -mgx\\
-%\vec{F} &= -k x
-%dU_\text{sys} - T^* dS - F^* dx &\leq 0\\
-%-mgdx - T^*dS + kx dx &\leq 0\\
-%(kx - mg)dx \leq 0
-%\eqe
-%Thus we can tell $kx = mg$.
-%
-%\subsection{Assumptions}
-%Lets begin to make some assumptions for a system
-%\begin{itemize}
-%\item The system will come to internal equilibrium with the environment (for a system + environment).
-%\item No assumptions will be made about the \emph{internal state} of the \emph{system}
-%\end{itemize}
-%
-%\un{For a simple system}
-%\eqs
-%dU - TdS + P dV \leq 0
-%\eqe
-%We can control the extensive variables for our system in the following ways
-%\begin{itemize}
-%\item \bold{Isolated}: $dU = 0$, $dV = 0$ which leads to $-TdS \leq 0 \rightarrow S_\text{max}$
-%\item \bold{Adiabatic \& Isochoric}: $dS = 0$, $dV=0$ which leads to $dU \leq 0 \rightarrow U_\text{min}$
-%\end{itemize}
-%Frequently, we want a function $U^*(y)$ that takes intensive parameters as our argument.  We usually have $U$ as a function of the extensive parameters $U(S,X,...)$.  To switch, we can perform a \bold{Legendre Transform} to define a new energy in the following way:
-%\eqs
-%\phi &= U - y_j x_j\\
-%d\phi &= dU - y_j dx_j - x_j dy_j
-%\eqe
-%where $dU = [...] + y_j dx_j$, so
-%\eqs
-%d\phi &= [...] - x_j dy_j
-%\eqe
-%and we are left with a function $\phi(S,x_{j\neq1},...,y_j)$.  Lets look at an example of an isobaric, isentropic ($dS=0$) system, considering the \bold{Enthalpy}, $H$:
-%\eqs
-%dU - TdS + PdV &\leq 0\\
-%H &= U + PV\\
-%dH &= dU + PdV + VdP\\
-%dH&= TdS + VdP\\
-%\eqe
-%and we can retrieve the following relations from $dH(S,P) = \frac{\partial H}{\partial S}|_P dS + \frac{\partial U}{\partial P}|_S dP$:
-%\eqs
-%T &= \frac{\partial H}{\partial S}|_P\\
-%V &= \frac{\partial H}{\partial P}|_S
-%\eqe
-%
-%%%%%%%%%%%%%%
-%\subsection{Different Energies}
-%The \bold{Helmholtz Free Energy} is:
-%\eqs
-%F &= U - TS\\
-%dF &= -SdT - P dV
-%\eqe
-%If we have a system that is isothermal and isochoric (constant volume and temperature) it makes sense to consider $F(T,V)$ since we will need only minimize $F$ ($dF \leq 0$, $dV = 0$, $dT=0$).  Similarly, the \bold{Gibb's Free Energy} is:
-%\eqs
-%G &= U-TS+PV\\
-%dG &= -SdT +VdP
-%\eqe
-%and we will have $dG \leq 0$ when isothermal, isobaric.  In summary, a general Legendre Transform (1) creates a function of the intensive variables, (2) contains the same information as $U$, (3) gives a function (a thermodynamic potential) of natural variables.  This function is the relevant thermodynamic potential for equilibrium under the constraints specified by the natural variables.\\
-%
-%Lets now look at a simple system using the Gibb's free energy $G(T,P)$.  First, we know from the above that $S = -\frac{\partial G}{\partial T}|_P$ and $V = \frac{\partial G}{\partial P}|_T$.  The change in volume is
-%\eqs
-%dV &= \frac{\partial V}{\partial T}|_P dT + \frac{\partial V}{\partial P}|_T dP\\
-%&= \alpha_V V dT - V \beta_T dP
-%\eqe
-%since $\alpha_v = \frac{1}{V} \frac{\partial V}{\partial T}|_P$ is the volumetric thermal expansion and $\beta_T = -\frac{1}{V}\frac{\partial V}{\partial P}|_T$ is the compressibility.  Likewise, the change in entropy is
-%\eqs
-%dS &= \frac{\partial S}{\partial T}|_P dT + \frac{\partial S}{\partial P}|_T dP\\
-%&= \frac{c_P}{T}dT + ???
-%\eqe
-%Since we want to find out $\frac{\partial S}{\partial P}|_T$, we can use a \bold{Maxwell Relation}.  For this, we note that
-%\eqs
-%(\frac{\partial}{\partial P}\frac{\partial G}{\partial T}|_P)|_T &= (\frac{\partial}{\partial T}\frac{\partial G}{\partial P}|_T)|_P\\
-%\frac{\partial}{\partial P}(-S)|_T &= \frac{\partial}{\partial T}(V)|_P\\
-%-\frac{\partial S}{\partial P}|_T &= \frac{\partial V}{\partial T}|_P = \alpha_V V\\
-%\eqe
-%and from here we can make our substitution into the above
-%\eqs
-%dS &= \frac{c_P}{T}dT - \alpha_V V dP
-%\eqe
+\section{Lecture - September 12, 2014}
+Now that the entropy has been defined, we are ready to start thinking about $U$ in terms of equilibrium processes, where we can replace $\delta Q$ by $TdS$. In this case, an arbitrary change in the state of our system can be represented as:
+
+\eqs
+dU = TdS + \sum_i Y_i dX_i
+\eqe
+The above equation is sometimes called the \emph{combined first and second law}. It is also called the \emph{fundamental equation of physical chemistry}, because it is used to derive the rest of thermodynamics. Performing equilibrium thermodynamics in terms of $dU$ and its transformations is called the Legendre formulation of thermodynamics. One can equivalently formulate thermodynamics in terms of changes in the entropy of a system during arbitrary, reversible processes:
+\eqs
+dS = \frac{1}{T}dU +\frac{P}{T}dV - \sum_i \frac{\mu_i}{T}dN_i
+\eqe
+Energetic calculations are usually easier to do in the Legendre formulation, which is posed in terms of energy. The Massieu formulation is easier to use to think about the reversibility of processes, as it is posed in terms of entropy.
+
+The combined first and second law leads to some powerful representations and insights into the properties of $U$.
+
+\subsection{Mathematical Properties of $U$}
+\subsubsection{U is a first order homogoneous of the extensive variables, as is S}
+The entropy is extensive (i.e. one can add the entropy of subsystems to obtain the entropy of a composite system). It also means that multipling the size of the system by some parameter, $\lambda$, gives $\lambda$ times the original entropy: 
+$S(\lambda U_\lambda X_i,...)=\lambda S(U,X_i,...)$
+
+You'll recognize this as tantamount to stating that the entropy is a first order homogeneous function. A similar argument can be made for the internal energy, which we also know is extensive. While one can make a somewhat hand-waving argument about integrating the internal energy to get a definition of $U$ instead of just $dU$, an elegant way to arrive at the same relationship is to make use of the fact that the internal energy is a first order homogeneous function. Hence, the purpose of discussing first order homogeneous functions is to avoid the physically murky reasoning that you need to introduce to integrate $dU$ to get $U$.
+
+\subsubsection{U can be defined in terms of a sum of the conjugate pairs}
+We derive this definition below. The result is sometimes called the \emph{Euler Relation}.
+
+A general definition of an $n^\text{th}$ order homogeneous equation is:
+$U(\lambda S, \lambda X,...)=\lambda^n U(S,X,...)$
+We can take the derivative of both sides of this equation to get:
+\eqs
+\frac{\partial}{\partial \lambda} U(\lambda S,\lambda X,...) =n \lambda^{n-1} U(S,X,...)
+\eqe
+For n = 1, the right hand side is just $U(S,X,...)$. We can expand the LHS in terms of its derivatives with respect to the natural variables of U (the extensive variables):
+\eqs
+\frac{\partial (\lambda S)}{\partial \lambda} \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda S)} + \frac{\partial (\lambda X)}{\partial \lambda} \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda X)} + ... = U(S,X,...)
+\eqe
+
+It's pretty easy to see that $\frac{\partial (\lambda S)}{\partial \lambda} = S$, and $\frac{\partial (\lambda X)}{\partial \lambda} = X$, giving:
+\eqs
+S \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda S)} + X \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda X)} + ... = U(S,X,...)
+\eqe
+
+Now, this next part seems trivial, but it's actually a nice, subtle trick. We used the definition of a homogeneous first order function to get U on the right hand side, so anything on the left hand side is an alternative defintion of U. By setting $\lambda = 1$, we can set each of the remaining derivatives equal to the conjugate forces:
+$\frac{\partial U(S, X,...)}{\partial S} = T$, $\frac{\partial U(S, X,...)}{\partial X} = Y$, and so on for all of the extensive variables.
+Remebering that the right hand side is $U(S,X,...)$, this allows us to show that U is defined as:
+\eqs
+U(S,X,...) = TS + \sum_i Y_i X_i
+\eqe
+
+This definition is very useful, so it's important we have a rigorous basis for it (which we just showed above!). It is gives us the Gibbs-Duhem equations, and also allows us to make changes of variables to other free energy functions which have different natural variables, such as the enthalpy, which has natural variables of $S$ and $P$:
+\eqs H = U + PV \eqe
+Plugging in the combined first and second law and the total differential of $PV$ gives:
+\eqs dH = TdS +VdP \eqe
+Note how the exact differential of $dH$ is naturally written in terms of new variables. We'll go in-depth into this type of transformation, a Legendre transform, and its implications in the next section.
+
+
+%\[PartialD](\[Lambda]S)/\[PartialD]\[Lambda] \[PartialD]U(\[Lambda]S,\[Lambda]X,...)/\[PartialD](\[Lambda]S)+\[PartialD](\[Lambda]X)/\[PartialD]\[Lambda] \[PartialD]U(\[Lambda]S,\[Lambda]X,...)/\[PartialD](\[Lambda]X)+...=U(S,X,...)
+
+
+
+
+% $U$ is a homogeneous function of first order in the \emph{extensive} variables; doubling the size of the system doubles all of the extensive variables (you double the volume, mole numbers, etc).
+% \eqs
+% f(\lambda x, \lambda ) = \lambda^r f(x,y)
+% \eqe
+% taking $r=1$ for $U$,
+% \eqs
+% f(\lambda x, \lambda y) = \lambda f(x,y)
+% \eqe
+% lets verify the result:
+% \eqs
+% \frac{\partial (U(\lambda S, \lambda X))}{\partial \lambda} &= \frac{\partial U}{\partial (\lambda S)} \frac{\partial (\lambda S)}{\partial \lambda} + \frac{\partial U}{\partial (\lambda X)} \frac{\partial (\lambda X)}{\partial \lambda}\\
+% &= \frac{\partial U}{\partial (\lambda S)} S + \frac{\partial U}{\partial (\lambda X)}X\\
+% &= \frac{\partial U}{\partial S} S + \frac{\partial U}{\partial X} X\\
+% &= U(S,X)
+% \eqe
+% Thus for $\lambda = 1$
+% \eqs
+% U = TS + yx
+% \eqe
+\subsubsection{The Gibbs-Duhem equation: The intensive variables are not independent}
+The Euler relation can give an independent definition of $dU$ by taking its total differential:
+\eqs
+d U(S,X,...) = T dS + S dT + \sum_i Y_i d X_i + \sum_i X_i d Y_i 
+\eqe
+Setting this equal to the definition of $dU$ from the combined first and second law gives:
+\begin{align*}
+TdS + \sum_i Y_i dX_i&=T dS + S dT + \sum_i Y_i d X_i + \sum_i X_i d Y_i \\
+0 &=S dT + \sum_i X_i d Y_i
+\end{align*} 
+
+This is called a \emph{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. They have a variety of convenient uses, and we will come back to them frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:\\
+Let's think about how the chemical potential of a binary system changes. In particular, we'll consider the experimentally relevant case where the system is at constant pressure and temperature ($dP=dT=0$), and we are varying the chemical potential of one component (say by flowing a vapor with different concentrations through the system). Then, the Gibbs-Duhem equation simplifies to:
+\eqs N_1 d \mu_1 = -N_2 d \mu_2 \eqe
+In words, this says that varying the chemical potential of one component automatically causes the chemical potential of the other component to change in the opposite direction, and that the rate of this change is related to the mole numbers  of the two components in the system. This is a deep and unintuitive truth.
+
+\subsubsection{Equations of state contain partial information about U}
+Equations of state of $U$ are expressions of the intensive variables in terms of the independent variables. As a thermodynamic state is completely defined by the extensive variables alone, the equations of state provide the relation between the independent, extensive state variables and the dependent, intensive state variables. For example, $P\equiv (\partial U / \partial V)_{S,N_i}$, which implies that P is a function of the entropy and mole numbers at which the derivative was taken: $P = P(S,N,V)$. This expression, $P(S,N,V)$, is one equation of state for a simple system. The others are $T(S,V,N),\mu(S,V,N) $. As the equations of state are the derivates of the free energy, if you know enough of them, you can combine their integrals to get the free energy function as a function of its natural variables referenced to some initial state. For a system where the mole numbers are constant:
+\eqs U(V,S)= \int_{V_0}^{V} \left(\frac{\partial U}{\partial V} \right)_{S_0} \,dV+\int_{S_0}^{S} \left( \frac{\partial U}{\partial S}\right)_{V}\,dS = \int_{V_0}^{V} P dV +\int_{S_0}^{S} TdS \eqe
+However, such an integration can only be performed if you have as many independent equations of state as you have free variables, and you know them in terms of the proper variables (S and V in the case of U).
+
+
+
+\subsection{Equilibrium and evolution of isolated systems}
+We now use the Massieu formulation and the second law to derive the conditions of equilibrium for a variety of cases. The conclusion is: \emph{at equilibrium in an isolated, unconstrained system, the intensive variables are homogeneous (constant across the whole system)}. Below, we treat temperature, chemical potential, and pressure individually, but the results are general. \footnote{This is similar to the discussion in Callen Chapter 4.4}
+
+%\subsubsection{An open and isolated system}
+We consider a system where the possible work terms are exchange of energy, mole numbers, and volume. The chemical potential, $\mu$, is the intensive conjugate of $dN$ which is the change in number of particles.
+\eqs
+U &= TS - PV + \sum_i \mu_i N_i\\
+dU &= SdT - VdP + N_i d\mu_i = 0
+\eqe
+
+For an isolated system, the 1st law says $U_\text{system}, V_\text{system}$ are constant; we have $dV_\text{system}=dU_\text{system}=0$. The 2nd law says $dS_\text{system} \geq 0$ (i.e. S is maximized over the set of thermodynamic states that are consistent with the constraints on the extensive variables, i.e. the boundaries).  The equilibrium state is then the one with maximal S for our boundary conditions.\\
+
+\subsubsection{Thermal Equilibrium}
+Lets look at thermal equilibrium (Temperature differences) in a system with two containers I and II that allow energy to flow between them: $dU_I,dU_{II} \neq 0$.
+\eqs
+dU &= 0 = dU_I+dU_{II}\\
+dU_I &= -dU_{II}\\
+dS &= dS_I + dS_{II}\\
+dS &= \frac{dU_I}{T_I} + \frac{dU_{II}}{T_{II}} \text{ (by Massieu/second law)}\\
+dS &= dU_I (\frac{1}{T_I}+\frac{1}{T_{II}})
+\eqe
+Now, if $T_I < T_{II}$ and $dU_I > 0$, then $dS > 0$ and we are \bold{not at equilibrium}.  If $T_I > T_{II}$ and $dU_I < 0$, then $dS > 0$ and we are also \bold{not at equilibrium}.  Equilibrium then occurs when $\frac{1}{T_I}+\frac{1}{T_{II}} = 0$, or $T_I = T_{II}$.
+
+\subsubsection{Mechanical Equilibrium}
+Consider two compartments of an isolated container separated by an diathermal, moveable wall.  The volume of the left side is $V_1$ and the right is $V_2$.
+\eqs
+dU_1 &= -dU_2\\
+dV_1 &= -dV_2\\
+dS &= dU_1 (\frac{1}{T_1}+\frac{1}{T_{2}}) + dV_1 (\frac{P_1}{T_1}+\frac{P_2}{T_{2}})\\
+\eqe
+thus $S$ is maximal for $T_1 = T_2$ and $P_1 = P_2$.
+\subsubsection{Chemical Equilibrium from Mass Flow}
+Similarly, we can add a $\mu dN$ term to the energy change (or $-\frac{\mu}{T}dN$ in the entropy representation).  We then get an additional term to $dS$ of 
+\eqs
+dS = ... -(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2})dN_1
+\eqe
+which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.  Enforcing thermal equilibrium means that $\mu_1=\mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$, as we would expect from a potential.  \footnote{In terms of kinetics, a gradient of $\frac{\mu}{T}$ generates mass flow (i.e. a diffusional relaxation toward equilibrium).}
+
+% \subsubsection{Chemical Equilibrium from Reactions}
+% Given the reaction
+% \eqs
+% aA + bB \rightarrow cC + dD
+% \eqe
+In general, we maximize the entropy $S$ by:
+\begin{itemize}
+\item Define the variables which are free to move in the system. For example: can subsystems exchange volume or mass? If so, $dV$ and $dN$ would be appropriate internal variables.
+\item Write $dS$ as a function of the \emph{internal} variables in the Masseu formulation.
+\item impose $dS_\text{system} = 0$ for all the variations
+\end{itemize}
+Thus, given appropriate internal variables, we can directly extract the equilibrium conditions.  For energy exchange, $dU_{1\rightarrow 2}$, we get $T_1 = T_2$.  For energy and volume exchange, $dU_{1\rightarrow 2}$ and $dV_{1\rightarrow 2}$, we have $T_1 = T_2$ and $P_1 = P_2$.  Another example would be charge exchange, $dq_{1\rightarrow 2}$, which implies a homogenous electrostatic potential: $\phi_1 = \phi_2$.
+
+
+%% \subsection{Legendre Transforms}
+
+%% We can perform a Legendre Transformation to come up with new representations of our system's energy
+%% \eqs
+%% dU = TdS + \sum_i y_i dx_i
+%% \eqe
+%% Lets consider a simple system.  We can write it in terms of several ``natural functions'' ($U(S,V)$ or $S(U,V)$)
+%% \eqs
+%% dU &= T dS - P dV\\
+%% dS &= \frac{1}{T}dU + \frac{P}{T}dV
+%% \eqe
+%% also, we may integrate our function
+%% \eqs
+%% U(S,X_i) \rightarrow dU = \frac{\partial U}{\partial S}|_{X_i} dS + \frac{\partial U}{\partial X_j}|_{X_{i\neq j}} dX_j
+%% \eqe
+%% and thus we have relations for our equations of state
+%% \eqs
+%% T(S,X_i) &= \frac{\partial U}{\partial S}|_{X_i}\\
+%% y_j(S,X_j) &= \frac{\partial U}{\partial X_j}|_{X_{i\neq j}} 
+%% \eqe
+%% If we just have one equation of state ($T(S,V)$), we can get
+%% \eqs
+%% U = \int dS T(S,V) + g_1(V)
+%% \eqe
+%% similarly if we only have $-P$
+%% \eqs
+%% U = -\int dV P(S,V) + g_2(S)
+%% \eqe
+%% The number of ways the system can exchange energy is equal to the number of equations of state (EOS).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 15, 2014}
+We have extensive boundary conditions for an isolated system with a wall that allows the volume and internal energies of each side to change.   When the internal energy $U$ and position $x$ is a constant, the entropy is maximum.  When the entropy $S$ is constant then the internal energy is minimum.
+
+\subsection{Equilibrium under the most general conditions}
+If we have an insulated, very large system, with temperature $T^*$ (where the $^*$ denotes the environment), and a smaller system within (no $^*$), and we assume that all variations are quasi-static, then
+\eqs
+\Delta U^* &= T^* \Delta S^* + \sum y_i^* \Delta x_i^*\\
+&= -\Delta U\\
+&= T^* \Delta S^* - \sum y_i^* \Delta x_i\\
+\Delta U - \sum y_i^* \Delta x_i &= -T^* \Delta S^*
+\eqe
+From the second law, we know that
+\eqs
+T^* (\Delta S* + \Delta S &\geq 0\\
+T^*\Delta S^* &\geq -T^*\Delta S\\
+-T^* \Delta S^* &\leq T^* \Delta S
+\eqe
+Therefore plugging into our previous result we have
+\eqs \boxed{
+\Delta U - \sum y_i^* \Delta x_i - T^* \Delta S \leq 0
+}
+\eqe
+In the above the $\Delta U$, $\Delta x_i$, and $\Delta S$ are the constraints for the \emph{system} and the $y_i^*$ and $T^*$ are the constraints for the \emph{environment}.\\
+
+\bold{Example:} A system interacting with the environment.  Consider a spring with mass $m$ hanging from it under the influence of gravity $g$.
+\eqs
+U_\text{sys} &= -mgx\\
+\vec{F} &= -k x
+dU_\text{sys} - T^* dS - F^* dx &\leq 0\\
+-mgdx - T^*dS + kx dx &\leq 0\\
+(kx - mg)dx \leq 0
+\eqe
+Thus we can tell $kx = mg$.
+
+\subsection{Assumptions}
+Lets begin to make some assumptions for a system
+\begin{itemize}
+\item The system will come to internal equilibrium with the environment (for a system + environment).
+\item No assumptions will be made about the \emph{internal state} of the \emph{system}
+\end{itemize}
+
+\un{For a simple system}
+\eqs
+dU - TdS + P dV \leq 0
+\eqe
+We can control the extensive variables for our system in the following ways
+\begin{itemize}
+\item \bold{Isolated}: $dU = 0$, $dV = 0$ which leads to $-TdS \leq 0 \rightarrow S_\text{max}$
+\item \bold{Adiabatic \& Isochoric}: $dS = 0$, $dV=0$ which leads to $dU \leq 0 \rightarrow U_\text{min}$
+\end{itemize}
+
+\subsection{Legendre Transforms}
+%$U$ is defubed a function of the extensive parameters $U(S,X,...)$. Frequently, we want a function $\phi(y)$ that is naturally a function of the intensive variables, raher than the extensive variables; it would be nice if we could specify the temperature instead of the entropy. 
+The difficulty in working with the internal energy, $U$, is that it is a natural function of the wrong set of variables: V is the natural, 'independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural 'independent' variable of U for reversible heat exchange,\footnote{You can think of reversible heating as T-S work if you'd like.} but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, 'independent' variables. \emph{Taking the \emph{Legendre transform} is a general procedure to 'switch' which variables are the natural variables in your thermodynamic potential of interest.}\\
+\textbf{How To Take a Legendre Transform}\\
+If we want to transform U such that an intensive variable, S$Y_i$, is the natural variable of the new, transformed potential, which we will call $\phi$, then we define $\phi$ as the difference of $U$ and the product $Y_i \cdot X_i$:
+\eqs
+\phi &= U - Y_i X_i\\
+d\phi &= dU - Y_i dX_i - X_i dY_i
+\eqe
+where $dU = [...] + y_j dx_j$, so
+Note that if U is composed of a sum of extensive variables times their intensives conjugates, $U=\sum_{j} Y_j X_j$, then $\phi]=\sum_{j\neq i} Y_j X_j$. The total derivative of $\phi$ is then given by:
+\eqs
+d\phi &= \sum_{j\neq i} Y_j dX_j - X_i dY_i
+\eqe
+This has the desired property that $Y_i$ is a natural variable of $\phi$, $\phi = f(X_{j\neq i},Y_i)$.
+Lets look at an example of an isobaric, isentropic ($dS=0$) system, considering the \bold{Enthalpy}, $H$:
+\eqs
+dU - TdS + PdV &\leq 0\\
+H &= U + PV\\
+dH &= dU + PdV + VdP\\
+dH&= TdS + VdP\\
+\eqe
+and we can retrieve the following relations from $dH(S,P) = \frac{\partial H}{\partial S}|_P dS + \frac{\partial U}{\partial P}|_S dP$:
+\eqs
+T &= \frac{\partial H}{\partial S}|_P\\
+V &= \frac{\partial H}{\partial P}|_S
+\eqe\\
+
+\textbf{Properties of Legendre Transforms}\\
+\begin{enumerate}
+\item $\frac{\partial \phi}{\partial Y_i}_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
+\item $\phi$ has analogous extremal properties to U: Just as the equilibrium state when all of the extensive variables are set occurs when $U$ is minimal, so the equilibrium state for a given Legendre transform, $\phi$, occurs $\phi$ under the appropriate boundary conditions. For example, the equilibrium state at constant temperature and pressure is the state with minimal Gibbs free energy, the equilibrium state at constant entropy and pressure is the state with minimal enthalpy, etc. 
+\item A corrolary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we equilibrated the original state at.
+\item The pure double derivatives of $\phi$ are the negative inverse of the pure double derivatives of $U$. For example:
+ \eqs \frac{\partial^2 U }{\partial V^2}_{S,N,...}&=-\frac{\partial P }{\partial V}_{S,N,...} &=(\beta_S V)^{-1}\\
+ \frac{\partial^2 H }{\partial P^2}_{S,N,...} &=-\frac{\partial V }{\partial P}_{S,N,...} &=-\beta_S V \eqe
+\end{enumerate}
+
+\textbf{Why do Legendre transforms work? (Optional)}\\
+The Legendre transform works because it is an effective switch of coordinate systems, and we don't lose any information in doing this switch of coordinates. This change of coordinates is possible because U is a convex function of the extensive variables, and because U is a 'smooth' function of these variables (there are no discontinuities in the first derivative of U). Therefore, there is a one-to-one mapping between the first derivative of U with respect to the extensive variables and the extensive variable itself, as shown in the Figure \ref{LegendreGraph} \footnote{From \href{http://dx.doi.org/10.1119/1.3119512}{``Making sense of the Legendre transform'', RKP Zia et al. Am. J. Phys. 2007}, which is a really good read if you desire a deeper understanding of Legendre transforms.}:
+
+\begin{figure}[h]
+\label{LegendreGraph}
+\centering
+\includegraphics[width=\textwidth]{legendregraph.pdf}
+\caption{\textbf{A} The graph of a convex function F(x). The tangent line at one point is illustrated. \textbf{B} The graph of $S(x)$, the slope of a convex function.}
+\end{figure}
+
+The one-to-one mapping of the slope of U with respect to its extensive variables and the extensive variables themselves means we can construct a new function from U that has the slope as its natural variable with no loss of information;  all the original thermodynamic information contained in U is also contained in its Legendre transforms, although in a different form. %The true convenience is that it still has units of energy, and that it has intuitive changes in concavity.
+
+
+%%%%%%%%%%%%%
+\subsection{Named Free Energies}
+There are several other common Legendre transforms which have names. It would be wise to memorize these. The \bold{Helmholtz Free Energy} is:
+\eqs
+F &= U - TS\\
+dF &= -SdT - P dV
+\eqe
+If we have a system where the temperature and volume are set experimentally, it makes sense to consider $F(T,V)$ since we will only need to minimize $F$ ($dF \leq 0$, $dV = 0$, $dT=0$).\\  
+Similarly, the \bold{Gibb's Free Energy} is:
+\eqs
+G &= U-TS+PV\\
+dG &= -SdT +VdP
+\eqe
+and we will have $dG \leq 0$ for a system where the temperature and pressure are set experimentally.  
+
+
+% Put in a table of the free energy names
+\begin{table}[ht]
+  \centering
+  %\Large
+\caption{Some thermodynamic potentials for simple systems}
+\renewcommand{\arraystretch}{1.5}% Spread rows out...
+$\begin{array}{>{\centering\bfseries}m{1.8in} >{\centering}m{1.8in} >{\centering}m{1in} >{\centering\arraybackslash}m{1.4in}}
+\toprule
+
+\hline %inserts double horizontal lines
+\textbf{T.D. potential} & \textbf{Differential} & \textbf{Natural variables} & \textbf{ Maxwell's}\\[2ex] 
+\hline  % inserts single horizontal line
+U & $dU=T\cdot dS -P \cdot dV$ & U(S,V) &  $(\frac{\partial{T}}{\partial{V}})_{S}=-(\frac{\partial{P}}{\partial{S}})_{V}$ \\[2ex]
+
+F=U-TS & $dF=-S\cdot dT-P \cdot dV$ & F(T,V) & $(\frac{\partial{S}}{\partial{V}})_{T}=(\frac{\partial{P}}{\partial{T}})_{V}$\\[2ex]
+
+H=U+PV & $dH=T\cdot dS+V \cdot dP$ & H(S,P) & $(\frac{\partial{T}}{\partial{P}})_{S}=(\frac{\partial{V}}{\partial{S}})_{P}$\\[2ex]
+
+G=U-TS+PV=H-TS & $dG=-S\cdot dT+V \cdot dP$ & G(T,P) & $-(\frac{\partial{S}}{\partial{P}})_{T}=(\frac{\partial{V}}{\partial{T}})_{P}$\\[2ex]
+
+%$\Phi_G$=U-TS-$\mu$N & $d\Phi =-S \cdot dT-P \cdot dV-\mu \cdot dN$ &  $\Phi_G(T,P)$ & \\[2ex]
+\bottomrule
+\end{array}$
+\end{table}
+
+\subsection{A First Look at Manipulating Thermodynamic Functions}
+Lets now look at a simple system using the Gibb's free energy $G(T,P)$.  First, we know from the above that $S = -\frac{\partial G}{\partial T}|_P$ and $V = \frac{\partial G}{\partial P}|_T$.  The change in volume is
+\eqs
+dV &= \frac{\partial V}{\partial T}|_P dT + \frac{\partial V}{\partial P}|_T dP\\
+&= \alpha_V V dT - V \beta_T dP
+\eqe
+since $\alpha_v = \frac{1}{V} \frac{\partial V}{\partial T}|_P$ is the volumetric thermal expansion and $\beta_T = -\frac{1}{V}\frac{\partial V}{\partial P}|_T$ is the compressibility.  Likewise, the change in entropy is
+\eqs
+dS &= \frac{\partial S}{\partial T}|_P dT + \frac{\partial S}{\partial P}|_T dP\\
+&= \frac{c_P}{T}dT + ???
+\eqe
+Since we want to find out $\frac{\partial S}{\partial P}|_T$, we can use a \bold{Maxwell Relation}.  For this, we note that
+\eqs
+(\frac{\partial}{\partial P}\frac{\partial G}{\partial T}|_P)|_T &= (\frac{\partial}{\partial T}\frac{\partial G}{\partial P}|_T)|_P\\
+\frac{\partial}{\partial P}(-S)|_T &= \frac{\partial}{\partial T}(V)|_P\\
+-\frac{\partial S}{\partial P}|_T &= \frac{\partial V}{\partial T}|_P = \alpha_V V\\
+\eqe
+and from here we can make our substitution into the above
+\eqs
+dS &= \frac{c_P}{T}dT - \alpha_V V dP
+\eqe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 17, 2014}
 %Previously we discussed \bold{Maxwell Relations}, which allow us to swap $x,y$ and may be defined generally as
@@ -1821,19 +2024,6 @@ The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you wh
 %S &= N k_B \ln \Big[ \Big(\frac{2\pi m k_B T}{h^2} \Big)^{3/2} \frac{V}{N} c^{5/2}... \text{(see text?)}
 %\eqe
 %where the above expression for entropy is the ``Sackur-Tetrode'' equation.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  22 FEB 2015 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 APR 2015 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,24 +876,53 @@ File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 shapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
 )))
-Package hyperref Info: Option `colorlinks' set `true' on input line 10.
- (./class_notes.aux)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen264
+\lightrulewidth=\dimen265
+\cmidrulewidth=\dimen266
+\belowrulesep=\dimen267
+\belowbottomsep=\dimen268
+\aboverulesep=\dimen269
+\abovetopsep=\dimen270
+\cmidrulesep=\dimen271
+\cmidrulekern=\dimen272
+\defaultaddspace=\dimen273
+\@cmidla=\count175
+\@cmidlb=\count176
+\@aboverulesep=\dimen274
+\@belowrulesep=\dimen275
+\@thisruleclass=\count177
+\@lastruleclass=\count178
+\@thisrulewidth=\dimen276
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen277
+\extrarowheight=\dimen278
+\NC@list=\toks38
+\extratabsurround=\skip134
+\backup@length=\skip135
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
+
+(./class_notes.aux)
 \openout1 = `class_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -931,17 +960,17 @@ LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count175
-\scratchdimen=\dimen264
+\scratchcounter=\count179
+\scratchdimen=\dimen279
 \scratchbox=\box62
-\nofMPsegments=\count176
-\nofMParguments=\count177
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count178
-\MPscratchDim=\dimen265
-\MPnumerator=\count179
-\makeMPintoPDFobject=\count180
-\everyMPtoPDFconversion=\toks39
+\nofMPsegments=\count180
+\nofMParguments=\count181
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count182
+\MPscratchDim=\dimen280
+\MPnumerator=\count183
+\makeMPintoPDFobject=\count184
+\everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -958,7 +987,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring ON on input line 15.
+Package hyperref Info: Link coloring ON on input line 17.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -966,62 +995,62 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count181
+\c@section@level=\count185
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (./class_notes.out) (./class_notes.out)
 \@outlinefile=\write4
 \openout4 = `class_notes.out'.
 
-LaTeX Info: Redefining \celsius on input line 15.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 15.
+LaTeX Info: Redefining \celsius on input line 17.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 17.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 15.
-Package gensymb Info: Using \Omega for \ohm on input line 15.
+LaTeX Info: Redefining \ohm on input line 17.
+Package gensymb Info: Using \Omega for \ohm on input line 17.
 
 Package gensymb Warning: Not defining \micro.
 
 ABD: EveryShipout initializing macros
-<titlepage.pdf, id=41, 597.50829pt x 845.0471pt>
+<titlepage.pdf, id=152, 597.50829pt x 845.0471pt>
 File: titlepage.pdf Graphic file (type pdf)
  <use titlepage.pdf>
-Package pdftex.def Info: titlepage.pdf used on input line 16.
+Package pdftex.def Info: titlepage.pdf used on input line 18.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: titlepage.pdf Graphic file (type pdf)
 
 <use titlepage.pdf>
-Package pdftex.def Info: titlepage.pdf used on input line 16.
+Package pdftex.def Info: titlepage.pdf used on input line 18.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
- <titlepage.pdf, id=44, page=1, 597.50829pt x 845.0471pt>
+ <titlepage.pdf, id=155, page=1, 597.50829pt x 845.0471pt>
 File: titlepage.pdf Graphic file (type pdf)
 
 <use titlepage.pdf, page 1>
-Package pdftex.def Info: titlepage.pdf, page1 used on input line 16.
+Package pdftex.def Info: titlepage.pdf, page1 used on input line 18.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: titlepage.pdf Graphic file (type pdf)
  <use titlepage.pdf, page 1>
-Package pdftex.def Info: titlepage.pdf, page1 used on input line 16.
+Package pdftex.def Info: titlepage.pdf, page1 used on input line 18.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: titlepage.pdf Graphic file (type pdf)
 
 <use titlepage.pdf, page 1>
-Package pdftex.def Info: titlepage.pdf, page1 used on input line 16.
+Package pdftex.def Info: titlepage.pdf, page1 used on input line 18.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: titlepage.pdf Graphic file (type pdf)
  <use titlepage.pdf, page 1>
-Package pdftex.def Info: titlepage.pdf, page1 used on input line 16.
+Package pdftex.def Info: titlepage.pdf, page1 used on input line 18.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: titlepage.pdf Graphic file (type pdf)
 
 <use titlepage.pdf, page 1>
-Package pdftex.def Info: titlepage.pdf, page1 used on input line 16.
+Package pdftex.def Info: titlepage.pdf, page1 used on input line 18.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [1
 
@@ -1033,13 +1062,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1048,7 +1077,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
 
@@ -1066,7 +1095,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
-Overfull \hbox (7.93pt too wide) in paragraph at lines 141--142
+Overfull \hbox (7.93pt too wide) in paragraph at lines 143--144
 []\OT1/cmr/bx/n/12 Case 2, In-ex-act Dif-fer-en-tials: \OT1/cmr/m/n/12 Con-side
 r now a sys-tem where the force $[]$ is non-conservative.
  []
@@ -1091,11 +1120,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8] <figures/DiatomicSpecHeat2.png, id=242, 2406.9925pt x 1805.74625pt>
+[8] <figures/DiatomicSpecHeat2.png, id=353, 2406.9925pt x 1805.74625pt>
 File: figures/DiatomicSpecHeat2.png Graphic file (type png)
 
 <use figures/DiatomicSpecHeat2.png>
-Package pdftex.def Info: figures/DiatomicSpecHeat2.png used on input line 234.
+Package pdftex.def Info: figures/DiatomicSpecHeat2.png used on input line 237.
 (pdftex.def)             Requested size: 469.75502pt x 352.40842pt.
 
 
@@ -1112,7 +1141,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10 <./figures/DiatomicSpecHeat2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 
  []
 
@@ -1123,15 +1152,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 272--274
+Underfull \hbox (badness 10000) in paragraph at lines 275--277
 
  []
 
-<figures/H_of_T_labeled.png, id=262, 707.2824pt x 257.2812pt>
+<figures/H_of_T_labeled.png, id=372, 707.2824pt x 257.2812pt>
 File: figures/H_of_T_labeled.png Graphic file (type png)
 
 <use figures/H_of_T_labeled.png>
-Package pdftex.def Info: figures/H_of_T_labeled.png used on input line 279.
+Package pdftex.def Info: figures/H_of_T_labeled.png used on input line 283.
 (pdftex.def)             Requested size: 469.75502pt x 170.88179pt.
 
 
@@ -1141,51 +1170,271 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12 <./figures/H_of_T_labeled.png>]
-<figures/Trouton_and_Richards_rules.png, id=277, 401.5pt x 319.1925pt>
+<figures/Trouton_and_Richards_rules.png, id=388, 401.5pt x 319.1925pt>
 File: figures/Trouton_and_Richards_rules.png Graphic file (type png)
 
 <use figures/Trouton_and_Richards_rules.png>
 Package pdftex.def Info: figures/Trouton_and_Richards_rules.png used on input l
-ine 303.
+ine 308.
 (pdftex.def)             Requested size: 284.52756pt x 226.21426pt.
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./figures/Trouton_and_Richards_rules.png (PNG copy)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1848.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1848.
+[13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14 <./figures/Trouton_and_Richards_rules.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 425--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22] <figures/thirdLawPlot_with_faces.pdf, id=481, 595.22375pt x 255.95625pt>
+File: figures/thirdLawPlot_with_faces.pdf Graphic file (type pdf)
+
+<use figures/thirdLawPlot_with_faces.pdf>
+Package pdftex.def Info: figures/thirdLawPlot_with_faces.pdf used on input line
+ 546.
+(pdftex.def)             Requested size: 341.43306pt x 146.82219pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/Can_We_achieve_0K.pdf, id=482, 595.22375pt x 379.4175pt>
+File: figures/Can_We_achieve_0K.pdf Graphic file (type pdf)
+
+<use figures/Can_We_achieve_0K.pdf>
+Package pdftex.def Info: figures/Can_We_achieve_0K.pdf used on input line 562.
+(pdftex.def)             Requested size: 284.52756pt x 181.36569pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24 <./figures/thirdLawPlot_with_faces.pdf> <./figures/Can_We_achieve_0K.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 595.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 595.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 788--790
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 846--848
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33] <figures/legendregraph.pdf, id=655, 644.4075pt x 202.7575pt>
+File: figures/legendregraph.pdf Graphic file (type pdf)
+
+<use figures/legendregraph.pdf>
+Package pdftex.def Info: figures/legendregraph.pdf used on input line 862.
+(pdftex.def)             Requested size: 469.75502pt x 147.81064pt.
+
+Overfull \hbox (3.86494pt too wide) in paragraph at lines 891--908
+ []$[]$ 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34 <./figures/legendregraph.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2038.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2038.
  (./class_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1848.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1848.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2038.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2038.
 
-
-
-Package rerunfilecheck Warning: File `class_notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `class_notes.out':
-(rerunfilecheck)             Before: 1B1E5EEB0E9366D5CFFB210EF5F7D6B4;594
-(rerunfilecheck)             After:  9FCFE1A064F6932418BEADC9B536F525;801.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1848.
+Package rerunfilecheck Info: File `class_notes.out' has not changed.
+(rerunfilecheck)             Checksum: CB4A3AAA3C377CCB494F7096A4388060;2899.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2038.
  ) 
 Here is how much of TeX's memory you used:
- 23872 strings out of 493117
- 454000 string characters out of 6135433
- 616356 words of memory out of 5000000
- 26917 multiletter control sequences out of 15000+600000
- 9884 words of font info for 36 fonts, out of 8000000 for 9000
+ 24151 strings out of 493117
+ 457829 string characters out of 6135433
+ 620077 words of memory out of 5000000
+ 27062 multiletter control sequences out of 15000+600000
+ 10723 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,66p,10442b,753s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -1193,23 +1442,24 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
 usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on class_notes.pdf (14 pages, 431081 bytes).
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on class_notes.pdf (35 pages, 873950 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
- 231 compressed objects within 3 object streams
- 65 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 840 PDF objects out of 1000 (max. 8388607)
+ 636 compressed objects within 7 object streams
+ 190 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 
