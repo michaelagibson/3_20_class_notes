@@ -76,7 +76,7 @@ The formalism for work is $\delta W_i = y_i dx_i$, where $y_i$ is the force (int
 \eqs
 \delta W = V \bar{\bar{\sigma}} \cdot d\bar{\bar{\epsilon}}
 \eqe 
-where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and volume element results in a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
+where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and the volume element $[\text{m}^3]$ together produce a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
 \eqs
 \delta W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
 &= -P V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33})
@@ -140,23 +140,22 @@ Therefore, we can calculate the work required to move us to the new spot via int
 \eqe
 Ultimately, the energy change (or work required to move us) from $h_1 \rightarrow h_2$ is independent of the path taken.  Hence, $\vec{F}$ is an exact differential. Mathematicians would say that gravitational force fields are conservative vector fields. This is an equivalence; exact differentials define conservative vector fields.
 
-\bold{Case 2, Inexact Differentials:}  Consider now a system where the force $\vec{F}$ is non-conservative.  The work terms associated with moving through this kind of a vector field are then inexact differentials. \un{dissipative forces} tend to make the force vector-field non-conservative, resulting in path dependence. For example, moving in a gravitational field with a constant friction term would result in:
+\bold{Case 2, Inexact Differentials:}  Consider now a system where the force $\vec{F}$ is non-conservative.  The work terms associated with moving through this kind of a vector field are then inexact differentials. \un{Dissipative forces} tend to make the force vector-field non-conservative, resulting in path dependence. For example, moving in a gravitational field with a constant friction term would result in:
 \begin{align*}
 \vec{F} &= -\vec{\nabla}\vec{E} - f_\text{friction} | \vec{e_v}|\\
 \int \vec{F}\delta\vec{r} &= -mg\Delta h- f L_\text{path}
 \end{align*} 
 
- In thermodynamics, you can get an inexact differential for two reasons. As described above, dissipation leads to inexact differentials. A second, related way, is simply not taking into account all of the forces during your integration. Such an incomplete description will result in path-dependent integrals, even if the underlieing vector field is conservative. For example, if we are moving in three dimensions and do not describe the force in the $y$-direction, $F_y'$, then we would (incorrectly) describe the work when moving in three dimensions as:
+ In thermodynamics, you can get an inexact differential for two reasons. As described above, dissipation leads to inexact differentials. A second, related way, is simply not taking into account all of the forces during your integration. Such an incomplete description will result in path-dependent integrals, even if the underlying vector field is conservative. For example, if we are moving in three dimensions and do not describe the force in the $y$-direction, $F_y'$, then we would (incorrectly) describe the work when moving in three dimensions as:
 \begin{align*}
 \delta W_\text{incomplete} = \delta W_x + \delta W_z = F_x \dot dx + F_z \dot dz 
 \end{align*}
-Consider two different paths in a conservative 3D vector field.  The integrated amount of work done due to the x- and z- forces may be different between the two paths, even though the total work is the same. This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \delta W_x + \delta W_z = \int F_x dx F_z dz = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  This is analogous to describing the changes in internal energy of a system through only work terms; we are missing an entire component of the internal energy change, the change to due to \un{heat} flow into a system.
+Consider two different paths in a conservative 3D vector field.  The integrated amount of work done due to the x- and z- forces may be different between the two paths, even though the total work is the same. This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \delta W_x + \delta W_z = \int F_x dx + F_z dz = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  This is analogous to describing the changes in internal energy of a system through only work terms; we are missing an entire component of the internal energy change, the change to due to \un{heat} flow into a system.
 
 
 
 \subsection{Heat}
-Heat is energy transferred between two bodies not due to work or mass transfer.
-\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisble liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (AKA Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
+Heat is energy transferred between two bodies not due to work or mass transfer\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisible liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (a.k.a. Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}.  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
 \begin{equation}\boxed{
 dU = \delta W + \delta Q
 }\end{equation}
@@ -175,7 +174,7 @@ It is often useful to think of these changes as paths in a pressure versus volum
 %%%% We should insert the relevant P-V diagram here!
 \eqs
 W_a &= -nRT\int \frac{dV}{V}\\
-&= -nRT \ln(\frac{V_f}{V_i})\\
+&= -nRT \ln\Big(\frac{V_f}{V_i}\Big)\\
 &= nRT \ln(2)\\
 &= 1717 \frac{\text{J}}{\text{mol}}
 \eqe
@@ -262,21 +261,21 @@ and substitute $dU = \delta Q - P dV$
 dH &= \delta Q + V dP\\
 (dH)_p &= \delta Q
 \end{align*}
-Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state funcitno. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experiemental technique.  $H$ is often called the ``heat'' content.\\
+Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state function. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experimental technique.  $H$ is often called the ``heat'' content.\\
 
 If we write down what $(dH)_p$ is, we get
 \begin{align*}
 (dH)_p &= n C_p (dT)_p\\
-\frac{\partial H}{\partial T}|_p &= C_p\\
+\Big(\frac{\partial H}{\partial T}\Big)_p &= C_p\\
 \end{align*}
 If we heat a substance through a phase transition, the enthalpy of the system can be broken into three parts:
 \eqs
 H(T) &= H(T_0) +  \int_{T_0}^{T_f}C_p  dT + \Delta H_{\phi T}
 \eqe
-where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a funciton of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$.  As such, we often reference these state functions to their \emph{standard states}. Under the this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101325$ Pa) and temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is often exchanged when a chemical reaction takes place.\\
+where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a funciton of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$\footnote{Only relative energies between states are physically measurable}.  As such, we often reference these state functions to their \emph{standard states}. Under the this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101,325$ Pa) and temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is often exchanged when a chemical reaction takes place.\\
 
 %(H\degree(Fe))
-The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree C$. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
+The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree$C. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
 \begin{figure}[h]
 \centering
 \includegraphics[width = \textwidth]{H_of_T_labeled.png}
@@ -286,21 +285,20 @@ The enthalpy as a function of temperature is plotted below for Fe over two tempe
 The solid$\to$solid phase transitions' discontinuitites are barely visible on the left curve. This is because the latent heats of the different phase transitions differ by several orders of magnitude: $\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol. A large enthalpy for a solid$\to$solid phase transition is observed for zirconia's \href{http://en.wikipedia.org/wiki/Diffusionless_transformation#Martensitic_transformation}{martensitic phase transformation}, where $\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  
 
 The enthalpy of fusion (equivalently, the enthalpy of melting) is generally much higher. Richard's rule says that the enthalpy of fusion is proportional to the melting temperature of an element. 
-
 %\begin{figure}[h]
 %\centering
 %\includegraphics[width = 12cm]{H_of_T_Fe_zoomed_out.png}
 %\caption{The correlation between the enthalpy of melting and the melting temperature for the elements.}
 %\end{figure}
-
+%
 \begin{equation}
-\Delta H_\text{fusion} \text{ in J/mol } \approx 9 T_\text{fusion} \text{ in K}
+\Delta H_\text{fusion} [\text{J/mol}] \approx 9 T_\text{fusion} [\text{K}]
 \end{equation}
-In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The elemental heat of vaporization follows a similar rule, Trouton's rule, which states that the the enthalpy of vaporization is proportional to the boiling temperature.\footnote{As we will learn later, these rules imply that the entropies of melting and boiling are approximately equivalent for all of the elements.}
+In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The elemental heat of vaporization follows a similar rule, Trouton's rule, which states that the the enthalpy of vaporization is proportional to the boiling temperature\footnote{As we will learn later, these rules imply that the entropies of melting and boiling are approximately equivalent for all of the elements}.
 \begin{equation}
 \Delta H_\text{vap} \approx 90 T_\text{vap}
 \end{equation}
-In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The binding energies of metals are also on the order of 100 kJ/mol; you can intuitively think of evaporation as putting in the energy to break the bonds between atoms. We will emphasize understanding the orders-of-magnitude of energy scales in materials science throughout, sticking to engineering units of kJ/mol.\footnote{Understanding in terms of atomic mechanisms is sometimes useful, wherein the natural units are eV/atom. $1 \text{ eV/atom}= 96.354\text{ kJ/mol}\approx 100\text{ kJ/mol}$. An especially good article on energy scales in materials science is  \href{http://dx.doi.org/10.1080/14786430500155080}{Spaepen, Phil. Mag. 2005}}
+In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The binding energies of metals are also on the order of 100 kJ/mol; you can intuitively think of evaporation as putting in the energy to break the bonds between atoms. We will emphasize understanding the orders-of-magnitude of energy scales in materials science throughout, sticking to engineering units of kJ/mol\footnote{Understanding in terms of atomic mechanisms is sometimes useful, wherein the natural units are eV/atom. $1 \text{ eV/atom}= 96.354\text{ kJ/mol}\approx 100\text{ kJ/mol}$. An especially good article on energy scales in materials science is  \href{http://dx.doi.org/10.1080/14786430500155080}{Spaepen, Phil. Mag. 2005}}.
 
 \begin{figure}[h]
 \centering
@@ -309,21 +307,24 @@ In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The bindi
 \label{Trouton_Richard}
 \end{figure}
 
-Now, what is the relative contribution of the PdV term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^-5 \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is ~ 10\% $\Delta V$.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, expect at very high pressures}.
+Now, what is the relative contribution of the $PdV$ term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^{-5} \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is $\sim$ 10\% $\Delta V$.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, except at very high pressures}.
 
-Just as it is useful to understand the energy scales associated with P-V work, it is also useful for us to understand the energy scales associated with chemical reactions. In chemistry, this is characterized by the enthalpy of formation of molecules, in the solid state, the relevant quantity is the enthalpy of formation of \emph{compounds}:\\
+Just as it is useful to understand the energy scales associated with P-V work, it is also useful for us to understand the energy scales associated with chemical reactions. In chemistry, this is characterized by the enthalpy of formation of molecules, in the solid state, the relevant quantity is the enthalpy of formation of compounds:\\
+
 At room temperature and pressure:
 %I am confused what you were trying to say here, any idea, Derek?
 \begin{equation}
 2 Fe_{(s)}^{\alpha} + \frac{3}{2}O_{2 (g)} \rightarrow Fe_2O_{3 (s)}^{\alpha} + (\Delta Q)_p
 \end{equation}
-with $(\Delta Q)_p$ = -1963 kcal/mol.
+with $(\Delta Q)_p$ = -1963 kcal/mol.  The sum enthalpy of the reaction $\Delta_v H$ is then:
 \begin{equation}
 \Delta_v H = \Delta H^0_{Fe_2O_3} - \Delta H^0_{Fe} - \frac{3}{2} \Delta H^0_{O_2}
 \end{equation}
-and
+and, for reference, we have:
 \begin{align*}
 \Delta H^0_{Fe_2O_3} &= -820.5 \text{kJ}/\text{mol}\\
+\Delta H^0_{Fe} &= 0\\
+\Delta H^0_{O_2} &= 0\\
 \Delta H^0_{CO} &= -110.52 \text{kJ}/\text{mol}\\
 \Delta H^0_{CO_2} &= -393.51 \cdot \text{kJ}/\text{mol}
 \end{align*}
@@ -336,7 +337,7 @@ C_{(s)} + O_{2 (g)} &\rightleftharpoons CO_{2 (g)}\\
 C_{(s)} + \frac{1}{2} O_{2 (g)} &\rightleftharpoons CO_{(g)}\\
 \Delta_r H^0 &= -110.52 \text{kJ}/\text{mol}\\
 C_{(s)} + CO_{2 (g)} &\rightleftharpoons 2 CO_{(g)}\\
-\Delta_r H^0 &= +180 \text{kJ}/\text{mol}\\
+\Delta_r H^0 &= +183.00 \text{kJ}/\text{mol}\\
 \end{align*}
 
 The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}. Exothermic reactions release heat, which tells you that a given reaction is favorable in terms of its bonding. The first two reactions are exothermic; carbon and oxygen prefer to bond to one another. The last reaction is endothermic, meaning that the formation of $CO_{(g)}$ is not energetically favorable from  $CO_{2 (g)}$ and $C_{(s)}$. However, enthalpy is not the whole story in determining the spontaneity of reactions: energy conservation alone cannot tell you in which direction a reaction will occur.
@@ -351,7 +352,7 @@ The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you wh
 % If we have two compartments that are connected, one at $T_1$ and another at $T_2$ with $T_1 > T_2$ and $Q_1 < 0$ \& $Q_2 > 0$.
 In previous lectures, we worked with the first law with both the heat and work terms.  In continuation, we examine how different processes can be modeled within this framework, and the importance of the proper definitions of systems and boundary conditions in obtaining the correct results. We do so by considering different processes that an ideal gas can undergo.
 
-\bold{An aside on the ideal gas}:  The ideal gas is a convenient system to examine thermodynamically because its internal energy can be defined in terms of just one state variable, the temperature: $U = U(T)$. Specifically, the internal of an ideal gas is:\footnote{We'll prove this in statistical mechanics, but it is proven from the ideal gas law \href{http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html}{here}.}
+\bold{An aside on the ideal gas}:  The ideal gas is a convenient system to examine thermodynamically because its internal energy can be defined in terms of just one state variable, the temperature: $U = U(T)$. Specifically, the internal energy of an ideal gas is\footnote{We'll prove this in statistical mechanics, but it is proven from the ideal gas law \href{http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html}{here}.}:
 \begin{align*}
 dU=C_V dT=(C_P-nR)dT\\
 \Delta U=C_V \Delta T = (C_P-nR) \Delta T
@@ -360,7 +361,7 @@ In addition, we also have a nice \emph{equation of state} to relate changes in t
 
 \subsection{Throttling processes}
 
- Consider a bike tube initially at room temperature ($T=298K$) with $P=4.4$atm (50 psi).  Now, we release the pressure from the bike tire and let air out, the air exiting the tube undergoes what is called a \emph{throttling process}. We are interested in how the thermodynamic state of the gas will change as it is released, in particular, what will be the temperature of the air right outside the nozzle?\\
+ Consider a bike tube initially at room temperature ($T=298K$) with $P=4.4$atm (50 psi).  Now, we release the pressure from the bike tire and let air out; the air exiting the tube undergoes what is called a \emph{throttling process}. We are interested in how the thermodynamic state of the gas will change as it is released, in particular, what will be the temperature of the air right outside the nozzle?\\
 
 First, we define our system as the gas which is released. It undergoes a sufficiently rapid expansion that the process can be approximated as adiabatic (not enough time for system to exchange heat with its environment). Then:
 \begin{align*}
@@ -381,8 +382,8 @@ $$
 Plugging in this defintion of $dV$ above gives the final temperature in terms of the initial temperature and the ratio of the pressures:
 \begin{align*}
 nC_V dT &= -nRdT + RT \frac{dP}{P}\\
-(\frac{T_2}{T_1})^{C_P/ R} &= \frac{P_2}{P_1}\\
-T_2 &= T_1 (\frac{P_1}{P_2})^{R/C_P}
+\Big(\frac{T_2}{T_1}\Big)^{C_P/ R} &= \frac{P_2}{P_1}\\
+T_2 &= T_1 \Big(\frac{P_1}{P_2}\Big)^{R/C_P}
 \end{align*}
 
 For the bike tube, this gives $T_2 = 206$K = -67\degree C.  Why didn't we actually reach this temperature?  Well, the gas flowed through a nozzle instead of simply isotropically expanding, and the pressure outside the gas was not equal to the pressure inside the gas during the expansion. Clearly, we need to examine this process from a different perspective. Often, in thermodynamics, this means you need to re-define your system. We do so below.\\
@@ -419,100 +420,103 @@ In general, we categorize processes in the following way:
 \end{enumerate}
 
 \subsection{Quasistatic Piston}
-We now consider a piston slowly compressing a gas. See Callen Figure 5.  For our path,
+We now consider a piston slowly compressing a gas. See Callen Figure 5.
 \begin{equation}
-\sum_{i=1}^2 \frac{\delta Q_i}{T} = \text{constant}
+\sum_{i=1}^2 \frac{\dbar Q_i}{T} = \text{constant}
 \end{equation}
-Only depends on 1 (initial state) and 2 (final state).  The above is also our state function.\\
+Our path only depends on 1 (initial state) and 2 (final state).  The above is also our state function.\\
 
-Let's assume that $dS = \frac{\delta Q}{T}$.\\
-\bold{Process 1}: Let's take a reservoir that is adiabatically isolated with $T_1$.  Let's transfer $\delta Q$ to the reservoir.  The resulting temperature will then be $T_2$.\\
-\bold{Process 2:} Now we have a propeller going into our reservoir with adiabatic walls and $T_1$.  Here, we have $dS_1 = dS_2 \neq \frac{\delta Q}{T}$.\\
+Let's assume that $dS = \frac{\dbar Q}{T}$.\\
+\bold{Process 1}: Let's take a reservoir that is adiabatically isolated with $T_1$.  Let's transfer $\dbar Q$ to the reservoir.  The resulting temperature will then be $T_2$.\\
+\bold{Process 2:} Now we have a propeller going into our reservoir with adiabatic walls and $T_1$.  Here, we have $dS_1 = dS_2 \neq \frac{\dbar Q}{T}$.\\
 
 Second Law of Thermodynamics:  There exists a state function (property S) for which holds (closed system)
 \begin{equation}
-dS_\text{system} \geq \frac{\delta Q}{T}
+dS_\text{system} \geq \frac{\dbar Q}{T}
 \end{equation}
-it fixes the direction of change.  Forward ($1\rightarrow 2$) if $dS_f \geq \frac{\delta Q_f}{T}$ or backward ($2\rightarrow 1$) if $dS_b \geq \frac{\delta Q_b}{T}$.\\
+it fixes the direction of change.  Forward ($1\rightarrow 2$) if $dS_f \geq \frac{\dbar Q_f}{T}$ or backward ($2\rightarrow 1$) if $dS_b \geq \frac{\dbar Q_b}{T}$.\\
 
-If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\delta Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\delta Q}{T}$ (or $dS_\text{rev} + \xi$ where $\xi >0$).  The first law said that $U$ exists and
+If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\dbar Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\dbar Q}{T}$ (or $dS_\text{rev} + \xi$ where $\xi >0$).  The first law said that $U$ exists and
 \begin{equation}
-dU = \delta Q + \sum y_i dx_i
+dU = \dbar Q + \sum y_i dx_i
 \end{equation}
 while the second law says $S$ exists and for a closed system
 \begin{equation}
-dS \geq \frac{\delta Q}{T}
+dS \geq \frac{\dbar Q}{T}
 \end{equation}
 
 Back to the example of two compartments that are connected (one at $T_1$ and the other at $T_2$), see Figure 6, we get
 \begin{align*}
-\delta Q_1 &= -\delta Q_2\\
+\dbar Q_1 &= -\dbar Q_2\\
 dS_\text{system} &= dS_1 + dS_2\\
-dS_\text{system} &= \frac{\delta Q_1}{T_1} + \frac{\delta Q_2}{T_2}\\
-&= \frac{\delta Q_1}{T_1} - \frac{\delta Q_1}{T_2}\\
-&= \delta Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
-&= \delta Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
+dS_\text{system} &= \frac{\dbar Q_1}{T_1} + \frac{\dbar Q_2}{T_2}\\
+&= \frac{\dbar Q_1}{T_1} - \frac{\dbar Q_1}{T_2}\\
+&= \dbar Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
+&= \dbar Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
 \end{align*}
-If $T_2 > T_1$, $\delta Q_1 > 0$.  Or if $T_2 < T_1$, then $\delta Q_1 < 0$.  Heat flows from ``hot'' to ``cold''.
+If $T_2 > T_1$, $\delta Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{Heat flows from ``hot'' to ``cold''}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 10, 2014}
 As a reminder, the 1st law stated that $U$ is a state function where
 \beq
-dU = \delta Q + \sum y_i dx_i
+dU = \dbar Q + \sum y_i dx_i
 \ceq
 The 2nd law states that $S$ is also a state function, and for a \emph{isolated system} under any arbitrary process,
-\beq dS \geq \frac{\delta Q}{T} \ceq
-If the process is reversible then, $TdS = \delta Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
+\beq dS \geq \frac{\dbar Q}{T} \ceq
+If the process is reversible then, $TdS = \dbar Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
 Key properties of entropy:
 \begin{enumerate}[(I)]
-\item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system by increasing the enreopy of the surroundings). 
+\item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system by increasing the entropy of the surroundings). 
 \item $S$ of the \emph{universe} is only conserved during reversible processes. Otherwise, $S_\text{universe}$ is an increasing quantity (Imagine the case where we stir an isolated bucket with a propeller).
-\item $S$ of an adiabatic system is constant or increases.  This is because the $\delta Q$ term is zero, so $dS \geq 0$. %This seems redundant to me...
+\item $S$ of an adiabatic system is constant or increases.  This is because the $\dbar Q$ term is zero, so $dS \geq 0$. %This seems redundant to me...
 %\item $S$ \emph{can} decrease.  An example is allowing a liquid to cool and form a solid phase.  In this case the entropy of the system decreases.  The entropy of the environment, however, increases by an amount greater than or equal to the decrease of iron entropy.  Thus, $dS_\text{universe}$ is positive.
 \end{enumerate}
 \subsection{Consequences of the 2nd law:}
 \begin{enumerate}[(I)]
-\item \un{Irreversibility and 'lost work'}: For processes with the same initial and final states, the work done by a system upon its surroundings during a reversible process is greater than or equal to the work done by a system during an irreversible process.
-\beq \delta W_\text{reversible} \geq \delta W_\text{irreversible} \ceq
-For a reversible path, \beq dU_\text{reversible} = \delta Q_\text{reversible} + \delta W_\text{reversible} \ceq
-and the second law allows us to replace $\delta Q_\text{reversible}$ by $TdS$.  For an irreversible path, U is a state function, so $dU$ is the same:
+\item \un{Irreversibility and `lost work'}: For processes with the same initial and final states, the work done by a system upon its surroundings during a reversible process is greater than or equal to the work done by a system during an irreversible process.
+\beq \dbar W_\text{reversible} < \dbar W_\text{irreversible} \ceq
+For a reversible path, \beq dU_\text{reversible} = \dbar Q_\text{reversible} + \dbar W_\text{reversible} \ceq
+and the second law allows us to replace $\dbar Q_\text{reversible}$ by $TdS$.  For an irreversible path, U is a state function, so $dU$ is the same:
 
-\beq dU_\text{reversible} = dU_\text{irreversible}  = \delta Q_\text{irreversible} + \delta W_\text{irreversible} \ceq
-Since $T dS > \delta Q_\text{irreversible} $ for an irreversible process, we have
+\beq dU_\text{reversible} = dU_\text{irreversible}  = \dbar Q_\text{irreversible} + \dbar W_\text{irreversible} \ceq
+Since $T dS > \dbar Q_\text{irreversible} $ for an irreversible process, we have
 
-\begin{align} T dS + \delta W_\text{reversible} &= \delta Q_\text{irreversible} + \delta W_\text{irreversible}\\
-T dS -\delta Q_\text{irreversible}  = \delta W_\text{irreversible} - \delta W_\text{reversible} > 0
+\begin{align} T dS + \dbar W_\text{reversible} &= \dbar Q_\text{irreversible} + \dbar W_\text{irreversible}\\
+T dS -\dbar Q_\text{irreversible}  &= \dbar W_\text{irreversible} - \dbar W_\text{reversible} > 0
 \end{align}
 so
-\beq \boxed{\delta W_\text{reversible} < \delta W_\text{irreversible}}
+\beq \boxed{\dbar W_\text{reversible} < \dbar W_\text{irreversible}}
 \ceq
-Note that our sign convention in these notes is $dU = \delta Q + \delta W$, so negative work is work done by the systems upon the surroundings. The important physical implication is that that if you want to extract work from a system, you get the most work out if the work is performed reversibly. Work that is not obtained from a process due to irreversibilities is sometimes called \emph{lost work}. Similarly, and perhaps more intuitively, if you want to do work upon a system, you will expend the least energy if the work is done reversibly: \\ \emph{The dissipation inherent in irreversible processes is bad for efficiency, regardless of whether work is done by a system, or work is performed upon system.} %\footnote{This has significant implications for the operation of batteries and the  materials production, wherein we are generally aiming to make things as reversible as possible}
+Note that our sign convention in these notes is $dU = \dbar Q + \dbar W$, so negative work is work done by the systems upon the surroundings. The important physical implication is that that if you want to extract work from a system, you get the most work out if the work is performed reversibly. Work that is not obtained from a process due to irreversibilities is sometimes called \emph{lost work}. Similarly, and perhaps more intuitively, if you want to do work upon a system, you will expend the least energy if the work is done reversibly: \\ \emph{The dissipation inherent in irreversible processes is bad for efficiency, regardless of whether work is done by a system, or work is performed upon system.} %\footnote{This has significant implications for the operation of batteries and the  materials production, wherein we are generally aiming to make things as reversible as possible}
 \item \un{Limits to heat-work conversion}: 
 Since a reversible process leads to the highest efficiencies, it is then logical to use a reversible process to set a limit on the amount of work that we can get from a heat source, i.e. by reversibly transfering heat from hot to cold. One can consider any process to do so, here we consider a non-specific process. The steps are worked out, but not explained. An animated explanation can be found on \href{https://www.khanacademy.org/science/physics/thermodynamics/v/efficiency-of-a-carnot-engine}{Khan Academy}\footnote{Sal Khan is an MIT alum!}, and a good written explanation is on \href{https://en.wikipedia.org/wiki/Carnot_cycle}{wikipedia}.
+%\begin{align*}
+%\Delta U = 0 &= Q + W\\
+%\Delta S = \oint \frac{\dbar Q}{T}& = 0\\
+%&= \frac{Q_H}{T_H}
+%\end{align*}
 \begin{align*}
-\Delta U = 0 &= Q + W\\
-\Delta S = \oint \frac{\delta Q}{T}& = 0\\
-&= \frac{Q_H}{T_H}
-\end{align*}
-\begin{align*}
-\oint \frac{\delta Q}{T} &= 0\\
-\Delta S &= \frac{Q_H}{T_H} + \frac{Q_L}{T_L}\\
-&= 0\\
+\Delta S &= \oint \frac{\dbar Q}{T} = 0\\
+\Delta S &= \frac{Q_H}{T_H} + \frac{Q_L}{T_L} = 0\\
 Q_H &= \frac{-T_L}{T_H} Q_L
 \end{align*}
 \begin{align*}
-Q &= -W\\
+\Delta U = 0 &= Q + W\\
 Q_H + Q_L &= -W\\
-Q_H - Q_H \frac{T_L}{T_H} = -W\\
-Q_H (1 - \frac{T_L}{T_H}) = -W\\
+Q_H - Q_H \frac{T_L}{T_H} &= -W\\
+Q_H (1 - \frac{T_L}{T_H}) &= -W\\
 \end{align*}
-This gives us the Carnot efficiency $\eta = \frac{-W}{Q_H}$ and \beq \boxed{\eta_{\text{heat $\to$ work}} = 1 - \frac{T_L}{T_H}} \ceq  To give a sense of these efficiencies, with $T_H = 100^0$ C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. Significant gains in efficiency can be gained by going to higher temperatures: if $T_H$ = 550\degree C, $\eta \approx 63$\%.
+This gives us the Carnot efficiency $\eta = \frac{-W}{Q_H}$ and 
+\beq 
+\boxed{\eta_{\text{heat$\to$work}} = 1 - \frac{T_L}{T_H}}
+\ceq
+To give a sense of these efficiencies, with $T_H = 100^0$ C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. Significant gains in efficiency can be gained by going to higher temperatures: if $T_H$ = 550\degree C, $\eta \approx 63$\%.
 
-We can also use work to move heat.  This process is also limited by the second law, but is characterized by a different efficiency,. Moving heat from hot to cold is spontaneous, so we are usually concerned with how much heat we can move from cold to hot. When making something that is already warm warmer, we have a \un{heat pump} and when making something cold colder, we have a refrigerator (or an air conditioner). The logical way to characterize such an efficiency is the amount of heat moved per unit work used (this is often referred to as the ``coefficient of performance'', or COP of a heat pump). One can derive that:
+We can also use work to move heat.  This process is also limited by the second law, but is characterized by a different efficiency. Moving heat from hot to cold is spontaneous, so we are usually concerned with how much heat we can move from cold to hot. When making something that is already warm warmer, we have a \un{heat pump} and when making something cold colder, we have a refrigerator (or an air conditioner). The logical way to characterize such an efficiency is the amount of heat moved per unit work used (this is often referred to as the ``coefficient of performance'', or COP of a heat pump). One can derive that:
 \beq COP_\text{heat pump} = \frac{-Q_H}{W} = \frac{T_H}{T_H - T_L} \ceq
 \beq COP_\text{refrigerator} = \frac{Q_L}{W} = \frac{T_L}{T_H - T_L} \ceq
-With $T_H = 25$C and $T_C = 0$C, $\eta = 11$.\footnote{This counterintuitively means that burning a fire is actually an extremely inefficient way to heat a home. You could get an order of magnitude more bang-for-your-Joule if you could convert that chemical energy to work, and use a heat pump!}
+With $T_H = 25$C and $T_C = 0$C, $COP_\text{refridgerator} = 11$.\footnote{This counterintuitively means that burning a fire is actually an extremely inefficient way to heat a home. You could get an order of magnitude more bang-for-your-Joule if you could convert that chemical energy to work, and use a heat pump!}
 
 Note that in the above derivation, no reference was made to a specific mechanism: \emph{the Carnot limit applies any time heat is being converted to work}. One example of an exotic device that does this is a thermoelectric. One can apply some basic thermoelectric theory to show that thermoelectrics will never be as efficient as steam engines unless the thermoelectric figure of merit, $ZT$, increases by around an order of magnitude.\footnote{See \href{http://dx.doi.org/10.1038/nmat2361}{Nature Materials Vol 8 Feb 2009 ``An inconvenient truth about thermoelectrics''}}. This is not to say that thermoelectrics are a bad topic to research, but that one should not believe that they will replace a conventional heat engine for turning heat into energy, unless the given application prohibits the use of a heat engine.
 
@@ -522,14 +526,14 @@ Note that in the above derivation, no reference was made to a specific mechanism
 
 %\un{Practically}, we use a fluid for heat transfer.  We add heat $Q_H$ to water that turns into steam and runs a turbine generating work $W$.  We take some heat $Q_L$ away from the  steam (often called a working fluid), causing the steam to condense. The cold condensate at $T_L$ is then flowed it back to the heat source.  We can have inefficiencies turning the turbine, condensing the steam back into water, and we can increase efficiency by going to higher temperatures. These are excellent and practical materials problems to work on in energy. % I would like to do a recitation on steam engines in the future.
 
-We now that we have an expression for a differential change in entropy, we can compute  entropy changes from arbitrary processes, $\Delta S_{\text{process}}$.  We know the temperature dependence of $S$:
-\beq C_c = \frac{(\delta Q)_c}{dT} \ceq
+Now that we have an expression for a differential change in entropy, we can compute  entropy changes from arbitrary processes, $\Delta S_{\text{process}}$.  We know the temperature dependence of $S$:
+\beq C_c = \frac{(\dbar Q)_c}{dT} \ceq
 Where the subscript c is for ``constant path''. A reversible process along such a path must have:
 \begin{align*}
-T(dS)_c &= (\delta Q)_c\\
-(\frac{\partial S}{\partial T})_c &= \frac{C_c}{T} \\
-(\frac{\partial S}{\partial T})_p &= \frac{C_p}{T}\\
-(\frac{\partial S}{\partial T})_v &= \frac{C_v}{T}\\
+T(dS)_c &= (\dbar Q)_c\\
+\Big(\frac{\partial S}{\partial T}\Big)_c &= \frac{C_c}{T} \\
+\Big(\frac{\partial S}{\partial T}\Big)_p &= \frac{C_p}{T}\\
+\Big(\frac{\partial S}{\partial T}\Big)_v &= \frac{C_v}{T}\\
 \end{align*}
 
 Ultimately, because temperature has an absolute zero, entropy should also have some reference value when $T=0$ K.  How do we come up with a reference entropy $S$?  Nernst got the Nobel prize for it in 1920.
@@ -537,8 +541,8 @@ Ultimately, because temperature has an absolute zero, entropy should also have s
 \subsection{The 3rd law}
 \textbf{As the temperature approaches zero, the magnitude of the entropy change in any reversible process is zero.}
 
-We can then fix the entropy of the elements at 0K, in their \un{equilibrium} state, as being equal to zero.\footnote{We will show the physical meaning behind the third law during statistical mechanics. For now, we take it as a postulate.} \beq S_{0\text{K}}^\text{element} = 0 \ceq
-Because entropy is a state function, the entropy along different paths must converge to the same value as a system is cooled to absolute zero; the curves must look like the right of Figure \ref{ThirdLawConsistency}. Because compounds can be reversibly formed from their constituent elements, the entropy of any compounds must also be zero at 0K, as $\Delta S_{formation}=0$: $S_{AB}^\text{0K} = 0$. By extension, \emph{at equilibrium, the entropy of all materials at absolute zero is zero}. 
+We can then fix the entropy of the elements at 0 K, in their \un{equilibrium} state, as being equal to zero.\footnote{We will show the physical meaning behind the third law during statistical mechanics. For now, we take it as a postulate.} \beq S_{0\text{K}}^\text{element} = 0 \ceq
+Because entropy is a state function, the entropy along different paths must converge to the same value as a system is cooled to absolute zero; the curves must look like the right of Figure \ref{ThirdLawConsistency}. Because compounds can be reversibly formed from their constituent elements, the entropy of any compounds must also be zero at 0 K, as $\Delta S_\text{formation}=0$: $S^{AB}_\text{0K} = 0$. By extension, \emph{at equilibrium, the entropy of all materials at absolute zero is zero}. 
 %\beq A + B \rightarrow AB \text{  (at 0K})\ceq
 \begin{figure}[h]
 \centering
@@ -555,22 +559,25 @@ Because entropy is a state function, the entropy along different paths must conv
 
 %\un{Trouton's rules}: $\Delta H_\text{vaporization} = 90 \times T_\text{vaporization}$.  With this, $\Delta S_\text{vaporization} \approx 90 \frac{J}{\text{mol} K}$.
 
-\bold{Can we reach 0K?}
+\bold{Can we reach 0 K?}
 \begin{figure}[h]
 \centering
 \includegraphics[width = 10cm]{Can_We_achieve_0K.pdf}
-\caption{A T-S diagram illustrating the diminishing changes in temperature and entropy in a low-temperature, step-wise isothermal-isentropic cooling process. These changes become so small that an infinite steps are needed to reach 0K.}
+\caption{A T-S diagram illustrating the diminishing changes in temperature and entropy in a low-temperature, step-wise isothermal-isentropic cooling process. These changes become so small that an infinite steps are needed to reach 0 K.}
 \label{Can_We_Reach_0_K}
 \end{figure}
 
 Consider trying to cool a material by extracting heat from the material and dumping it into a hotter reservoir. %$T_\text{outside}$ = 25\degree C and $T_\text{chamber} \approx  0.1$K.  
-We would first need to extract the heat during a process when the material is in contact with the environment (say, through an isothermal compression), and then perform an adiabatic process on the material such that no heat flows in, and we are in a position to repeat the previous heat removal process (say, via an adiabatic expansion).  Of course, this would only work if t=you could make a series of heat reverviors at lower and lower temperatures. See Figure \ref{Can_We_Reach_0_K}.  We can reduce the temperature by cycling between isothermal compression and isentropic (adiabatic) expansion, but we can never practically use this method to get to 0K, as it would take an infinite number of cycles to do so. We can illustrate this by looking at the different processes individually:
+We would first need to extract the heat during a process when the material is in contact with the environment (say, through an isothermal compression), and then perform an adiabatic process on the material such that no heat flows in, and we are in a position to repeat the previous heat removal process (say, via an adiabatic expansion).  Of course, this would only work if you could make a series of heat reservoirs at lower and lower temperatures. See Figure \ref{Can_We_Reach_0_K}.  We can reduce the temperature by cycling between isothermal compression and isentropic (adiabatic) expansion, but we can never practically use this method to get to 0 K, as it would take an infinite number of cycles to do so. We can illustrate this by looking at the different processes individually:
 \begin{enumerate}[(I)]
 \item \un{Adiabatic expansion} of an ideal gas.  How much does the entropy change? You could try integrating the heat capacity along the path:
 \beq T_2/T_1 = \frac{P_1}{P_2}^{R/C_v} \ceq
-But that's kind of silly. You know because it's adiabatic that $d S = 0$ since $\delta Q = 0$
-\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\partial Q}{T} = -\frac{\partial Q}{T} = \frac{PdV}{T} = nR \frac{dV}{V}$ (Know this since $U=U(T)$, and T constant means $\Delta U = 0 = Q + W$)
-\beq \Delta S = nR\ln(\frac{V_2}{V_1}) \ceq
+But that's kind of silly. You know that because it's adiabatic ($\dbar Q = 0$) then $d S = 0$.
+\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\dbar Q}{T} = -\frac{\dbar W}{T} = \frac{PdV}{T} = nR \frac{dV}{V}$ (Know this since $U=U(T)$, and T constant means $\Delta U = 0 = Q + W$)
+
+\beq 
+\Delta S = nR\ln\Big(\frac{V_2}{V_1}\Big) 
+\ceq
 As volume goes up, entropy will too.
 \item Arbitrary change of an ideal gas.  Since $S$ is a state function, we only need to find the reversible path.  We can break it up:
 \beq dS = dS_\text{isobaric} + dS_\text{isothermal} = C_p \frac{dT}{T} - R\frac{dP}{P} \ceq
