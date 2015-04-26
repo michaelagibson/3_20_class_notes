@@ -765,55 +765,57 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 15, 2014}
-We have extensive boundary conditions for an isolated system with a wall that allows the volume and internal energies of each side to change.   When the internal energy $U$ and position $x$ is a constant, the entropy is maximum.  When the entropy $S$ is constant then the internal energy is minimum.
+
 
 \subsection{Equilibrium under the most general conditions}
-If we have an insulated, very large system, with temperature $T^*$ (where the $^*$ denotes the environment), and a smaller system within (no $^*$), and we assume that all variations are quasi-static, then
-\eqs
-\Delta U^* &= T^* \Delta S^* + \sum y_i^* \Delta x_i^*\\
-&= -\Delta U\\
-&= T^* \Delta S^* - \sum y_i^* \Delta x_i\\
-\Delta U - \sum y_i^* \Delta x_i &= -T^* \Delta S^*
-\eqe
-From the second law, we know that
-\eqs
-T^* (\Delta S* + \Delta S &\geq 0\\
-T^*\Delta S^* &\geq -T^*\Delta S\\
--T^* \Delta S^* &\leq T^* \Delta S
-\eqe
-Therefore plugging into our previous result we have
-\eqs \boxed{
-\Delta U - \sum y_i^* \Delta x_i - T^* \Delta S \leq 0
-}
-\eqe
-In the above the $\Delta U$, $\Delta x_i$, and $\Delta S$ are the constraints for the \emph{system} and the $y_i^*$ and $T^*$ are the constraints for the \emph{environment}.\\
+\textbf{Mike has not edited this section yet}
+% We have extensive boundary conditions for an isolated system with a wall that allows the volume and internal energies of each side to change.   When the internal energy $U$ and position $x$ is a constant, the entropy is maximum.  When the entropy $S$ is constant then the internal energy is minimum.
+% If we have an insulated, very large system, with temperature $T^*$ (where the $^*$ denotes the environment), and a smaller system within (no $^*$), and we assume that all variations are quasi-static, then
+% \eqs
+% \Delta U^* &= T^* \Delta S^* + \sum y_i^* \Delta x_i^*\\
+% &= -\Delta U\\
+% &= T^* \Delta S^* - \sum y_i^* \Delta x_i\\
+% \Delta U - \sum y_i^* \Delta x_i &= -T^* \Delta S^*
+% \eqe
+% From the second law, we know that
+% \eqs
+% T^* (\Delta S* + \Delta S &\geq 0\\
+% T^*\Delta S^* &\geq -T^*\Delta S\\
+% -T^* \Delta S^* &\leq T^* \Delta S
+% \eqe
+% Therefore plugging into our previous result we have
+% \eqs \boxed{
+% \Delta U - \sum y_i^* \Delta x_i - T^* \Delta S \leq 0
+% }
+% \eqe
+% In the above the $\Delta U$, $\Delta x_i$, and $\Delta S$ are the constraints for the \emph{system} and the $y_i^*$ and $T^*$ are the constraints for the \emph{environment}.\\
 
-\bold{Example:} A system interacting with the environment.  Consider a spring with mass $m$ hanging from it under the influence of gravity $g$.
-\eqs
-U_\text{sys} &= -mgx\\
-\vec{F} &= -k x
-dU_\text{sys} - T^* dS - F^* dx &\leq 0\\
--mgdx - T^*dS + kx dx &\leq 0\\
-(kx - mg)dx \leq 0
-\eqe
-Thus we can tell $kx = mg$.
+% \bold{Example:} A system interacting with the environment.  Consider a spring with mass $m$ hanging from it under the influence of gravity $g$.
+% \eqs
+% U_\text{sys} &= -mgx\\
+% \vec{F} &= -k x
+% dU_\text{sys} - T^* dS - F^* dx &\leq 0\\
+% -mgdx - T^*dS + kx dx &\leq 0\\
+% (kx - mg)dx \leq 0
+% \eqe
+% Thus we can tell $kx = mg$.
 
-\subsection{Assumptions}
-Lets begin to make some assumptions for a system
-\begin{itemize}
-\item The system will come to internal equilibrium with the environment (for a system + environment).
-\item No assumptions will be made about the \emph{internal state} of the \emph{system}
-\end{itemize}
+% \subsection{Assumptions}
+% Lets begin to make some assumptions for a system
+% \begin{itemize}
+% \item The system will come to internal equilibrium with the environment (for a system + environment).
+% \item No assumptions will be made about the \emph{internal state} of the \emph{system}
+% \end{itemize}
 
-\un{For a simple system}
-\eqs
-dU - TdS + P dV \leq 0
-\eqe
-We can control the extensive variables for our system in the following ways
-\begin{itemize}
-\item \bold{Isolated}: $dU = 0$, $dV = 0$ which leads to $-TdS \leq 0 \rightarrow S_\text{max}$
-\item \bold{Adiabatic \& Isochoric}: $dS = 0$, $dV=0$ which leads to $dU \leq 0 \rightarrow U_\text{min}$
-\end{itemize}
+% \un{For a simple system}
+% \eqs
+% dU - TdS + P dV \leq 0
+% \eqe
+% We can control the extensive variables for our system in the following ways
+% \begin{itemize}
+% \item \bold{Isolated}: $dU = 0$, $dV = 0$ which leads to $-TdS \leq 0 \rightarrow S_\text{max}$
+% \item \bold{Adiabatic \& Isochoric}: $dS = 0$, $dV=0$ which leads to $dU \leq 0 \rightarrow U_\text{min}$
+% \end{itemize}
 
 \subsection{Legendre Transforms}
 %$U$ is defubed a function of the extensive parameters $U(S,X,...)$. Frequently, we want a function $\phi(y)$ that is naturally a function of the intensive variables, raher than the extensive variables; it would be nice if we could specify the temperature instead of the entropy. 
@@ -847,7 +849,7 @@ V &= \frac{\partial H}{\partial P}|_S
 \begin{enumerate}
 \item $\frac{\partial \phi}{\partial Y_i}_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
 \item $\phi$ has analogous extremal properties to U: Just as the equilibrium state when all of the extensive variables are set occurs when $U$ is minimal, so the equilibrium state for a given Legendre transform, $\phi$, occurs $\phi$ under the appropriate boundary conditions. For example, the equilibrium state at constant temperature and pressure is the state with minimal Gibbs free energy, the equilibrium state at constant entropy and pressure is the state with minimal enthalpy, etc. 
-\item A corrolary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we equilibrated the original state at.
+\item A corrolary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we originally minimized the Gibbs free energy for.
 \item The pure double derivatives of $\phi$ are the negative inverse of the pure double derivatives of $U$. For example:
  \eqs \frac{\partial^2 U }{\partial V^2}_{S,N,...}&=-\frac{\partial P }{\partial V}_{S,N,...} &=(\beta_S V)^{-1}\\
  \frac{\partial^2 H }{\partial P^2}_{S,N,...} &=-\frac{\partial V }{\partial P}_{S,N,...} &=-\beta_S V \eqe
@@ -916,183 +918,209 @@ dV &= \frac{\partial V}{\partial T}|_P dT + \frac{\partial V}{\partial P}|_T dP\
 since $\alpha_v = \frac{1}{V} \frac{\partial V}{\partial T}|_P$ is the volumetric thermal expansion and $\beta_T = -\frac{1}{V}\frac{\partial V}{\partial P}|_T$ is the compressibility.  Likewise, the change in entropy is
 \eqs
 dS &= \frac{\partial S}{\partial T}|_P dT + \frac{\partial S}{\partial P}|_T dP\\
-&= \frac{c_P}{T}dT + ???
+&= \frac{c_P}{T}dT + \frac{\partial S}{\partial P}|_T dP
 \eqe
-Since we want to find out $\frac{\partial S}{\partial P}|_T$, we can use a \bold{Maxwell Relation}.  For this, we note that
+It's not really obvious what $\frac{\partial S}{\partial P}|_T$ is. We can use a \bold{Maxwell Relation} to gain some insight.  For this, we note that the double derivative of a function does not depend upon the order in which the derivatives are exchanged.
 \eqs
-(\frac{\partial}{\partial P}\frac{\partial G}{\partial T}|_P)|_T &= (\frac{\partial}{\partial T}\frac{\partial G}{\partial P}|_T)|_P\\
-\frac{\partial}{\partial P}(-S)|_T &= \frac{\partial}{\partial T}(V)|_P\\
--\frac{\partial S}{\partial P}|_T &= \frac{\partial V}{\partial T}|_P = \alpha_V V\\
+\frac{\partial}{\partial P}\left(\left(\frac{\partial G}{\partial T}\right)_P\right)_T &= \frac{\partial}{\partial T}\left(\left(\frac{\partial G}{\partial P}\right)_T\right)_P\\
+\frac{\partial}{\partial P}(-S)_T &= \frac{\partial}{\partial T}(V)_P\\
+-\left(\frac{\partial S}{\partial P}\right)_T &= \left(\frac{\partial V}{\partial T}\right)_P = \alpha_V V\\
 \eqe
 and from here we can make our substitution into the above
 \eqs
 dS &= \frac{c_P}{T}dT - \alpha_V V dP
 \eqe
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 17, 2014}
-%Previously we discussed \bold{Maxwell Relations}, which allow us to swap $x,y$ and may be defined generally as
-%\eqs \boxed{
-%\frac{\partial x}{\partial y}|_{\text{conj}[x]} = \pm \frac{\partial {\text{conj}[y]}}{\partial {\text{conj}[x]}}|_{y}}
-%\eqe
-%
-%For an ideal gas, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
-%\eqs
-%d(PV) = nR dT &= V dP +P dV\\
-% \frac{\partial V}{\partial T}|_P &= \frac{nR}{P}
-%\eqe
-%so we substituted and we can get 
-%\eqs
-%\boxed{dS = -nR \frac{dP}{P} + c_P \frac{dT}{T}}
-%\eqe
-%
-%\subsection{Magnetic Systems}
-%\eqs
-%dU = TdS - PdV + \mu_0 H_0 dM
-%\eqe
-%Here we have $U(S,V,M)$, but we want to know if the thermodynamic potential may be expressed as a function of $T, P, H$ ($U(T,P,H)$)?  First, we perform a Legendre Transform:
-%\eqs
-%\phi &= U-TS + PV - \mu_0 H_0 M\\
-%d\phi &= -S dT + VdP - \mu_0 M dH\\
-%\eqe
-%and obtain the following relationships
-%\eqs
-%\frac{\partial S}{\partial P}|_{T,H} &= -\frac{\partial V}{\partial T}|_{P,H} \\
-%\frac{\partial (\mu_0 M)}{\partial T}|_{H,P} &= \frac{\partial S}{\partial H}|_{T,P}  
-%\eqe
-%
-%%%%%%
-%\subsection{Very useful relationships of $f(x,y)$}
-%Inverse rule:
-%\eqs
-%\frac{\partial f}{\partial x}|_y = \frac{1}{\frac{\partial x}{\partial f}|_y}
-%\eqe
-%Chain rule:
-%\eqs
-%\frac{\partial f}{\partial x}|_y = \frac{\partial f}{\partial u}|_y \frac{\partial u}{\partial x}|_y
-%\eqe
-%Triplet rule:
-%\eqs
-%\frac{\partial f}{\partial x}|_y \frac{\partial x}{\partial y}|_f \frac{\partial y}{\partial f}|_x = -1
-%\eqe
-%
-%%%%%%
-%\subsection{Example: A rod under tension}
-%Consider a rod that doesn't change volume and evolves adiabatically.  We apply a force $F$ to each end of the rod and obtain a change in pressure $dP$ as a result.  What happens to the temperature?
-%\eqs
-%dS &= \frac{\partial S}{\partial T}|_F dT + \frac{\partial S}{\partial F}|_T dF\\
-%dU &= TdS + Fdl
-%\eqe
-%From the triplet rule, $\frac{\partial T}{\partial F}|_S \frac{\partial F}{\partial S}|_T \frac{\partial S}{\partial T}|_F = -1$, and thus
-%\eqs
-%\frac{\partial T}{\partial F}|_S &= -\frac{\frac{\partial S}{\partial F}|_T}{\frac{\partial S}{\partial T}|_F}\\
-%&=-\frac{\frac{\partial S}{\partial F}|_T}{\frac{c_F}{T}}\\
-%\eqe
-%Now what is $\frac{\partial S}{\partial F}|_T$?  We can define a new potential
-%\eqs
-%\phi &= U - TS - Fl\\
-%d\phi &= -SdT - ldF
-%\eqe
-%which yields
-%\eqs
-%\frac{\partial S}{\partial F}|_T = \frac{\partial l}{\partial T}|_F = \alpha_L
-%\eqe
-%The thermal expansion coefficient $\alpha_L = \frac{1}{l} \frac{\partial l}{\partial T}|_F$.  Putting this all together,
-%\eqs\boxed{
-%\frac{\partial T}{\partial F}|_S = - T l (\frac{\alpha_L}{c_F})}
-%\eqe
-%Now all we need is the materials parameters.  $c_F \approx c_P \approx 25$ J/molK and $\alpha_L \approx 2 \cdot 10^{-5}$ 1/K, $\Delta (F/A) \approx 100 MPa$:
-%\eqs
-%\Delta T = -(\Delta \frac{F}{A}) (A \cdot l) T \frac{\alpha_L}{c_F}
-%\eqe
-%This results in a value of $\Delta T = -0.1 $K.  
-%
-%\subsection{Strategy to reduce variables}
-%\begin{enumerate}[(1)]
-%\item Bring the thermodynamic potentials to the numerator\\
-%i.e. given  Joule-Thompson expansion (isenthalpic), 
-%\eqs
-%\frac{\partial T}{\partial P}|_H = -\frac{\frac{\partial H}{\partial P}|_T}{\frac{\partial H}{\partial T}|_P}
-%\eqe
-%\item Always bring $S$ to the numerator and turn it into a heat capacity\\
-%i.e. from $dH = TdS + VdP$:
-%\eqs
-%\frac{\partial H}{\partial P}|_T &= T \frac{\partial S}{\partial P} + V\\
-%\frac{\partial H}{\partial T}|_P &= T \frac{\partial S}{\partial T}|_P\\
-%\frac{\partial T}{\partial P}|_H &= \frac{-(T \frac{\partial S}{\partial P}|_T + V)}{T \frac{\partial S}{\partial T}|_P}\\
-%&= \frac{-(T \frac{\partial S}{\partial P}|_T + V)}{c_P}\\
-%&= \frac{-(-T\alpha_V V  + V)}{c_P}\\
-%&= \frac{V(T\alpha_V -1)}{c_P}
-%\eqe
-%(where the above used the Maxwell relationship $\frac{\partial S}{\partial P}|_T = -\frac{\partial V}{\partial T}|_P = -\alpha_V V$, and for an ideal gas we would have $\alpha_V = T^{-1}$, resulting in $\frac{\partial T}{\partial P}|_H  = 0$)
-%\item If needed, bring the volume to the numerator and turn it into a derivative of (T,P)
-%\item Relate heat capacities to what you know
-%\eqs
-%c_P - c_V &= T[\frac{\partial S}{\partial T}|_P - \frac{\partial S}{\partial T}|_V]\\
-%&= T[\frac{\partial S}{\partial V}|_T \cdot \frac{\partial V}{\partial T}|_P]
-%\eqe
-%where in the above I used the relation
-%\eqs
-%\frac{\partial f}{\partial x}|_g &= \frac{\partial f}{\partial x}|_y + \frac{\partial f}{\partial y}|_x \cdot \frac{\partial y}{\partial x}|_g
-%\eqe
-%continuing, we have
-%\eqs
-%c_P - c_V &= T[\frac{\partial S}{\partial P}|_T \cdot \frac{\partial P}{\partial V}|_T \cdot \frac{\partial V}{\partial T}|_P]\\
-%&= T[\frac{\partial S}{\partial P}|_T \cdot (\frac{-1}{V\beta_T}) \cdot \frac{\partial V}{\partial T}|_P]\\
-%\eqe
-%and from the Maxwell relation, $\frac{\partial S}{\partial P}|_T = -\frac{\partial V}{\partial T}|_P = -\alpha_V V$:
-%\eqs
-%c_P - c_V &= T[\frac{-\alpha_V V}{-\beta_T V} \alpha_V V]\\
-%&=\boxed{ T V (\frac{\alpha_V^2}{\beta_T})}
-%\eqe
-%\end{enumerate}
-%
-%%%%%%
-%\subsection{Natural Variables}
-%A question we may ask ourself is ``What are the natural variables for $U(S,V)$?''  What if we wrote $U(T,P)$?
-%\eqs
-%dU = \frac{\partial U}{\partial T}|_P dT + \frac{\partial U}{\partial P}|_T dP
-%\eqe
-%now let's take partials of the $U(S,V)$ we already know:
-%\eqs
-%\frac{\partial}{\partial P}|_T \cdot U &= T\frac{\partial S}{\partial P}|_T - P \frac{\partial V}{\partial P}|_T\\
-%&= -T (\alpha_V V) - P (-\beta_T V)\\
-%&= V(P \beta_T - T\alpha_V)
-%\eqe
-%Similarly,
-%\eqs
-%\frac{\partial}{\partial T}|_P \cdot U &= T\frac{\partial S}{\partial T}|_P - P \frac{\partial V}{\partial T}|_P\\
-%&= n c_P - P V \alpha_V
-%\eqe
-%and thus we can write
-%\eqs
-%dU = (n c_P - PV \alpha_V)dT + V(P \beta_T - T \alpha_V)dP
-%\eqe
-%
-%Now, lets look at the order of some second-derivatives of $G(T,P) \rightarrow dG = -S dT + V dP$:
-%\eqs
-%\frac{\partial G}{\partial T}|_P &= -S\\
-%\frac{\partial G}{\partial P}|_T &= V\\
-%\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{c_P}{T}\\
-%\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V\\
-%\eqe
-%We can display the order of derivatives as follows:\\
-%\begin{center}
-%\begin{tabular}{c | c | c}
-%& T & P\\ \hline
-%T & $-\frac{c_P}{T}$ & $\alpha_V V$\\ \hline
-%P & $\alpha_V V$ & $-\beta_T V$
-%\end{tabular}
-%\end{center}
-%If we add a \bold{magnetic field} our energy becomes $dU = TdS - PdV + H dM$.  The various derivatives of $\phi = U - ST + PV - HM$ result in the following order of (second) derivatives:
-%\begin{center}
-%\begin{tabular}{c | c | c | c}
-%& T & P & H\\ \hline
-%T & $-\frac{c_P}{T}$ & $\alpha_V \cdot V$ & $-\frac{\partial M}{\partial T}$\\ \hline
-%P & $\alpha_V \cdot V$ & $-\beta_T \cdot V$ & $V \cdot \gamma$\\ \hline
-%H& $-\frac{\partial M}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
-%\end{tabular}
-%\end{center}
-%
+This should kind of weird you out; The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily experimentally measurable quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about: we can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it.\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 17, 2014}
+\subsection{Maxwell Relations}
+Previously we discussed \bold{Maxwell Relations}, which allow us to swap a derivative in terms of some thermodynamic variables $x$ and $y$ for a derivative in terms of the conjugates of $x$ and $y$. They may be defined generally as
+\eqs \boxed{
+\left(\frac{\partial x}{\partial y}\right)_{\text{conj}[x]} = \pm \left(\frac{\partial {\text{conj}[y]}}{\partial {\text{conj}[x]}}\right)_{y}}
+\eqe
+The $ \pm $ in the above expression happens because the sign flips whenever you take a Legendre transform. The general procedure to create a Maxwell relation is then to: 
+\begin{enumerate}
+\item Legendre transform your potential so that the natural variables of the free energy are the variables you want in the denominator of the expression.
+\item Equate the double partial derivatives.
+\end{enumerate}
+We now review some applications of Maxwell relations. 
+\subsubsection{Maxwell for an Ideal Gas}
+In general, we know, $dS = \frac{c_P}{T}dT - \alpha_V V dP$. We can apply this in the case of an ideal gas to get a concrete expression for the change in entropy under changes in temperature and pressure:%, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
+\eqs
+d(PV) = nR dT &= V dP +P dV\\
+\frac{\partial V}{\partial T}|_P &= \frac{nR}{P}
+\eqe
+Substituting gives: 
+\eqs
+\boxed{dS = -nR \frac{dP}{P} + c_P \frac{dT}{T}}
+\eqe
+
+\subsubsection{Magnetic Maxwells}
+One can perform Maxwell relations including other work terms too. We demonstrate this here. In particular, let's say we wanted expressions relating the behavior of entropy in a magnetic field to other quantities that are more easily measured; we want expressions for $\left(\frac{\partial S}{\partial P}\right)_{T,H}$ and $\left(\frac{\partial S}{\partial H}\right)_{T,P}$. Including magnetic work terms, $dU$ can be expressed as:
+\eqs
+dU = TdS - PdV + \mu_0 H_0 dM
+\eqe
+Here we have $U(S,V,M)$, but we need a thermodynamic potential expressed as a natural function of $T, P, H$ to perform the desired Maxwell relations, i.e. we want $\phi (T,P,H)$.  First, we perform a Legendre Transform:
+\eqs
+\phi &= U-TS + PV - \mu_0 H_0 M\\
+d\phi &= -S dT + VdP - \mu_0 M dH\\
+\eqe
+This permits us to obtain the following relationships:
+\eqs
+\left(\frac{\partial S}{\partial P}\right)_{T,H} &= -\left(\frac{\partial V}{\partial T}\right)_{P,H} \\
+\left(\frac{\partial (\mu_0 M)}{\partial T}\right)_{H,P} &= \left(\frac{\partial S}{\partial H}\right)_{T,P}  
+\eqe
+
+%%%%%
+\subsection{How to do thermo derivations} 
+We first give some general relationships from calculus that are useful in manipulating thermodynamic variables, and then we give you a general way to think about deriving quantities in thermodynamics.
+\subsubsection{Very useful relationships of $f(x,y)$}
+\textbf{Inverse rule}:
+\eqs
+\left(\frac{\partial f}{\partial x}\right)_y = \frac{1}{\left(\frac{\partial x}{\partial f}\right)_y}
+\eqe
+This relation is useful for getting things to the numerator from the denominator. This relationship only holds for well-behaved functions, but luckily thermodynamic functions are well-behaved.
+
+\textbf{Chain rule}:
+\eqs
+\left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
+\eqe
+This is good if you can't take a derivative of f with respect to X, but you can take the derivative of u with respect to X (and hopefully of f with respect to u).
+
+
+\textbf{Triplet rule}:
+\eqs
+\frac{\partial f}{\partial x}|_y \frac{\partial x}{\partial y}|_f \frac{\partial y}{\partial f}|_x = -1
+\eqe
+This is good for changing paths: you get to hold different variables constant when taking the other two derivatves
+
+\textbf{Another, unnamed rule} (Mike calls it the generalized chain rule):
+\eqs
+\left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
+\eqe
+This is also good for changing paths, especially for heat capacity paths (this was the relation we used to derive the relationship between $C_p$ and $C_V$).
+%%%%%
+\subsubsection{Strategy to reduce variables}
+Thermo derivations are usually about simplifying messy derivatives. The object of these derivations is to simplify them by substituting in known materials parameters. Hence, these guidelines are all about how to manipulate the derivatives so that you can start to substitute in known materials parameters.
+\begin{enumerate}[(1)]
+\item Bring the thermodynamic potentials to the numerator\\
+i.e. given  Joule-Thompson expansion (isenthalpic), we can remove the constraint of a derivative at constant enthalpy (which we don't know how to take) by using the triplet rule:
+\eqs
+\frac{\partial T}{\partial P}|_H = -\frac{\frac{\partial H}{\partial P}|_T}{\frac{\partial H}{\partial T}|_P}
+\eqe
+\item Always bring $S$ to the numerator and turn it into a heat capacity\\
+i.e. from $dH = TdS + VdP$:
+\eqs
+\left(\frac{\partial H}{\partial P}\right)_T &= T \frac{\partial S}{\partial P} + V\\
+\left(\frac{\partial H}{\partial T}\right)_P &= T \left(\frac{\partial S}{\partial T}\right)_P\\
+\left(\frac{\partial T}{\partial P}\right)_H &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{T \left(\frac{\partial S}{\partial T}\right)_P}\\
+&= frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{c_P}\\
+&= \frac{-(-T\alpha_V V  + V)}{c_P}\\
+&= \frac{V(T\alpha_V -1)}{c_P}
+\eqe
+(where the above used the Maxwell relationship $\frac{\partial S}{\partial P}|_T = -\left(\frac{\partial V}{\partial T}\right)_P = -\alpha_V V$, and for an ideal gas we would have $\alpha_V = T^{-1}$, resulting in $\left(\frac{\partial T}{\partial P}\right)_H  = 0$)
+\item If needed, bring the volume to the numerator and turn it into a derivative of (T,P)
+\item Relate heat capacities to what you know
+\eqs
+c_P - c_V &= T[\left(\frac{\partial S}{\partial T}\right)_P - \left(\frac{\partial S}{\partial T}\right)_V]\\
+&= T[\left(\frac{\partial S}{\partial V}\right)_T \cdot \left(\frac{\partial V}{\partial T}\right)_P]
+\eqe
+where in the above I used the relation
+\eqs
+\left(\frac{\partial f}{\partial x}\right)_g &= \left(\frac{\partial f}{\partial x}\right)_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g
+\eqe
+continuing, we have
+\eqs
+c_P - c_V &= T\left[\left(\frac{\partial S}{\partial P}\right)_T \cdot \left(\frac{\partial P}{\partial V}\right)_T \cdot \left( \frac{\partial V}{\partial T}\right)_P\right]\\
+&= T\left[\left(\frac{\partial S}{\partial P}\right)_T \cdot (\frac{-1}{V\beta_T}) \cdot \left(\frac{\partial V}{\partial T}\right)_P\right]\\
+\eqe
+and from the Maxwell relation, $\left(\frac{\partial S}{\partial P}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_P = -\alpha_V V$:
+\eqs
+c_P - c_V &= T\left[\frac{-\alpha_V V}{-\beta_T V} \alpha_V V\right]\\
+&=\boxed{ T V \left(\frac{\alpha_V^2}{\beta_T}\right)}
+\eqe
+\end{enumerate}
+
+%%%%%
+\subsubsection{Example: A rod under tension}
+Consider a rod that doesn't change volume and evolves adiabatically.  We apply a force $F$ to each end of the rod and obtain a change in pressure $dP$ as a result.  What happens to the temperature?
+\eqs
+dS &= \frac{\partial S}{\partial T}|_F dT + \frac{\partial S}{\partial F}|_T dF\\
+dU &= TdS + Fdl
+\eqe
+From the triplet rule, $\frac{\partial T}{\partial F}|_S \frac{\partial F}{\partial S}|_T \frac{\partial S}{\partial T}|_F = -1$, and thus
+\eqs
+\frac{\partial T}{\partial F}|_S &= -\frac{\frac{\partial S}{\partial F}|_T}{\frac{\partial S}{\partial T}|_F}\\
+&=-\frac{\frac{\partial S}{\partial F}|_T}{\frac{c_F}{T}}\\
+\eqe
+Now what is $\frac{\partial S}{\partial F}|_T$?  We can define a new potential
+\eqs
+\phi &= U - TS - Fl\\
+d\phi &= -SdT - ldF
+\eqe
+which yields
+\eqs
+\frac{\partial S}{\partial F}|_T = \frac{\partial l}{\partial T}|_F = \alpha_L
+\eqe
+The thermal expansion coefficient $\alpha_L = \frac{1}{l} \frac{\partial l}{\partial T}|_F$.  Putting this all together,
+\eqs\boxed{
+\frac{\partial T}{\partial F}|_S = - T l (\frac{\alpha_L}{c_F})}
+\eqe
+Now all we need is the materials parameters.  $c_F \approx c_P \approx 25$ J/molK and $\alpha_L \approx 2 \cdot 10^{-5}$ 1/K, $\Delta (F/A) \approx 100 MPa$:
+\eqs
+\Delta T = -(\Delta \frac{F}{A}) (A \cdot l) T \frac{\alpha_L}{c_F}
+\eqe
+This results in a value of $\Delta T = -0.1 $K.  
+
+%%%%%
+\subsection{Natural Variables}
+A question we may ask after all of this is: ``What are the natural variables for $U(S,V)$?'' Can we write $U(T,P)$? If so, what are the consequences?
+\eqs
+dU = \left(\frac{\partial U}{\partial T}\right)_P dT + \left(\frac{\partial U}{\partial P}\right)_T dP
+\eqe
+now let's take partials of the $U(S,V)$ we already know:
+\eqs
+\frac{\partial}{\partial P}|_T \cdot U &= T\frac{\partial S}{\partial P}|_T - P \frac{\partial V}{\partial P}|_T\\
+&= -T (\alpha_V V) - P (-\beta_T V)\\
+&= V(P \beta_T - T\alpha_V)
+\eqe
+Similarly,
+\eqs
+\frac{\partial}{\partial T}|_P \cdot U &= T\frac{\partial S}{\partial T}|_P - P \frac{\partial V}{\partial T}|_P\\
+&= n c_P - P V \alpha_V
+\eqe
+and thus we can write
+\eqs
+dU = (n c_P - PV \alpha_V)dT + V(P \beta_T - T \alpha_V)dP
+\eqe
+Clearly, it is possible to think about $dU$ in terms of variations in the intensive variables, but it's much more natural to think of $dU$ in terms of $dV$ and $dS$.
+
+We're starting to build up a large number of derivatives and second derivatives of the free energies, it would be nice to have systematic way of representing and thinking of these derivatives. It turns out you can represent these derivatives as matrices. Lets look at the order of some derivatives of $G(T,P) \rightarrow dG = -S dT + V dP$:
+\eqs
+\frac{\partial G}{\partial T}|_P &= -S\\
+\frac{\partial G}{\partial P}|_T &= V\\
+\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{c_P}{T}\\
+\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V\\
+\eqe
+We can display the order of derivatives as follows:\\
+\begin{center}
+\begin{tabular}{c | c | c}
+ $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$\\ \hline
+ $\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V V$\\ \hline
+ $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$
+\end{tabular}
+\end{center}
+If we add a \bold{magnetic field} our energy becomes $dU = TdS - PdV + H dM$.  The various derivatives of $\phi = U - ST + PV - HM$ result in the following order of (second) derivatives:
+\begin{center}
+\begin{tabular}{c | c | c | c}
+$\phi$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$& $\frac{\partial}{\partial H}$\\ \hline
+$\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V \cdot V$ & $-\frac{\partial M}{\partial T}$\\ \hline
+$\frac{\partial}{\partial P}$ & $\alpha_V \cdot V$ & $-\beta_T \cdot V$ & $V \cdot \gamma$\\ \hline
+$\frac{\partial}{\partial H}$ & $-\frac{\partial M}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
+\end{tabular}
+\end{center}
+You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are controlled the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because of $U$ is convex up with respect to the extensive variables.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 24, 2014}
 %Last lecture we asked ourselves what the variation of the volume with respect to temperature (constant magnetization) is equal ($\frac{\partial V}{\partial T}|_M$)
