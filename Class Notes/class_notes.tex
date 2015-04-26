@@ -1017,7 +1017,7 @@ i.e. from $dH = TdS + VdP$:
 \left(\frac{\partial H}{\partial P}\right)_T &= T \frac{\partial S}{\partial P} + V\\
 \left(\frac{\partial H}{\partial T}\right)_P &= T \left(\frac{\partial S}{\partial T}\right)_P\\
 \left(\frac{\partial T}{\partial P}\right)_H &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{T \left(\frac{\partial S}{\partial T}\right)_P}\\
-&= frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{c_P}\\
+&= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{c_P}\\
 &= \frac{-(-T\alpha_V V  + V)}{c_P}\\
 &= \frac{V(T\alpha_V -1)}{c_P}
 \eqe
@@ -1161,7 +1161,7 @@ Can $\alpha_V < 0?$
 \end{figure}
 Yes! Indeed, this is observed in many systems. The basic way in which this happens is when molecules have more degees of freedom when the system is smaller. One examples is in polymers: there are more configurations when the chains in a polymer are bent, thus as temperature increases, polymers tend to shrink!
 
-\un{What you should be able to do by now:}
+\subsection{Checkin: What you should be able to do by now}
 \begin{enumerate}[(1)]
 \item Identify work terms
 \item Construct the relevant thermodynamic potential, \ref{LegendreTransforms}
@@ -1170,12 +1170,12 @@ Yes! Indeed, this is observed in many systems. The basic way in which this happe
 \item Relate thermodynamic quantities and thus variations: \ref{howToDerive}
 \end{enumerate}
 
-\subsection{Intro. to multicomponent systems}
-Back to open systems, we know
+\subsection{Equilibrium Conditions for Multicomponent Systems}
+Back to systems where we take the mole numbers into account, we can write $dU$ for a multicomponent system as:
 \eqs
 dU = TdS - PdV + \sum_i \mu_i dn_i
 \eqe
-where $\mu_i = \frac{\partial U}{\partial n_i}|_{S,V}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, n_j^{(1)}$ describing the first and $S^{(2)}, V^{(2)}, n_j^{(2)}$ describing the second.  We know
+where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j\}^{(1)}$ describing the first and $S^{(2)}, V^{(2)}, n_j^{(2)}$ describing the second.  We know
 \eqs
 \partial S^{(1)} &= -\partial S^{(2)}\\
 \partial V^{(1)} &= -\partial V^{(2)}\\
@@ -1189,56 +1189,116 @@ V&= \sum_{\alpha} V^{\alpha}\\
 N&= \sum_{\alpha} n^{\alpha}\\
 \eqe
 \eqs
-\partial U = \sum_\alpha T^{(\alpha)} (\partial S)^\alpha - P^{(\alpha)} (\partial V)^\alpha + \sum_{j=1}^v \mu_j (\partial n_j)^\alpha
+\d U = \sum_\alpha T^{(\alpha)} (\d S)^\alpha - P^{(\alpha)} (\d V)^\alpha + \sum_{j=1}^v \mu_j (\d n_j)^\alpha
 \eqe
-This is the first order displacement of $U$.  If the system is at equilibrium, $\partial U \geq 0$.  If true equilibrium, $\partial U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase.\\
+This is the first order displacement of $U$.  If the system is at equilibrium, $\d U \geq 0$.  If true equilibrium, $\d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, ex: charge is not coupled to mass flow like in a battery), then the intensive variables in any subsystem must be the same as in any other subsystem: if the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually, this means:
+\begin{itemize}
+\item We always formulate the conditions for equilibrium in terms of the intensive variables.
+\item We can supply a bunch of constraints on the intensive variables of the different phases: they all need to be equal to one another. We derive these constraints in the next section.
+\end{itemize}
+If the exchange of extensive variables is coupled, it is the coupled sum of the the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous, if we denote $\mu^*$ as the electrochemical potential, it is easy to show that
+$\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.\\
 
-\subsection{Gibbs Phase rule} If there are $v$ phases coexisting (at equilibrium and constant $T, P$ (+2 equations)), then
-\eqs
-\mu_i^{(\alpha)} (T,P,x_1^\alpha,... x_{r-1}^\alpha) = \mu_i^{(\gamma)} (T,P,x_1^\gamma,... x_{r-1}^\gamma)
-\eqe
-and so $1 \leq \alpha < \gamma \leq v$ (for the number of phases, and for the number of species we have $1 < i < r$.  Ultimately, there are $r(v-1)$ equations for the chemical potential.
+\subsection{Constraints from equilibrium of heterogeneous systems: The Gibbs phase rule} 
+For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without invalidating (i.e. overspecifying the system) as:
+\eqs f=m-n \eqe
+We call $f$ the degrees of freedom of the system of equations. We define a phase as a part of a system which is measurably distinct in terms of its thermodynamic variables from another part of the subsystem.
 
-\un{Gibbs Phase rule:}  The thermodynamic degrees of freedom $f$ is
-\eqs
-\boxed{f = 2 + r - v}
-\eqe
-be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
+When multiple phases are in equilibrium with each other, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, we increase the vapor pressure of the gas for it to remain in equlibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust itself when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
+As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. Let there be p phases, and let there by c components in the system. We know that in each phase $\alpha$, a Gibbs-Duhem equation must hold:
 
-What is a \un{stable} equilibrium? (see Chandlor Ch. 2)
 \eqs
-(\Delta U)_{S,V,n_j} = \partial U + \partial^2 U + ... > 0\\
-\eqe
-At a new equilibrium, $\partial U = 0$, and so $\Delta U \approx \partial^2 U > 0$.  This here is a guarantee of stability.  If we think of a composite system with an thermal wall, and then fix 
+S^{\alpha }\text{dT}^{\alpha }-V^{\alpha }\text{dP}^{\alpha }+\underset{i=1}{\overset{c}{\Sigma }}N^{\alpha }\text{d$\mu $}_i^{\alpha }=0\eqe
+
+Hence, for each phase, there are \textit{ c} + 1 independent intensive variables, which we can write in terms of $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials:$\mu _i^{\alpha}$. The number of variables is thus the number of phases times $c + 1$: 
+\eqs m = p(c + 1) \eqe
+The number of constraints from the intensive variables being equal to each other in each phase is the number of intensive variables in each phase
+times the number of phases minus 1:
+\eqs n = (p - 1)(c + 2) \eqe
+
+Then the number of independent variations of the intensive variables is thus (if one allows temperature and pressure to vary): 
+\eqs f = m - n = c - p + 2 \text{ (}T\text{ and }P \text{ can vary)} \eqe
+If, instead, one considers a system at constant pressure, you get:
+\eqs f = c - p + 1 \text{ (}P \text{ specified)} \eqe
+If temperature and pressure are both specified, you get:
+\eqs f = c - p \text{ (}T\text{ and }P  \text{ specified)}\eqe
+These are all versions of the Gibbs phase rule. It has important implications for the possible shapes of phase diagrams.
+
+
+
+% If there are $v$ phases coexisting (at equilibrium and constant $T, P$ (+2 equations)), then
+% \eqs
+% \mu_i^{(\alpha)} (T,P,x_1^\alpha,... x_{r-1}^\alpha) = \mu_i^{(\gamma)} (T,P,x_1^\gamma,... x_{r-1}^\gamma)
+% \eqe
+% and so $1 \leq \alpha < \gamma \leq v$ (for the number of phases, and for the number of species we have $1 < i < r$.  Ultimately, there are $r(v-1)$ equations for the chemical potential.
+
+% \un{Gibbs Phase rule:}  The thermodynamic degrees of freedom $f$ is
+% \eqs
+% \boxed{f = 2 + r - v}
+% \eqe
+% be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
+
+\subsection{Stability Conditions on the free energy} 
+Here, we use a Taylor expansion to make some insights into the shape of $U$, and thus its Legendre transforms. $U$ can be expressed as a Taylor expansion in the extensive variables as:
 \eqs
-\partial S &= \partial S^{(1)} + \partial S^{(2)} = 0\\
-\partial V^{(1)}&= \partial V^{(2)} = 0\\
-\partial n^{(1)} &= \partial n^{(2)} 
+(\Delta U)_{S,V,n_j} = d U + d^2 U + ... > 0\\
 \eqe
-then
+At equilibrium, we know that $d U = 0$. Therefore $dU \approx d^2U > 0$.  Thus, if we know that the second-order terms in a Taylor expansion of $U$ should all be positive to guarantee $U$ is minimal. Very loosely, this is the same as saying that in order for a function, $f$, to be at a minimum, it must have $f'=0,f''>0$. More concretely, this corresponds to the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable to such perturbations, as illustrated in figure \ref{stability}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{StabilityWRTPerturbations}
+\caption{An illustration of a stable and unstable system with respect to volume perturbations. In the unstable case, subsystems can exchange volume and lower the energy of the systems. We call such instabilities to minute perturbations spinodal instabilities, and they evolve by special kinetics, termed spinodal decomposition.}
+\label{stability}
+\end{figure}
+
+To illustrate this mathematically, we'll consider composite system with a diathermal wall\footnote{Reminder: heat can be exchanged, but $n$, $V$, cannot be exchanged.}, and then fix $S,V,n$:
 \eqs
-\partial^2 U&= \partial^2U^{(1)} + \partial^2 U^{(2)}\\
-&= \frac{1}{2}\frac{\partial^2U}{\partial S^{(1)2}}(\partial S^{(1)2}) + \frac{1}{2}\frac{\partial^2U}{\partial S^{(2)2}} (\partial S^{(2)2})
+d S &= d S^{(1)} + d S^{(2)} = 0\\
+d V^{(1)}&= d V^{(2)} = 0\\
+d n^{(1)} &= d n^{(2)} 
 \eqe
+then the variation in $U$ becomes:
 \eqs
-\frac{\partial^2U}{\partial S^{2}}|_{V,n} &= \frac{\partial T}{\partial S} = \frac{T}{c_V}\\
-\partial^2U &= \frac{1}{2}(\partial S^{(1)2})[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\\
-T[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}] &\geq 0\\
+d^2 U&= d^2U^{(1)} + d^2 U^{(2)}\\
+&= \frac{1}{2}\frac{\partial^2U}{\partial S^{(1)2}}(d S^{(1)2}) + \frac{1}{2}\frac{\partial^2U}{\partial S^{(2)2}} (d S^{(2)2})
 \eqe
-Thus we get the result that $c_V \geq 0$.  Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
+Substituting in our known derivatives of $U$:
+\eqs
+\left(\frac{\partial^2U}{\partial S^{2}}\right)_{V,n} &= \left(\frac{\partial T}{\partial S}\right)_{V,n} = \frac{T}{c_V}\\
+\partial^2U &= \frac{1}{2}(d S^{(1)2})\left[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\right]\\
+T\left[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}\right] &\geq 0\\
+\eqe
+Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
 
 \subsection{Phase stability}
-With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases 
-\eqs G^\alpha &= G^\beta \\ \Delta G &= 0\eqe
-we can also read off the first derivatives $\frac{\partial G}{\partial T}|_P = -S$ and $\frac{\partial G}{\partial P}|_T = V$ which holds for $\alpha$ or $\beta$.  At a phase equilibrium, we should have a discontinuity in the change in volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).  G(T)?
+$G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. There are similar guarantees on the double derivatives of G. 
+If we imagine that each phase/state of matter has its own free energy curve $G(T)^{\alpha},G(T)^{\beta},...$, then \emph{the equilibrium free energy is simply the lower envelope of the free energy curves of the possible phases}. This is shown in figure \ref{phaseGCurves}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{G_Curves_For_Phases}
+\caption{An illustration of thermodynamically consistent curves for the free energy of phases as a function of T and P which obey the stability criteria.}
+\label{phaseGCurves}
+\end{figure}
+
+Getting more quantitative, we can follow a similar line of thought as before for $U$. If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases, their free energies must be equal as shown in figure \ref{phaseGCurves}
+\eqs G^\alpha &= G^\beta %\\ \Delta G &= 0
+\eqe
+We can also read off the first derivatives of G: $\frac{\partial G}{\partial T}|_P = -S$ and $\frac{\partial G}{\partial P}|_T = V$. These hold for both phases. %$\alpha$ or $\beta$.  
+Therefore, as a system passes through a two phase equilibrium, it should exhibit a discontinuity in its volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).  G(T)?
 \eqs
 \frac{\partial G}{\partial T}|_P &= - S\\
 \frac{\partial^2 G}{\partial T^2}|_P &= -\frac{\partial S}{\partial T}|_P = -\frac{c_P}{T} <0\\
 \frac{\partial G}{\partial P}|_T &= V\\
 \frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V <0\\
 \eqe
-For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor (and are all negative).  In addition, $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
+For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
 
+
+
+
+
+
+%With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 25, 2014}
