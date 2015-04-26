@@ -232,10 +232,10 @@ A diatomic gas, can be modelled as two atoms are attached by a spring, free to r
 at higher temperatures, the two vibrational degrees of freedom are excited, giving: $c_v^{\text{diatomic, high }T} = \frac{7}{2} R$
 This is borne out in the experimental data, as shown in Figure \ref{CPofgases}:
 \begin{figure}[h]
-\label{CPofgases}
 \centering
 \includegraphics[width=\textwidth]{DiatomicSpecHeat2}
 \caption{The specific heats of diatomic gases (normalized by R) as a function of temperature. The temperature at which the vibrational modes are excited is a function of the stiffness of the bond, with hydrogen exhibiting especially stiff bonds, and thus a late transition temperature.}
+\label{CPofgases}
 \end{figure}
 
 \begin{align*}
@@ -278,10 +278,10 @@ where the first term is the enthalpy of the system in its initial state, the sec
 %(H\degree(Fe))
 The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree C$. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
 \begin{figure}[h]
-\label{enthalpy_vs_T}
 \centering
 \includegraphics[width = \textwidth]{H_of_T_labeled.png}
 \caption{$H\degree (T)$ for Fe over two temperature scales.}
+\label{enthalpy_vs_T}
 \end{figure}
 The solid$\to$solid phase transitions' discontinuitites are barely visible on the left curve. This is because the latent heats of the different phase transitions differ by several orders of magnitude: $\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol. A large enthalpy for a solid$\to$solid phase transition is observed for zirconia's \href{http://en.wikipedia.org/wiki/Diffusionless_transformation#Martensitic_transformation}{martensitic phase transformation}, where $\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  
 
@@ -304,9 +304,9 @@ In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The bindi
 
 \begin{figure}[h]
 \centering
-\label{Trouton_Richard}
 \includegraphics[width = 10cm]{Trouton_and_Richards_rules.png}
 \caption{Elemental phase transition temperatures and enthalpies on a log-log scale. The slope of this correlation (on a linear scale) gives the characteristic entropy of these phase transitions. The correlation is stronger for boiling as compared to melting because the liquid$\to$gas transition's entropy change is dominated by the gain of translational degrees of freedom, whereas the gain in entropy upon melting can be appreciably changed by the local interactions in the solids and liquids of the elements. Positive deviations from Richard's rule occur for heavy semimetals: Sb, Bi, Sn, Te have larger entropies of melting than expected. Negative deviations occur for elements with unfilled f-orbitals: Pu, Ce, Nd have smaller entropies of melting than expected. Simple metals and transition metals are well-behaved.}
+\label{Trouton_Richard}
 \end{figure}
 
 Now, what is the relative contribution of the PdV term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^-5 \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is ~ 10\% $\Delta V$.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, expect at very high pressures}.
@@ -541,10 +541,10 @@ We can then fix the entropy of the elements at 0K, in their \un{equilibrium} sta
 Because entropy is a state function, the entropy along different paths must converge to the same value as a system is cooled to absolute zero; the curves must look like the right of Figure \ref{ThirdLawConsistency}. Because compounds can be reversibly formed from their constituent elements, the entropy of any compounds must also be zero at 0K, as $\Delta S_{formation}=0$: $S_{AB}^\text{0K} = 0$. By extension, \emph{at equilibrium, the entropy of all materials at absolute zero is zero}. 
 %\beq A + B \rightarrow AB \text{  (at 0K})\ceq
 \begin{figure}[h]
-\label{ThirdLawConsistency}
 \centering
 \includegraphics[width = 12cm]{thirdLawPlot_with_faces.pdf}
 \caption{An illustration of entropy as a function of temperature inconsistent and consistent with the third law.}
+\label{ThirdLawConsistency}
 \end{figure}
 
 %With this process $\Delta S = 0$ (reversible path) and .  Alternatively, it can be said that ``The entropy of a system at 0K is 0''.  This statement, however,is true if we are at \un{equilibrium}.
@@ -557,10 +557,10 @@ Because entropy is a state function, the entropy along different paths must conv
 
 \bold{Can we reach 0K?}
 \begin{figure}[h]
-\label{Can_We_Reach_0_K}
 \centering
 \includegraphics[width = 10cm]{Can_We_achieve_0K.pdf}
 \caption{A T-S diagram illustrating the diminishing changes in temperature and entropy in a low-temperature, step-wise isothermal-isentropic cooling process. These changes become so small that an infinite steps are needed to reach 0K.}
+\label{Can_We_Reach_0_K}
 \end{figure}
 
 Consider trying to cool a material by extracting heat from the material and dumping it into a hotter reservoir. %$T_\text{outside}$ = 25\degree C and $T_\text{chamber} \approx  0.1$K.  
@@ -817,7 +817,7 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 % \item \bold{Adiabatic \& Isochoric}: $dS = 0$, $dV=0$ which leads to $dU \leq 0 \rightarrow U_\text{min}$
 % \end{itemize}
 
-\subsection{Legendre Transforms}
+\subsection{Legendre Transforms} \label{LegendreTransforms}
 %$U$ is defubed a function of the extensive parameters $U(S,X,...)$. Frequently, we want a function $\phi(y)$ that is naturally a function of the intensive variables, raher than the extensive variables; it would be nice if we could specify the temperature instead of the entropy. 
 The difficulty in working with the internal energy, $U$, is that it is a natural function of the wrong set of variables: V is the natural, 'independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural 'independent' variable of U for reversible heat exchange,\footnote{You can think of reversible heating as T-S work if you'd like.} but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, 'independent' variables. \emph{Taking the \emph{Legendre transform} is a general procedure to 'switch' which variables are the natural variables in your thermodynamic potential of interest.}\\
 \textbf{How To Take a Legendre Transform}\\
@@ -859,10 +859,10 @@ V &= \frac{\partial H}{\partial P}|_S
 The Legendre transform works because it is an effective switch of coordinate systems, and we don't lose any information in doing this switch of coordinates. This change of coordinates is possible because U is a convex function of the extensive variables, and because U is a 'smooth' function of these variables (there are no discontinuities in the first derivative of U). Therefore, there is a one-to-one mapping between the first derivative of U with respect to the extensive variables and the extensive variable itself, as shown in the Figure \ref{LegendreGraph} \footnote{From \href{http://dx.doi.org/10.1119/1.3119512}{``Making sense of the Legendre transform'', RKP Zia et al. Am. J. Phys. 2007}, which is a really good read if you desire a deeper understanding of Legendre transforms.}:
 
 \begin{figure}[h]
-\label{LegendreGraph}
 \centering
 \includegraphics[width=\textwidth]{legendregraph.pdf}
 \caption{\textbf{A} The graph of a convex function F(x). The tangent line at one point is illustrated. \textbf{B} The graph of $S(x)$, the slope of a convex function.}
+\label{LegendreGraph}
 \end{figure}
 
 The one-to-one mapping of the slope of U with respect to its extensive variables and the extensive variables themselves means we can construct a new function from U that has the slope as its natural variable with no loss of information;  all the original thermodynamic information contained in U is also contained in its Legendre transforms, although in a different form. %The true convenience is that it still has units of energy, and that it has intuitive changes in concavity.
@@ -973,7 +973,7 @@ This permits us to obtain the following relationships:
 \eqe
 
 %%%%%
-\subsection{How to do thermo derivations} 
+\subsection{How to do thermo derivations} \label{howToDerive}
 We first give some general relationships from calculus that are useful in manipulating thermodynamic variables, and then we give you a general way to think about deriving quantities in thermodynamics.
 \subsubsection{Very useful relationships of $f(x,y)$}
 \textbf{Inverse rule}:
@@ -984,6 +984,7 @@ This relation is useful for getting things to the numerator from the denominator
 
 \textbf{Chain rule}:
 \eqs
+\label{chainRule}
 \left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
 \eqe
 This is good if you can't take a derivative of f with respect to X, but you can take the derivative of u with respect to X (and hopefully of f with respect to u).
@@ -997,6 +998,7 @@ This is good for changing paths: you get to hold different variables constant wh
 
 \textbf{Another, unnamed rule} (Mike calls it the generalized chain rule):
 \eqs
+\label{genChainRule}
 \left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
 \eqe
 This is also good for changing paths, especially for heat capacity paths (this was the relation we used to derive the relationship between $C_p$ and $C_V$).
@@ -1095,7 +1097,7 @@ and thus we can write
 dU = (n c_P - PV \alpha_V)dT + V(P \beta_T - T \alpha_V)dP
 \eqe
 Clearly, it is possible to think about $dU$ in terms of variations in the intensive variables, but it's much more natural to think of $dU$ in terms of $dV$ and $dS$.
-
+\subsection{A systematic way to think about derivatives} \label{systematicWayDerivatives}
 We're starting to build up a large number of derivatives and second derivatives of the free energies, it would be nice to have systematic way of representing and thinking of these derivatives. It turns out you can represent these derivatives as matrices. Lets look at the order of some derivatives of $G(T,P) \rightarrow dG = -S dT + V dP$:
 \eqs
 \frac{\partial G}{\partial T}|_P &= -S\\
@@ -1121,111 +1123,123 @@ $\frac{\partial}{\partial H}$ & $-\frac{\partial M}{\partial T}$ & $V \cdot \gam
 \end{tabular}
 \end{center}
 You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are controlled the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because of $U$ is convex up with respect to the extensive variables.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 24, 2014}
-%Last lecture we asked ourselves what the variation of the volume with respect to temperature (constant magnetization) is equal ($\frac{\partial V}{\partial T}|_M$)
-%\eqs
-%\frac{\partial V}{\partial T}|_M = \frac{\partial V}{\partial T}|_H
-%\eqe
-%and from last time we have
-%\eqs
-%\frac{1}{V}\frac{\partial V}{\partial T}|_M &= \frac{1}{V}\frac{\partial V}{\partial T}|_H + \frac{1}{V}\frac{\partial V}{\partial M}|_T \frac{\partial M}{\partial T}|_H\\
-%&= \frac{1}{V}\frac{\partial V}{\partial T}|_H + \frac{1}{V}\frac{\partial V}{\partial M}|_T M'(T)\\
-%\eqe
-%and $\frac{\partial V}{\partial M}|_T = \frac{\partial V}{\partial H}|_T \frac{\partial H}{\partial M}|_T = \frac{\gamma}{\chi}$ thus:
-%\eqs
-%\alpha_M = \alpha_H + \frac{\gamma}{\chi}M'(T)
-%\eqe
-%in general we will consider a paramagnet, so $\chi > 0$.  Also, the magnetization is relatively constant until when it gets close to $T_c$ the Curie temperature, at which it falls off to zero.  Thus, we can assume $M'(T) < 0$.\\
-%
-%What about thermal expansion?
-%\eqs
-%\alpha_V &= \frac{1}{V}\frac{\partial V}{\partial T}|_P\\
-% &= -\frac{1}{V}\frac{\partial S}{\partial P}|_T\\
-%&= -\frac{1}{V}\frac{\partial S}{\partial V}|_T \frac{\partial V}{\partial P}|_T\\
-%&= \beta_T \frac{\partial S}{\partial V}|_T
-%\eqe
-%If we have a rod that has a changing length $l$, then $\Delta E \propto \frac{1}{l^2}$.  $S$ is our disorder, or probability to occupy more states.  As the volume goes up, we will see that our entropy will also go up.  Can $\alpha_V < 0?$  Add rotations.  There are more configurations when the chains in a polymer are bent, thus at higher temperature the size goes down.
-%
-%\un{What you should be able to do by now:}
-%\begin{enumerate}[(1)]
-%\item Identify work terms
-%\item Construct the relevant thermodynamic potential
-%\item Define equilibrium (internal degrees of freedom consistent with boundary conditions)
-%\item Define the relevant properties (see matrix of 2nd derivatives)
-%\item Relate thermodynamic quantities and thus variations
-%\end{enumerate}
-%
-%\subsection{Intro. to multicomponent systems}
-%Back to open systems, we know
-%\eqs
-%dU = TdS - PdV + \sum_i \mu_i dn_i
-%\eqe
-%where $\mu_i = \frac{\partial U}{\partial n_i}|_{S,V}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, n_j^{(1)}$ describing the first and $S^{(2)}, V^{(2)}, n_j^{(2)}$ describing the second.  We know
-%\eqs
-%\partial S^{(1)} &= -\partial S^{(2)}\\
-%\partial V^{(1)} &= -\partial V^{(2)}\\
-%\partial n_j^{(1)} = -\partial n_j^{(2)}
-%\eqe
-%where $j=[1,...,r]$.  Meanwhile
-%\eqs
-%U &=\sum_{\alpha=1}^v U^{\alpha}\\
-%S&= \sum_{\alpha=1}^v S^{\alpha}\\
-%V&= \sum_{\alpha} V^{\alpha}\\
-%N&= \sum_{\alpha} n^{\alpha}\\
-%\eqe
-%\eqs
-%\partial U = \sum_\alpha T^{(\alpha)} (\partial S)^\alpha - P^{(\alpha)} (\partial V)^\alpha + \sum_{j=1}^v \mu_j (\partial n_j)^\alpha
-%\eqe
-%This is the first order displacement of $U$.  If the system is at equilibrium, $\partial U \geq 0$.  If true equilibrium, $\partial U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase.\\
-%
-%\subsection{Gibbs Phase rule} If there are $v$ phases coexisting (at equilibrium and constant $T, P$ (+2 equations)), then
-%\eqs
-%\mu_i^{(\alpha)} (T,P,x_1^\alpha,... x_{r-1}^\alpha) = \mu_i^{(\gamma)} (T,P,x_1^\gamma,... x_{r-1}^\gamma)
-%\eqe
-%and so $1 \leq \alpha < \gamma \leq v$ (for the number of phases, and for the number of species we have $1 < i < r$.  Ultimately, there are $r(v-1)$ equations for the chemical potential.
-%
-%\un{Gibbs Phase rule:}  The thermodynamic degrees of freedom $f$ is
-%\eqs
-%\boxed{f = 2 + r - v}
-%\eqe
-%be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
-%
-%What is a \un{stable} equilibrium? (see Chandlor Ch. 2)
-%\eqs
-%(\Delta U)_{S,V,n_j} = \partial U + \partial^2 U + ... > 0\\
-%\eqe
-%At a new equilibrium, $\partial U = 0$, and so $\Delta U \approx \partial^2 U > 0$.  This here is a guarantee of stability.  If we think of a composite system with an thermal wall, and then fix 
-%\eqs
-%\partial S &= \partial S^{(1)} + \partial S^{(2)} = 0\\
-%\partial V^{(1)}&= \partial V^{(2)} = 0\\
-%\partial n^{(1)} &= \partial n^{(2)} 
-%\eqe
-%then
-%\eqs
-%\partial^2 U&= \partial^2U^{(1)} + \partial^2 U^{(2)}\\
-%&= \frac{1}{2}\frac{\partial^2U}{\partial S^{(1)2}}(\partial S^{(1)2}) + \frac{1}{2}\frac{\partial^2U}{\partial S^{(2)2}} (\partial S^{(2)2})
-%\eqe
-%\eqs
-%\frac{\partial^2U}{\partial S^{2}}|_{V,n} &= \frac{\partial T}{\partial S} = \frac{T}{c_V}\\
-%\partial^2U &= \frac{1}{2}(\partial S^{(1)2})[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\\
-%T[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}] &\geq 0\\
-%\eqe
-%Thus we get the result that $c_V \geq 0$.  Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
-%
-%\subsection{Phase stability}
-%With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases 
-%\eqs G^\alpha &= G^\beta \\ \Delta G &= 0\eqe
-%we can also read off the first derivatives $\frac{\partial G}{\partial T}|_P = -S$ and $\frac{\partial G}{\partial P}|_T = V$ which holds for $\alpha$ or $\beta$.  At a phase equilibrium, we should have a discontinuity in the change in volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).  G(T)?
-%\eqs
-%\frac{\partial G}{\partial T}|_P &= - S\\
-%\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{\partial S}{\partial T}|_P = -\frac{c_P}{T} <0\\
-%\frac{\partial G}{\partial P}|_T &= V\\
-%\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V <0\\
-%\eqe
-%For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor (and are all negative).  In addition, $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
-%
-%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 24, 2014}
+Last lecture we asked ourselves what the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field: %($\frac{\partial V}{\partial T}|_M$)
+\eqs
+\left(\frac{\partial V}{\partial T}\right)_M \to? \left(\frac{\partial V}{\partial T}\right)_H
+\eqe
+We can apply the generalized chain rule, Eq. \ref{genChainRule}, in this situation:
+\eqs
+\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_M &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_H + \frac{1}{V}\left(\frac{\partial V}{\partial M}\right)_T \left(\frac{\partial M}{\partial T}\right)_H\\
+&= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_H + \frac{1}{V}\left(\frac{\partial V}{\partial M}\right)_T M'(T)\\
+\eqe
+Where we abbreviate $\left(\frac{\partial M}{\partial T}\right)_H$ as $M'(T)$. We know $\left(\frac{\partial V}{\partial M}\right)_T = \left(\frac{\partial V}{\partial H}\right)_T \left(\frac{\partial H}{\partial M}\right)_T = \frac{\gamma}{\chi}$, thus:
+\eqs
+\alpha_M = \alpha_H + \frac{\gamma}{\chi}M'(T)
+\eqe
+Mostly materials are either paramagnetic or ferromagnetic, so $\chi > 0$.  For a ferromagnet, the magnetization is relatively constant until when $T$ gets close to the Curie temperature,$T_c$, at which it falls rapidly to zero.  Thus, we can assume $M'(T) < 0$.\\
+
+What about thermal expansion?
+\eqs
+\label{entropicElastic}
+\alpha_V &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P\\
+&= -\frac{1}{V}\left(\frac{\partial S}{\partial P}\right)_T \mbox{ (Maxwell)}\\
+&= -\frac{1}{V}\left(\frac{\partial S}{\partial V}\right)_T \left(\frac{\partial V}{\partial P}\right)_T \mbox{ (Chain Rule, Eq. \ref{chainRule})}\\
+&= \beta_T \left(\frac{\partial S}{\partial V}\right)_T
+\eqe
+%If a rod changes in length by $\Delta l$, then $\Delta E \propto \Delta l^2$.
+As we'll see in stat mech, $S$ is a measure of the number of states the system can occupy.  As the volume goes up, the number of states should go up, so the entropy should also go up, so Eq.\ref{entropicElastic} makes sense. 
+
+Can $\alpha_V < 0?$  
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Short_and_Long_Comparison}
+\caption{The reason polymers have a negative thermal expansion coefficient is because of entropy: their are more ways for the polymer to wiggle around when it isn't stretched out. We'll get quantitative about this in stat mech}
+\label{shortLongEntropy}
+\end{figure}
+Yes! Indeed, this is observed in many systems. The basic way in which this happens is when molecules have more degees of freedom when the system is smaller. One examples is in polymers: there are more configurations when the chains in a polymer are bent, thus as temperature increases, polymers tend to shrink!
+
+\un{What you should be able to do by now:}
+\begin{enumerate}[(1)]
+\item Identify work terms
+\item Construct the relevant thermodynamic potential, \ref{LegendreTransforms}
+\item Define equilibrium (internal degrees of freedom consistent with boundary conditions) 
+\item Define the relevant properties: \ref{systematicWayDerivatives}
+\item Relate thermodynamic quantities and thus variations: \ref{howToDerive}
+\end{enumerate}
+
+\subsection{Intro. to multicomponent systems}
+Back to open systems, we know
+\eqs
+dU = TdS - PdV + \sum_i \mu_i dn_i
+\eqe
+where $\mu_i = \frac{\partial U}{\partial n_i}|_{S,V}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, n_j^{(1)}$ describing the first and $S^{(2)}, V^{(2)}, n_j^{(2)}$ describing the second.  We know
+\eqs
+\partial S^{(1)} &= -\partial S^{(2)}\\
+\partial V^{(1)} &= -\partial V^{(2)}\\
+\partial n_j^{(1)} = -\partial n_j^{(2)}
+\eqe
+where $j=[1,...,r]$.  Meanwhile
+\eqs
+U &=\sum_{\alpha=1}^v U^{\alpha}\\
+S&= \sum_{\alpha=1}^v S^{\alpha}\\
+V&= \sum_{\alpha} V^{\alpha}\\
+N&= \sum_{\alpha} n^{\alpha}\\
+\eqe
+\eqs
+\partial U = \sum_\alpha T^{(\alpha)} (\partial S)^\alpha - P^{(\alpha)} (\partial V)^\alpha + \sum_{j=1}^v \mu_j (\partial n_j)^\alpha
+\eqe
+This is the first order displacement of $U$.  If the system is at equilibrium, $\partial U \geq 0$.  If true equilibrium, $\partial U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase.\\
+
+\subsection{Gibbs Phase rule} If there are $v$ phases coexisting (at equilibrium and constant $T, P$ (+2 equations)), then
+\eqs
+\mu_i^{(\alpha)} (T,P,x_1^\alpha,... x_{r-1}^\alpha) = \mu_i^{(\gamma)} (T,P,x_1^\gamma,... x_{r-1}^\gamma)
+\eqe
+and so $1 \leq \alpha < \gamma \leq v$ (for the number of phases, and for the number of species we have $1 < i < r$.  Ultimately, there are $r(v-1)$ equations for the chemical potential.
+
+\un{Gibbs Phase rule:}  The thermodynamic degrees of freedom $f$ is
+\eqs
+\boxed{f = 2 + r - v}
+\eqe
+be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
+
+What is a \un{stable} equilibrium? (see Chandlor Ch. 2)
+\eqs
+(\Delta U)_{S,V,n_j} = \partial U + \partial^2 U + ... > 0\\
+\eqe
+At a new equilibrium, $\partial U = 0$, and so $\Delta U \approx \partial^2 U > 0$.  This here is a guarantee of stability.  If we think of a composite system with an thermal wall, and then fix 
+\eqs
+\partial S &= \partial S^{(1)} + \partial S^{(2)} = 0\\
+\partial V^{(1)}&= \partial V^{(2)} = 0\\
+\partial n^{(1)} &= \partial n^{(2)} 
+\eqe
+then
+\eqs
+\partial^2 U&= \partial^2U^{(1)} + \partial^2 U^{(2)}\\
+&= \frac{1}{2}\frac{\partial^2U}{\partial S^{(1)2}}(\partial S^{(1)2}) + \frac{1}{2}\frac{\partial^2U}{\partial S^{(2)2}} (\partial S^{(2)2})
+\eqe
+\eqs
+\frac{\partial^2U}{\partial S^{2}}|_{V,n} &= \frac{\partial T}{\partial S} = \frac{T}{c_V}\\
+\partial^2U &= \frac{1}{2}(\partial S^{(1)2})[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\\
+T[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}] &\geq 0\\
+\eqe
+Thus we get the result that $c_V \geq 0$.  Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
+
+\subsection{Phase stability}
+With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases 
+\eqs G^\alpha &= G^\beta \\ \Delta G &= 0\eqe
+we can also read off the first derivatives $\frac{\partial G}{\partial T}|_P = -S$ and $\frac{\partial G}{\partial P}|_T = V$ which holds for $\alpha$ or $\beta$.  At a phase equilibrium, we should have a discontinuity in the change in volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).  G(T)?
+\eqs
+\frac{\partial G}{\partial T}|_P &= - S\\
+\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{\partial S}{\partial T}|_P = -\frac{c_P}{T} <0\\
+\frac{\partial G}{\partial P}|_T &= V\\
+\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V <0\\
+\eqe
+For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor (and are all negative).  In addition, $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 25, 2014}
 %From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$.  What is our $T_B$ (boiling temp.)?
