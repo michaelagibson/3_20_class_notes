@@ -586,7 +586,7 @@ As volume goes up, entropy will too.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 12, 2014}
-Now that the entropy has been defined, we are ready to start thinking about $U$ in terms of equilibrium processes, where we can replace $\delta Q$ by $TdS$. In this case, an arbitrary change in the state of our system can be represented as:
+Now that the entropy has been defined, we are ready to start thinking about $U$ in terms of equilibrium processes, where we can replace $\dbar Q$ by $TdS$. In this case, an arbitrary change in the state of our system can be represented as:
 
 \eqs
 dU = TdS + \sum_i Y_i dX_i
@@ -600,11 +600,11 @@ Energetic calculations are usually easier to do in the Legendre formulation, whi
 The combined first and second law leads to some powerful representations and insights into the properties of $U$.
 
 \subsection{Mathematical Properties of $U$}
-\subsubsection{U is a first order homogoneous of the extensive variables, as is S}
-The entropy is extensive (i.e. one can add the entropy of subsystems to obtain the entropy of a composite system). It also means that multipling the size of the system by some parameter, $\lambda$, gives $\lambda$ times the original entropy: 
-$S(\lambda U_\lambda X_i,...)=\lambda S(U,X_i,...)$
+\subsubsection{U is first order homogeneous of the extensive variables, as is S}
+The entropy is extensive (i.e. one can add the entropy of subsystems to obtain the entropy of a composite system). It also means that multiplying the size of the system by some parameter, $\lambda$, gives $\lambda$ times the original entropy: 
+$S(\lambda U, \lambda X_i,...)=\lambda S(U,X_i,...)$
 
-You'll recognize this as tantamount to stating that the entropy is a first order homogeneous function. A similar argument can be made for the internal energy, which we also know is extensive. While one can make a somewhat hand-waving argument about integrating the internal energy to get a definition of $U$ instead of just $dU$, an elegant way to arrive at the same relationship is to make use of the fact that the internal energy is a first order homogeneous function. Hence, the purpose of discussing first order homogeneous functions is to avoid the physically murky reasoning that you need to introduce to integrate $dU$ to get $U$.
+This states that the entropy is a first order homogeneous function. A similar argument can be made for the internal energy, which is also extensive. While one can make a somewhat hand-waving argument about integrating the internal energy to get a definition of $U$ instead of just $dU$, an elegant way to arrive at the same relationship is to make use of the fact that the internal energy is a first order homogeneous function. Hence, the purpose of discussing first order homogeneous functions is to avoid the physically murky reasoning that you need to introduce to integrate $dU$ to get $U$.
 
 \subsubsection{U can be defined in terms of a sum of the conjugate pairs}
 We derive this definition below. The result is sometimes called the \emph{Euler Relation}.
@@ -627,12 +627,12 @@ S \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda S)} + X \frac{\p
 
 Now, this next part seems trivial, but it's actually a nice, subtle trick. We used the definition of a homogeneous first order function to get U on the right hand side, so anything on the left hand side is an alternative defintion of U. By setting $\lambda = 1$, we can set each of the remaining derivatives equal to the conjugate forces:
 $\frac{\partial U(S, X,...)}{\partial S} = T$, $\frac{\partial U(S, X,...)}{\partial X} = Y$, and so on for all of the extensive variables.
-Remebering that the right hand side is $U(S,X,...)$, this allows us to show that U is defined as:
+Remembering that the right hand side is $U(S,X,...)$, this allows us to show that U is defined as:
 \eqs
 U(S,X,...) = TS + \sum_i Y_i X_i
 \eqe
 
-This definition is very useful, so it's important we have a rigorous basis for it (which we just showed above!). It is gives us the Gibbs-Duhem equations, and also allows us to make changes of variables to other free energy functions which have different natural variables, such as the enthalpy, which has natural variables of $S$ and $P$:
+This definition is very useful, so it's important we have a rigorous basis for it (which we just showed above!). It gives us the Gibbs-Duhem equations, and also allows us to make changes of variables to other free energy functions which have different natural variables, such as the enthalpy, which has natural variables of $S$ and $P$:
 \eqs H = U + PV \eqe
 Plugging in the combined first and second law and the total differential of $PV$ gives:
 \eqs dH = TdS +VdP \eqe
@@ -675,6 +675,7 @@ TdS + \sum_i Y_i dX_i&=T dS + S dT + \sum_i Y_i d X_i + \sum_i X_i d Y_i \\
 \end{align*} 
 
 This is called a \emph{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. They have a variety of convenient uses, and we will come back to them frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:\\
+
 Let's think about how the chemical potential of a binary system changes. In particular, we'll consider the experimentally relevant case where the system is at constant pressure and temperature ($dP=dT=0$), and we are varying the chemical potential of one component (say by flowing a vapor with different concentrations through the system). Then, the Gibbs-Duhem equation simplifies to:
 \eqs N_1 d \mu_1 = -N_2 d \mu_2 \eqe
 In words, this says that varying the chemical potential of one component automatically causes the chemical potential of the other component to change in the opposite direction, and that the rate of this change is related to the mole numbers  of the two components in the system. This is a deep and unintuitive truth.
