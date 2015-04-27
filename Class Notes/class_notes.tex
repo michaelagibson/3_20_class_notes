@@ -1310,89 +1310,88 @@ Therefore, as a system passes through a two phase equilibrium, it should exhibit
 For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
 
 
-
-
-
-
 %With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 25, 2014}
-%From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$.  What is our $T_B$ (boiling temp.)?
-%\eqs
-%\Delta G_{l\rightarrow v}(T_B) = 0
-%\eqe
-%We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta H_{l\rightarrow v} = 120$ J/mol, and $T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.  How do we evaluate $\Delta G_{l\rightarrow v}(T)$?  We know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation.
-%\eqs
-%\Delta G_{l\rightarrow v}(T) &\approx \Delta H - T \Delta S\\
-%&= \Delta H_{\phi T}-T\frac{\Delta H_{\phi T}}{T_{\phi T}} = \Delta H_{\phi T}(1-\frac{T}{T_{\phi T}})
-%\eqe
-%Remember to check your $\Delta c_P$.  If this is not correct, try $c_P^{l}$ or $c_P^{v}$.\\
-%
-%The thermodynamic potential is continuous.  However, the first derivative of the thermodynamic potential is \bold{not}.
-%
-%\subsection{Ehrenfest classification of $\phi T$}
-%\un{1st order}:  The first derivative of the potential is discontinuous (S, V, ...)\\
-%\un{2nd order}:  The second derivative of the potential is also discontinuous (but this implies that the first derivative is not)\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 25, 2014}
+From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$.  What is our $T_B$ (boiling temp.)?
+\eqs
+\Delta G_{l\rightarrow v}(T_B) = 0
+\eqe
+We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta H_{l\rightarrow v} = 120$ J/mol, and $T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.  How do we evaluate $\Delta G_{l\rightarrow v}(T)$?  We know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation.
+\eqs
+\Delta G_{l\rightarrow v}(T) &\approx \Delta H - T \Delta S\\
+&= \Delta H_{\phi T}-T\frac{\Delta H_{\phi T}}{T_{\phi T}} = \Delta H_{\phi T}(1-\frac{T}{T_{\phi T}})
+\eqe
+Remember to check your $\Delta c_P$.  If this is not correct, try $c_P^{l}$ or $c_P^{v}$.\\
+
+\subsection{Ehrenfest classification of $\phi T$}
+Since free energies curves of individual phases are continuous, the equilibrium free energy which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy curve will have discontinuities where different curves intersect, giving rise to a convenient way to describe phase transformations. The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be uniquely identified by discontinuities in the derivatives of the appropriate free energy. First order transitions display discontinuities in the first order derivatives (volume, mole number, and entropy), while second order transitions display continuous first derivatives but discontinuties in the curvature of G (i.e. things like compressibilities and heat capacities are discontinuous).
+\un{1st order}:  The first derivative of the potential is discontinuous (S, V, ...)\\
+\un{2nd order}:  The second derivative of the potential is also discontinuous (but this implies that the first derivative is not)\\
+Classifications beyond second order usually are not made, but presumably third-order phase transitions exist under the Ehrenfest classification, they just aren't as useful in real life, so we don't bother talking about them.
+
 %\un{3rd order}: Third derivative of the potential...\\
-%
-%\un{Phase diagram}:  A map of of states with lowest free energy at equilibrium.
-%
-%How much does pressure affect the solid phases stability?
-%\eqs
-%\Delta G = \Delta P \cdot \Delta V\\
-%\frac{\partial G}{\partial P}|_T = V
-%\eqe
-%The volume is $V = 5 \cdot 10^{-6}$m\three/mol, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol.  Then $\Delta G = 10\cdot 10^{9} \cdot 5 \cdot 10^{-7} = 1000 \text{J/mol} \approx 10$ meV.
-%
-%Now lets think about \un{iron}, which prefers a phase with smaller sensitivity to volume change (more FCC).  This is less sensitive to changes in pressure ($\Delta P$).  $G_\text{hcp} \approx G_\text{bcc}$ at low $P$?
-%
-%\un{Sulfur}: Up to 8 valencies, anions are $S^{2-}$.
-%
-%\subsection{Determining Phase Diagrams}
-%Given a pressure vs temperature ($P$ vs. $T$) curve with a phase $\alpha$ above and $\beta$ below, we want to find the equation for our coexistence line.  $G_{T,P}^\alpha = G_{T,P}^\beta$ results in $dG_{T,P}^\alpha = dG_{T,P}^\beta$ and we have
-%\eqs
-%-S^\alpha dT + V^\alpha dP = -S^\beta dT + V^\beta dP
-%\eqe
-%at the phase transformation $\alpha \rightarrow \beta$
-%\eqs
-%\Delta V^{\alpha \rightarrow \beta} &= V^\beta - V^\alpha\\
-%\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha
-%\eqe
-%and so
-%\eqs
-%\frac{dP}{dT} = \frac{\Delta S^{\alpha \rightarrow \beta}}{\Delta V^{\alpha \rightarrow \beta}}
-%\eqe
-%At the phase transformation ($\phi T$), 
-%\eqs
-%\Delta S^{\alpha \rightarrow \beta} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}\\
-%\frac{dP}{dT} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta} \Delta V^{\alpha \rightarrow \beta}}\\
-%\eqe
-%This was originally derived from Clausius-Clapeyron.
-%
-%\subsection{Example: solid to liquid transition}
-%\eqs
-%\Delta S &= S_l - S_s\\
-%\Delta V &= V_l - V_s
-%\eqe
-%most of the time $\Delta S > 0$.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  If $\Delta V < 0$, then the line will have a negative slope.
-%
-%\underline{How much $\Delta P$ is required to raise the melting point of Pb by 10\degree C?}
-%\eqs
-%\Delta H_m &= 4810 \text{J/mol}\\
-%T_M &= 600 K\\
-%v_l &= 19.47 {\text{cm}^3\text{/mol}}\\
-%v_s &= 18.92 {\text{cm}^3\text{/mol}}\\
-%\eqe
-%and so
-%\eqs
-%\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
-%\Delta P &= \frac{\Delta H}{\Delta V}ln(\frac{T_f}{T_i}) = 2870 \cdot 10^5 \text{Pa}
-%\eqe
-%
-%\subsection{Le Chatelier Principle}
-%Typical slopes.  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ cc/mol, and the slope is large (+/-).  For solid to gas,  $\Delta H = 100$ kJ, $\Delta V = 10^4$ cc/mol, and the slope is small (+).
-%
+\subsection{Elemental Phase Diagrams}
+
+\un{Phase diagram}:  A map of of states with lowest free energy at equilibrium.
+
+How much does pressure affect the solid phases stability?
+\eqs
+\Delta G = \Delta P \cdot \Delta V\\
+\frac{\partial G}{\partial P}|_T = V
+\eqe
+The volume is $V = 5 \cdot 10^{-6}$m\three/mol, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol.  Then $\Delta G = 10\cdot 10^{9} \cdot 5 \cdot 10^{-7} = 1000 \text{J/mol} \approx 10$ meV.
+
+Now lets think about \un{iron}, which prefers a phase with smaller sensitivity to volume change (more FCC).  This is less sensitive to changes in pressure ($\Delta P$).  $G_\text{hcp} \approx G_\text{bcc}$ at low $P$?
+
+\un{Sulfur}: Up to 8 valencies, anions are $S^{2-}$.
+
+\subsection{Determining Phase Diagrams}
+Given a pressure vs temperature ($P$ vs. $T$) curve with a phase $\alpha$ above and $\beta$ below, we want to find the equation for our coexistence line.  $G_{T,P}^\alpha = G_{T,P}^\beta$ results in $dG_{T,P}^\alpha = dG_{T,P}^\beta$ and we have
+\eqs
+-S^\alpha dT + V^\alpha dP = -S^\beta dT + V^\beta dP
+\eqe
+at the phase transformation $\alpha \rightarrow \beta$
+\eqs
+\Delta V^{\alpha \rightarrow \beta} &= V^\beta - V^\alpha\\
+\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha
+\eqe
+and so
+\eqs
+\frac{dP}{dT} = \frac{\Delta S^{\alpha \rightarrow \beta}}{\Delta V^{\alpha \rightarrow \beta}}
+\eqe
+At the phase transformation ($\phi T$), 
+\eqs
+\Delta S^{\alpha \rightarrow \beta} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}\\
+\frac{dP}{dT} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta} \Delta V^{\alpha \rightarrow \beta}}\\
+\eqe
+This was originally derived from Clausius-Clapeyron.
+
+\subsection{Example: solid to liquid transition}
+\eqs
+\Delta S &= S_l - S_s\\
+\Delta V &= V_l - V_s
+\eqe
+most of the time $\Delta S > 0$.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  If $\Delta V < 0$, then the line will have a negative slope.
+
+\underline{How much $\Delta P$ is required to raise the melting point of Pb by 10\degree C?}
+\eqs
+\Delta H_m &= 4810 \text{J/mol}\\
+T_M &= 600 K\\
+v_l &= 19.47 {\text{cm}^3\text{/mol}}\\
+v_s &= 18.92 {\text{cm}^3\text{/mol}}\\
+\eqe
+and so
+\eqs
+\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
+\Delta P &= \frac{\Delta H}{\Delta V}ln(\frac{T_f}{T_i}) = 2870 \cdot 10^5 \text{Pa}
+\eqe
+
+\subsection{Le Chatelier Principle}
+Typical slopes.  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ cc/mol, and the slope is large (+/-).  For solid to gas,  $\Delta H = 100$ kJ, $\Delta V = 10^4$ cc/mol, and the slope is small (+).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - September 26, 2014}
 %Simplified Clapeyron for the condensed phase and vapor equilibrium.  First we had the vapor as an ideal gas $V = \frac{RT}{P}$, and then second se approximated $\Delta V \approx V_g$
