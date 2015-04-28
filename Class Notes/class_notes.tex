@@ -939,7 +939,7 @@ This might seem a bit strange. The change in entropy with respect to pressure at
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 17, 2014}
 \subsection{Maxwell Relations}
-Previously we discussed \bold{Maxwell Relations}, which allow us to swap a derivative in terms of some thermodynamic variables $x$ and $y$ for a derivative in terms of the conjugates of $x$ and $y$. They may be defined generally as
+Previously we discussed \bold{Maxwell relations}, which allow us to swap a derivative in terms of some thermodynamic variables $x$ and $y$ for a derivative in terms of the conjugates of $x$ and $y$. They may be defined generally as
 \eqs \boxed{
 \left(\frac{\partial x}{\partial y}\right)_{\text{conj}[x]} = \pm \left(\frac{\partial {\text{conj}[y]}}{\partial {\text{conj}[x]}}\right)_{y}}
 \eqe
@@ -949,19 +949,19 @@ The $ \pm $ in the above expression happens because the sign flips whenever you 
 \item Equate the double partial derivatives.
 \end{enumerate}
 We now review some applications of Maxwell relations. 
-\subsubsection{Maxwell for an Ideal Gas}
-In general, we know, $dS = \frac{c_P}{T}dT - \alpha_V V dP$. We can apply this in the case of an ideal gas to get a concrete expression for the change in entropy under changes in temperature and pressure:%, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
+\subsubsection{Maxwell relations for an Ideal Gas}
+In general, $dS = \frac{c_P}{T}dT - \alpha_V V dP$. However, we can apply this in the case of an ideal gas to get a concrete expression for the change in entropy under changes in temperature and pressure:%, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
 \eqs
 d(PV) = nR dT &= V dP +P dV\\
-\frac{\partial V}{\partial T}|_P &= \frac{nR}{P}
+\Big(\frac{\partial V}{\partial T}\Big)_P &= \frac{nR}{P}
 \eqe
 Substituting gives: 
 \eqs
 \boxed{dS = -nR \frac{dP}{P} + c_P \frac{dT}{T}}
 \eqe
 
-\subsubsection{Magnetic Maxwells}
-One can perform Maxwell relations including other work terms too. We demonstrate this here. In particular, let's say we wanted expressions relating the behavior of entropy in a magnetic field to other quantities that are more easily measured; we want expressions for $\left(\frac{\partial S}{\partial P}\right)_{T,H}$ and $\left(\frac{\partial S}{\partial H}\right)_{T,P}$. Including magnetic work terms, $dU$ can be expressed as:
+\subsubsection{Magnetic Maxwell relations}
+One can perform Maxwell relations including other work terms too. We demonstrate this here. In particular, let's say we wanted expressions relating the behavior of entropy in a magnetic field to other quantities that are more easily measured, say $\left(\frac{\partial S}{\partial P}\right)_{T,H}$ and $\left(\frac{\partial S}{\partial H}\right)_{T,P}$. Including magnetic work terms, $dU$ can be expressed as:
 \eqs
 dU = TdS - PdV + \mu_0 H_0 dM
 \eqe
@@ -977,7 +977,7 @@ This permits us to obtain the following relationships:
 \eqe
 
 %%%%%
-\subsection{How to do thermo derivations} \label{howToDerive}
+\subsection{How to perform thermodynamic derivations} \label{howToDerive}
 We first give some general relationships from calculus that are useful in manipulating thermodynamic variables, and then we give you a general way to think about deriving quantities in thermodynamics.
 \subsubsection{Very useful relationships of $f(x,y)$}
 \textbf{Inverse rule}:
@@ -996,50 +996,54 @@ This is good if you can't take a derivative of f with respect to X, but you can 
 
 \textbf{Triplet rule}:
 \eqs
-\frac{\partial f}{\partial x}|_y \frac{\partial x}{\partial y}|_f \frac{\partial y}{\partial f}|_x = -1
+\Big(\frac{\partial f}{\partial x}\Big)_y \Big(\frac{\partial x}{\partial y}\Big)_f \Big(\frac{\partial y}{\partial f}\Big)_x = -1
 \eqe
 This is good for changing paths: you get to hold different variables constant when taking the other two derivatves
 
 \textbf{Another, unnamed rule} (Mike calls it the generalized chain rule):
+%\eqs
+%\label{genChainRule}
+%\left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
+%\eqe
 \eqs
 \label{genChainRule}
-\left(\frac{\partial f}{\partial x}\right)_y = \left(\frac{\partial f}{\partial u}\right)_y \left(\frac{\partial u}{\partial x}\right)_y
+\left(\frac{\partial f}{\partial x}\right)_g &= \left(\frac{\partial f}{\partial x}\right)_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g
 \eqe
 This is also good for changing paths, especially for heat capacity paths (this was the relation we used to derive the relationship between $C_p$ and $C_V$).
 %%%%%
 \subsubsection{Strategy to reduce variables}
-Thermo derivations are usually about simplifying messy derivatives. The object of these derivations is to simplify them by substituting in known materials parameters. Hence, these guidelines are all about how to manipulate the derivatives so that you can start to substitute in known materials parameters.
+Thermodynamic derivations are usually all about simplifying messy derivatives. The object of these derivations is to simplify them by substituting in known materials parameters. Hence, these guidelines are all about how to manipulate the derivatives so that you can start to substitute in known materials parameters.
 \begin{enumerate}[(1)]
-\item Bring the thermodynamic potentials to the numerator\\
+\item \un{Bring the thermodynamic potentials to the numerator.}\\
 i.e. given  Joule-Thompson expansion (isenthalpic), we can remove the constraint of a derivative at constant enthalpy (which we don't know how to take) by using the triplet rule:
 \eqs
-\frac{\partial T}{\partial P}|_H = -\frac{\frac{\partial H}{\partial P}|_T}{\frac{\partial H}{\partial T}|_P}
+\Big(\frac{\partial T}{\partial P}\Big)_H = -\frac{\Big(\frac{\partial H}{\partial P}\Big)_T}{\Big(\frac{\partial H}{\partial T}\Big)_P}
 \eqe
-\item Always bring $S$ to the numerator and turn it into a heat capacity\\
+\item \un{Always bring $S$ to the numerator and turn it into a heat capacity.}\\
 i.e. from $dH = TdS + VdP$:
 \eqs
-\left(\frac{\partial H}{\partial P}\right)_T &= T \frac{\partial S}{\partial P} + V\\
+\left(\frac{\partial H}{\partial P}\right)_T &= T \Big(\frac{\partial S}{\partial P}\Big)_T + V\\
 \left(\frac{\partial H}{\partial T}\right)_P &= T \left(\frac{\partial S}{\partial T}\right)_P\\
 \left(\frac{\partial T}{\partial P}\right)_H &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{T \left(\frac{\partial S}{\partial T}\right)_P}\\
 &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{c_P}\\
 &= \frac{-(-T\alpha_V V  + V)}{c_P}\\
 &= \frac{V(T\alpha_V -1)}{c_P}
 \eqe
-(where the above used the Maxwell relationship $\frac{\partial S}{\partial P}|_T = -\left(\frac{\partial V}{\partial T}\right)_P = -\alpha_V V$, and for an ideal gas we would have $\alpha_V = T^{-1}$, resulting in $\left(\frac{\partial T}{\partial P}\right)_H  = 0$)
-\item If needed, bring the volume to the numerator and turn it into a derivative of (T,P)
-\item Relate heat capacities to what you know
+(where the above used the Maxwell relationship $\left(\frac{\partial S}{\partial P}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_P = -\alpha_V V$, and for an ideal gas we would have $\alpha_V = T^{-1}$, resulting in $\left(\frac{\partial T}{\partial P}\right)_H  = 0$)
+\item \un{If needed, bring the volume to the numerator and turn it into a derivative of (T,P).}
+\item \un{Relate heat capacities to what you know.}
 \eqs
 c_P - c_V &= T[\left(\frac{\partial S}{\partial T}\right)_P - \left(\frac{\partial S}{\partial T}\right)_V]\\
 &= T[\left(\frac{\partial S}{\partial V}\right)_T \cdot \left(\frac{\partial V}{\partial T}\right)_P]
 \eqe
-where in the above I used the relation
+In the above I used the relation
 \eqs
 \left(\frac{\partial f}{\partial x}\right)_g &= \left(\frac{\partial f}{\partial x}\right)_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g
 \eqe
 continuing, we have
 \eqs
 c_P - c_V &= T\left[\left(\frac{\partial S}{\partial P}\right)_T \cdot \left(\frac{\partial P}{\partial V}\right)_T \cdot \left( \frac{\partial V}{\partial T}\right)_P\right]\\
-&= T\left[\left(\frac{\partial S}{\partial P}\right)_T \cdot (\frac{-1}{V\beta_T}) \cdot \left(\frac{\partial V}{\partial T}\right)_P\right]\\
+&= T\left[\left(\frac{\partial S}{\partial P}\right)_T \cdot \left(\frac{-1}{V\beta_T}\right) \cdot \left(\frac{\partial V}{\partial T}\right)_P\right]\\
 \eqe
 and from the Maxwell relation, $\left(\frac{\partial S}{\partial P}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_P = -\alpha_V V$:
 \eqs
@@ -1052,30 +1056,29 @@ c_P - c_V &= T\left[\frac{-\alpha_V V}{-\beta_T V} \alpha_V V\right]\\
 \subsubsection{Example: A rod under tension}
 Consider a rod that doesn't change volume and evolves adiabatically.  We apply a force $F$ to each end of the rod and obtain a change in pressure $dP$ as a result.  What happens to the temperature?
 \eqs
-dS &= \frac{\partial S}{\partial T}|_F dT + \frac{\partial S}{\partial F}|_T dF\\
+dS &= \left(\frac{\partial S}{\partial T}\right)_F dT + \left(\frac{\partial S}{\partial F}\right)_T dF\\
 dU &= TdS + Fdl
 \eqe
-From the triplet rule, $\frac{\partial T}{\partial F}|_S \frac{\partial F}{\partial S}|_T \frac{\partial S}{\partial T}|_F = -1$, and thus
+From the triplet rule, $\left(\frac{\partial T}{\partial F}\right)_S \left(\frac{\partial F}{\partial S}\right)_T \left(\frac{\partial S}{\partial T}\right)_F = -1$, and thus
 \eqs
-\frac{\partial T}{\partial F}|_S &= -\frac{\frac{\partial S}{\partial F}|_T}{\frac{\partial S}{\partial T}|_F}\\
-&=-\frac{\frac{\partial S}{\partial F}|_T}{\frac{c_F}{T}}\\
+\left(\frac{\partial T}{\partial F}\right)_S &= -\frac{\left(\frac{\partial S}{\partial F}\right)_T}{\left(\frac{\partial S}{\partial T}\right)_F}\\
+&=-\frac{\left(\frac{\partial S}{\partial F}\right)_T}{\frac{c_F}{T}}\\
 \eqe
-Now what is $\frac{\partial S}{\partial F}|_T$?  We can define a new potential
+Now what is $\left(\frac{\partial S}{\partial F}\right)_T$?  We can define a new potential
 \eqs
 \phi &= U - TS - Fl\\
 d\phi &= -SdT - ldF
 \eqe
 which yields
 \eqs
-\frac{\partial S}{\partial F}|_T = \frac{\partial l}{\partial T}|_F = \alpha_L
+\left(\frac{\partial S}{\partial F}\right)_T = \left(\frac{\partial l}{\partial T}\right)_F = \alpha_L
 \eqe
-The thermal expansion coefficient $\alpha_L = \frac{1}{l} \frac{\partial l}{\partial T}|_F$.  Putting this all together,
-\eqs\boxed{
-\frac{\partial T}{\partial F}|_S = - T l (\frac{\alpha_L}{c_F})}
+The thermal expansion coefficient $\alpha_L = \frac{1}{l} \left(\frac{\partial l}{\partial T}\right)_F$.  Putting this all together,
+\eqs\boxed{\left(\frac{\partial T}{\partial F}\right)_S = - T l \left(\frac{\alpha_L}{c_F}\right)}
 \eqe
 Now all we need is the materials parameters.  $c_F \approx c_P \approx 25$ J/molK and $\alpha_L \approx 2 \cdot 10^{-5}$ 1/K, $\Delta (F/A) \approx 100 MPa$:
 \eqs
-\Delta T = -(\Delta \frac{F}{A}) (A \cdot l) T \frac{\alpha_L}{c_F}
+\Delta T = -\left(\Delta \frac{F}{A}\right) (A \cdot l) T \frac{\alpha_L}{c_F}
 \eqe
 This results in a value of $\Delta T = -0.1 $K.  
 
@@ -1087,13 +1090,13 @@ dU = \left(\frac{\partial U}{\partial T}\right)_P dT + \left(\frac{\partial U}{\
 \eqe
 now let's take partials of the $U(S,V)$ we already know:
 \eqs
-\frac{\partial}{\partial P}|_T \cdot U &= T\frac{\partial S}{\partial P}|_T - P \frac{\partial V}{\partial P}|_T\\
+\left(\frac{\partial U}{\partial P}\right)_T &= T\left(\frac{\partial S}{\partial P}\right)_T - P \left(\frac{\partial V}{\partial P}\right)_T\\
 &= -T (\alpha_V V) - P (-\beta_T V)\\
 &= V(P \beta_T - T\alpha_V)
 \eqe
 Similarly,
 \eqs
-\frac{\partial}{\partial T}|_P \cdot U &= T\frac{\partial S}{\partial T}|_P - P \frac{\partial V}{\partial T}|_P\\
+\left(\frac{\partial U}{\partial T}\right)_P &= T\left(\frac{\partial S}{\partial T}\right)_P - P \left(\frac{\partial V}{\partial T}\right)_P\\
 &= n c_P - P V \alpha_V
 \eqe
 and thus we can write
@@ -1104,10 +1107,10 @@ Clearly, it is possible to think about $dU$ in terms of variations in the intens
 \subsection{A systematic way to think about derivatives} \label{systematicWayDerivatives}
 We're starting to build up a large number of derivatives and second derivatives of the free energies, it would be nice to have systematic way of representing and thinking of these derivatives. It turns out you can represent these derivatives as matrices. Lets look at the order of some derivatives of $G(T,P) \rightarrow dG = -S dT + V dP$:
 \eqs
-\frac{\partial G}{\partial T}|_P &= -S\\
-\frac{\partial G}{\partial P}|_T &= V\\
-\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{c_P}{T}\\
-\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V\\
+\left(\frac{\partial G}{\partial T}\right)_P &= -S\\
+\left(\frac{\partial G}{\partial P}\right)_T &= V\\
+\left(\frac{\partial^2 G}{\partial T^2}\right)_P &= -\frac{c_P}{T}\\
+\left(\frac{\partial^2 G}{\partial P^2}\right)_T &= -\beta_T V\\
 \eqe
 We can display the order of derivatives as follows:\\
 \begin{center}
@@ -1117,7 +1120,7 @@ We can display the order of derivatives as follows:\\
  $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$
 \end{tabular}
 \end{center}
-If we add a \bold{magnetic field} our energy becomes $dU = TdS - PdV + H dM$.  The various derivatives of $\phi = U - ST + PV - HM$ result in the following order of (second) derivatives:
+If we add a \emph{magnetic field} our energy becomes $dU = TdS - PdV + H dM$.  The various derivatives of $\phi = U - ST + PV - HM$ result in the following order of (second) derivatives:
 \begin{center}
 \begin{tabular}{c | c | c | c}
 $\phi$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$& $\frac{\partial}{\partial H}$\\ \hline
@@ -1126,11 +1129,11 @@ $\frac{\partial}{\partial P}$ & $\alpha_V \cdot V$ & $-\beta_T \cdot V$ & $V \cd
 $\frac{\partial}{\partial H}$ & $-\frac{\partial M}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
 \end{tabular}
 \end{center}
-You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are controlled the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because of $U$ is convex up with respect to the extensive variables.
+You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are a result of the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because $U$ is convex up with respect to the extensive variables.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 24, 2014}
-Last lecture we started to get interested in the diffrence that the choice of path makes in measuring thermodynamic quantities. So, we asked ourselves: what is the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field: %($\frac{\partial V}{\partial T}|_M$)
+Last lecture we started to look at the difference the choice of path makes in measuring thermodynamic quantities. So, we asked ourselves the following: what is the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field? %($\frac{\partial V}{\partial T}|_M$)
 \eqs
 \left(\frac{\partial V}{\partial T}\right)_M \to? \left(\frac{\partial V}{\partial T}\right)_H
 \eqe
@@ -1154,39 +1157,39 @@ What about thermal expansion?
 &= \beta_T \left(\frac{\partial S}{\partial V}\right)_T
 \eqe
 %If a rod changes in length by $\Delta l$, then $\Delta E \propto \Delta l^2$.
-As we'll see in stat mech, $S$ is a measure of the number of states the system can occupy.  As the volume goes up, the number of states should go up, so the entropy should also go up, so Eq.\ref{entropicElastic} makes sense. 
+As we'll see in stat mech, $S$ is a measure of the number of states the system can occupy.  As the volume goes up, the number of states should go up, so the entropy should also go up, so Eq. \ref{entropicElastic} makes sense. 
 
-Can $\alpha_V < 0?$  
+Can $\alpha_V < 0?$
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Short_and_Long_Comparison}
 \caption{The reason polymers have a negative thermal expansion coefficient is because of entropy: their are more ways for the polymer to wiggle around when it isn't stretched out. We'll get quantitative about this in stat mech}
 \label{shortLongEntropy}
 \end{figure}
-Yes! Indeed, this is observed in many systems. The basic way in which this happens is when molecules have more degees of freedom when the system is smaller. One examples is in polymers: there are more configurations when the chains in a polymer are bent, thus as temperature increases, polymers tend to shrink!
+Yes! Indeed, this is observed in many systems. This happens when molecules gain degrees of freedom as the system size decreases. One examples is in polymers: there are more configurations when the chains in a polymer are bent. Thus as temperature increases, polymers tend to shrink!
 
 
-\subsection{Checkin: What you should be able to do by now}
+\subsection{Check in: What you should be able to do by now}
 
 \begin{enumerate}[(1)]
-\item Identify work terms, \ref{}
-\item Construct the relevant thermodynamic potential, \ref{LegendreTransforms}
+\item Identify work terms
+\item Construct the relevant thermodynamic potential: see (\ref{LegendreTransforms})
 \item Define equilibrium (internal degrees of freedom consistent with boundary conditions) 
-\item Define the relevant properties: \ref{systematicWayDerivatives}
-\item Relate thermodynamic quantities and thus variations: \ref{howToDerive}
+\item Define the relevant properties: see (\ref{systematicWayDerivatives})
+\item Relate thermodynamic quantities and thus variations: see (\ref{howToDerive})
 \end{enumerate}
 
 
 \subsection{Equilibrium Conditions for Multicomponent Systems}\label{eqMultiComponent}
-Back to systems where we take the mole numbers into account, we can write $dU$ for a multicomponent system as:
+Let's return to systems where we consider the mole numbers. We can write $dU$ for a multicomponent system as
 \eqs
 dU = TdS - PdV + \sum_i \mu_i dn_i
 \eqe
-where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j\}^{(1)}$ describing the first and $S^{(2)}, V^{(2)}, n_j^{(2)}$ describing the second.  We know
+where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j^{(1)}\}$ describing the first and $S^{(2)}, V^{(2)}, \{n_j^{(2)}\}$ describing the second.  We know
 \eqs
 \partial S^{(1)} &= -\partial S^{(2)}\\
 \partial V^{(1)} &= -\partial V^{(2)}\\
-\partial n_j^{(1)} = -\partial n_j^{(2)}
+\partial n_j^{(1)} &= -\partial n_j^{(2)}
 \eqe
 where $j=[1,...,r]$.  Meanwhile
 \eqs
@@ -1196,30 +1199,30 @@ V&= \sum_{\alpha} V^{\alpha}\\
 N&= \sum_{\alpha} n^{\alpha}\\
 \eqe
 \eqs
-\d U = \sum_\alpha T^{(\alpha)} (\d S)^\alpha - P^{(\alpha)} (\d V)^\alpha + \sum_{j=1}^v \mu_j (\d n_j)^\alpha
+d U = \sum_\alpha T^{(\alpha)} (d S)^\alpha - P^{(\alpha)} (d V)^\alpha + \sum_{j=1}^v \mu_j (d n_j)^\alpha
 \eqe
-This is the first order displacement of $U$.  If the system is at equilibrium, $\d U \geq 0$.  If true equilibrium, $\d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, ex: charge is not coupled to mass flow like in a battery), then the intensive variables in any subsystem must be the same as in any other subsystem: if the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually, this means:
+This is the first order displacement of $U$.  If the system is at equilibrium, $d U \geq 0$.  If true equilibrium, $d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, just as charge is not coupled to mass flow in say, a battery), then the intensive variables in any subsystem must be the same as in any other subsystem.  If the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually this means:
 \begin{itemize}
-\item We always formulate the conditions for equilibrium in terms of the intensive variables.
-\item We can supply a bunch of constraints on the intensive variables of the different phases: they all need to be equal to one another. We derive these constraints in the next section.
+\item we always formulate the conditions for equilibrium in terms of the intensive variables.
+\item we can supply a bunch of constraints on the intensive variables of the different phases: they all need to be equal to one another. We derive these constraints in the next section.
 \end{itemize}
-If the exchange of extensive variables is coupled, it is the coupled sum of the the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous, if we denote $\mu^*$ as the electrochemical potential, it is easy to show that
+If the exchange of extensive variables is coupled, it is the coupled sum of the the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous. If we denote $\mu^*$ as the electrochemical potential, it is easy to show that
 $\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.\\
 
-\subsection{Constraints from equilibrium of heterogeneous systems: The Gibbs phase rule} \label{phaseRule}
-For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without invalidating (i.e. overspecifying the system) as:
+\subsection{Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule} \label{phaseRule}
+For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without invalidating (i.e. overspecifying) the system as:
 \eqs f=m-n \eqe
 We call $f$ the degrees of freedom of the system of equations. We define a phase as a part of a system which is measurably distinct in terms of its thermodynamic variables from another part of the subsystem.
 
 When multiple phases are in equilibrium with each other, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, we increase the vapor pressure of the gas for it to remain in equlibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust itself when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
-As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. Let there be p phases, and let there by c components in the system. We know that in each phase $\alpha$, a Gibbs-Duhem equation must hold:
+As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. Let there be $p$ phases, and let there by $c$ components in the system. We know that in each phase $\alpha$, a Gibbs-Duhem equation must hold:
 
 \eqs
 S^{\alpha }\text{dT}^{\alpha }-V^{\alpha }\text{dP}^{\alpha }+\underset{i=1}{\overset{c}{\Sigma }}N^{\alpha }\text{d$\mu $}_i^{\alpha }=0\eqe
 
-Hence, for each phase, there are \textit{ c} + 1 independent intensive variables, which we can write in terms of $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials:$\mu _i^{\alpha}$. The number of variables is thus the number of phases times $c + 1$: 
+Hence, for each phase, there are \textit{ c} + 1 independent intensive variables, which we can write in terms of $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials: $\mu _i^{\alpha}$. The number of variables is thus the number of phases times $c + 1$: 
 \eqs m = p(c + 1) \eqe
-The number of constraints from the intensive variables being equal to each other in each phase is the number of intensive variables in each phase
+The number of constraints from the intensive variables being equal to each other in each phase (such as $\mu_i^\alpha = \mu_i^\beta$, $T^\alpha=T^\beta$) is the number of intensive variables in each phase
 times the number of phases minus 1:
 \eqs n = (p - 1)(c + 2) \eqe
 
@@ -1250,7 +1253,7 @@ Here, we use a Taylor expansion to make some insights into the shape of $U$, and
 \eqs
 (\Delta U)_{S,V,n_j} = d U + d^2 U + ... > 0\\
 \eqe
-At equilibrium, we know that $d U = 0$. Therefore $dU \approx d^2U > 0$.  Thus, if we know that the second-order terms in a Taylor expansion of $U$ should all be positive to guarantee $U$ is minimal. Very loosely, this is the same as saying that in order for a function, $f$, to be at a minimum, it must have $f'=0,f''>0$. More concretely, this corresponds to the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable to such perturbations, as illustrated in figure \ref{stability}. 
+At equilibrium, we know that $d U = 0$. Therefore $dU \approx d^2U > 0$.  Thus, if we know that the second-order terms in a Taylor expansion of $U$ should all be positive to guarantee $U$ is minimal. More concretely, this corresponds to the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable to such perturbations, as illustrated in figure \ref{stability}. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{StabilityWRTPerturbations}
@@ -1278,8 +1281,8 @@ T\left[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}\right] &\geq 0\\
 Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
 
 \subsection{Phase stability}
-$G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. There are similar guarantees on the double derivatives of G. 
-If we imagine that each phase/state of matter has its own free energy curve $G(T)^{\alpha},G(T)^{\beta},...$, then \emph{the equilibrium free energy is simply the lower envelope of the free energy curves of the possible phases}. This is shown in figure \ref{phaseGCurves}.
+$G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. There are similar guarantees on the second derivatives of G. 
+If we imagine that each phase/state of matter has its own free energy curve $G(T)^{\alpha},G(T)^{\beta},...$, then \emph{the equilibrium free energy is simply the lower envelope of the free energy curves of the possible phases}. This is shown in Figure \ref{phaseGCurves}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{G_Curves_For_Phases}
@@ -1287,18 +1290,18 @@ If we imagine that each phase/state of matter has its own free energy curve $G(T
 \label{phaseGCurves}
 \end{figure}
 
-Getting more quantitative, we can follow a similar line of thought as before for $U$. If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases, their free energies must be equal as shown in figure \ref{phaseGCurves}
+Getting more quantitative, we can follow a similar line of thought as before for $U$. If there are two possible phases $\alpha$ and $\beta$, then at equilibrium between 2 phases, their free energies must be equal as shown in Figure \ref{phaseGCurves}
 \eqs G^\alpha &= G^\beta %\\ \Delta G &= 0
 \eqe
 We can also read off the first derivatives of G: $\frac{\partial G}{\partial T}|_P = -S$ and $\frac{\partial G}{\partial P}|_T = V$. These hold for both phases. %$\alpha$ or $\beta$.  
-Therefore, as a system passes through a two phase equilibrium, it should exhibit a discontinuity in its volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).  G(T)?
+Therefore, as a system passes through a two phase equilibrium, it should exhibit a discontinuity in its volume and entropy ($\Delta V_{\phi T}$, $\Delta S_{\phi T}$).
 \eqs
-\frac{\partial G}{\partial T}|_P &= - S\\
-\frac{\partial^2 G}{\partial T^2}|_P &= -\frac{\partial S}{\partial T}|_P = -\frac{c_P}{T} <0\\
-\frac{\partial G}{\partial P}|_T &= V\\
-\frac{\partial^2 G}{\partial P^2}|_T &= -\beta_T V <0\\
+\left(\frac{\partial G}{\partial T}\right)_P &= - S\\
+\left(\frac{\partial^2 G}{\partial T^2}\right)_P &= -\left(\frac{\partial S}{\partial T}\right)_P = -\frac{c_P}{T} <0\\
+\left(\frac{\partial G}{\partial P}\right)_T &= V\\
+\left(\frac{\partial^2 G}{\partial P^2}\right)_T &= -\beta_T V <0\\
 \eqe
-For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of the $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
+For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
 
 
 %With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  
