@@ -1536,16 +1536,26 @@ Thus we can estimate our change in temperature with field
 Note: a Tesla is a \emph{huge} magnetic field, so we see that phase boundaries between magnetic phases are super strongly affected by temperature, making them hard to study well if you don't have good control over $T$.
 
 \subsection{Thermoelasticity}
-An application of a generalized Clausius-Clapeyron relationship is thermoelasticity. Thermoelasticity, or ``superelasticity'' is a recoverable strain far beyond what is normally expected for solids \footnote{Elastic deformation usually only occurs until around $\epsilon \approx 0.2\%$. Superelasticity permits reversible strains of up to 10\%}.  The phase transformation is typically induced by stress.  In the high-T phase, we have the P (parent) phase.  In the low-T phase, we have M (martensitic).
+An application of a generalized Clausius-Clapeyron relationship is thermoelasticity. Thermoelasticity, or ``superelasticity'' is a recoverable strain far beyond what is normally expected for solids \footnote{Elastic deformation usually only occurs until around $\epsilon \approx 0.2\%$. Superelasticity permits reversible strains of up to 10\%}.  The phase transformation is typically induced by stress.  In the high-T phase, we have the A (austenite) phase.  In the low-T phase, we have M (martensite).
+The stress-strain curves look like those in Fig \ref{superElasticity} \textbf{A}.
 
-If we plot G vs. T, we will have a downward sloping line of the martensitic phase (under no force) with a \emph{gradual downward slope}.  At high enough temperature, this intersects with the parent phase (under no force) with a \emph{steeper} downward slope.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{superelasticity}
+\caption{\textbf{A} A typical stress-strain curve for a superelastic material. \textbf{B} Free energy curves for martensite and austenite as a function of temperature showing how the curves shift upon application of a stress \textbf{C} A simplified phase diagram for superelastic materials.}
+\label{superElasticity}
+\end{figure}
+
+Keep in mind what you see in Fig \ref{superElasticity} \textbf{A}; a discontinuity in an extensive variable (length/strain) while an intensive variable is constant (force/stress). This is almost always a sign that changing the intensive variable induced a first-order phase transition.\footnote{Another example is when battery charge-discharge curves \href{http://i.stack.imgur.com/UkodS.gif}{exhibit a constant discharge voltage} for a large amount of current}
+
+If we plot G vs. T, both phases exhibit downward slopes and negative curvature, as in Fig \ref{superElasticity} \textbf{B}. The higher entropy austenitic phase will have a larger, negative slope, and thus become stable at higher temperature. We want to investigate the effect of force on the temperature of the superelastic transition, so we set up our relevant potential:
 
 \eqs
-dU &= ... F dl\\
-G &= ... - F \cdot l
-P &= -\frac{\partial G}{\partial F}|_{T_i}
+dU &= TdS + F dL\\
+G &= U- T\cdot S - F \cdot L\\
+L &= -\left(\frac{\partial G}{\partial F}\right)_{T_i}
 \eqe
-By actually applying a force and deforming the material, we move downwards the $G vs. T$ line for the martensitic phase (and a little bit for the parent phase).  If we plot the length of the material vs. the force on the material, we will initially have an upward increasing line, and then a discontinuity when we change to a martensitic phase.\\
+By applying a force and stretching the material, we move the $G\text{ vs. }T$ line downwards for both phases, but the the martensitic phase moves down more quickly than the parent phase due to the martensite's larger $L$. This relative movement is indicated by the dashed lines in Fig. \ref{superElasticity}\textbf{B}. The interesting thing is that because they don't move at the same rate, you get shifts in the transition temperature due to application of stress; there's a Clausius-Clapeyron effect here. Let's quantify it in the context of a specific system.\\
 
 Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\three/mol, $\Delta S \approx 1$ J/mol/K.  Now we write down a version of Clausius-Clapeyron:
 \eqs
@@ -1553,6 +1563,7 @@ Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\
 A \Delta P &= V_m \Delta \epsilon\\
 \frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
 \eqe
+The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it's just a line with a 
 
 In general, what would be the heat involved if we apply a stress?
 \eqs
