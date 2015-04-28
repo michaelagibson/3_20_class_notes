@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 APR 2015 13:57
-=======
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.2)  28 APR 2015 14:53
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.2)  28 APR 2015 15:38
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 entering extended mode
 **class_notes.tex
 ("C:\Users\Derek\Documents\GitHub\3_20_class_notes\Class Notes\class_notes.tex"
@@ -1026,15 +1018,7 @@ Package gensymb Info: Using \Omega for \ohm on input line 17.
 Package gensymb Warning: Not defining \micro.
 
 ABD: EveryShipout initializing macros
-<<<<<<< HEAD
-<<<<<<< HEAD
-<titlepage.pdf, id=292, 597.50829pt x 845.0471pt>
-=======
-<titlepage.pdf, id=259, 597.50829pt x 845.0471pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <titlepage.pdf, id=330, 597.50829pt x 845.0471pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: titlepage.pdf Graphic file (type pdf)
  <use titlepage.pdf>
 Package pdftex.def Info: titlepage.pdf used on input line 18.
@@ -1044,15 +1028,7 @@ File: titlepage.pdf Graphic file (type pdf)
 <use titlepage.pdf>
 Package pdftex.def Info: titlepage.pdf used on input line 18.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<<<<<<< HEAD
-<<<<<<< HEAD
- <titlepage.pdf, id=295, page=1, 597.50829pt x 845.0471pt>
-=======
- <titlepage.pdf, id=262, page=1, 597.50829pt x 845.0471pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
  <titlepage.pdf, id=333, page=1, 597.50829pt x 845.0471pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: titlepage.pdf Graphic file (type pdf)
 
 <use titlepage.pdf, page 1>
@@ -1144,15 +1120,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[8] <figures/DiatomicSpecHeat2.png, id=493, 2406.9925pt x 1805.74625pt>
-=======
-[8] <figures/DiatomicSpecHeat2.png, id=459, 2406.9925pt x 1805.74625pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [8] <figures/DiatomicSpecHeat2.png, id=530, 2406.9925pt x 1805.74625pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/DiatomicSpecHeat2.png Graphic file (type png)
 
 <use figures/DiatomicSpecHeat2.png>
@@ -1189,15 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--276
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<figures/H_of_T_labeled.png, id=513, 707.2824pt x 257.2812pt>
-=======
-<figures/H_of_T_labeled.png, id=479, 707.2824pt x 257.2812pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/H_of_T_labeled.png, id=550, 707.2824pt x 257.2812pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/H_of_T_labeled.png Graphic file (type png)
 
 <use figures/H_of_T_labeled.png>
@@ -1210,18 +1170,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[12 <./figures/H_of_T_labeled.png>]
-<figures/Trouton_and_Richards_rules.png, id=530, 401.5pt x 319.1925pt>
-=======
 [12 <C:/Users/Derek/Documents/GitHub/3_20_class_notes/Class Notes/figures/H_of_
 T_labeled.png>]
-<<<<<<< HEAD
-<figures/Trouton_and_Richards_rules.png, id=496, 401.5pt x 319.1925pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/Trouton_and_Richards_rules.png, id=567, 401.5pt x 319.1925pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/Trouton_and_Richards_rules.png Graphic file (type png)
 
 <use figures/Trouton_and_Richards_rules.png>
@@ -1325,15 +1276,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[22] <figures/thirdLawPlot_with_faces.pdf, id=623, 595.22375pt x 255.95625pt>
-=======
-[22] <figures/thirdLawPlot_with_faces.pdf, id=588, 595.22375pt x 255.95625pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [22] <figures/thirdLawPlot_with_faces.pdf, id=659, 595.22375pt x 255.95625pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/thirdLawPlot_with_faces.pdf Graphic file (type pdf)
 
 <use figures/thirdLawPlot_with_faces.pdf>
@@ -1341,15 +1284,7 @@ Package pdftex.def Info: figures/thirdLawPlot_with_faces.pdf used on input line
  549.
 (pdftex.def)             Requested size: 341.43306pt x 146.82219pt.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<figures/Can_We_achieve_0K.pdf, id=624, 595.22375pt x 379.4175pt>
-=======
-<figures/Can_We_achieve_0K.pdf, id=589, 595.22375pt x 379.4175pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/Can_We_achieve_0K.pdf, id=660, 595.22375pt x 379.4175pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/Can_We_achieve_0K.pdf Graphic file (type pdf)
 
 <use figures/Can_We_achieve_0K.pdf>
@@ -1446,20 +1381,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 856--858
-
- []
-
-<figures/legendregraph.pdf, id=773, 644.4075pt x 202.7575pt>
-=======
-[30] <figures/legendregraph.pdf, id=737, 644.4075pt x 202.7575pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [30] <figures/legendregraph.pdf, id=808, 644.4075pt x 202.7575pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/legendregraph.pdf Graphic file (type pdf)
 
 <use figures/legendregraph.pdf>
@@ -1553,15 +1475,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1148--1150
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<figures/Short_and_Long_Comparison.pdf, id=930, 587.19376pt x 183.68625pt>
-=======
-<figures/Short_and_Long_Comparison.pdf, id=892, 587.19376pt x 183.68625pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/Short_and_Long_Comparison.pdf, id=963, 587.19376pt x 183.68625pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/Short_and_Long_Comparison.pdf Graphic file (type pdf)
 
 <use figures/Short_and_Long_Comparison.pdf>
@@ -1604,15 +1518,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[43] <figures/StabilityWRTPerturbations.pdf, id=996, 509.905pt x 225.84375pt>
-=======
-[43] <figures/StabilityWRTPerturbations.pdf, id=959, 509.905pt x 225.84375pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [43] <figures/StabilityWRTPerturbations.pdf, id=1030, 509.905pt x 225.84375pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/StabilityWRTPerturbations.pdf Graphic file (type pdf)
 
 <use figures/StabilityWRTPerturbations.pdf>
@@ -1626,18 +1532,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[44 <./figures/StabilityWRTPerturbations.pdf>]
-<figures/G_Curves_For_Phases.pdf, id=1031, 454.69875pt x 274.02374pt>
-=======
 [44 <C:/Users/Derek/Documents/GitHub/3_20_class_notes/Class Notes/figures/Stabi
 lityWRTPerturbations.pdf>]
-<<<<<<< HEAD
-<figures/G_Curves_For_Phases.pdf, id=993, 454.69875pt x 274.02374pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/G_Curves_For_Phases.pdf, id=1064, 454.69875pt x 274.02374pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/G_Curves_For_Phases.pdf Graphic file (type pdf)
 
 <use figures/G_Curves_For_Phases.pdf>
@@ -1680,15 +1577,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1323.
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<figures/Carbon_dioxide_pressure_temperature_phase_diagram2.pdf, id=1083, 595.8
-=======
-<figures/Carbon_dioxide_pressure_temperature_phase_diagram2.pdf, id=1044, 595.8
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 <figures/Carbon_dioxide_pressure_temperature_phase_diagram2.pdf, id=1115, 595.8
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 2597pt x 562.1pt>
 File: figures/Carbon_dioxide_pressure_temperature_phase_diagram2.pdf Graphic fi
 le (type pdf)
@@ -1726,15 +1615,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[50] <figures/Water_phase_diagram.pdf, id=1164, 411.136pt x 308.352pt>
-=======
-[50] <figures/Water_phase_diagram.pdf, id=1124, 411.136pt x 308.352pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [50] <figures/Water_phase_diagram.pdf, id=1196, 411.136pt x 308.352pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/Water_phase_diagram.pdf Graphic file (type pdf)
 
 <use figures/Water_phase_diagram.pdf>
@@ -1774,15 +1655,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[53] <figures/superelasticity.pdf, id=1230, 644.4075pt x 189.70876pt>
-=======
-[53] <figures/superelasticity.pdf, id=1190, 644.4075pt x 189.70876pt>
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
 [53] <figures/superelasticity.pdf, id=1262, 644.4075pt x 189.70876pt>
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 File: figures/superelasticity.pdf Graphic file (type pdf)
 
 <use figures/superelasticity.pdf>
@@ -1825,9 +1698,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [56]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 1663--1664
 
  []
@@ -1837,7 +1707,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1665--1666
 
  []
 
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1845,19 +1714,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [57]
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 1642--1643
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1644--1645
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1648--1651
-=======
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1905,7 +1761,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [59]
 Underfull \hbox (badness 10000) in paragraph at lines 1771--1773
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
  []
 
@@ -1915,15 +1770,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[58] <figures/partialMolarVolumes.pdf, id=1343, 684.5575pt x 359.3425pt>
-File: figures/partialMolarVolumes.pdf Graphic file (type pdf)
-
-<use figures/partialMolarVolumes.pdf>
-Package pdftex.def Info: figures/partialMolarVolumes.pdf used on input line 166
-4.
-(pdftex.def)             Requested size: 369.88582pt x 194.16817pt.
-=======
 [60]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1935,7 +1781,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \hbox (badness 10000) in paragraph at lines 1868--1869
 
  []
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1943,85 +1788,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[59 <./figures/partialMolarVolumes.pdf>]
-=======
 [62]
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[60]
-=======
 [63]
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[61]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2334.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2334.
- (./class_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2334.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2334.
-
-Package rerunfilecheck Info: File `class_notes.out' has not changed.
-(rerunfilecheck)             Checksum: F0E1CBFABCC9EF2910D73BE682A2650F;5777.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2334.
- ) 
-Here is how much of TeX's memory you used:
- 24411 strings out of 493117
- 462147 string characters out of 6135433
- 624972 words of memory out of 5000000
- 27140 multiletter control sequences out of 15000+600000
- 10723 words of font info for 39 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 62i,18n,66p,10442b,753s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on class_notes.pdf (61 pages, 1952020 bytes).
-PDF statistics:
- 1593 PDF objects out of 1728 (max. 8388607)
- 1277 compressed objects within 13 object streams
- 365 named destinations out of 1000 (max. 500000)
- 690 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2232.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2232.
-=======
 [64]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2235.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 2235.
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
 ("C:\Users\Derek\Documents\GitHub\3_20_class_notes\Class Notes\class_notes.aux"
 )
@@ -2061,14 +1844,7 @@ e1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 ublic/amsfonts/cm/cmtt12.pfb>
 Output written on class_notes.pdf (64 pages, 1240938 bytes).
 PDF statistics:
-<<<<<<< HEAD
- 1422 PDF objects out of 1440 (max. 8388607)
- 337 named destinations out of 1000 (max. 500000)
- 621 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
  1602 PDF objects out of 1728 (max. 8388607)
  422 named destinations out of 1000 (max. 500000)
  765 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
 
