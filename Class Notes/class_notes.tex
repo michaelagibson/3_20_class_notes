@@ -688,7 +688,7 @@ However, such an integration can only be performed if you have as many independe
 
 
 \subsection{Equilibrium and evolution of isolated systems}
-We now use the Massieu formulation and the second law to derive the conditions of equilibrium for a variety of cases. The conclusion is: \emph{at equilibrium in an isolated, unconstrained system, the intensive variables are homogeneous (constant across the whole system)}. Below, we treat temperature, chemical potential, and pressure individually, but the results are general. \footnote{This is similar to the discussion in Callen Chapter 4.4}
+We now use the Massieu formulation and the second law to derive the conditions of equilibrium for a variety of cases. The conclusion is: \emph{at equilibrium in an isolated, unconstrained system, the intensive variables are homogeneous (constant across the whole system)}. Below, we treat temperature, chemical potential, and pressure individually, but the results are general\footnote{This is similar to the discussion in Callen Chapter 4.4}.
 
 %\subsubsection{An open and isolated system}
 We consider a system where the possible work terms are exchange of energy, mole numbers, and volume. The chemical potential, $\mu$, is the intensive conjugate of $dN$ which is the change in number of particles.
@@ -697,44 +697,44 @@ U &= TS - PV + \sum_i \mu_i N_i\\
 dU &= SdT - VdP + N_i d\mu_i = 0
 \eqe
 
-For an isolated system, the 1st law says $U_\text{system}, V_\text{system}$ are constant; we have $dV_\text{system}=dU_\text{system}=0$. The 2nd law says $dS_\text{system} \geq 0$ (i.e. S is maximized over the set of thermodynamic states that are consistent with the constraints on the extensive variables, i.e. the boundaries).  The equilibrium state is then the one with maximal S for our boundary conditions.\\
+For an isolated system, the 1st law says $U_\text{system}$ \& $ V_\text{system}$ are constant ($dV_\text{system}=dU_\text{system}=0$). The 2nd law says $dS_\text{system} \geq 0$.  S is maximized over the set of thermodynamic states that are consistent with the constraints on the extensive variables, i.e. the boundaries.  The equilibrium state is then the one with maximal S for our boundary conditions.\\
 
 \subsubsection{Thermal Equilibrium}
-Lets look at thermal equilibrium (Temperature differences) in a system with two containers I and II that allow energy to flow between them: $dU_I,dU_{II} \neq 0$.
+Lets look at thermal equilibrium in a system with two containers I and II that allow energy to flow between them: $dU_I,dU_{II} \neq 0$.
 \eqs
 dU &= 0 = dU_I+dU_{II}\\
 dU_I &= -dU_{II}\\
 dS &= dS_I + dS_{II}\\
 dS &= \frac{dU_I}{T_I} + \frac{dU_{II}}{T_{II}} \text{ (by Massieu/second law)}\\
-dS &= dU_I (\frac{1}{T_I}+\frac{1}{T_{II}})
+dS &= dU_I \Big(\frac{1}{T_I}-\frac{1}{T_{II}}\Big)
 \eqe
-Now, if $T_I < T_{II}$ and $dU_I > 0$, then $dS > 0$ and we are \bold{not at equilibrium}.  If $T_I > T_{II}$ and $dU_I < 0$, then $dS > 0$ and we are also \bold{not at equilibrium}.  Equilibrium then occurs when $\frac{1}{T_I}+\frac{1}{T_{II}} = 0$, or $T_I = T_{II}$.
+Now, if $T_I < T_{II}$ and $dU_I > 0$, then $dS > 0$ and we are \bold{not at equilibrium}.  If $T_I > T_{II}$ and $dU_I < 0$, then $dS > 0$ and we are also \bold{not at equilibrium}.  Equilibrium then occurs when $\frac{1}{T_I}-\frac{1}{T_{II}} = 0$, or $T_I = T_{II}$.
 
 \subsubsection{Mechanical Equilibrium}
 Consider two compartments of an isolated container separated by an diathermal, moveable wall.  The volume of the left side is $V_1$ and the right is $V_2$.
 \eqs
 dU_1 &= -dU_2\\
 dV_1 &= -dV_2\\
-dS &= dU_1 (\frac{1}{T_1}+\frac{1}{T_{2}}) + dV_1 (\frac{P_1}{T_1}+\frac{P_2}{T_{2}})\\
+dS &= dU_1 \Big(\frac{1}{T_1}-\frac{1}{T_{2}}\Big) + dV_1 \Big(\frac{P_1}{T_1}-\frac{P_2}{T_{2}}\Big)\\
 \eqe
 thus $S$ is maximal for $T_1 = T_2$ and $P_1 = P_2$.
 \subsubsection{Chemical Equilibrium from Mass Flow}
 Similarly, we can add a $\mu dN$ term to the energy change (or $-\frac{\mu}{T}dN$ in the entropy representation).  We then get an additional term to $dS$ of 
 \eqs
-dS = ... -(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2})dN_1
+dS = ... -\Big(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2}\Big)dN_1
 \eqe
-which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.  Enforcing thermal equilibrium means that $\mu_1=\mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$, as we would expect from a potential.  \footnote{In terms of kinetics, a gradient of $\frac{\mu}{T}$ generates mass flow (i.e. a diffusional relaxation toward equilibrium).}
+which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.  Enforcing thermal equilibrium means that $\mu_1=\mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$, as we would expect from a potential\footnote{In terms of kinetics, a gradient of $\frac{\mu}{T}$ generates mass flow (i.e. a diffusional relaxation toward equilibrium).}.
 
 % \subsubsection{Chemical Equilibrium from Reactions}
 % Given the reaction
 % \eqs
 % aA + bB \rightarrow cC + dD
 % \eqe
-In general, we maximize the entropy $S$ by:
+In general, we can maximize the entropy by:
 \begin{itemize}
-\item Define the variables which are free to move in the system. For example: can subsystems exchange volume or mass? If so, $dV$ and $dN$ would be appropriate internal variables.
-\item Write $dS$ as a function of the \emph{internal} variables in the Masseu formulation.
-\item impose $dS_\text{system} = 0$ for all the variations
+\item defining the variables which are free to move in the system. For example: can subsystems exchange volume or mass? If so, $dV$ and $dN$ would be appropriate internal variables.
+\item writing $dS$ as a function of the \emph{internal} variables in the Masseu formulation.
+\item imposing $dS_\text{system} = 0$ for all the variations.
 \end{itemize}
 Thus, given appropriate internal variables, we can directly extract the equilibrium conditions.  For energy exchange, $dU_{1\rightarrow 2}$, we get $T_1 = T_2$.  For energy and volume exchange, $dU_{1\rightarrow 2}$ and $dV_{1\rightarrow 2}$, we have $T_1 = T_2$ and $P_1 = P_2$.  Another example would be charge exchange, $dq_{1\rightarrow 2}$, which implies a homogenous electrostatic potential: $\phi_1 = \phi_2$.
 
@@ -775,8 +775,8 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 \section{Lecture - September 15, 2014}
 
 
-\subsection{Equilibrium under the most general conditions}
-\textbf{Mike has not edited this section yet}
+%\subsection{Equilibrium under the most general conditions}
+%\textbf{Mike has not edited this section yet}
 % We have extensive boundary conditions for an isolated system with a wall that allows the volume and internal energies of each side to change.   When the internal energy $U$ and position $x$ is a constant, the entropy is maximum.  When the entropy $S$ is constant then the internal energy is minimum.
 % If we have an insulated, very large system, with temperature $T^*$ (where the $^*$ denotes the environment), and a smaller system within (no $^*$), and we assume that all variations are quasi-static, then
 % \eqs
@@ -827,44 +827,45 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 
 \subsection{Legendre Transforms} \label{LegendreTransforms}
 %$U$ is defubed a function of the extensive parameters $U(S,X,...)$. Frequently, we want a function $\phi(y)$ that is naturally a function of the intensive variables, raher than the extensive variables; it would be nice if we could specify the temperature instead of the entropy. 
-The difficulty in working with the internal energy, $U$, is that it is a natural function of the wrong set of variables: V is the natural, 'independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural 'independent' variable of U for reversible heat exchange,\footnote{You can think of reversible heating as T-S work if you'd like.} but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, 'independent' variables. \emph{Taking the \emph{Legendre transform} is a general procedure to 'switch' which variables are the natural variables in your thermodynamic potential of interest.}\\
+The difficulty in working with the internal energy, $U$, is that it is a natural function of the wrong set of variables: V is the natural, `independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural `independent' variable of U for reversible heat exchange\footnote{You can think of reversible heating as T-S work if you'd like.}, but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, `independent' variables. \emph{Taking the Legendre transform is a general procedure to 'switch' which variables are the natural variables in your thermodynamic potential of interest.}\\
+
 \textbf{How To Take a Legendre Transform}\\
-If we want to transform U such that an intensive variable, S$Y_i$, is the natural variable of the new, transformed potential, which we will call $\phi$, then we define $\phi$ as the difference of $U$ and the product $Y_i \cdot X_i$:
+If we want to transform U such that an intensive variable, $Y_i$, is the natural variable of the new, transformed potential, which we will call $\phi$, then we define $\phi$ as the difference of $U$ and the product $Y_i \cdot X_i$:
 \eqs
 \phi &= U - Y_i X_i\\
 d\phi &= dU - Y_i dX_i - X_i dY_i
 \eqe
-where $dU = [...] + y_j dx_j$, so
-Note that if U is composed of a sum of extensive variables times their intensives conjugates, $U=\sum_{j} Y_j X_j$, then $\phi]=\sum_{j\neq i} Y_j X_j$. The total derivative of $\phi$ is then given by:
+where $dU = [...] + Y_j dX_j$.
+Note that if U is composed of a sum of extensive variables times their intensives conjugates, $U=\sum_{j} Y_j X_j$, then $\phi=\sum_{j\neq i} Y_j X_j$. The total derivative of $\phi$ is then given by:
 \eqs
 d\phi &= \sum_{j\neq i} Y_j dX_j - X_i dY_i
 \eqe
 This has the desired property that $Y_i$ is a natural variable of $\phi$, $\phi = f(X_{j\neq i},Y_i)$.
-Lets look at an example of an isobaric, isentropic ($dS=0$) system, considering the \bold{Enthalpy}, $H$:
+Lets look at an example of an isobaric, isentropic ($dS=0$) system, considering the \bold{enthalpy}, $H$:
 \eqs
-dU - TdS + PdV &\leq 0\\
+dU &= TdS - PdV\\
 H &= U + PV\\
 dH &= dU + PdV + VdP\\
 dH&= TdS + VdP\\
 \eqe
-and we can retrieve the following relations from $dH(S,P) = \frac{\partial H}{\partial S}|_P dS + \frac{\partial U}{\partial P}|_S dP$:
+and we can retrieve the following relations from $dH(S,P) = \Big(\frac{\partial H}{\partial S}\Big)_P dS + \Big(\frac{\partial H}{\partial P}\Big)_S dP$:
 \eqs
-T &= \frac{\partial H}{\partial S}|_P\\
-V &= \frac{\partial H}{\partial P}|_S
+T &= \Big(\frac{\partial H}{\partial S}\Big)_P\\
+V &= \Big(\frac{\partial H}{\partial P}\Big)_S
 \eqe\\
 
 \textbf{Properties of Legendre Transforms}\\
 \begin{enumerate}
-\item $\frac{\partial \phi}{\partial Y_i}_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
+\item $\Big(\frac{\partial \phi}{\partial Y_i}\Big)_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
 \item $\phi$ has analogous extremal properties to U: Just as the equilibrium state when all of the extensive variables are set occurs when $U$ is minimal, so the equilibrium state for a given Legendre transform, $\phi$, occurs $\phi$ under the appropriate boundary conditions. For example, the equilibrium state at constant temperature and pressure is the state with minimal Gibbs free energy, the equilibrium state at constant entropy and pressure is the state with minimal enthalpy, etc. 
-\item A corrolary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we originally minimized the Gibbs free energy for.
+\item A corollary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we originally minimized the Gibbs free energy for.
 \item The pure double derivatives of $\phi$ are the negative inverse of the pure double derivatives of $U$. For example:
  \eqs \frac{\partial^2 U }{\partial V^2}_{S,N,...}&=-\frac{\partial P }{\partial V}_{S,N,...} &=(\beta_S V)^{-1}\\
  \frac{\partial^2 H }{\partial P^2}_{S,N,...} &=-\frac{\partial V }{\partial P}_{S,N,...} &=-\beta_S V \eqe
 \end{enumerate}
 
 \textbf{Why do Legendre transforms work? (Optional)}\\
-The Legendre transform works because it is an effective switch of coordinate systems, and we don't lose any information in doing this switch of coordinates. This change of coordinates is possible because U is a convex function of the extensive variables, and because U is a 'smooth' function of these variables (there are no discontinuities in the first derivative of U). Therefore, there is a one-to-one mapping between the first derivative of U with respect to the extensive variables and the extensive variable itself, as shown in the Figure \ref{LegendreGraph} \footnote{From \href{http://dx.doi.org/10.1119/1.3119512}{``Making sense of the Legendre transform'', RKP Zia et al. Am. J. Phys. 2007}, which is a really good read if you desire a deeper understanding of Legendre transforms.}:
+The Legendre transform works because it is an effective switch of coordinate systems, and we don't lose any information in doing this switch of coordinates. This change of coordinates is possible because U is a convex function of the extensive variables, and because U is a `smooth' function of these variables (there are no discontinuities in the first derivative of U). Therefore, there is a one-to-one mapping between the first derivative of U with respect to the extensive variables and the extensive variable itself, as shown in the Figure \ref{LegendreGraph}\footnote{From \href{http://dx.doi.org/10.1119/1.3119512}{``Making sense of the Legendre transform'', RKP Zia et al. Am. J. Phys. 2007}, which is a really good read if you desire a deeper understanding of Legendre transforms.}:
 
 \begin{figure}[h]
 \centering
@@ -913,17 +914,17 @@ G=U-TS+PV=H-TS & $dG=-S\cdot dT+V \cdot dP$ & G(T,P) & $-(\frac{\partial{S}}{\pa
 \end{table}
 
 \subsection{A First Look at Manipulating Thermodynamic Functions}
-Lets now look at a simple system using the Gibb's free energy $G(T,P)$.  First, we know from the above that $S = -\frac{\partial G}{\partial T}|_P$ and $V = \frac{\partial G}{\partial P}|_T$.  The change in volume is
+Lets now look at a simple system using the Gibb's free energy $G(T,P)$.  First, we know from the above that $S = -\Big(\frac{\partial G}{\partial T}\Big)_P$ and $V = \Big(\frac{\partial G}{\partial P}\Big)_T$.  The change in volume is
 \eqs
-dV &= \frac{\partial V}{\partial T}|_P dT + \frac{\partial V}{\partial P}|_T dP\\
+dV &= \Big(\frac{\partial V}{\partial T}\Big)_P dT + \Big(\frac{\partial V}{\partial P}\Big)_T dP\\
 &= \alpha_V V dT - V \beta_T dP
 \eqe
 since $\alpha_v = \frac{1}{V} \frac{\partial V}{\partial T}|_P$ is the volumetric thermal expansion and $\beta_T = -\frac{1}{V}\frac{\partial V}{\partial P}|_T$ is the compressibility.  Likewise, the change in entropy is
 \eqs
-dS &= \frac{\partial S}{\partial T}|_P dT + \frac{\partial S}{\partial P}|_T dP\\
-&= \frac{c_P}{T}dT + \frac{\partial S}{\partial P}|_T dP
+dS &= \Big(\frac{\partial S}{\partial T}\Big)_P dT + \Big(\frac{\partial S}{\partial P}\Big)_T dP\\
+&= \frac{c_P}{T}dT + \Big(\frac{\partial S}{\partial P}\Big)_T dP
 \eqe
-It's not really obvious what $\frac{\partial S}{\partial P}|_T$ is. We can use a \bold{Maxwell Relation} to gain some insight.  For this, we note that the double derivative of a function does not depend upon the order in which the derivatives are exchanged.
+It's not really obvious what $\frac{\partial S}{\partial P}|_T$ is. We can use a \bold{Maxwell Relation} to gain some insight.  For this, we note that the second derivative of a function does not depend upon the order in which the derivatives are exchanged.
 \eqs
 \frac{\partial}{\partial P}\left(\left(\frac{\partial G}{\partial T}\right)_P\right)_T &= \frac{\partial}{\partial T}\left(\left(\frac{\partial G}{\partial P}\right)_T\right)_P\\
 \frac{\partial}{\partial P}(-S)_T &= \frac{\partial}{\partial T}(V)_P\\
@@ -933,7 +934,7 @@ and from here we can make our substitution into the above
 \eqs
 dS &= \frac{c_P}{T}dT - \alpha_V V dP
 \eqe
-This should kind of weird you out; The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily experimentally measurable quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about: we can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it.\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}
+This might seem a bit strange. The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily measurable experimental quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about.  We can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 17, 2014}
