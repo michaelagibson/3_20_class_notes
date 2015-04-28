@@ -31,35 +31,36 @@
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Chemical Equilibrium from Mass Flow}{subsection.6.2}% 31
 \BOOKMARK [1][-]{section.7}{Lecture - September 15, 2014}{}% 32
 \BOOKMARK [1][-]{section.7}{Lecture - September 15, 2014}{}% 33
-\BOOKMARK [2][-]{subsection.7.1}{Equilibrium under the most general conditions}{section.7}% 34
-\BOOKMARK [2][-]{subsection.7.2}{Legendre Transforms}{section.7}% 35
-\BOOKMARK [2][-]{subsection.7.3}{Named Free Energies}{section.7}% 36
-\BOOKMARK [2][-]{subsection.7.4}{A First Look at Manipulating Thermodynamic Functions}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.1}{Legendre Transforms}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.2}{Named Free Energies}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.3}{A First Look at Manipulating Thermodynamic Functions}{section.7}% 36
+\BOOKMARK [1][-]{section.8}{Lecture - September 17, 2014}{}% 37
 \BOOKMARK [1][-]{section.8}{Lecture - September 17, 2014}{}% 38
-\BOOKMARK [1][-]{section.8}{Lecture - September 17, 2014}{}% 39
-\BOOKMARK [2][-]{subsection.8.1}{Maxwell Relations}{section.8}% 40
-\BOOKMARK [3][-]{subsubsection.8.1.1}{Maxwell for an Ideal Gas}{subsection.8.1}% 41
-\BOOKMARK [3][-]{subsubsection.8.1.2}{Magnetic Maxwells}{subsection.8.1}% 42
-\BOOKMARK [2][-]{subsection.8.2}{How to do thermo derivations}{section.8}% 43
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Very useful relationships of f\(x,y\)}{subsection.8.2}% 44
-\BOOKMARK [3][-]{subsubsection.8.2.2}{Strategy to reduce variables}{subsection.8.2}% 45
-\BOOKMARK [3][-]{subsubsection.8.2.3}{Example: A rod under tension}{subsection.8.2}% 46
-\BOOKMARK [2][-]{subsection.8.3}{Natural Variables}{section.8}% 47
-\BOOKMARK [2][-]{subsection.8.4}{A systematic way to think about derivatives}{section.8}% 48
+\BOOKMARK [2][-]{subsection.8.1}{Maxwell Relations}{section.8}% 39
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Maxwell relations for an Ideal Gas}{subsection.8.1}% 40
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Magnetic Maxwell relations}{subsection.8.1}% 41
+\BOOKMARK [2][-]{subsection.8.2}{How to perform thermodynamic derivations}{section.8}% 42
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Very useful relationships of f\(x,y\)}{subsection.8.2}% 43
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Strategy to reduce variables}{subsection.8.2}% 44
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Example: A rod under tension}{subsection.8.2}% 45
+\BOOKMARK [2][-]{subsection.8.3}{Natural Variables}{section.8}% 46
+\BOOKMARK [2][-]{subsection.8.4}{A systematic way to think about derivatives}{section.8}% 47
+\BOOKMARK [1][-]{section.9}{Lecture - September 24, 2014}{}% 48
 \BOOKMARK [1][-]{section.9}{Lecture - September 24, 2014}{}% 49
-\BOOKMARK [1][-]{section.9}{Lecture - September 24, 2014}{}% 50
-\BOOKMARK [2][-]{subsection.9.1}{Checkin: What you should be able to do by now}{section.9}% 51
-\BOOKMARK [2][-]{subsection.9.2}{Equilibrium Conditions for Multicomponent Systems}{section.9}% 52
-\BOOKMARK [2][-]{subsection.9.3}{Constraints from equilibrium of heterogeneous systems: The Gibbs phase rule}{section.9}% 53
-\BOOKMARK [2][-]{subsection.9.4}{Stability Conditions on the free energy}{section.9}% 54
-\BOOKMARK [2][-]{subsection.9.5}{Phase stability}{section.9}% 55
+\BOOKMARK [2][-]{subsection.9.1}{Check in: What you should be able to do by now}{section.9}% 50
+\BOOKMARK [2][-]{subsection.9.2}{Equilibrium Conditions for Multicomponent Systems}{section.9}% 51
+\BOOKMARK [2][-]{subsection.9.3}{Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.4}{Stability Conditions on the free energy}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.5}{Phase stability}{section.9}% 54
+\BOOKMARK [1][-]{section.10}{Lecture - September 25, 2014}{}% 55
 \BOOKMARK [1][-]{section.10}{Lecture - September 25, 2014}{}% 56
-\BOOKMARK [1][-]{section.10}{Lecture - September 25, 2014}{}% 57
-\BOOKMARK [2][-]{subsection.10.1}{Ehrenfest classification of T}{section.10}% 58
-\BOOKMARK [2][-]{subsection.10.2}{Elemental Phase Diagrams}{section.10}% 59
-\BOOKMARK [2][-]{subsection.10.3}{Determining Phase Diagrams}{section.10}% 60
-\BOOKMARK [2][-]{subsection.10.4}{Example: solid to liquid transition}{section.10}% 61
+\BOOKMARK [2][-]{subsection.10.1}{Ehrenfest classification of T}{section.10}% 57
+\BOOKMARK [2][-]{subsection.10.2}{Elemental Phase Diagrams}{section.10}% 58
+\BOOKMARK [2][-]{subsection.10.3}{Determining Phase Diagrams}{section.10}% 59
+\BOOKMARK [2][-]{subsection.10.4}{Example: solid to liquid transition}{section.10}% 60
+\BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 61
 \BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 62
+<<<<<<< HEAD
 \BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 63
 \BOOKMARK [2][-]{subsection.11.1}{Le Chatelier-Braun principle}{section.11}% 64
 \BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 65
@@ -72,3 +73,9 @@
 \BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 72
 \BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 73
 \BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 74
+=======
+\BOOKMARK [2][-]{subsection.11.1}{Le Chatelier-Braun principle}{section.11}% 63
+\BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 64
+\BOOKMARK [2][-]{subsection.11.3}{Magnetic-induced phase transformation}{section.11}% 65
+\BOOKMARK [2][-]{subsection.11.4}{Thermoelasticity}{section.11}% 66
+>>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
