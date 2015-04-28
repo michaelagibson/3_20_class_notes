@@ -1320,7 +1320,7 @@ We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta H_{l\rightarrow v} = 12
 \eqe
 Remember to check your $\Delta c_P$.  If this is not correct, try $c_P^{l}$ or $c_P^{v}$.\\
 
-\subsection{Ehrenfest classification of $\phi T$}
+\subsection{Ehrenfest classification of $\phi T$ (phase transitions)}
 Since free energies curves of individual phases are continuous, the equilibrium free energy which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy curve will have discontinuities where different curves intersect, giving rise to a convenient way to describe phase transformations. 
 
 The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be uniquely identified by discontinuities in the derivatives of the appropriate free energy. First order transitions display discontinuities in the first order derivatives (volume, mole number, and entropy), while second order transitions display continuous first derivatives but discontinuties in the curvature of G (i.e. things like compressibilities and heat capacities are discontinuous).
@@ -1332,7 +1332,7 @@ Classifications beyond second order usually are not made, but presumably third-o
 \subsection{Elemental Phase Diagrams} \label{elementalPhaseDiagrams}
 
 A \un{phase diagram} is a map of the conditions under which different phases are stable at equilibrium.\\
-As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensive variables are a natural way to describe equilibrium between phases. As such, we will first talk about phase diagrams which have intensive variables as their axes, in particular, we begin with the simple case of $T$-$P$ phase diagrams for one-component systems, shown in Fig \ref{phaseDiagramCO2} for $\text{CO}_2$. 
+As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensive variables are a natural way to describe equilibrium between phases. As such, we will first talk about phase diagrams which have intensive variables as their axes, in particular, we begin with the simple case of $T$-$P$ phase diagrams for one-component systems, shown in Figure \ref{phaseDiagramCO2} for $\text{CO}_2$. 
 % \begin{figure}
 %   \centering
 %   \def\svgwidth{\columnwidth}
@@ -1352,17 +1352,18 @@ As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensi
 % \caption{\textbf{A} The P-T phase diagram of $\text{CO}_2$. Images courtesy of \href{https://commons.wikimedia.org/wiki/File:Carbon_dioxide_pressure-temperature_phase_diagram.svg}{wikimedia commons}}%\footnote{Attribution is cool, even if the the image is copyleft}
 % \label{phaseDiagramCO2}
 % \end{figure}
-The open areas in Fig \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border.\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in stat mech.} 
+
+The open areas in Figure \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in statisttical mechanics.}.
 
 \textbf{Exercise}: Prove using the phase rule that for a single-component system, the one-phase regions must be two-dimensional, the two-phse regions must be one-dimensional, and the three-phases regions must occur at a point in $T$-$P$ space.
 
-One thing that is pretty universal about phase diagrams is that the pressures are really high compared to the pressures we normally think about; note the logarithmic scale in Fig \ref{phaseDiagramCO2}, and the fact that 1 bar = 0.1 MPa. We demonstrate why large pressures are needed to effect phase stability with an order of magnitude comparison: we'll calculate the work done per mole during a phase transition with some change in volume for 'normal' pressures:
+One thing that is pretty universal about phase diagrams is that the pressures are really high compared to the pressures we normally think about; note the logarithmic scale in Figure \ref{phaseDiagramCO2}, and the fact that 1 bar = 0.1 MPa. We demonstrate why large pressures are needed to effect phase stability with an order of magnitude comparison: we'll calculate the work done per mole during a phase transition with some change in volume for `normal' pressures:
 %How much does pressure affect the solid phases stability?
 \eqs
 \Delta W = P \cdot \Delta V\\
 %\frac{\partial G}{\partial P}|_T = V
 \eqe
-A typical molar volume for an element is $V = 5 \cdot 10^{-6}$m\three/mol, and a large change in volume for condensed phases is on the order of 10\%, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol. A large pressure would be 100 MPa, as this is the order of magnitude when most metals yield. Then $\Delta W = 100\cdot 10^{6} \cdot 5 \cdot 10^{-7} = 50 \text{J/mol} \approx 0.5$ meV. Let's compare this to the amount of energy it takes to heat an element by one degree K, $c_V\approx c_P \approx$ 25 J/mol/K. Therefore, we see that changes of a few degrees K cause the free energy to change the same amount as large changes in volume at rather high pressures. Thus, we expect that to appreciably change phase behavior, which often takes place via changes of hundreds of degrees K, we will need to apply extremely large pressures, often on the order of tens to hundreds of GPa. We get quantitative about this in the next section.
+A typical molar volume for an element is $V = 5 \cdot 10^{-6}$m\three/mol, and a large change in volume for condensed phases is on the order of 10\%, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol. A large pressure would be 100 MPa, as this is the order of magnitude when most metals yield. Then $\Delta W = 100\cdot 10^{6} \cdot 5 \cdot 10^{-7} = 50 \text{J/mol} \approx 0.5$ meV. Let's compare this to the amount of energy it takes to heat an element by one degree K, $c_V\approx c_P \approx$ 25 J/mol/K. Therefore, we see that changes of a few degrees K cause the free energy to change the same amount as large changes in volume at rather high pressures. Thus, we expect that in order to appreciably change phase behavior that often takes place via changes of hundreds of degrees K, we will need to apply extremely large pressures, often on the order of tens to hundreds of GPa. This will become more quantitative in the next section.
 
 %Now lets think about \un{iron}, which prefers a phase with smaller sensitivity to volume change (more FCC).  This is less sensitive to changes in pressure ($\Delta P$).  $G_\text{hcp} \approx G_\text{bcc}$ at low $P$?
 
@@ -1377,9 +1378,11 @@ We know that two phases are at equilibrium at a given temperature and pressure w
 This can be manipulated to give insight into the slope of the phase boundary in T-P space. Defining the differences in volume and entropy between the two phases and simplifying gives: %at the phase transformation $\alpha \rightarrow \beta$
 \eqs
 \Delta V^{\alpha \rightarrow \beta} &= V^\beta - V^\alpha\\
-\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha\\
-\frac{dP}{dT} = \frac{\Delta S^{\alpha \rightarrow \beta}}{\Delta V^{\alpha \rightarrow \beta}}
+\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha
 \eqe
+\eqs \boxed{
+\frac{dP}{dT} = \frac{\Delta S^{\alpha \rightarrow \beta}}{\Delta V^{\alpha \rightarrow \beta}}
+}\eqe
 This is known as the \emph{Clausius-Clapeyron relation}. It is commonly expressed in terms of the more easily-measured enthalpy changed of the phase transformation, $\Delta H^{\alpha \rightarrow \beta}$. This is possible because at a phase transformation, 
 \eqs
 \Delta G &= 0 
@@ -1411,7 +1414,7 @@ and so
 \Delta P &= \frac{\Delta H}{T_M\Delta V}\Delta T_M = 14.5 \text{ MPa}
 \eqe
 
-Almost of the time $\Delta S > 0$; liquids have higher entropy.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  This is the case for most solid-liquid equilibria, as the solid is usually more dense than the liquid. There are some technologically relevant exceptions where $\Delta V < 0$, these mostly occur in directionally-bonded solids, such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_water.svg}{water}, \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_silicon_(1975).png}{Si}, and \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_germanium_(1975).png}{Ge}, but can occur for metallic elements, such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_gallium_%281975%29.png}{Ga} at low pressures.
+Most of the time $\Delta S > 0$ since liquids have higher entropy than solids.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  This is the case for most solid-liquid equilibria, as the solid is usually more dense than the liquid. There are some technologically relevant exceptions where $\Delta V < 0$.  These mostly occur in directionally-bonded solids, such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_water.svg}{water}, \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_silicon_(1975).png}{Si}, and \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_germanium_(1975).png}{Ge}, but can occur for metallic elements such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_gallium_%281975%29.png}{Ga} at low pressures.
 
 Typical slopes:  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ cc/mol, and the slope is large, with the sign determined by the volume change (+/-).  For solid to gas,  $\Delta H = 100$ kJ, $\Delta V = 10^4$ cc/mol (~10 Liters), and the slope is small, but positive.
 
@@ -1656,285 +1659,285 @@ H' &= U + PV - Fl\\
 %The shift of the equilibrium state from one local minimum to the other constitutes a \emph{first-order phase transition}, induced by changing temperature, or other thermodynamic parameters.  The two states between which a first-order phase transition occurs are distinct, occurring at separate regions of the thermodynamic configuration space.  The states between which a \emph{second-order phase transition occurs} are contiguous states in the thermodynamic configuration space.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Things to memorize for Test 1}
-%First part of test is True/False questions.  An example of a question would be:\\
-%
-%``A one component material undergoes a pressure induced phase transformation at $P_{\phi T}$.  The material has the same equation of state in both phases.  True or False?'' (20 questions like this)\\
-%
-%``In the $\alpha$ phase, $\beta P = a + b \beta \mu$ ($\mu$ is the chemical potential, $\beta = 1/T$), in $\gamma$ phase, $\beta P = c + d (\beta \mu)^2$.  $a,b,c,d$ are positive functions of $\beta$, and we know $d > b$, $c < a$.  What is the density differences between $\alpha$ and $\gamma$ at the phase transformation?  What $P_{\phi T}$ does the transition happen at?''
-%
-%\un{Solution:} We know that at the phase transformation $\mu_\alpha = \mu_\beta$ and $\beta^{(\alpha)} = \beta^{(\gamma)}$, and $\rho = 1/V$.
-%
-%%\begin{enumerate}[(1)]
-%\subsection{Definitions}
-%\begin{itemize}
-%\item \bold{System:} Any collection of matter that can be uniquely identified and on which you can define macroscopic averages
-%\item \bold{Environment:}  Complement of the system
-%\eqs
-%[\text{Universe}] = [\text{Environment}] + [\text{System}]
-%\eqe
-%\item \bold{Extensive Variables:} Variables that scale with a system's size (volume, mass, number of particles, ...)
-%\item \bold{Intensive Variables:} Variables that do \emph{not} scale (pressure, temperature, chemical potential, ...)
-%\item \bold{Boundaries:} Define a system and its interaction with the environment
-%\item \bold{Adiabatic:} No flow of heat $\partial Q = 0$ and $PV^{\gamma} = \text{constant}$, where the $\gamma$ is determined by
-%\eqs
-%\gamma = \frac{c_P}{c_V} = \frac{f+2}{f}
-%\eqe
-%\item \bold{Conserved quantity}: A quantity dependent on variables that are \emph{constant}.  (In this class, we can assume the extensive parameters, except entropy $S$, are conserved.)
-%\item \bold{Reversible process}: Constant entropy process ($dS=0$)
-%\item \bold{Isochoric:} Constant volume $dV = 0$
-%\item \bold{Isentropic:} Constant entropy $dS = 0$
-%\item \bold{Isenthelpic:} Constant enthalpy $dH = 0$
-%\item \bold{Isothermal:} Constant temperature $dT=0$.  For an ideal gas, $U = U(T) = n c_V T$ where $c_V = \frac{3}{2} R$ for a monoatomic gas or $c_V = \frac{5}{2} n R$ for a diatomic gas.
-%\item \bold{Isobaric:} Constant pressure $dP = 0$
-%\item \bold{Equations of state:} Expression of intensive parameters in terms of independent extensive parameters (e.g. $T= T(S,V,N,...)$)
-%\item \bold{Relative Humidity:} $\frac{P_{H_2O}}{P_{H_2O}^*}$ where the numerator is the partial pressure of water vapor \emph{in the mixture} and the denominator is the \emph{equilibrium vapor pressure} of water.
-%\item \bold{The Fundamental Equation:}
-%\eqs
-%dU = TdS - PdV + \sum_i^k \mu_i dn_i + ...
-%\eqe
-%\item \bold{Heat Capacity:} The amount of heat that changes with changing temperature.  For example:
-%\eqs
-%c_V &= \frac{\partial Q}{\partial T}|_V = \frac{d U}{d T}\\
-%c_P &= \frac{\partial Q}{\partial T}|_P = \frac{d H}{d T}
-%\eqe
-%\item \bold{Dulong-Petit:} This is simply the relationships for $c_v$ and $c_p$ for monoatomic and diatomic gases.  For monoatomic gases, $c_v = \frac{3}{2} R$, for diatomic gases $c_v = \frac{5}{2} R$, and for both, $c_p = c_v + R$.
-%\end{itemize}
-%
-%
-%%%%%%%%%%
-%\subsection{Thermodynamic Laws}
+\section{Review of Exam 1 materials}
+First part of test is True/False questions.  An example of a question would be:\\
+
+``A one component material undergoes a pressure induced phase transformation at $P_{\phi T}$.  The material has the same equation of state in both phases.  True or False?'' (20 questions like this)\\
+
+``In the $\alpha$ phase, $\beta P = a + b \beta \mu$ ($\mu$ is the chemical potential, $\beta = 1/T$), in $\gamma$ phase, $\beta P = c + d (\beta \mu)^2$.  $a,b,c,d$ are positive functions of $\beta$, and we know $d > b$, $c < a$.  What is the density differences between $\alpha$ and $\gamma$ at the phase transformation?  What $P_{\phi T}$ does the transition happen at?''
+
+\un{Solution:} We know that at the phase transformation $\mu_\alpha = \mu_\beta$ and $\beta^{(\alpha)} = \beta^{(\gamma)}$, and $\rho = 1/V$.
+
 %\begin{enumerate}[(1)]
-%\item $dU = \partial W + \partial Q$.  If adiabatic, $dU = \partial W$
-%\item Reversible: $dS_\text{system} = \frac{\partial Q}{T}$\\
-%Irreversible: $dS_\text{system} = \frac{\partial Q}{T}$
-%\item As temperature $T$ approaches zero, the magnitude of entropy change ($dS$) in any reversible process is zero (Thus heat capacity at $T=0$ is zero also).
-%\end{enumerate}
+\subsection{Definitions}
+\begin{itemize}
+\item \bold{System:} Any collection of matter that can be uniquely identified and on which you can define macroscopic averages
+\item \bold{Environment:}  Complement of the system
+\eqs
+[\text{Universe}] = [\text{Environment}] + [\text{System}]
+\eqe
+\item \bold{Extensive Variables:} Variables that scale with a system's size (volume, mass, number of particles, ...)
+\item \bold{Intensive Variables:} Variables that do \emph{not} scale (pressure, temperature, chemical potential, ...)
+\item \bold{Boundaries:} Define a system and its interaction with the environment
+\item \bold{Adiabatic:} No flow of heat $\partial Q = 0$ and $PV^{\gamma} = \text{constant}$, where the $\gamma$ is determined by
+\eqs
+\gamma = \frac{c_P}{c_V} = \frac{f+2}{f}
+\eqe
+\item \bold{Conserved quantity}: A quantity dependent on variables that are \emph{constant}.  (In this class, we can assume the extensive parameters, except entropy $S$, are conserved.)
+\item \bold{Reversible process}: Constant entropy process ($dS=0$)
+\item \bold{Isochoric:} Constant volume $dV = 0$
+\item \bold{Isentropic:} Constant entropy $dS = 0$
+\item \bold{Isenthelpic:} Constant enthalpy $dH = 0$
+\item \bold{Isothermal:} Constant temperature $dT=0$.  For an ideal gas, $U = U(T) = n c_V T$ where $c_V = \frac{3}{2} R$ for a monoatomic gas or $c_V = \frac{5}{2} n R$ for a diatomic gas.
+\item \bold{Isobaric:} Constant pressure $dP = 0$
+\item \bold{Equations of state:} Expression of intensive parameters in terms of independent extensive parameters (e.g. $T= T(S,V,N,...)$)
+\item \bold{Relative Humidity:} $\frac{P_{H_2O}}{P_{H_2O}^*}$ where the numerator is the partial pressure of water vapor \emph{in the mixture} and the denominator is the \emph{equilibrium vapor pressure} of water.
+\item \bold{The Fundamental Equation:}
+\eqs
+dU = TdS - PdV + \sum_i^k \mu_i dn_i + ...
+\eqe
+\item \bold{Heat Capacity:} The amount of heat that changes with changing temperature.  For example:
+\eqs
+c_V &= \left(\frac{\partial Q}{\partial T}\right)_V = \frac{d U}{d T}\\
+c_P &= \left(\frac{\partial Q}{\partial T}\right)_P = \frac{d H}{d T}
+\eqe
+\item \bold{Dulong-Petit:} This is simply the relationships for $c_v$ and $c_p$ for monoatomic and diatomic gases.  For monoatomic gases, $c_v = \frac{3}{2} R$, for diatomic gases $c_v = \frac{5}{2} R$, and for both, $c_p = c_v + R$.
+\end{itemize}
+
+
+%%%%%%%%%
+\subsection{Thermodynamic Laws}
+\begin{enumerate}[(1)]
+\item $dU = \partial W + \partial Q$.  If adiabatic, $dU = \partial W$
+\item Reversible: $dS_\text{system} = \frac{\partial Q}{T}$\\
+Irreversible: $dS_\text{system} = \frac{\partial Q}{T}$
+\item As temperature $T$ approaches zero, the magnitude of entropy change ($dS$) in any reversible process is zero (Thus heat capacity at $T=0$ is zero also).
+\end{enumerate}
+
+
+
+%%%%%%%%%
+\subsection{All the heat capacities, expansion coefficients, etc.}
+\begin{enumerate}[(i)]
+\item Coefficient of thermal expansions
+\eqs
+\boxed{\alpha = \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P}
+\eqe
+\item Isothermal compressibility (sometimes denoted by $\kappa_T$)
+\eqs
+\boxed{\beta_T = -\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T}
+\eqe
+\item Molar heat capacity at constant pressure (works similarly with volume):
+\eqs
+\boxed{c_{P} = \frac{1}{N}\left(\frac{\partial Q}{\partial T}\right)_{P} = \frac{T}{N} \left(\frac{\partial S}{\partial T}\right)_{P} = T\left(\frac{\partial s}{\partial T}\right)_{P}}
+\eqe
+\end{enumerate}
+%%%%%
+\subsection{Maxwell Relations}
+\begin{enumerate}[(i)]
+\item Find the extensive variables to be represented (i.e. T,P)
+\item Convert to the appropriate energy (i.e. G(T,P))
+\item Determine if there is a \un{sign difference} between the two extensive variables
+\item Match both second derivatives
+\end{enumerate}
+%%%%%
+\subsection{Gibbs-Duhem}
+Results from comparing the partial derivative of the Euler equation $U = TS - PV + \sum\mu_i N_i$ to the first law.
+\eqs
+0=SdT - VdP + \sum N_i d\mu_i
+\eqe
+%%%%%
+\subsection{Internal energy $U$, enthalpy $H$, Helmholtz $F$, and Gibbs $G$}
+\begin{enumerate}[(i)]
+\item H = U + PV
+\item F = U - TS
+\item G = U - TS + PV
+\end{enumerate}
+%%%%%
+\subsection{Legendre Transforms:}
+Given a potential and asked to make the other potentials (i.e. $U(S,X) = X^{-a}e^{bS}$)
+\begin{enumerate}[(i)]
+\item Find the equations of state (relate first derivatives to the conjugate variables you know they should be)
+\item To eliminate a variable $S$ of conjugate pair $S,T$, do $\phi= U-TS$
+\item Substitute values from equations of state to make sure new potential is in terms of appropriate variables
+\end{enumerate}
 %
-%
-%
-%%%%%%%%%%
-%\subsection{All the heat capacities, expansion coefficients, etc.}
-%\begin{enumerate}[(i)]
-%\item Coefficient of thermal expansions
-%\eqs
-%\boxed{\alpha = \frac{1}{V}\frac{\partial V}{\partial T}|_P}
-%\eqe
-%\item Isothermal compressibility (sometimes denoted by $\kappa_T$)
-%\eqs
-%\boxed{\beta_T = -\frac{1}{V}\frac{\partial V}{\partial P}|_T}
-%\eqe
-%\item Molar heat capacity at constant pressure (works similarly with volume):
-%\eqs
-%\boxed{c_{P} = \frac{1}{N}\frac{\partial Q}{\partial T}|_{P} = \frac{T}{N} \frac{\partial S}{\partial T}|_{P} = T\frac{\partial s}{\partial T}|_{P}}
-%\eqe
-%\end{enumerate}
-%%%%%%
-%\subsection{Maxwell Relations}
-%\begin{enumerate}[(i)]
-%\item Find the extensive variables to be represented (i.e. T,P)
-%\item Convert to the appropriate energy (i.e. G(T,P))
-%\item Determine if there is a \un{sign difference} between the two extensive variables
-%\item Match both second derivatives
-%\end{enumerate}
-%%%%%%
-%\subsection{Gibbs-Duhem}
-%Results from comparing the partial derivative of the Euler equation $U = TS - PV + \sum\mu_i N_i$ to the first law.
-%\eqs
-%0=SdT - VdP + \sum N_i d\mu_i
-%\eqe
-%%%%%%
-%\subsection{Internal energy $U$, enthalpy $H$, Helmholtz $F$, and Gibbs $G$}
-%\begin{enumerate}[(i)]
-%\item H = U + PV
-%\item F = U - TS
-%\item G = U - TS + PV
-%\end{enumerate}
-%%%%%%
-%\subsection{Legendre Transforms:}
-%Given a potential and asked to make the other potentials (i.e. $U(S,X) = X^{-a}e^{bS}$)
-%\begin{enumerate}[(i)]
-%\item Find the equations of state (relate first derivatives to the conjugate variables you know they should be)
-%\item To eliminate a variable $S$ of conjugate pair $S,T$, do $\phi= U-TS$
-%\item Substitute values from equations of state to make sure new potential is in terms of appropriate variables
-%\end{enumerate}
-%%
-%\subsection{Some useful math identities:}
-%\eqs\boxed{
-%\frac{\partial f}{\partial x}|_g = \frac{\partial f}{\partial x}|_y + \frac{\partial f}{\partial y}|_x \cdot \frac{\partial y}{\partial x}|_g}
-%\eqe
-%\eqs \boxed{
-%\frac{\partial f}{\partial x}|_y \frac{\partial x}{\partial y}|_f \frac{\partial y}{\partial f}|_x = -1}
-%\eqe
-%Also just know the chain rule and inverse rule (pretty intuitive). \\ 
-%
-%\bold{Variable reduction:}
-%\begin{enumerate}[1.]
-%\item Bring your thermodynamic potential to the numerator
-%\item Bring $S$ to the numerator and turn it into a heat capacity or use a Maxwell Relation
-%\item If needed, bring your volume to the numerator and turn it into a derivative of $T$ and $P$.
-%\item Relate heat capacities to what you know
-%\end{enumerate}
-%
-%%%%%%%%
-%\subsection{Carnot Engines:}
-%Carnot engines really aren't two complicated.  The principles are completely derived from the first two principles at reversible equilibrium $dS = 0 = dS_1 + dS_2$ and $dU = 0 = \partial Q + \partial W$.  The different efficiencies are all just the quantities that \emph{you want to get out of your pump/engine/refridgerator}.  Let's begin:
-%\eqs
-%dS = dS_1 + dS_1 &= 0\\
-%\frac{\partial Q_1}{T_1} &= -\frac{\partial Q_2}{T_2}\\
-%\partial Q_1 &= -\partial Q_2 \frac{T_1}{T_2}
-%\eqe
-%and now with the first law
-%\eqs
-%dU = \partial Q_1 + \partial Q_2 + \partial W &= 0\\
-%(1-\frac{T_1}{T_2})\partial Q_2 = -\partial W
-%\eqe
-%
-%\bold{Carnot Engine}:  Here we care about getting work \emph{out} by using a \emph{heat source}, so the efficiency is
-%\eqs
-%\mu_\text{engine} = \frac{-\partial W}{\partial Q_\text{hot}} = 1-\frac{T_L}{T_H} = \frac{T_H - T_C}{T_H}
-%\eqe
-%\bold{Heat Pump}: Here we care about \emph{extracting heat} by \emph{doing work} on the system.  The efficiency is then
-%\eqs
-%\mu_\text{pump} = \frac{-\partial Q_H}{\partial W} = \mu_\text{engine}^{-1} = \frac{T_H}{T_H-T_C}
-%\eqe
-%\bold{Refridgerator}: Here we want to maximize the amount of heat \emph{leaving} the cold system by \emph{doing work}.
-%\eqs
-%\mu_\text{refridgerator} = \frac{-\partial Q_C}{\partial W} = \frac{-\partial Q_H \frac{T_C}{T_H}}{-(1-\frac{T_C}{T_H})\partial Q_H}= \frac{-T_C}{-(T_H-T_C)} = \frac{T_C}{T_H-T_C}
-%\eqe
-%
-%\bold{Carnot Cycle} (All use reversible work sources)
-%\begin{enumerate}
-%\item \un{Isothermal expansion} with \emph{hot} reservoir contact and reversible work
-%\item \un{Adiabatic expansion} with reversible work to $T_C$
-%\item \un{Isothermal compression} with \emph{cold} reservoir contact and reversible work
-%\item \un{Adiabatic compression} with reversible work to $T_H$
-%\end{enumerate}
-%
-%\subsection{Le Chatelier-Braun principle}
-%\un{Definition:} If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
-%
-%%%%%%
-%\subsection{Clausius-Clapeyron:}
-%The Clausius-Clapeyron equation is a way to characterize phase transformations between two phases of matter (of the same constituent material).  Know the \emph{generalized form} (below) and be able to derive it for new systems:
-%\eqs
-%\frac{dy_j}{dT}|_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
-%\eqe  
-%\eqs\boxed{
-%\frac{dP}{dT} = \frac{\Delta H}{T\Delta V}}
-%\eqe
-%which, for an ideal gas and where $\Delta V = V_{(g)}-V_{(l)} \approx V_{(g)}$ leads to:
-%\eqs
-%\ln(\frac{P_f}{P_i}) = \frac{\Delta H}{n R}[\frac{1}{T_i}-\frac{1}{T_f}]
-%\eqe
-%
-%\bold{Derivation:}
-%\eqs
-%d\underline{G}^\alpha &= d\underline{G}^\beta\\
-%-\underline{S}^\alpha dT + \underline{V}^\alpha dP &= -\underline{S}^\beta dT + \underline{V}^\beta dP\\
-%\Delta \underline{V}^{\alpha \rightarrow \beta} &= \underline{V}^\beta - \underline{V}^\alpha\\
-%\Delta \underline{S}^{\alpha \rightarrow \beta} &= \underline{S}^\beta - \underline{S}^\alpha\\
-%\Delta \underline{S}^{\alpha \rightarrow \beta}dT + \Delta \underline{V}^{\alpha \rightarrow \beta} dP &= 0\\
-%\frac{dP}{dT} &= \frac{\Delta \underline{S}^{\alpha \rightarrow \beta}}{\Delta \underline{V}^{\alpha \rightarrow \beta}}\\
-%\Delta \underline{S}^{\alpha \rightarrow \beta} &= \frac{\Delta \underline{H}^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}
-%\eqe
-%plugging in we get the Clapeyron Equation, which defines the slope of our $P/T$ curve:
-%\eqs
-%\frac{dP}{dT} &= \frac{\Delta \underline{H}^{\alpha \rightarrow \beta}}{T \Delta \underline{V}^{\alpha \rightarrow \beta}}
-%\eqe
-%
-%%%%%%
-%\subsection{Raoult's Law:}
-%Given a mixture of ideal liquids, the vapor pressure of each constituent liquid is equal to the vapor pressure of that liquid as a \emph{single component} multiplied by the concentration.  Thus, the total vapor pressure of the mixture is 
-%\eqs
-%P_\text{vap} = \chi_A p_A + \chi_B p_B + ... = \sum_i \chi_i p_i
-%\eqe
-%
-%\subsection{Phase changes:}
-%You should be able to look at a $G$ vs. $T$ plot and rank the magnitudes of the entropy and heat capacity $c_P$ for the solid, liquid, and gas phases.  We can do this because
-%\eqs
-%\frac{\partial G}{\partial T} &= -S\\
-%\frac{\partial^2 G}{\partial T^2} &= \frac{-c_P}{T}
-%\eqe
-%
-%\bold{Gibb's Phase Rule:} If there are $n$ phases of $r$ species coexisting at equilibrium and constant temperature and pressure, then there are $f$ degrees of freedom where
-%\eqs
-%f = 2 + r - n
-%\eqe
-%
-%\bold{Binding Energy and Phase Change Rules}:\\
-%
-%Richard's Rule:
-%\eqs
-%\Delta H_\text{fusion} = 9 T_\text{fusion}
-%\eqe
-%Trouton's Rule:
-%\eqs
-%\Delta H_\text{vaporization} = 90 T_\text{vaporization}
-%\eqe
-%
-%For a reaction
-%\eqs
-%aA + bB \rightarrow cC + dD
-%\eqe
-%the enthalpy of reaction $\Delta_r^0$ is
-%\eqs
-%\Delta H_r^0 = c\Delta H_C^0 + d\Delta H_D^0 - b\Delta H_B^0 - a \Delta H_A^0
-%\eqe
-%
-%\bold{Stable equilibrium criteria:}\\
-%At a relative minima or maxima, $dU = 0$.  Also, $d^2U > 0$, which guarantees a minima.  At a constant temperature and pressure, two phases are in equilibrium if $G^\alpha = G^\beta$.
-%
-%%%%%%
-%\subsection{Joule-Thompson Expansion (Throttling)}
-%Two volumes are connected by a valve, with the pressure on one side higher than the other side.  The gas escaping from the higher pressure area moves (1) \emph{isenthalpically} ($dH=0$), (2) \emph{irreversibly} ($dS>0$), and (3) adiabatically (too fast to allow for heat transfer).
-%\eqs
-%dH &= \partial Q_{P,N_1,N_2,..}\\
-%Q_{i\rightarrow f} &= H(V_f, P, N) - H(V_i, P, N)
-%\eqe
-%Here's a derivation of an equation useful when dealing with ideal gases that start at different pressures:
-%\eqs
-%dU &= \partial Q + \partial W = \partial W\\
-%nc_V dT &= -P dV\\
-%V &= nRT/P\\
-%dV &= \frac{nR}{P}dT - nRT\frac{dP}{P^2}\\
-%(c_V + R)\frac{dT}{T} &= R\frac{dP}{P}\\
-%\left(\frac{T_2}{T_1}\right)^{c_V+R} &= \left(\frac{P_2}{P_1}\right)^R\\
-%T_2 &= T_1 \left(\frac{P_1}{P_2}\right)^{R/c_P}\\
-%\mu_{JT}&=\left(\frac{\partial T}{\partial P}\right)_H = \frac{V}{c_P}(\alpha T - 1)
-%\eqe
-%and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
-%
-%\subsection{Material Properties (useful 2nd derivatives of energy functions):}
-%\eqs
-%\text{Thermal Expansion $\alpha$:    } \left(\frac{\partial V}{\partial T}\right)_P = V \alpha
-%\eqe
-%\eqs
-%\text{Compressibility $\beta$:    } \left(\frac{\partial V}{\partial P}\right)_T = -V \beta
-%\eqe
-%\eqs
-%\text{Heat Capacity $c_V$:    } \left(\frac{\partial S}{\partial T}\right)_V = \frac{c_V}{T}
-%\eqe
-%\eqs
-%\text{Heat Capacity $c_P$:    } \left(\frac{\partial S}{\partial T}\right)_P = \frac{c_P}{T}
-%\eqe
-%\eqs
-%\text{Magnetostriction $\gamma$:    } \left(\frac{\partial V}{\partial H}\right)_{T,P} = V \gamma
-%\eqe
-%\eqs
-%\text{Magnetic Susceptibility $\chi$:    } \left(\frac{-\partial M}{\partial H}\right)_{T,P} = -V \chi
-%\eqe
-%
-%\subsection{Random constants we may need to know:}
-%\begin{itemize}
-%\item $R$ = 8.314 Joules mol$^{-1}$ K$^{-1}$
-%\item $N_\text{A}$ = 6.022 $\times 10^{-23}$ mol
-%\item $k_B = 1.38 \times 10^{-23}$ J K$^{-1}$
-%
-%
-%\end{itemize}
-%
-%
+\subsection{Some useful math identities:}
+\eqs\boxed{
+\left(\frac{\partial f}{\partial x}\right)_g = \left(\frac{\partial f}{\partial x}\right)|_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g}
+\eqe
+\eqs \boxed{
+\left(\frac{\partial f}{\partial x}\right)_y \left(\frac{\partial x}{\partial y}\right)_f \left(\frac{\partial y}{\partial f}\right)_x = -1}
+\eqe
+Also just know the chain rule and inverse rule (pretty intuitive). \\ 
+
+\bold{Variable reduction:}
+\begin{enumerate}[1.]
+\item Bring your thermodynamic potential to the numerator
+\item Bring $S$ to the numerator and turn it into a heat capacity or use a Maxwell Relation
+\item If needed, bring your volume to the numerator and turn it into a derivative of $T$ and $P$.
+\item Relate heat capacities to what you know
+\end{enumerate}
+
+%%%%%%%
+\subsection{Carnot Engines:}
+Carnot engines really aren't two complicated.  The principles are completely derived from the first two principles at reversible equilibrium $dS = 0 = dS_1 + dS_2$ and $dU = 0 = \partial Q + \partial W$.  The different efficiencies are all just the quantities that \emph{you want to get out of your pump/engine/refridgerator}.  Let's begin:
+\eqs
+dS = dS_1 + dS_1 &= 0\\
+\frac{\partial Q_1}{T_1} &= -\frac{\partial Q_2}{T_2}\\
+\partial Q_1 &= -\partial Q_2 \frac{T_1}{T_2}
+\eqe
+and now with the first law
+\eqs
+dU = \partial Q_1 + \partial Q_2 + \partial W &= 0\\
+(1-\frac{T_1}{T_2})\partial Q_2 = -\partial W
+\eqe
+
+\bold{Carnot Engine}:  Here we care about getting work \emph{out} by using a \emph{heat source}, so the efficiency is
+\eqs
+\mu_\text{engine} = \frac{-\partial W}{\partial Q_\text{hot}} = 1-\frac{T_L}{T_H} = \frac{T_H - T_C}{T_H}
+\eqe
+\bold{Heat Pump}: Here we care about \emph{extracting heat} by \emph{doing work} on the system.  The efficiency is then
+\eqs
+\mu_\text{pump} = \frac{-\partial Q_H}{\partial W} = \mu_\text{engine}^{-1} = \frac{T_H}{T_H-T_C}
+\eqe
+\bold{Refridgerator}: Here we want to maximize the amount of heat \emph{leaving} the cold system by \emph{doing work}.
+\eqs
+\mu_\text{refridgerator} = \frac{-\partial Q_C}{\partial W} = \frac{-\partial Q_H \frac{T_C}{T_H}}{-(1-\frac{T_C}{T_H})\partial Q_H}= \frac{-T_C}{-(T_H-T_C)} = \frac{T_C}{T_H-T_C}
+\eqe
+
+\bold{Carnot Cycle} (All use reversible work sources)
+\begin{enumerate}
+\item \un{Isothermal expansion} with \emph{hot} reservoir contact and reversible work
+\item \un{Adiabatic expansion} with reversible work to $T_C$
+\item \un{Isothermal compression} with \emph{cold} reservoir contact and reversible work
+\item \un{Adiabatic compression} with reversible work to $T_H$
+\end{enumerate}
+
+\subsection{Le Chatelier-Braun principle}
+\un{Definition:} If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
+
+%%%%%
+\subsection{Clausius-Clapeyron:}
+The Clausius-Clapeyron equation is a way to characterize phase transformations between two phases of matter (of the same constituent material).  Know the \emph{generalized form} (below) and be able to derive it for new systems:
+\eqs
+\frac{dy_j}{dT}|_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
+\eqe  
+\eqs\boxed{
+\frac{dP}{dT} = \frac{\Delta H}{T\Delta V}}
+\eqe
+which, for an ideal gas and where $\Delta V = V_{(g)}-V_{(l)} \approx V_{(g)}$ leads to:
+\eqs
+\ln(\frac{P_f}{P_i}) = \frac{\Delta H}{n R}[\frac{1}{T_i}-\frac{1}{T_f}]
+\eqe
+
+\bold{Derivation:}
+\eqs
+d\underline{G}^\alpha &= d\underline{G}^\beta\\
+-\underline{S}^\alpha dT + \underline{V}^\alpha dP &= -\underline{S}^\beta dT + \underline{V}^\beta dP\\
+\Delta \underline{V}^{\alpha \rightarrow \beta} &= \underline{V}^\beta - \underline{V}^\alpha\\
+\Delta \underline{S}^{\alpha \rightarrow \beta} &= \underline{S}^\beta - \underline{S}^\alpha\\
+\Delta \underline{S}^{\alpha \rightarrow \beta}dT + \Delta \underline{V}^{\alpha \rightarrow \beta} dP &= 0\\
+\frac{dP}{dT} &= \frac{\Delta \underline{S}^{\alpha \rightarrow \beta}}{\Delta \underline{V}^{\alpha \rightarrow \beta}}\\
+\Delta \underline{S}^{\alpha \rightarrow \beta} &= \frac{\Delta \underline{H}^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}
+\eqe
+plugging in we get the Clapeyron Equation, which defines the slope of our $P/T$ curve:
+\eqs
+\frac{dP}{dT} &= \frac{\Delta \underline{H}^{\alpha \rightarrow \beta}}{T \Delta \underline{V}^{\alpha \rightarrow \beta}}
+\eqe
+
+%%%%%
+\subsection{Raoult's Law:}
+Given a mixture of ideal liquids, the vapor pressure of each constituent liquid is equal to the vapor pressure of that liquid as a \emph{single component} multiplied by the concentration.  Thus, the total vapor pressure of the mixture is 
+\eqs
+P_\text{vap} = \chi_A p_A + \chi_B p_B + ... = \sum_i \chi_i p_i
+\eqe
+
+\subsection{Phase changes:}
+You should be able to look at a $G$ vs. $T$ plot and rank the magnitudes of the entropy and heat capacity $c_P$ for the solid, liquid, and gas phases.  We can do this because
+\eqs
+\frac{\partial G}{\partial T} &= -S\\
+\frac{\partial^2 G}{\partial T^2} &= \frac{-c_P}{T}
+\eqe
+
+\bold{Gibb's Phase Rule:} If there are $n$ phases of $r$ species coexisting at equilibrium and constant temperature and pressure, then there are $f$ degrees of freedom where
+\eqs
+f = 2 + r - n
+\eqe
+
+\bold{Binding Energy and Phase Change Rules}:\\
+
+Richard's Rule:
+\eqs
+\Delta H_\text{fusion} = 9 T_\text{fusion}
+\eqe
+Trouton's Rule:
+\eqs
+\Delta H_\text{vaporization} = 90 T_\text{vaporization}
+\eqe
+
+For a reaction
+\eqs
+aA + bB \rightarrow cC + dD
+\eqe
+the enthalpy of reaction $\Delta_r^0$ is
+\eqs
+\Delta H_r^0 = c\Delta H_C^0 + d\Delta H_D^0 - b\Delta H_B^0 - a \Delta H_A^0
+\eqe
+
+\bold{Stable equilibrium criteria:}\\
+At a relative minima or maxima, $dU = 0$.  Also, $d^2U > 0$, which guarantees a minima.  At a constant temperature and pressure, two phases are in equilibrium if $G^\alpha = G^\beta$.
+
+%%%%%
+\subsection{Joule-Thompson Expansion (Throttling)}
+Two volumes are connected by a valve, with the pressure on one side higher than the other side.  The gas escaping from the higher pressure area moves (1) \emph{isenthalpically} ($dH=0$), (2) \emph{irreversibly} ($dS>0$), and (3) adiabatically (too fast to allow for heat transfer).
+\eqs
+dH &= \partial Q_{P,N_1,N_2,..}\\
+Q_{i\rightarrow f} &= H(V_f, P, N) - H(V_i, P, N)
+\eqe
+Here's a derivation of an equation useful when dealing with ideal gases that start at different pressures:
+\eqs
+dU &= \partial Q + \partial W = \partial W\\
+nc_V dT &= -P dV\\
+V &= nRT/P\\
+dV &= \frac{nR}{P}dT - nRT\frac{dP}{P^2}\\
+(c_V + R)\frac{dT}{T} &= R\frac{dP}{P}\\
+\left(\frac{T_2}{T_1}\right)^{c_V+R} &= \left(\frac{P_2}{P_1}\right)^R\\
+T_2 &= T_1 \left(\frac{P_1}{P_2}\right)^{R/c_P}\\
+\mu_{JT}&=\left(\frac{\partial T}{\partial P}\right)_H = \frac{V}{c_P}(\alpha T - 1)
+\eqe
+and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
+
+\subsection{Material Properties (useful 2nd derivatives of energy functions):}
+\eqs
+\text{Thermal Expansion $\alpha$:    } \left(\frac{\partial V}{\partial T}\right)_P = V \alpha
+\eqe
+\eqs
+\text{Compressibility $\beta$:    } \left(\frac{\partial V}{\partial P}\right)_T = -V \beta
+\eqe
+\eqs
+\text{Heat Capacity $c_V$:    } \left(\frac{\partial S}{\partial T}\right)_V = \frac{c_V}{T}
+\eqe
+\eqs
+\text{Heat Capacity $c_P$:    } \left(\frac{\partial S}{\partial T}\right)_P = \frac{c_P}{T}
+\eqe
+\eqs
+\text{Magnetostriction $\gamma$:    } \left(\frac{\partial V}{\partial H}\right)_{T,P} = V \gamma
+\eqe
+\eqs
+\text{Magnetic Susceptibility $\chi$:    } \left(\frac{-\partial M}{\partial H}\right)_{T,P} = -V \chi
+\eqe
+
+\subsection{Random constants we may need to know:}
+\begin{itemize}
+\item $R$ = 8.314 Joules mol$^{-1}$ K$^{-1}$
+\item $N_\text{A}$ = 6.022 $\times 10^{-23}$ mol
+\item $k_B = 1.38 \times 10^{-23}$ J K$^{-1}$
+
+
+\end{itemize}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - October 6, 2014}
 %\begin{itemize}
