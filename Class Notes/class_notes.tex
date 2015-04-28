@@ -1421,32 +1421,24 @@ Typical slopes:  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 26, 2014}
-Simplified Clapeyron for the condensed phase and vapor equilibrium.  First we had the vapor as an ideal gas $V = \frac{RT}{P}$, and then second se approximated $\Delta V \approx V_g$
-\eqs
-\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
-&= P\frac{\Delta H_{\phi T}}{RT^2}\\
-\frac{dP}{P}&= \frac{dT}{T^2}\frac{\Delta H}{R}\\
-\ln(P) &= -\frac{\Delta_{\phi T}}{R} \frac{1}{T} + \text{constant}
-\eqe
-
-\un{Simplifying clapeyron}  For condensed phase/vapor\\
+Last time we calculated the Clausius-Clapeyron general relation.  Now we would like to find a simplified expression of the Clausius-Clapeyron equation for the condensed phase and vapor equilibrium.  We can assume the vapor is an ideal gas $V = \frac{RT}{P}$ and make the approximation $\Delta V \approx V_g$, since the volume in condensed phases are generally much smaller than the volume of the gas phase.
 \eqs
 \Delta V = V_v - V_l \approx V_v\\
 \eqe
-If the gas is ideal, we can use $V = \frac{RT}{P}$ and
 \eqs
-\frac{dP}{dT} &= \frac{\Delta H}{T \Delta V} = \frac{P \Delta H}{RT^2}\\
-d(\ln(P)) &= -\frac{\Delta H}{R} (d(\frac{1}{T}))\\
-\ln(P) &= -\frac{\Delta H}{R}\frac{1}{T} + \text{constant}
+\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
+&= P\frac{\Delta H}{RT^2}\\
+\frac{dP}{P}&= \frac{dT}{T^2}\frac{\Delta H}{R}\\
+\ln(P) &= -\frac{\Delta H}{R} \frac{1}{T} + \text{constant}
 \eqe
-
+The enthalpy is also a function of temperature, so we write it as a function of the relevant heat capacity.  Additionally, the heat capacities can all be expanded with respect to temperature.
 \eqs
-\Delta H_{\phi T}(T) &= \Delta H_{\phi T}(298) + \Delta C_p (T-298)\\
+\Delta H(T) &= \Delta H_{\phi T}(298) + \Delta C_p (T-298)\\
 c_P^{v} &= a + bT + ...\\
 c_P^{l} &= a' + b'T + ...\\
 \Delta c_P &= A' + B'T+...\\
 \eqe
-Which leads to Antoine's equation:
+Combining the above results leads to Antoine's equation, a relation with the constants $A,B,C$ that all determine the relationship between temperature and pressure during a phase transition:
 \eqs
 \log(P) = A - \frac{B}{T+C}
 \eqe
@@ -1460,8 +1452,8 @@ Take a look at the phase diagram for $\text{H}_2\text{O}$ in Fig \ref{PDH2O}.
 \label{PDH2O}
 \end{figure}
 From looking at this phase diagram, one would think that at room temperature and pressure $\left(10^5\text{Pa}, 300 K\right)$, water should be
-a single, liquid phase. Why, then, is there water vapor in the air around us? Well, this is because this phase diagram only considers \textit{unary
-systems at constant pressure and temperature}, whereas water exists in systems where there are other elements in the vapor above it. Because liquid water at STP has some well-defined chemical potential of $\text{H}_2\text{O}$, the vapor above it must have enough $\text{H}_2\text{O}$ in it that it has the same chemical potential for $\text{H}_2\text{O}$.\\
+a single, liquid phase. Why, then, is there water vapor in the air around us? This is because the phase diagram only considers \textit{unary
+systems at constant pressure and temperature}, whereas water exists in systems where there are other elements in the vapor above it (air!). Because liquid water at STP has some well-defined chemical potential of $\text{H}_2\text{O}$, the vapor above it must have enough $\text{H}_2\text{O}$ such that it has the same chemical potential.\\
 
 The \textbf{vapor pressure} is defined as the partial pressure that a substance in the \un{condensed} phase will create in the vapor phase in equilibrium with it. Where a partial pressure is defined as:
 \eqs
@@ -1471,32 +1463,32 @@ Because gases are ideal, if we have a liquid $A$ in a container with some other 
 
 \un{Example:} $P_{H_2O}(25^0) = 0.03$ atm.  At 45\degree it is 0.07 and at 100\degree it is 1 (boiling point).  The relative humidity is expressed by $\frac{P_{H_2O}}{P_{H_2O}^*}$.
 
-Note: saturated water vapor does not behave like an ideal gas. If we have a system of 100\% pure humid air, then if we compress the system, the vapor pressure of the water will remain constant, and some of the water will condense. %If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
+Note: saturated water vapor does not behave like an ideal gas. If we have a system of 100\% pure humid air and we compress the system, the vapor pressure of the water will remain constant and some of the water will condense. %If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
 
 
 \subsection{Le Chatelier-Braun principle}
  %If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
 \un{Definition:} When a system, initially at equilibrium, is perturbed from its equilibrium state, the system adjusts itself to counteract the effect of the applied change in establishing a new equilibrium.\footnote{Callen provides a good discussion of this in Ch. 8-4 (p. 210)}\\
-The most common example of this are in chemistry, such as when you add some reactant, A, to a system which was previously in some equilibrium governed by:
+
+The most common examples of this are in chemistry.  When you add a reactant A to a system which was previously in some equilibrium governed by
 \eqs A+B \longleftrightarrow C+D\eqe
-Adding some A acts as a\emph{ perturbation} to this system, and the system \emph{ adjusts itself} by reacting to partly eliminate this perturbation,
+then adding some A acts as a \emph{ perturbation} to this system, and the system \emph{ adjusts itself} by reacting to partly eliminate this perturbation,
 coming to a new equilibrium in the process.\footnote{Throwing away the thermo jargon: if you put a bit of $A$ in, some of that $A$ reacts, so the concentration of $A$ becomes less.} Thermodynamically, this is tantamount to increasing the chemical potential of A, with the forward reaction
 acting to then homogenize this perturbation in the chemical potential. \footnote{Historical note: Le Chatelier and Braun discovered this principle independently,
 so in 3.20 we give attribution to both of them!}
 
 \subsection{Generalization of Clausius-Clapeyron}
-The method to generate the Clausius-Clapeyron equation can be applied to any two sets of work terms, by taking the proper Legendre transform such
+The method used to generate the Clausius-Clapeyron equation can be applied to any two sets of work terms by taking the proper Legendre transform such
 that the intensive variables of interest are the natural variables for the thermodynamic potential. For example, in the case of the Clausis-Clapeyron
-equation, the intensive variables of interest were T and P, so we took $\phi $ = U-TS+PV, which turns out t be G. Along a phase boundary, this gave rise to the relation:
+equation the intensive variables of interest were T and P, so we took $\phi  = U-TS+PV$, which turns out to be the Gibb's free energy. Along a phase boundary, this gave rise to the relation:
 \eqs
-\frac{\partial P}{\partial T}=\frac{\text{$\Delta $s}}{\text{$\Delta $v}}
+\frac{d P}{d T}=\frac{\text{$\Delta $s}}{\text{$\Delta $v}}
 \eqe
 A similar relationship can be derived for a magnetic phase transition, taking
 instead: $\phi $ = U - TS + PV - HM such that
 \eqs \text{d$\phi $}=-S \text{dT}+V \text{dP}-M \text{dH}\eqe
-for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where want to move along a two-phase equilibrium boundary in T-H space such that the different thermodynamic potentials are ``changing'' at the same rate:
+for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where we want to move along a two-phase equilibrium boundary in T-H space such that the different thermodynamic potentials are changing at the same rate:
 \eqs\text{d$\phi $}^1=\text{d$\phi $}^2\eqe
-meaning:
 \eqs
 -S^1 \text{dT}+V^1 \text{dP}-M^1 \text{dH}-\left(-S^2 \text{dT}+V^2 \text{dP}-M^2 \text{dH}\right)=0
 \eqe
@@ -1504,8 +1496,10 @@ For a system at constant pressure, we
 can show that:
 \eqs\left(\frac{\partial H}{\partial T}\right)_P=-\frac{\text{$\Delta $S}}{\text{$\Delta $M}}\eqe
 In general, this can be written for any work term as:
-\eqs\left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\text{$\Delta $S}}{\text{$\Delta $X}_j}\eqe
-Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, C-C relationships with $P$ have a negative sign.
+\eqs \boxed{
+\left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\text{$\Delta $S}}{\text{$\Delta $X}_j}
+}\eqe
+Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, Clausius-Clapeyron (C-C) relationships with $P$ have a negative sign.
 % \eqs
 % dU &= TdS + \sum_i y_i dx_i\\
 % G &= U-TS - y_idx_i\\
@@ -1558,7 +1552,7 @@ dU &= TdS + F dL\\
 G &= U- T\cdot S - F \cdot L\\
 L &= -\left(\frac{\partial G}{\partial F}\right)_{T_i}
 \eqe
-By applying a force and stretching the material, we move the $G\text{ vs. }T$ line downwards for both phases, but the the martensitic phase moves down more quickly than the parent phase due to the martensite's larger $L$. This relative movement is indicated by the dashed lines in Fig. \ref{superElasticity}\textbf{B}. The interesting thing is that because they don't move at the same rate, you get shifts in the transition temperature due to application of stress; there's a Clausius-Clapeyron effect here. Let's quantify it in the context of a specific system.\\
+By applying a force and stretching the material, we move the $G\text{ vs. }T$ line downwards for both phases, but the the martensitic phase moves down more quickly than the parent phase due to the martensite's larger $L$. This relative movement is indicated by the dashed lines in Fig. \ref{superElasticity}\textbf{B}. The interesting thing is that because they don't move at the same rate, you get shifts in the transition temperature due to application of stress; there is a Clausius-Clapeyron effect here. Let's quantify it in the context of a specific system.\\
 
 Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\three/mol, $\Delta S \approx 1$ J/mol/K.  Now we write down a version of Clausius-Clapeyron:
 \eqs
@@ -1567,19 +1561,19 @@ A \Delta P &= V_m \Delta \epsilon\\
 \frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
 \label{superElastCC}
 \eqe
-The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it's just a line with a slope given by Eq. \ref{superElastCC}.
+The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it's just a line with a slope given by Equation \ref{superElastCC}.
 
 In general, what would be the heat involved if we apply a stress?
 \eqs
 H &= U+PV\\
-dH &= \partial Q +VdP + F dl\\
-(dH)_p &= (\partial Q)_P F dl
+dH &= \dbar Q +VdP + F dl\\
+(dH)_p &= (\dbar Q)_P F dl
 \eqe
 Universal enthalpy
 \eqs
 H &= U - \sum y_i x_i\\
 H' &= U + PV - Fl\\
-(dH') &= (\partial Q)_P - l dF
+(dH') &= (\dbar Q)_P - l dF
 \eqe
 %%%%%%%%%%%%%%
 %\subsection{EXAM 1 MATERIAL ENDS HERE}
@@ -1593,63 +1587,122 @@ H' &= U + PV - Fl\\
 %\end{itemize}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 29, 2014}
-%\subsection{Open Systems}
-%\eqs
-%U &= TS - PV + \sum \mu_i N_i\\
-%G &= U - TS + PV\\
-%&= \sum \mu_i N_i
-%\eqe
-%If we extend what we have seen before for the various intensive properties, we can write down our second derivative charts again
-%\begin{center}
-%\begin{tabular}{c | c | c | c}
-%& T & P & $n_i$ \\ \hline
-%T & $-\frac{c_P}{T}$ & $\alpha_V V$& $-\bar{S_i}$ \\ \hline
-%P & $\alpha_V V$ & $-\beta_T V$& $\bar{V_i}$ \\ \hline
-%$n_i$ & $-\bar{S_i}$ & $\bar{V_i}$ & $\frac{\partial \mu_i}{\partial n_i}$
-%\end{tabular}
-%\end{center}
-%where the extra second derivatives are from
-%\eqs
-%\frac{\partial^2 G}{\partial T \partial n_i} &= -\frac{\partial S}{\partial n_i}|_{P,T,n_{j\neq i}} = -\bar{S_i}\\
-%\frac{\partial^2 G}{\partial P \partial n_i} &=\frac{\partial V}{\partial n_i} = \bar{V_i}
-%\eqe
-%A \un{partial molar quantity} $\bar{x_i}$ is given by
-%\eqs
-%\bar{x_i} = \frac{\partial x}{\partial n_i}|_{y,n_{i\neq j}}
-%\eqe
-%For a single component, we graphed our pressure vs. temperature plot (P vs T), indicating the regions of vapor, solid, and liquid.  In addition, we could plot pressure vs. partial molar volume (P vs $\bar{V}$) with isothermal lines.  At a phase change the volume would change discontinuously with pressure.\\
-%
-%Given a system open to two components A \& B, we know $dN_A = -dN_B$.  See notebook for binary phase diagram.  We will end up converting this over to a T vs. $\mu_B^*$ diagram.
-%
-%\eqs
-%dU &= ... \mu_A dN_A + \mu_B dN_B\\
-%&= (\mu_B - \mu_A) dN_B\\
-%&= \mu_B^* dN_B
-%\eqe
-%\eqs
-%d\phi = -S dT + VdP - N_B d\mu_B^* = 0\\
-%\eqe
-%\eqs
-%\frac{dT}{d\mu_B^*} = -\frac{\Delta N_B}{\Delta S}
-%\eqe
-%(see notebook on two phase diagrams)
-%
-%\subsection{Molar Volume}
-%\eqs
-%\bar{V}_A = \frac{\partial V}{\partial n_A}|_{T,P}
-%\eqe
-%The density matters?  Lets add an interstitial atom B into a crystal lattice of A atoms.  If we have pure B ($x_A = 0$):
-%\eqs
-%\bar{V}_A(x_A = 0) &= 0\\
-%\bar{V}_B(x_A=0) &= V_B
-%\eqe
-%If we have just pure A $(x_A = 1)$
-%\eqs
-%\bar{V}_B(x_A = 1) &= 0\\
-%\bar{V}_A(x_A = 1) &= V_A
-%\eqe
-%Our partial molar volume can be either positive or negative.  Assume we have a container with H\2O$_{(l)}$ in it and we add MgSO\4, which will ionize to form MG$^{2+}$ and SO\4$^{2-}$.  The water interacts with the magnesium and shortens the distance between the water molecules.  Thus, $\bar{V}_{\text{MgSO}_4}$ is initially negative, and then at some saturation point
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 29, 2014}
+We now begin the section on chemical thermodynamics and solution theory, which is all about what happens when the substances we are dealing with are no longer pure. 
+
+Readings regarding solution theory will be from \textit{ Chemical Thermodynamics of Materials} by Claude H.P. Lupis (a former member of MIT DMSE) and will be posted to Stellar when possible. Readings on specific topics are listed below, under the corresponding heading.\\
+In general, Denigh{'}s \textit{ The Principles of Chemical Equillibrium} is also a good reference on these topics. This book is somewhat verbose, but very good if you want a second, different viewpoint.\\
+\textbf{Phase Diagrams:}\\
+\textit{ Principles of Phase Diagams in Materials Systems} by Paul Gordon is a very thorough reference for phase diagrams. It seems to be out of print and so we will post the chapters as needed.\\
+The ASM Phase Diagram Database is an extremely useful tool for materials scientists. The link is found \href{http://www1.asminternational.org/asmenterprise/apd/BrowseAPD.aspx}{here}. We will look at a lot of phase diagrams from here throughout the last part of this course.
+
+\subsection{Adding composition as a work term in G}
+G is defined as $G = U-TS+PV$. Recognizing that $U = TS - PV + \Sigma \mu _iN_i$, we see that there are a bunch of chemical work terms we{'}ve been
+leaving out! G can thus be defined as (ignoring other work terms like $\mathcal{H}$d$\mathcal{M}$, $\mathcal{E}$d$\mathcal{P}$, etc):\\
+\eqs G = \Sigma \mu _iN_i\eqe
+We get a whole new class of properties by taking derivatives of G with respect to G. We call these partial molar quantities, and we can add them to our matrix of derivatives:
+\begin{center}
+\begin{tabular}{c | c | c | c}
+ $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$ & $\frac{\partial}{\partial n_i}$\\ \hline
+ $\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V V$ & $-\bar{S_i}$\\ \hline
+ $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$ & $\bar{V_i}$\\ \hline
+ $\frac{\partial}{\partial n_i}$ & $-\bar{S_i}$ & $\bar{V_i}$ & $\frac{\partial \mu_i}{\partial n_i}$
+\end{tabular}
+\end{center}
+
+% \begin{center}
+% \begin{tabular}{c | c | c | c}
+% & T & P & $n_i$ \\ \hline
+% T & $-\frac{c_P}{T}$ & $\alpha_V V$& $-\bar{S_i}$ \\ \hline
+% P & $\alpha_V V$ & $-\beta_T V$& $\bar{V_i}$ \\ \hline
+% $n_i$ & $-\bar{S_i}$ & $\bar{V_i}$ & $\frac{\partial \mu_i}{\partial n_i}$
+% \end{tabular}
+% \end{center}
+where the extra second derivatives are from
+\eqs
+\frac{\partial^2 G}{\partial T \partial n_i} &= -\frac{\partial S}{\partial n_i}|_{P,T,n_{j\neq i}} = -\bar{S_i}\\
+\frac{\partial^2 G}{\partial P \partial n_i} &=\frac{\partial V}{\partial n_i} = \bar{V_i}
+\eqe
+\subsection{Solutions, Molar Quantities, and Partial Molar Quantities}
+\textbf{Readings}: DeHoff{'}s \textit{ Thermodynamics in Materials Science} (pgs 197-202) is the best for this. Lupis 2.3.3 also has a decent discussion.\\
+\textbf{Solutions}: A solution is defined as a single phase, $\alpha$, which has multiple elements. Note that we have not defined whether the solution is in the solid, liquid, or gas state. Solutions can exist in each of these phases, so while it is unintutive to think of a solid `solution', solutions definitely occur in the solid state. Disordered solid solutions are often called \emph{alloys}. Ordered solid solutions are called \emph{compounds}. Note that ordered phases are still solutions in the thermodynamic sense; they contain multiple elements, each element just has a tendency to exist
+at certain crystallographic sites.
+
+\textbf{Molar Quantities}: A molar quantity is any extensive property normalized on a molar basis. These are usually written with an underbar; the molar entropy would thus be written $\underline{S}=\frac{S}{N}$. A concrete example is that the molar volume of pure Ni is $\underline{V}_{\text{Ni}}=\frac{V}{N}=$ 7 $\left.\text{cm}^3\right/\text{mol}$, and that of water is $\underline{V}_{H_2O}=$18 $\left.\text{cm}^3\right/\text{mol}$. Molar quantities are well-tabulated for the elements. Molar properties can also be defined for solutions; solutions have well-defined extensive variables and mole numbers, so you can divide the extensive variables by the total number of moles in the solution and get a molar property.\\
+
+Molar quantities are intensive: the molar volume of Ni does not change whether you have one or two moles of Ni. Note that the intensive nature of molar quantities makes it silly to define molar properties of the intensive variables, as the units get messed up: the temperature per mole does not make sense. Molar quantities are very related to (but distinct from) partial molar quantities. We will derive this relationship below.\\
+
+\textbf{Partial Molar Quantities:}\\
+A partial molar quantity (PMQ) is the derivative of any extensive property, X, with respect to the number of moles of a single species, $N_i$:\\
+\eqs \bar{X}_i=\left(\frac{\partial X}{\partial N_i}\right)_{T,P,N_{j\neq i}}\eqe
+PMQs are written with an overbar. Thus $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$. It is easy to show that the partial molar quantities are intensive properties of the system (i.e. they do not depend on the size of the system). The easiest example of PMQs being intensive is the chemical potential, we already know it is intensive:$\mu _i=\overline{G_i}=\left(\frac{\partial G}{\partial N_i}\right)_{T,P,N_{j\neq i}}$\\
+The discussion in these notes is meant to be self-contained, but it you need more info, there{'}s a really good Wikipedia page on these: \href{https://en.wikipedia.org/wiki/Partial_molar_property}{Wikipedia page on partial molar quantities}. We will first discuss a concrete example of PMQs with the partial molar volume of water-ethanol mixtures, and then give a general discussion of the properties of partial molar quantities.\\
+
+\subsection{Ex: Partial Molar Volumes}
+One common example of a partial molar quantity is a \emph{partial molar volume}. The definition of the partial molar volume is: 
+\eqs\bar{V}_i=\left(\frac{\partial V}{\partial n_i}\right)_{n_{j\neq i}, T, P}\eqe
+That is: the amount that the total volume of a system changes upon addition of a small amount of that substance. Partial molar volumes can be extremely important in technological applications. For example, the change in volume due to lithiation of various battery electrodes causes mechanical degradation of the electrodes. This turns out to be one of the key factors governing the cycling performance of the electrodes, with many next-generation electrodes limited by mechanical degradation.\\
+In practice, one way to calculate partial molar volumes is by taking a relatively large solution (say of water) and adding a well-defined, small amount of solute to the solution (say one mole of ethanol). We will discuss a more clever way of measuring partial molar properties later. The partial molar volume is then given (approximately) by the volume change divided by the number of moles added:
+\eqs\bar{V}_{\text{EtOH}}\simeq \left(\frac{\text{$\Delta $V}}{\text{$\Delta $n}_{\text{EtOH}}}\right)_{n_{H_2O}, T, P}
+\label{approxPMV}
+\eqe
+In this situation, the mols of $N_i$ and the change in volume are small relative to the mole numbers and volume of the system, so Eq. \ref{approxPMV} approximates the differential volume change per mole of solute added.
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=13cm]{partialMolarVolumes}
+\caption{\textbf{A} Partial molar volumes of ethanol-water solutions as a function of composition (Moore 1972) \textbf{B} The excess volume of ethanol-water solutions as a function of composition, \href{https://commons.wikimedia.org/wiki/File:Excess_Volume_Mixture_of_Ethanol_and_Water.png}{wikimedia commons}}
+\label{PMVexamp}
+\end{figure}
+
+
+The volume of a solution or compound is often not the sum of the volume of its constituent elements. For example, shown in Fig. \ref{PMVexamp} the partial molar volumes of ethanol and water when mixed with one another. As can be seen, for almost all concentrations, the partial molar volume of the constituents is less than the molar volume of the constituents in their pure states (symbolically: $\bar{V}_{\text{EtOH}}(x)<\underline{V}_{\text{EtOH},\text{pure}}$ for all x). This means that there is a net contraction when you mix water and ethanol. 
+
+This contraction relative to the equivalent mole numbers of the pure constituents can be considered an ``excess amount of volume which occurs dueto mixing.'' This is called the \emph{excess volume of mixing}, and is written symbolically as: 
+\eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underline{V}_{\text{solution}}(x)-x_A\underline{V}_A-x_B\underline{V}_B\eqe
+A contraction upon mixing corresponds to a negative excess volume of mixing. Excess properties upon mixing can be defined for any extensive properties of interest, and we will spend a lot of time on them soon.\\
+One could derive the excess volume of mixing by integrating the partial molar volumes and subtracting the reference states. However, it turns out you can just add the partial volumes up weighted by their mole fractions and subtract the reference volumes to get the same answer: \\
+\eqs\underline{V}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{V}_i\eqe
+and so:
+\eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underset{i}{\Sigma }x_i\left(\bar{V}_i-\underline{V}_i\right)\eqe
+Shown in Fig \ref{PMVexamp}\textbf{B} is the excess volume of mixing for water and ethanol. As expected from the previous discussion, it is negative for all compositions.
+
+The ability to sum the individual partial molar quantities to calculate the total molar quantity is a general (and useful) property of partial molar quantities. We now discuss general properties of partial molar quantities.
+
+\textbf{The Sum of the partial molar quantities yields the molar quantity of the solution}\\
+In general, one might think that we would need to integrate all of the partial molar volumes one by one with respect to their mole numbers to reach
+the volume of the solution:\\
+\eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\int_0^{n_i} \bar{V}_i\left(n_i,n_j=0\right) \, dn_i+\int_0^{n_j} \bar{V}_j\left(n_i,n_j\right)
+\, dn_j+\text{...}\eqe
+More compactly:
+\eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\int_0^{n_i} \bar{V}_i\left(\left\{n_i\right\}\right) \, dn_i \eqe
+where this sum is carried out in sequence over the components.\\
+However, the volume of the solution is a state function of the composition, so we are free to choose whatever path in composition space we want in
+intergrating these partial molar volumes. The path which makes the most sense is to simply add all of the components at the same time in the proportions
+found in the final solution. This way, the partial molar volume of each component is constant, and is given by the partial molar volume of the component
+in the final solution. Then, the volume of the solution is given by:
+\eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\bar{V}_i\int _0^{n_i}dn_i\eqe
+Note how we were able to pull the various partial molar volumes, $\bar{V}_i$, out of the integral because they are constant. This integral is then
+trivial and gives:
+\eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\bar{V}_in_i\eqe
+Or, taking the molar volume of the solution and converting the \(n_i\) to mole fractions:
+\eqs \underline{V}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{V}_i \eqe
+The above procedure is valid for an choice of extensive variable and thus all extensive properties of solutions can be written in the general form
+written in class:
+\eqs \boxed{\underline{X}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{X}_i}\eqe
+\\
+\textbf{The partial molar quantities are related by Maxwell relations}\\
+With the exception of $\mu _i$, the partial molar quantities are defined as derivates of the extensive variables with respect to changes in mole
+number (ex: $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$). However, these extensive variables themselves are defined
+as derivatives of G: $S=-\left(\frac{\partial G}{\partial T}\right)_{P,N_{j\neq i}}$. Hence, these partial molar quantities are mixed partial derivatives
+of G. Therefore a Maxwell relation exists upon switching the order of differentiation: 
+\eqs 
+\bar{S}_i &= \left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= -\left(\frac{\partial \mu _i}{\partial T}\right)_{P,N_j} \\
+\bar{V}_i &= \left(\frac{\partial V}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= \left(\frac{\partial\mu _i}{\partial P}\right)_{T,N_j}
+\eqe 
+This usually gives you a second, nice way of interpreting the meaning of the PMQs: they are also the rate at which the chemical potential changes with respect to changes in the appropriate extensive variable{'}s conjugate. To give an example of such an interpretation, the partial molar volume is the rate at which the chemical potential of each component changes as you increase the pressure, meaning elements which allow the system to attain a smaller volume are more favorable at higher pressures: the elements which effectively make a solution``bigger'' get ``squeezed out'' of the solution upon application of pressure.
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Readings}
