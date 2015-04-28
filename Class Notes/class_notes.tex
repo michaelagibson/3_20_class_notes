@@ -1129,7 +1129,7 @@ You can write a similar matrix for any thermodynamic potential you choose. All s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 24, 2014}
-Last lecture we asked ourselves what the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field: %($\frac{\partial V}{\partial T}|_M$)
+Last lecture we started to get interested in the diffrence that the choice of path makes in measuring thermodynamic quantities. So, we asked ourselves: what is the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field: %($\frac{\partial V}{\partial T}|_M$)
 \eqs
 \left(\frac{\partial V}{\partial T}\right)_M \to? \left(\frac{\partial V}{\partial T}\right)_H
 \eqe
@@ -1164,11 +1164,9 @@ Can $\alpha_V < 0?$
 \end{figure}
 Yes! Indeed, this is observed in many systems. The basic way in which this happens is when molecules have more degees of freedom when the system is smaller. One examples is in polymers: there are more configurations when the chains in a polymer are bent, thus as temperature increases, polymers tend to shrink!
 
-<<<<<<< HEAD
-\subsection{What you should be able to do by now}
-=======
+
 \subsection{Checkin: What you should be able to do by now}
->>>>>>> mikelec9new
+
 \begin{enumerate}[(1)]
 \item Identify work terms, \ref{}
 \item Construct the relevant thermodynamic potential, \ref{LegendreTransforms}
@@ -1177,13 +1175,9 @@ Yes! Indeed, this is observed in many systems. The basic way in which this happe
 \item Relate thermodynamic quantities and thus variations: \ref{howToDerive}
 \end{enumerate}
 
-<<<<<<< HEAD
-\subsection{Extending Formalism To Multicomponent systems}
-Back to open systems, we know
-=======
-\subsection{Equilibrium Conditions for Multicomponent Systems}
+
+\subsection{Equilibrium Conditions for Multicomponent Systems}\label{eqMultiComponent}
 Back to systems where we take the mole numbers into account, we can write $dU$ for a multicomponent system as:
->>>>>>> mikelec9new
 \eqs
 dU = TdS - PdV + \sum_i \mu_i dn_i
 \eqe
@@ -1211,7 +1205,7 @@ This is the first order displacement of $U$.  If the system is at equilibrium, $
 If the exchange of extensive variables is coupled, it is the coupled sum of the the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous, if we denote $\mu^*$ as the electrochemical potential, it is easy to show that
 $\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.\\
 
-\subsection{Constraints from equilibrium of heterogeneous systems: The Gibbs phase rule} 
+\subsection{Constraints from equilibrium of heterogeneous systems: The Gibbs phase rule} \label{phaseRule}
 For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without invalidating (i.e. overspecifying the system) as:
 \eqs f=m-n \eqe
 We call $f$ the degrees of freedom of the system of equations. We define a phase as a part of a system which is measurably distinct in terms of its thermodynamic variables from another part of the subsystem.
@@ -1234,7 +1228,7 @@ If, instead, one considers a system at constant pressure, you get:
 \eqs f = c - p + 1 \text{ (}P \text{ specified)} \eqe
 If temperature and pressure are both specified, you get:
 \eqs f = c - p \text{ (}T\text{ and }P  \text{ specified)}\eqe
-These are all versions of the Gibbs phase rule. It has important implications for the possible shapes of phase diagrams.
+These are all versions of the Gibbs phase rule. It has important implications for the possible shapes of phase diagrams, which we will describe in section \ref{elementalPhaseDiagrams}.
 
 
 
@@ -1323,54 +1317,82 @@ We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta H_{l\rightarrow v} = 12
 Remember to check your $\Delta c_P$.  If this is not correct, try $c_P^{l}$ or $c_P^{v}$.\\
 
 \subsection{Ehrenfest classification of $\phi T$}
-Since free energies curves of individual phases are continuous, the equilibrium free energy which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy curve will have discontinuities where different curves intersect, giving rise to a convenient way to describe phase transformations. The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be uniquely identified by discontinuities in the derivatives of the appropriate free energy. First order transitions display discontinuities in the first order derivatives (volume, mole number, and entropy), while second order transitions display continuous first derivatives but discontinuties in the curvature of G (i.e. things like compressibilities and heat capacities are discontinuous).
+Since free energies curves of individual phases are continuous, the equilibrium free energy which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy curve will have discontinuities where different curves intersect, giving rise to a convenient way to describe phase transformations. 
+
+The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be uniquely identified by discontinuities in the derivatives of the appropriate free energy. First order transitions display discontinuities in the first order derivatives (volume, mole number, and entropy), while second order transitions display continuous first derivatives but discontinuties in the curvature of G (i.e. things like compressibilities and heat capacities are discontinuous).
 \un{1st order}:  The first derivative of the potential is discontinuous (S, V, ...)\\
 \un{2nd order}:  The second derivative of the potential is also discontinuous (but this implies that the first derivative is not)\\
 Classifications beyond second order usually are not made, but presumably third-order phase transitions exist under the Ehrenfest classification, they just aren't as useful in real life, so we don't bother talking about them.
 
 %\un{3rd order}: Third derivative of the potential...\\
-\subsection{Elemental Phase Diagrams}
+\subsection{Elemental Phase Diagrams} \label{elementalPhaseDiagrams}
 
-\un{Phase diagram}:  A map of of states with lowest free energy at equilibrium.
+A \un{phase diagram} is a map of the conditions under which different phases are stable at equilibrium.\\
+As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensive variables are a natural way to describe equilibrium between phases. As such, we will first talk about phase diagrams which have intensive variables as their axes, in particular, we begin with the simple case of $T$-$P$ phase diagrams for one-component systems, shown in Fig \ref{phaseDiagramCO2} for $\text{CO}_2$. 
+% \begin{figure}
+%   \centering
+%   \def\svgwidth{\columnwidth}
+%   \input{Carbon_dioxide_pressure_temperature_phase_diagram.pdf_tex}
+%   \caption{The P-T phase diagram of $\text{CO}_2$. Image courtesy of \href{https://commons.wikimedia.org/wiki/File:Carbon_dioxide_pressure-temperature_phase_diagram.svg}{wikimedia commons}\footnote{Attribution is cool, even if the the image is copyleft}}
+%   \label{phaseDiagramCO2}
+% \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{Carbon_dioxide_pressure_temperature_phase_diagram2.pdf}
+\caption{The P-T phase diagram of $\text{CO}_2$. Image courtesy of \href{https://commons.wikimedia.org/wiki/File:Carbon_dioxide_pressure-temperature_phase_diagram.svg}{wikimedia commons}}%\footnote{Attribution is cool, even if the the image is copyleft}
+\label{phaseDiagramCO2}
+\end{figure}
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=10cm]{CO2andHydrogenPD}
+% \caption{\textbf{A} The P-T phase diagram of $\text{CO}_2$. Images courtesy of \href{https://commons.wikimedia.org/wiki/File:Carbon_dioxide_pressure-temperature_phase_diagram.svg}{wikimedia commons}}%\footnote{Attribution is cool, even if the the image is copyleft}
+% \label{phaseDiagramCO2}
+% \end{figure}
+The open areas in Fig \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border.\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in stat mech.} 
 
-How much does pressure affect the solid phases stability?
+\textbf{Exercise}: Prove using the phase rule that for a single-component system, the one-phase regions must be two-dimensional, the two-phse regions must be one-dimensional, and the three-phases regions must occur at a point in $T$-$P$ space.
+
+One thing that is pretty universal about phase diagrams is that the pressures are really high compared to the pressures we normally think about; note the logarithmic scale in Fig \ref{phaseDiagramCO2}, and the fact that 1 bar = 0.1 MPa. We demonstrate why large pressures are needed to effect phase stability with an order of magnitude comparison: we'll calculate the work done per mole during a phase transition with some change in volume for 'normal' pressures:
+%How much does pressure affect the solid phases stability?
 \eqs
-\Delta G = \Delta P \cdot \Delta V\\
-\frac{\partial G}{\partial P}|_T = V
+\Delta W = P \cdot \Delta V\\
+%\frac{\partial G}{\partial P}|_T = V
 \eqe
-The volume is $V = 5 \cdot 10^{-6}$m\three/mol, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol.  Then $\Delta G = 10\cdot 10^{9} \cdot 5 \cdot 10^{-7} = 1000 \text{J/mol} \approx 10$ meV.
+A typical molar volume for an element is $V = 5 \cdot 10^{-6}$m\three/mol, and a large change in volume for condensed phases is on the order of 10\%, $\Delta V = 5 \cdot 10^{-7}$ m\three/mol. A large pressure would be 100 MPa, as this is the order of magnitude when most metals yield. Then $\Delta W = 100\cdot 10^{6} \cdot 5 \cdot 10^{-7} = 50 \text{J/mol} \approx 0.5$ meV. Let's compare this to the amount of energy it takes to heat an element by one degree K, $c_V\approx c_P \approx$ 25 J/mol/K. Therefore, we see that changes of a few degrees K cause the free energy to change the same amount as large changes in volume at rather high pressures. Thus, we expect that to appreciably change phase behavior, which often takes place via changes of hundreds of degrees K, we will need to apply extremely large pressures, often on the order of tens to hundreds of GPa. We get quantitative about this in the next section.
 
-Now lets think about \un{iron}, which prefers a phase with smaller sensitivity to volume change (more FCC).  This is less sensitive to changes in pressure ($\Delta P$).  $G_\text{hcp} \approx G_\text{bcc}$ at low $P$?
+%Now lets think about \un{iron}, which prefers a phase with smaller sensitivity to volume change (more FCC).  This is less sensitive to changes in pressure ($\Delta P$).  $G_\text{hcp} \approx G_\text{bcc}$ at low $P$?
 
-\un{Sulfur}: Up to 8 valencies, anions are $S^{2-}$.
+%\un{Sulfur}: Up to 8 valencies, anions are $S^{2-}$.
 
 \subsection{Determining Phase Diagrams}
-Given a pressure vs temperature ($P$ vs. $T$) curve with a phase $\alpha$ above and $\beta$ below, we want to find the equation for our coexistence line.  $G_{T,P}^\alpha = G_{T,P}^\beta$ results in $dG_{T,P}^\alpha = dG_{T,P}^\beta$ and we have
+Here we demonstrate that the slopes of the lines on phase diagrams are dictated by thermodynamics, and that you can usually guess them pretty well with a bit of knowledge. %Given a pressure vs temperature ($P$ vs. $T$) curve with a phase $\alpha$ above and $\beta$ below, we want to find the equation for our coexistence line.  $G_{T,P}^\alpha = G_{T,P}^\beta$ results in $dG_{T,P}^\alpha = dG_{T,P}^\beta$ and we have
+We know that two phases are at equilibrium at a given temperature and pressure when their free energies are equal, $G_{T,P}^\alpha = G_{T,P}^\beta$. If we change the experimental conditions a bit, the phases will only remain in equilibrium if the free energy change of $\alpha$ is equal to the free energy change of $\beta$, $dG_{T,P}^\alpha = dG_{T,P}^\beta$. Expanding this expression gives:
 \eqs
 -S^\alpha dT + V^\alpha dP = -S^\beta dT + V^\beta dP
 \eqe
-at the phase transformation $\alpha \rightarrow \beta$
+This can be manipulated to give insight into the slope of the phase boundary in T-P space. Defining the differences in volume and entropy between the two phases and simplifying gives: %at the phase transformation $\alpha \rightarrow \beta$
 \eqs
 \Delta V^{\alpha \rightarrow \beta} &= V^\beta - V^\alpha\\
-\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha
-\eqe
-and so
-\eqs
+\Delta S^{\alpha \rightarrow \beta} &= S^\beta - S^\alpha\\
 \frac{dP}{dT} = \frac{\Delta S^{\alpha \rightarrow \beta}}{\Delta V^{\alpha \rightarrow \beta}}
 \eqe
-At the phase transformation ($\phi T$), 
+This is known as the \emph{Clausius-Clapeyron relation}. It is commonly expressed in terms of the more easily-measured enthalpy changed of the phase transformation, $\Delta H^{\alpha \rightarrow \beta}$. This is possible because at a phase transformation, 
 \eqs
-\Delta S^{\alpha \rightarrow \beta} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}\\
+\Delta G &= 0 
+&= \Delta H^{\alpha \rightarrow \beta} - T^{\alpha \rightarrow \beta}\Delta S^{\alpha \rightarrow \beta} %&= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}\\
+\eqe
+so we can eliminate $\Delta S^{\alpha \rightarrow \beta}$:
+\eqs
 \frac{dP}{dT} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta} \Delta V^{\alpha \rightarrow \beta}}\\
 \eqe
-This was originally derived from Clausius-Clapeyron.
+This relation actual tells us a very simple thing: if the temperature changes a bit when two phases are at equilibrium, the resulting difference in free energies is $\Delta S^{\alpha \rightarrow \beta}dP$. If the phases are to remain at equilibrium, a compensating change in the free energy due to pressure must be made: $-\Delta V^{\alpha \rightarrow \beta}dT$, so the rate at which the pressure changes with respect to temperature along a phase boundary is proportional to the ratio of their conjugates.
 
 \subsection{Example: solid to liquid transition}
+Here we just put some numbers to the Clausius-Clapeyron relationship for liquid-solid relationships so that you can get a feel for some numbers. 
 \eqs
 \Delta S &= S_l - S_s\\
 \Delta V &= V_l - V_s
 \eqe
-most of the time $\Delta S > 0$.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  If $\Delta V < 0$, then the line will have a negative slope.
 
 \underline{How much $\Delta P$ is required to raise the melting point of Pb by 10\degree C?}
 \eqs
@@ -1381,122 +1403,177 @@ v_s &= 18.92 {\text{cm}^3\text{/mol}}\\
 \eqe
 and so
 \eqs
-\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
-\Delta P &= \frac{\Delta H}{\Delta V}ln(\frac{T_f}{T_i}) = 2870 \cdot 10^5 \text{Pa}
+\frac{dP}{dT} &= \frac{\Delta H_M}{T_M\Delta V}\\
+\Delta P &= \frac{\Delta H}{T_M\Delta V}\Delta T_M = 14.5 \text{ MPa}
 \eqe
 
-\subsection{Le Chatelier Principle}
-Typical slopes.  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ cc/mol, and the slope is large (+/-).  For solid to gas,  $\Delta H = 100$ kJ, $\Delta V = 10^4$ cc/mol, and the slope is small (+).
+Almost of the time $\Delta S > 0$; liquids have higher entropy.  If $\Delta V > 0$, $\frac{dP}{dT} > 0$, then the solid/liquid line will have a positive slope.  This is the case for most solid-liquid equilibria, as the solid is usually more dense than the liquid. There are some technologically relevant exceptions where $\Delta V < 0$, these mostly occur in directionally-bonded solids, such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_water.svg}{water}, \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_silicon_(1975).png}{Si}, and \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_germanium_(1975).png}{Ge}, but can occur for metallic elements, such as \href{http://commons.wikimedia.org/wiki/File:Phase_diagram_of_gallium_%281975%29.png}{Ga} at low pressures.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Lecture - September 26, 2014}
-%Simplified Clapeyron for the condensed phase and vapor equilibrium.  First we had the vapor as an ideal gas $V = \frac{RT}{P}$, and then second se approximated $\Delta V \approx V_g$
-%\eqs
-%\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
-%&= P\frac{\Delta H_{\phi T}}{RT^2}\\
-%\frac{dP}{P}&= \frac{dT}{T^2}\frac{\Delta H}{R}\\
-%\ln(P) &= -\frac{\Delta_{\phi T}}{R} \frac{1}{T} + \text{constant}
-%\eqe
-%
-%\un{Simplifying clapeyron}  For condensed phase/vapor\\
-%\eqs
-%\Delta V = V_v - V_l \approx V_v\\
-%\eqe
-%If the gas is ideal, we can use $V = \frac{RT}{P}$ and
-%\eqs
-%\frac{dP}{dT} &= \frac{\Delta H}{T \Delta V} = \frac{P \Delta H}{RT^2}\\
-%d(\ln(P)) &= -\frac{\Delta H}{R} (d(\frac{1}{T}))\\
-%\ln(P) &= -\frac{\Delta H}{R}\frac{1}{T} + \text{constant}
-%\eqe
-%
-%\eqs
-%\Delta H_{\phi T}(T) &= \Delta H_{\phi T}(298) + \Delta C_p (T-298)\\
-%c_P^{v} &= a + bT + ...\\
-%c_P^{l} &= a' + b'T + ...\\
-%\Delta c_P &= A' + B'T+...\\
-%\eqe
-%Which leads to Antoine's equation:
-%\eqs
-%\log(P) = A - \frac{B}{T+C}
-%\eqe
-%\subsection{Le Chatelier-Braun principle}
-%\un{Definition:} If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
-%
-%This is well expressed in Calen Ch. 8-4 (p. 210).\\
-%
-%Are condensed phases really condensed?
-%The vapor pressure is defined as the partial pressure that a substance in the \un{condensed} phase will create in the vapor phase in equilibrium with it.
-%\eqs
-%P_i = \frac{n_i}{n_\text{total}} P_\text{total}
-%\eqe
-%Say we have a liquid $A$ in a container with some other gas atmosphere.  The partial pressure of the vapor $A$ is not a function of the gas atmosphere, but of the liquid $A$.\\
-%
-%\un{Example:} $P_{H_2O}(25^0) = 0.03$ atm.  At 45\degree it is 0.07 and at 100\degree it is 1 (boiling point).  The relative humidity is expressed by $\frac{P_{H_2O}}{P_{H_2O}^*}$.
-%
-%Saturated water vapor does not behave like an ideal gas.  $dT<0$ If we have a system of 100\% pure humid air going evolving towards a system with both liquid and air.  If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
-%
-%\subsection{Generalization of Clausius-Clapeyron}
-%\eqs
-%dU &= TdS + \sum_i y_i dx_i\\
-%G &= U-TS - y_idx_i\\
-%dG &= -SdT - \sum x_i dy_i
-%\eqe
-%Say the change in temperature is not equal to zero ($dT \neq 0$) and the change in other components isn't either ($dy_j \neq 0$, $dy_{i\neq j} = 0$).  How does the equilibrium change when varying those variables?
-%\eqs
-%\frac{dy_j}{dT}|_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
-%\eqe  
-%
-%\subsection{Magnetic-induced phase transformation}
-%\eqs
-%dU &= TdS + \mu_0 H dM\\
-%dG &= -SdT - \mu_0 M dH
-%\eqe
-%\eqs
-%\frac{dT}{dH} &= -\frac{\Delta M}{\Delta S}\\
-%\eqe
-%\eqs
-%\Delta M &= M_\text{ferro} - M_\text{para} \approx 4 \mu_B \approx 4 \cdot 10^{-5} \text{eV/Tesla}
-%\eqe
-%Where we assumed that the magnetization of the ferromagnetic material was 4 Bohr magneton per atom.  For spins, we can have two states, so 
-%\eqs
-%\Delta S = k_B \ln(2)
-%\eqe
-%Thus we can estimate our change in temperature with field
-%\eqs
-%\frac{dT}{dH} = -\frac{4 \cdot 10^{-5}}{8.617 \cdot 10^{-5} \cdot \ln(2)} = -0.66 \text{K/Tesla}
-%\eqe
-%
-%\subsection{Thermoplasticity}
-%Thermoplasticity, or ``super plasticity'' is recoverable elastic deformation (usually around $\approx 0.2\%$).  The phase transformation is typically induced by stress.  In the high-T phase, we have the P (parent) phase.  In the low-T phase, we have M (martensitic).
-%
-%If we plot G vs. T, we will have a downward sloping line of the martensitic phase (under no force) with a \emph{gradual downward slope}.  At high enough temperature, this intersects with the parent phase (under no force) with a \emph{steeper} downward slope.
-%
-%\eqs
-%dU &= ... F dl\\
-%G &= ... - F \cdot l
-%P &= -\frac{\partial G}{\partial F}|_{T_i}
-%\eqe
-%By actually applying a force and deforming the material, we move downwards the $G vs. T$ line for the martensitic phase (and a little bit for the parent phase).  If we plot the length of the material vs. the force on the material, we will initially have an upward increasing line, and then a discontinuity when we change to a martensitic phase.\\
-%
-%Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\three/mol, $\Delta S \approx 1$ J/mol/K.  Now we write down a version of Clausius-Clapeyron:
-%\eqs
-%\frac{1}{A} \frac{dF}{dT} &= -\frac{\Delta S}{\Delta P}\frac{1}{A}\\
-%A \Delta P &= V_m \Delta \epsilon\\
-%\frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
-%\eqe
-%
-%In general, what would be the heat involved if we apply a stress?
-%\eqs
-%H &= U+PV\\
-%dH &= \partial Q +VdP + F dl\\
-%(dH)_p &= (\partial Q)_P F dl
-%\eqe
-%Universal enthalpy
-%\eqs
-%H &= U - \sum y_i x_i\\
-%H' &= U + PV - Fl\\
-%(dH') &= (\partial Q)_P - l dF
-%\eqe
+Typical slopes:  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ cc/mol, and the slope is large, with the sign determined by the volume change (+/-).  For solid to gas,  $\Delta H = 100$ kJ, $\Delta V = 10^4$ cc/mol (~10 Liters), and the slope is small, but positive.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lecture - September 26, 2014}
+Simplified Clapeyron for the condensed phase and vapor equilibrium.  First we had the vapor as an ideal gas $V = \frac{RT}{P}$, and then second se approximated $\Delta V \approx V_g$
+\eqs
+\frac{dP}{dT} &= \frac{\Delta H}{T\Delta V}\\
+&= P\frac{\Delta H_{\phi T}}{RT^2}\\
+\frac{dP}{P}&= \frac{dT}{T^2}\frac{\Delta H}{R}\\
+\ln(P) &= -\frac{\Delta_{\phi T}}{R} \frac{1}{T} + \text{constant}
+\eqe
+
+\un{Simplifying clapeyron}  For condensed phase/vapor\\
+\eqs
+\Delta V = V_v - V_l \approx V_v\\
+\eqe
+If the gas is ideal, we can use $V = \frac{RT}{P}$ and
+\eqs
+\frac{dP}{dT} &= \frac{\Delta H}{T \Delta V} = \frac{P \Delta H}{RT^2}\\
+d(\ln(P)) &= -\frac{\Delta H}{R} (d(\frac{1}{T}))\\
+\ln(P) &= -\frac{\Delta H}{R}\frac{1}{T} + \text{constant}
+\eqe
+
+\eqs
+\Delta H_{\phi T}(T) &= \Delta H_{\phi T}(298) + \Delta C_p (T-298)\\
+c_P^{v} &= a + bT + ...\\
+c_P^{l} &= a' + b'T + ...\\
+\Delta c_P &= A' + B'T+...\\
+\eqe
+Which leads to Antoine's equation:
+\eqs
+\log(P) = A - \frac{B}{T+C}
+\eqe
+
+\un{Are condensed phases really condensed?}\footnote{(i.e. Why do condensed phases have vapor pressures above them?)}\\
+Take a look at the phase diagram for $\text{H}_2\text{O}$ in Fig \ref{PDH2O}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{Water_phase_diagram}
+\caption{A simplified phase diagram for water. The blue start is room temperature and pressure. Image from \href{https://commons.wikimedia.org/wiki/File:Water_phase_diagram.svg}{wikimedia commons}.}
+\label{PDH2O}
+\end{figure}
+From looking at this phase diagram, one would think that at room temperature and pressure $\left(10^5\text{Pa}, 300 K\right)$, water should be
+a single, liquid phase. Why, then, is there water vapor in the air around us? Well, this is because this phase diagram only considers \textit{unary
+systems at constant pressure and temperature}, whereas water exists in systems where there are other elements in the vapor above it. Because liquid water at STP has some well-defined chemical potential of $\text{H}_2\text{O}$, the vapor above it must have enough $\text{H}_2\text{O}$ in it that it has the same chemical potential for $\text{H}_2\text{O}$.\\
+
+The \textbf{vapor pressure} is defined as the partial pressure that a substance in the \un{condensed} phase will create in the vapor phase in equilibrium with it. Where a partial pressure is defined as:
+\eqs
+P_i = \frac{n_i}{n_\text{total}} P_\text{total}
+\eqe
+Because gases are ideal, if we have a liquid $A$ in a container with some other gas atmosphere, the partial pressure of the vapor $A$ is actually independent of the gas atmosphere. Vapor pressures are only defined by the chemical potentials in the condensed phases, in this case the liquid $A$.\\
+
+\un{Example:} $P_{H_2O}(25^0) = 0.03$ atm.  At 45\degree it is 0.07 and at 100\degree it is 1 (boiling point).  The relative humidity is expressed by $\frac{P_{H_2O}}{P_{H_2O}^*}$.
+
+Note: saturated water vapor does not behave like an ideal gas. If we have a system of 100\% pure humid air, then if we compress the system, the vapor pressure of the water will remain constant, and some of the water will condense. %If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
+
+
+\subsection{Le Chatelier-Braun principle}
+ %If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
+\un{Definition:} When a system, initially at equilibrium, is perturbed from its equilibrium state, the system adjusts itself to counteract the effect of the applied change in establishing a new equilibrium.\footnote{Callen provides a good discussion of this in Ch. 8-4 (p. 210)}\\
+The most common example of this are in chemistry, such as when you add some reactant, A, to a system which was previously in some equilibrium governed by:
+\eqs A+B \longleftrightarrow C+D\eqe
+Adding some A acts as a\emph{ perturbation} to this system, and the system \emph{ adjusts itself} by reacting to partly eliminate this perturbation,
+coming to a new equilibrium in the process.\footnote{Throwing away the thermo jargon: if you put a bit of $A$ in, some of that $A$ reacts, so the concentration of $A$ becomes less.} Thermodynamically, this is tantamount to increasing the chemical potential of A, with the forward reaction
+acting to then homogenize this perturbation in the chemical potential. \footnote{Historical note: Le Chatelier and Braun discovered this principle independently,
+so in 3.20 we give attribution to both of them!}
+
+\subsection{Generalization of Clausius-Clapeyron}
+The method to generate the Clausius-Clapeyron equation can be applied to any two sets of work terms, by taking the proper Legendre transform such
+that the intensive variables of interest are the natural variables for the thermodynamic potential. For example, in the case of the Clausis-Clapeyron
+equation, the intensive variables of interest were T and P, so we took $\phi $ = U-TS+PV, which turns out t be G. Along a phase boundary, this gave rise to the relation:
+\eqs
+\frac{\partial P}{\partial T}=\frac{\text{$\Delta $s}}{\text{$\Delta $v}}
+\eqe
+A similar relationship can be derived for a magnetic phase transition, taking
+instead: $\phi $ = U - TS + PV - HM such that
+\eqs \text{d$\phi $}=-S \text{dT}+V \text{dP}-M \text{dH}\eqe
+for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where want to move along a two-phase equilibrium boundary in T-H space such that the different thermodynamic potentials are ``changing'' at the same rate:
+\eqs\text{d$\phi $}^1=\text{d$\phi $}^2\eqe
+meaning:
+\eqs
+-S^1 \text{dT}+V^1 \text{dP}-M^1 \text{dH}-\left(-S^2 \text{dT}+V^2 \text{dP}-M^2 \text{dH}\right)=0
+\eqe
+For a system at constant pressure, we
+can show that:
+\eqs\left(\frac{\partial H}{\partial T}\right)_P=-\frac{\text{$\Delta $S}}{\text{$\Delta $M}}\eqe
+In general, this can be written for any work term as:
+\eqs\left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\text{$\Delta $S}}{\text{$\Delta $X}_j}\eqe
+Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, C-C relationships with $P$ have a negative sign.
+% \eqs
+% dU &= TdS + \sum_i y_i dx_i\\
+% G &= U-TS - y_idx_i\\
+% dG &= -SdT - \sum x_i dy_i
+% \eqe
+% Say the change in temperature is not equal to zero ($dT \neq 0$) and the change in other components isn't either ($dy_j \neq 0$, $dy_{i\neq j} = 0$).  How does the equilibrium change when varying those variables?
+% \eqs
+% \frac{dy_j}{dT}|_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
+% \eqe  
+
+\subsection{Magnetic-induced phase transformation}
+Let's put some numbers onto this new C-C relationship to get a sense of how temperature can affect the $T$-$H$ phase boundary.
+\eqs
+dU &= TdS + \mu_0 H dM\\
+dG &= -SdT - \mu_0 M dH
+\eqe
+\eqs
+\frac{dT}{dH} &= -\frac{\Delta M}{\Delta S}\\
+\eqe
+\eqs
+\Delta M &= M_\text{ferro} - M_\text{para} \approx 4 \mu_B \approx 4 \cdot 10^{-5} \text{eV/Tesla}
+\eqe
+Where we assumed that the magnetization of the ferromagnetic material was 4 Bohr magneton per atom.  For spins, we can have two states, so 
+\eqs
+\Delta S = k_B \ln(2)
+\eqe
+Thus we can estimate our change in temperature with field
+\eqs
+\frac{dT}{dH} = -\frac{4 \cdot 10^{-5}}{8.617 \cdot 10^{-5} \cdot \ln(2)} = -0.66 \text{K/Tesla}
+\eqe
+Note: a Tesla is a \emph{huge} magnetic field, so we see that phase boundaries between magnetic phases are super strongly affected by temperature, making them hard to study well if you don't have good control over $T$.
+
+\subsection{Thermoelasticity}
+An application of a generalized Clausius-Clapeyron relationship is thermoelasticity. Thermoelasticity, or ``superelasticity'' is a recoverable strain far beyond what is normally expected for solids \footnote{Elastic deformation usually only occurs until around $\epsilon \approx 0.2\%$. Superelasticity permits reversible strains of up to 10\%}.  The phase transformation is typically induced by stress.  In the high-T phase, we have the A (austenite) phase.  In the low-T phase, we have M (martensite).
+The stress-strain curves look like those in Fig \ref{superElasticity} \textbf{A}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{superelasticity}
+\caption{\textbf{A} A typical stress-strain curve for a superelastic material. \textbf{B} Free energy curves for martensite and austenite as a function of temperature showing how the curves shift upon application of a stress \textbf{C} A simplified phase diagram for superelastic materials.}
+\label{superElasticity}
+\end{figure}
+
+Keep in mind what you see in Fig \ref{superElasticity} \textbf{A}; a discontinuity in an extensive variable (length/strain) while an intensive variable is constant (force/stress). This is almost always a sign that changing the intensive variable induced a first-order phase transition.\footnote{Another example is when battery charge-discharge curves \href{http://i.stack.imgur.com/UkodS.gif}{exhibit a constant discharge voltage} for a large amount of current}
+
+If we plot G vs. T, both phases exhibit downward slopes and negative curvature, as in Fig \ref{superElasticity} \textbf{B}. The higher entropy austenitic phase will have a larger, negative slope, and thus become stable at higher temperature. We want to investigate the effect of force on the temperature of the superelastic transition, so we set up our relevant potential:
+
+\eqs
+dU &= TdS + F dL\\
+G &= U- T\cdot S - F \cdot L\\
+L &= -\left(\frac{\partial G}{\partial F}\right)_{T_i}
+\eqe
+By applying a force and stretching the material, we move the $G\text{ vs. }T$ line downwards for both phases, but the the martensitic phase moves down more quickly than the parent phase due to the martensite's larger $L$. This relative movement is indicated by the dashed lines in Fig. \ref{superElasticity}\textbf{B}. The interesting thing is that because they don't move at the same rate, you get shifts in the transition temperature due to application of stress; there's a Clausius-Clapeyron effect here. Let's quantify it in the context of a specific system.\\
+
+Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\three/mol, $\Delta S \approx 1$ J/mol/K.  Now we write down a version of Clausius-Clapeyron:
+\eqs
+\frac{1}{A} \frac{dF}{dT} &= -\frac{\Delta S}{\Delta P}\frac{1}{A}\\
+A \Delta P &= V_m \Delta \epsilon\\
+\frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
+\label{superElastCC}
+\eqe
+The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it's just a line with a slope given by Eq. \ref{superElastCC}.
+
+In general, what would be the heat involved if we apply a stress?
+\eqs
+H &= U+PV\\
+dH &= \partial Q +VdP + F dl\\
+(dH)_p &= (\partial Q)_P F dl
+\eqe
+Universal enthalpy
+\eqs
+H &= U - \sum y_i x_i\\
+H' &= U + PV - Fl\\
+(dH') &= (\partial Q)_P - l dF
+\eqe
 %%%%%%%%%%%%%%
 %\subsection{EXAM 1 MATERIAL ENDS HERE}
 %\begin{itemize}
