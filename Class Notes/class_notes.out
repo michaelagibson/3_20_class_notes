@@ -60,43 +60,32 @@
 \BOOKMARK [2][-]{subsection.10.4}{Example: solid to liquid transition}{section.10}% 60
 \BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 61
 \BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 62
-<<<<<<< HEAD
-\BOOKMARK [1][-]{section.11}{Lecture - September 26, 2014}{}% 63
-\BOOKMARK [2][-]{subsection.11.1}{Le Chatelier-Braun principle}{section.11}% 64
-\BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 65
-\BOOKMARK [2][-]{subsection.11.3}{Magnetic-induced phase transformation}{section.11}% 66
-\BOOKMARK [2][-]{subsection.11.4}{Thermoelasticity}{section.11}% 67
-\BOOKMARK [2][-]{subsection.11.5}{Creating Generalized Enthalpies}{section.11}% 68
-\BOOKMARK [2][-]{subsection.11.6}{EXAM 1 MATERIAL ENDS HERE}{section.11}% 69
-\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 70
-\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 71
-\BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 72
-\BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 73
-\BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 74
-=======
 \BOOKMARK [2][-]{subsection.11.1}{Le Chatelier-Braun principle}{section.11}% 63
 \BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 64
 \BOOKMARK [2][-]{subsection.11.3}{Magnetic-induced phase transformation}{section.11}% 65
 \BOOKMARK [2][-]{subsection.11.4}{Thermoelasticity}{section.11}% 66
-<<<<<<< HEAD
->>>>>>> fbab452ebe1c6cebb0a19d110e312e8b4a489cc8
-=======
-\BOOKMARK [1][-]{section.12}{Review of Exam 1 materials}{}% 67
-\BOOKMARK [1][-]{section.12}{Review of Exam 1 materials}{}% 68
-\BOOKMARK [2][-]{subsection.12.1}{Definitions}{section.12}% 69
-\BOOKMARK [2][-]{subsection.12.2}{Thermodynamic Laws}{section.12}% 70
-\BOOKMARK [2][-]{subsection.12.3}{All the heat capacities, expansion coefficients, etc.}{section.12}% 71
-\BOOKMARK [2][-]{subsection.12.4}{Maxwell Relations}{section.12}% 72
-\BOOKMARK [2][-]{subsection.12.5}{Gibbs-Duhem}{section.12}% 73
-\BOOKMARK [2][-]{subsection.12.6}{Internal energy U, enthalpy H, Helmholtz F, and Gibbs G}{section.12}% 74
-\BOOKMARK [2][-]{subsection.12.7}{Legendre Transforms:}{section.12}% 75
-\BOOKMARK [2][-]{subsection.12.8}{Some useful math identities:}{section.12}% 76
-\BOOKMARK [2][-]{subsection.12.9}{Carnot Engines:}{section.12}% 77
-\BOOKMARK [2][-]{subsection.12.10}{Le Chatelier-Braun principle}{section.12}% 78
-\BOOKMARK [2][-]{subsection.12.11}{Clausius-Clapeyron:}{section.12}% 79
-\BOOKMARK [2][-]{subsection.12.12}{Raoult's Law:}{section.12}% 80
-\BOOKMARK [2][-]{subsection.12.13}{Phase changes:}{section.12}% 81
-\BOOKMARK [2][-]{subsection.12.14}{Joule-Thompson Expansion \(Throttling\)}{section.12}% 82
-\BOOKMARK [2][-]{subsection.12.15}{Material Properties \(useful 2nd derivatives of energy functions\):}{section.12}% 83
-\BOOKMARK [2][-]{subsection.12.16}{Random constants we may need to know:}{section.12}% 84
->>>>>>> e0c477fddb75f6248089ecbdf1be8f7737d28c66
+\BOOKMARK [2][-]{subsection.11.5}{Creating Generalized Enthalpies}{section.11}% 67
+\BOOKMARK [2][-]{subsection.11.6}{EXAM 1 MATERIAL ENDS HERE}{section.11}% 68
+\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 69
+\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 70
+\BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 71
+\BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 72
+\BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 73
+\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{}% 74
+\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{}% 75
+\BOOKMARK [2][-]{subsection.13.1}{Definitions}{section.13}% 76
+\BOOKMARK [2][-]{subsection.13.2}{Thermodynamic Laws}{section.13}% 77
+\BOOKMARK [2][-]{subsection.13.3}{All the heat capacities, expansion coefficients, etc.}{section.13}% 78
+\BOOKMARK [2][-]{subsection.13.4}{Maxwell Relations}{section.13}% 79
+\BOOKMARK [2][-]{subsection.13.5}{Gibbs-Duhem}{section.13}% 80
+\BOOKMARK [2][-]{subsection.13.6}{Internal energy U, enthalpy H, Helmholtz F, and Gibbs G}{section.13}% 81
+\BOOKMARK [2][-]{subsection.13.7}{Legendre Transforms:}{section.13}% 82
+\BOOKMARK [2][-]{subsection.13.8}{Some useful math identities:}{section.13}% 83
+\BOOKMARK [2][-]{subsection.13.9}{Carnot Engines:}{section.13}% 84
+\BOOKMARK [2][-]{subsection.13.10}{Le Chatelier-Braun principle}{section.13}% 85
+\BOOKMARK [2][-]{subsection.13.11}{Clausius-Clapeyron:}{section.13}% 86
+\BOOKMARK [2][-]{subsection.13.12}{Raoult's Law:}{section.13}% 87
+\BOOKMARK [2][-]{subsection.13.13}{Phase changes:}{section.13}% 88
+\BOOKMARK [2][-]{subsection.13.14}{Joule-Thompson Expansion \(Throttling\)}{section.13}% 89
+\BOOKMARK [2][-]{subsection.13.15}{Material Properties \(useful 2nd derivatives of energy functions\):}{section.13}% 90
+\BOOKMARK [2][-]{subsection.13.16}{Random constants we may need to know:}{section.13}% 91
