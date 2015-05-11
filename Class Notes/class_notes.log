@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 APR 2015 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 MAY 2015 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1511,13 +1511,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[43] <figures/StabilityWRTPerturbations.pdf, id=1057, 509.905pt x 225.84375pt>
+[43] <figures/StabilityWRTPerturbations.pdf, id=1057, 513.92pt x 225.84375pt>
 File: figures/StabilityWRTPerturbations.pdf Graphic file (type pdf)
 
 <use figures/StabilityWRTPerturbations.pdf>
 Package pdftex.def Info: figures/StabilityWRTPerturbations.pdf used on input li
 ne 1259.
-(pdftex.def)             Requested size: 469.75502pt x 208.07167pt.
+(pdftex.def)             Requested size: 469.75502pt x 206.43823pt.
+
+Overfull \vbox (1.08017pt too high) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1526,7 +1529,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [44 <./figures/StabilityWRTPerturbations.pdf>]
-<figures/G_Curves_For_Phases.pdf, id=1091, 454.69875pt x 274.02374pt>
+<figures/G_Curves_For_Phases.pdf, id=1092, 454.69875pt x 274.02374pt>
 File: figures/G_Curves_For_Phases.pdf Graphic file (type pdf)
 
 <use figures/G_Curves_For_Phases.pdf>
@@ -1535,22 +1538,19 @@ Package pdftex.def Info: figures/G_Curves_For_Phases.pdf used on input line 128
 (pdftex.def)             Requested size: 341.43306pt x 205.76817pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[45 <./figures/G_Curves_For_Phases.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[46 <./figures/G_Curves_For_Phases.pdf>]
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 1320--1322
 
  []
@@ -1863,10 +1863,6 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2288.
 
 Package rerunfilecheck Info: File `class_notes.out' has not changed.
 (rerunfilecheck)             Checksum: F3E12FF478B180CEB4276452E1B8A69F;6986.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2288.
  ) 
 Here is how much of TeX's memory you used:
@@ -1896,7 +1892,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on class_notes.pdf (69 pages, 1981205 bytes).
+Output written on class_notes.pdf (69 pages, 1981500 bytes).
 PDF statistics:
  1764 PDF objects out of 2073 (max. 8388607)
  1438 compressed objects within 15 object streams
