@@ -20,7 +20,7 @@
 \section{Lecture 1: Introduction and Preliminaries}
 %This is an inexact differential: $\dbar$
 
-Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics and an understanding of energy scales.  The material in this course is broadly applicable to all field of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
+Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics and an understanding of energy scales.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
 
 \subsection{Definitions}
 To begin our journey, we will define some frequently used terms for convenience.
@@ -1353,7 +1353,7 @@ As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensi
 % \label{phaseDiagramCO2}
 % \end{figure}
 
-The open areas in Figure \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in statisttical mechanics.}.
+The open areas in Figure \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in statistical mechanics.}.
 
 \textbf{Exercise}: Prove using the phase rule that for a single-component system, the one-phase regions must be two-dimensional, the two-phse regions must be one-dimensional, and the three-phases regions must occur at a point in $T$-$P$ space.
 
@@ -1556,8 +1556,8 @@ By applying a force and stretching the material, we move the $G\text{ vs. }T$ li
 
 Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\three/mol, $\Delta S \approx 1$ J/mol/K.  Now we write down a version of Clausius-Clapeyron:
 \eqs
-\frac{1}{A} \frac{dF}{dT} &= -\frac{\Delta S}{\Delta P}\frac{1}{A}\\
-A \Delta P &= V_m \Delta \epsilon\\
+\frac{1}{A} \frac{dF}{dT} &= -\frac{\Delta S}{\Delta L}\frac{1}{A}\\
+A \Delta L &= V_m \Delta \epsilon\\
 \frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
 \label{superElastCC}
 \eqe
@@ -1659,7 +1659,7 @@ In this situation, the mols of $N_i$ and the change in volume are small relative
 
 The volume of a solution or compound is often not the sum of the volume of its constituent elements. For example, shown in Fig. \ref{PMVexamp} the partial molar volumes of ethanol and water when mixed with one another. As can be seen, for almost all concentrations, the partial molar volume of the constituents is less than the molar volume of the constituents in their pure states (symbolically: $\bar{V}_{\text{EtOH}}(x)<\underline{V}_{\text{EtOH},\text{pure}}$ for all x). This means that there is a net contraction when you mix water and ethanol. 
 
-This contraction relative to the equivalent mole numbers of the pure constituents can be considered an ``excess amount of volume which occurs dueto mixing.'' This is called the \emph{excess volume of mixing}, and is written symbolically as: 
+This contraction relative to the equivalent mole numbers of the pure constituents can be considered an ``excess amount of volume which occurs due to mixing.'' This is called the \emph{excess volume of mixing}, and is written symbolically as: 
 \eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underline{V}_{\text{solution}}(x)-x_A\underline{V}_A-x_B\underline{V}_B\eqe
 A contraction upon mixing corresponds to a negative excess volume of mixing. Excess properties upon mixing can be defined for any extensive properties of interest, and we will spend a lot of time on them soon.\\
 One could derive the excess volume of mixing by integrating the partial molar volumes and subtracting the reference states. However, it turns out you can just add the partial volumes up weighted by their mole fractions and subtract the reference volumes to get the same answer: \\
@@ -1727,12 +1727,16 @@ First part of test is True/False questions.  An example of a question would be:\
 \item \bold{System:} Any collection of matter that can be uniquely identified and on which you can define macroscopic averages
 \item \bold{Environment:}  Complement of the system
 \eqs
-[\text{Universe}] = [\text{Environment}] + [\text{System}]
+\text{[Universe]} = [\text{Environment}] + [\text{System}]
 \eqe
-\item \bold{Extensive Variables:} Variables that scale with a system's size (volume, mass, number of particles, ...)
-\item \bold{Intensive Variables:} Variables that do \emph{not} scale (pressure, temperature, chemical potential, ...)
+
+% \eqs
+% \text{[Universe]} = \text{Environment} +\text{System}
+% \eqe
+\item \bold{Extensive Variables:} Variables that scale (linearly) with a system's size (volume, mass, number of particles, ...)
+\item \bold{Intensive Variables:} Variables that are  independent of a system's size (pressure, temperature, chemical potential, ...)
 \item \bold{Boundaries:} Define a system and its interaction with the environment
-\item \bold{Adiabatic:} No flow of heat $\partial Q = 0$ and $PV^{\gamma} = \text{constant}$, where the $\gamma$ is determined by
+\item \bold{Adiabatic:} No flow of heat $\dbar Q = 0$ and $PV^{\gamma} = \text{constant}$, where the $\gamma$ is determined by
 \eqs
 \gamma = \frac{c_P}{c_V} = \frac{f+2}{f}
 \eqe
@@ -1782,20 +1786,20 @@ Irreversible: $dS_\text{system} = \frac{\partial Q}{T}$
 \eqe
 \item Molar heat capacity at constant pressure (works similarly with volume):
 \eqs
-\boxed{c_{P} = \frac{1}{N}\left(\frac{\partial Q}{\partial T}\right)_{P} = \frac{T}{N} \left(\frac{\partial S}{\partial T}\right)_{P} = T\left(\frac{\partial s}{\partial T}\right)_{P}}
+\boxed{c_{P} = \frac{1}{N}\left(\frac{\dbar Q_{\text{rev}}}{d T}\right)_{P} = \frac{T}{N} \left(\frac{\partial S}{\partial T}\right)_{P} = T\left(\frac{\partial s}{\partial T}\right)_{P}}
 \eqe
 \end{enumerate}
 %%%%%
 \subsection{Maxwell Relations}
 \begin{enumerate}[(i)]
-\item Find the extensive variables to be represented (i.e. T,P)
-\item Convert to the appropriate energy (i.e. G(T,P))
-\item Determine if there is a \un{sign difference} between the two extensive variables
-\item Match both second derivatives
+\item Find the appropriate natural variables for the thermodynamic potential of interest (ex: $T,P$)
+\item Convert to the appropriate thermodynamic potential via a Legendre Transform (ex:$T,P \rightarrow G(T,P)$)
+\item The Legendre transform should tell you if there is a \un{sign difference} between the two second derivatives of the potential with respect to the variables of interest.
+\item Match both second derivatives taking the sign difference into account if you need to.
 \end{enumerate}
 %%%%%
 \subsection{Gibbs-Duhem}
-Results from comparing the partial derivative of the Euler equation $U = TS - PV + \sum\mu_i N_i$ to the first law.
+Results from comparing the total derivative of the Euler equation $U = TS - PV + \sum\mu_i N_i$ to the first law.
 \eqs
 0=SdT - VdP + \sum N_i d\mu_i
 \eqe
@@ -1817,7 +1821,7 @@ Given a potential and asked to make the other potentials (i.e. $U(S,X) = X^{-a}e
 %
 \subsection{Some useful math identities:}
 \eqs\boxed{
-\left(\frac{\partial f}{\partial x}\right)_g = \left(\frac{\partial f}{\partial x}\right)|_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g}
+\left(\frac{\partial f}{\partial x}\right)_g = \left(\frac{\partial f}{\partial x}\right)_y + \left(\frac{\partial f}{\partial y}\right)_x \cdot \left(\frac{\partial y}{\partial x}\right)_g}
 \eqe
 \eqs \boxed{
 \left(\frac{\partial f}{\partial x}\right)_y \left(\frac{\partial x}{\partial y}\right)_f \left(\frac{\partial y}{\partial f}\right)_x = -1}
@@ -1834,29 +1838,29 @@ Also just know the chain rule and inverse rule (pretty intuitive). \\
 
 %%%%%%%
 \subsection{Carnot Engines:}
-Carnot engines really aren't two complicated.  The principles are completely derived from the first two principles at reversible equilibrium $dS = 0 = dS_1 + dS_2$ and $dU = 0 = \partial Q + \partial W$.  The different efficiencies are all just the quantities that \emph{you want to get out of your pump/engine/refridgerator}.  Let's begin:
+Carnot engines really aren't too complicated.  The principles are completely derived from the first two principles at reversible equilibrium $dS = 0 = dS_1 + dS_2$ and $dU = 0 = \dbar Q + \dbar W$.  The different efficiencies are all just the quantities that \emph{you want to get out of your pump/engine/refridgerator}.  Let's begin:
 \eqs
 dS = dS_1 + dS_1 &= 0\\
-\frac{\partial Q_1}{T_1} &= -\frac{\partial Q_2}{T_2}\\
-\partial Q_1 &= -\partial Q_2 \frac{T_1}{T_2}
+\frac{\dbar Q_{1,\text{rev}}}{T_1} &= -\frac{\dbar Q_{2,\text{rev}}}{T_2}\\
+\dbar Q_{1,\text{rev}} &= -\dbar Q_{2,\text{rev}} \frac{T_1}{T_2}
 \eqe
 and now with the first law
 \eqs
-dU = \partial Q_1 + \partial Q_2 + \partial W &= 0\\
-(1-\frac{T_1}{T_2})\partial Q_2 = -\partial W
+dU = \dbar Q_1 + \dbar Q_2 + \dbar W &= 0\\
+(1-\frac{T_1}{T_2})\dbar Q_2 = -\dbar W
 \eqe
 
 \bold{Carnot Engine}:  Here we care about getting work \emph{out} by using a \emph{heat source}, so the efficiency is
 \eqs
-\mu_\text{engine} = \frac{-\partial W}{\partial Q_\text{hot}} = 1-\frac{T_L}{T_H} = \frac{T_H - T_C}{T_H}
+\mu_\text{engine} = \frac{-\dbar W}{\dbar Q_\text{hot}} = 1-\frac{T_L}{T_H} = \frac{T_H - T_C}{T_H}
 \eqe
 \bold{Heat Pump}: Here we care about \emph{extracting heat} by \emph{doing work} on the system.  The efficiency is then
 \eqs
-\mu_\text{pump} = \frac{-\partial Q_H}{\partial W} = \mu_\text{engine}^{-1} = \frac{T_H}{T_H-T_C}
+\mu_\text{pump} = \frac{-\dbar Q_H}{\dbar W} = \mu_\text{engine}^{-1} = \frac{T_H}{T_H-T_C}
 \eqe
 \bold{Refridgerator}: Here we want to maximize the amount of heat \emph{leaving} the cold system by \emph{doing work}.
 \eqs
-\mu_\text{refridgerator} = \frac{-\partial Q_C}{\partial W} = \frac{-\partial Q_H \frac{T_C}{T_H}}{-(1-\frac{T_C}{T_H})\partial Q_H}= \frac{-T_C}{-(T_H-T_C)} = \frac{T_C}{T_H-T_C}
+\mu_\text{refridgerator} = \frac{-\dbar Q_C}{\dbar W} = \frac{-\dbar Q_H \frac{T_C}{T_H}}{-(1-\frac{T_C}{T_H})\dbar Q_H}= \frac{-T_C}{-(T_H-T_C)} = \frac{T_C}{T_H-T_C}
 \eqe
 
 \bold{Carnot Cycle} (All use reversible work sources)
@@ -1871,17 +1875,17 @@ dU = \partial Q_1 + \partial Q_2 + \partial W &= 0\\
 \un{Definition:} If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
 
 %%%%%
-\subsection{Clausius-Clapeyron:}
+\subsection{Clausius-Clapeyron}
 The Clausius-Clapeyron equation is a way to characterize phase transformations between two phases of matter (of the same constituent material).  Know the \emph{generalized form} (below) and be able to derive it for new systems:
 \eqs
-\frac{dy_j}{dT}|_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
+\left(\frac{dy_j}{dT}\right)_{y_{i\neq j}} = - \frac{\Delta S}{\Delta x_j}
 \eqe  
 \eqs\boxed{
 \frac{dP}{dT} = \frac{\Delta H}{T\Delta V}}
 \eqe
 which, for an ideal gas and where $\Delta V = V_{(g)}-V_{(l)} \approx V_{(g)}$ leads to:
 \eqs
-\ln(\frac{P_f}{P_i}) = \frac{\Delta H}{n R}[\frac{1}{T_i}-\frac{1}{T_f}]
+\ln\left(\frac{P_f}{P_i}\right) = \frac{\Delta H}{n R}\left[\frac{1}{T_i}-\frac{1}{T_f}\right]
 \eqe
 
 \bold{Derivation:}
@@ -1933,13 +1937,13 @@ For a reaction
 \eqs
 aA + bB \rightarrow cC + dD
 \eqe
-the enthalpy of reaction $\Delta_r^0$ is
+the enthalpy of reaction $\Delta H_r^0$ is
 \eqs
 \Delta H_r^0 = c\Delta H_C^0 + d\Delta H_D^0 - b\Delta H_B^0 - a \Delta H_A^0
 \eqe
 
 \bold{Stable equilibrium criteria:}\\
-At a relative minima or maxima, $dU = 0$.  Also, $d^2U > 0$, which guarantees a minima.  At a constant temperature and pressure, two phases are in equilibrium if $G^\alpha = G^\beta$.
+At a relative minimum or maximum, $dU = 0$.  Also, $d^2U > 0$, which guarantees a minimum.  At a constant temperature and pressure, two phases are in equilibrium if $G^\alpha = G^\beta$.
 
 %%%%%
 \subsection{Joule-Thompson Expansion (Throttling)}
