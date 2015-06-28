@@ -16,6 +16,7 @@
 
 \begin{document}
 \includepdf[pages=-]{titlepage.pdf}
+\tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture 1: Introduction and Preliminaries}
 %This is an inexact differential: $\dbar$
@@ -329,7 +330,7 @@ and, for reference, we have:
 \Delta H^0_{CO_2} &= -393.51 \cdot \text{kJ}/\text{mol}
 \end{align*}
 
-There are plenty of references to get these values, such as \un{Janaf tables}.  Examples include FactSage \& Thermocalc and they provide $H^0$, $G^0$, $C_p^0$, etc.
+There are plenty of references to get these values, such as \href{http://kinetics.nist.gov/janaf/}{Janaf tables}. They provide $H^0$, $G^0$, $C_p^0$, etc.
 
 \begin{align*}
 C_{(s)} + O_{2 (g)} &\rightleftharpoons CO_{2 (g)}\\
@@ -2284,9 +2285,70 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 
 
 
+\section{Lecture XX: The Physical Basis of Mixing}
+In this section, we will elucidate the physical reasons why some pairs of elements mix together to form random solutions and/or compounds, whereas others are immiscible. We will call this general process of allowing two elements to come together \emph{mixing}. It is illustrated in Fig. \ref{mixing_process}. We will mostly restrict ourselves to the solid state. From a thermodynamic perspective, pairs of elements mix because the free energy of forming the solution is negative relative to the pure state, $\Delta G_{mix} <0$. An element is immiscible in another if $\Delta G_{mix} >0$. It is useful to split $\Delta G_{mix}$ into its component parts, $\Delta H_{mix}$ and $\Delta S_{mix}$ in order to understand why mixing occurs. We'll begin with $\Delta H_{mix}$, and then address $\Delta S_{mix}$.  
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{process_of_mixing}
+\caption{The process of mixing. Note: $A_x B_{1-x}$ can be a compound or a random solid solution. It's depicted as a general blob here to emphasize the generality of the mixing process.}
+\label{mixing_process}
+\end{figure}
 
+\subsection{Energetic Effects on Mixing}
+As $p \Delta V$ terms are generally negligible in the solid state, we will discuss the energy of mixing, $\Delta E_{mix}$, instead of the enthalpy of mixing. In practice, this is convenient because simulations are often pretty good at calculating energies, by e.g. quanutm mechanical methods. In fact, qunatum mechanics is used to compute ground state energies of compounds quite often, and there are now large bodies of computed energies of compounds available online, for example at the \href{https://www.materialsproject.org/}{Materials Project}, and the \href{http://oqmd.org/}{Open Quantum Materials Database}. Between these online resources and compendiums of experimentally-determined enthalpies of formation like the \href{http://kinetics.nist.gov/janaf/}{Janaf Tables}, you will almost never have to determine the enthalpy/energy of formation of a compound. Therefore, this section will try to explain why certain pairs of elements interact the way they do, rather than to provide detailed values. This amounts to the creation and examination of heuristics for mixing.
 
+Some possible heuristic rules for mixing are the following. We'll discuss them in more detail below.
+\begin{itemize}
+\item \un{Size}: The hypothesis would be that atoms might mix well if they are the same size; they need to fit together.
+\item \un{Crystal Structure}: The hypothesis would be that elements with the same crystal structure should mix. This turns out to be a bad heuristic. Don't use it.
+\item \un{Electronegativity}: The hypothesis would be that a large difference in electronegativity should drive compound formation due to charge transfer: large $\Delta \chi$ should be associated with large electronegativity differences.
+\item \un{Valency}: One might also hypothesize that there should be some relationship between the number of valence electrons that each mixing element has.
+\item \un{The Miedema Rules}: A set of rules developed by Miedema and co-workers to predict whether transition metals will form compounds or be immiscible which worked astoundingly well. It turns out Miedema got the right result, but got the physical picture entirely wrong, so we won't get into his theory.\footnote{For a proper discussion of cohesion in transition metal alloys, see: \textit{A Quantum-Mechanical Critique of the Miedema Rules for Alloy Formation}, D.G. Pettifor, Solid State Physics \bold{40} 1987 (\href{http://libraries.mit.edu/get/ssp}{link})} 
+\end{itemize}
+
+\subsubsection{Is size a good predictor of mixing behavior?}
+Size is indeed a good predictor of mixing behavior, especially in terms of forming solid solutions: two elements can only coexist in a lattice if they both `fit' in the same sites. More specifically, in metals, Hume-Rothery found that large ranges of solid solubility are only found for pairs of elements whose  atomic radii differ by less than 15\%.\footnote{Hume-Rothery developed a series of rules for the behavior of metallic solutions based on the properties of the elements, called the Hume-Rothery rules. The 15\% rule is the first Hume-Rothery rule. They're very useful, even if they're a bit primitive compared to quantum mechanics.} This behavior comes about because there is an energetic penalty accosiated with the straining at atom to fit in a given site. Note that this rule is a necesarry but not sufficient condition for solubility: it tells you when dissolution is possible, but doesn't guarantee when it will occur. This is because it only considers \emph{size}, but there's a lot more going one when you mix two things together: bands can hybridize, charge transfer can occur, and chemical bonds can form. These are what one might call chemical effects. Atomic size differences will determine miscibility in the absence of chemical effects.
+
+The effects of atomic size are not limited to metals; similar size-based arguments hold for the mixing of other systems where chemical effects are small. For example, when you mix isovalent\footnote{Isovalent means \emph{having the same charge}; a isovalent oxides would be CaO and MgO, where both cations have the same charge, +2, as compared to Al$_2$O$_3$ and Mg), where the cations have different charges.} oxides, there really isn't any chemistry going on; the cations are separated from one another by the oxygen atoms and the cations' charge remains the same. Therefore, the biggest factor in determining whether two isovalent oxides mix is whether they can fit on the same lattice in terms of their sizes. Similarly, the miscibility of solutions of semiconductor compounds with from the same families \footnote{e.g. the alloying of III-V compounds with one another versus alloying a III-V with a II-VI} is mostly determined by atomic size arguments.
+
+\subsubsection{Is electronegativity a good predictor of mixing behavior?}
+Of all the heuristics commonly discussed in the literature, electronegativity differences have the largest effects on mixing.
+It is generally true that larger differences in electronegativity between two elements, are correlated with a greater the tendency for compound formation. Further, $|\chi_A - \chi_B|$ is correlated with more negative the enthalpies of formation. 
+
+(Eventually put in a plot of the enthalpy of formation of the elements versus the electronegativity difference here)
+
+There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, then the electrons from the more electronegative element are transfered from the less electronegative element to the more electronegative element. This process is show in Fig. \ref{chargeTransfer}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{chargeTransferLargeElectroneg2}
+\caption{A schematic of charge transfer for the case of large electronegativity differences. The three panels are flipped density-of-states diagrams. The high-energy electrons of B are transfered into the empty states above the Fermi level of A. When compounds form, stoichiometry is generally optimized so that maximal charge transfer occurs (e.g. Al donates three electrons when forming an oxide, while O only accepts 2, leading to the Al$_2$O$_3$ stoichiometry), meaning the low-energy band is completely filled, and the high energy band is completely empty. This is why ionic compounds are insulators.}
+\label{chargeTransfer}
+\end{figure}
+
+This is essentially what happens in ionic bonding; the electrons from one element are transfered to the other, filling the lower-energy band up, and emptying the higher energy band.
+
+The physics are different when compounds form when there are small differences in electronegativity, typically with pairs of transition metals. Compound formation between pairs of transition metals is also well-predicted by electronegativity differences, but there is not a clear-cut case for charge transfer, because the bands overlap, and the electrons are not well-localized. In fact, when you go into quantum-mechanical calculations and look at the charge on atoms in metals, you find that they are essentially neutral. Therefore, we know that electrostatics isn't actually driving compound formation. 
+
+What's actually happening in transition metal alloys is a metallic version of the octet rule. You can derive from tight-binding arguments that the cohesive energy should be maximal when the d-band is half full; think of this as filling all the bonding states in the d-band but none of the antibonding states, this is shown in the lower left-hand panel of Fig. \ref{cohesion_in_TMs}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{cohesion_in_TMs_pettifor_1987}
+\caption{Theoretical predictions of transition metal properties according to tight-binding as a function of the number of d-electrons. The cohesive energy, $U_{\text{coh}}$ is in the bottom left. You can see that tight-binding predicts most properties pretty accurately from consisdering the d-electrons alone. Other properties depicted are the d-band width (top left), Wigner-Seitz radius (top right), and bulk modulus (bottom right). From Pettifor, DG. \textit{Solid State Physics} 1987}
+\label{cohesion_in_TMs}
+\end{figure}
+
+Thus, when two transition metals are mixed, compounds will form when the two metals can achieve a d-band occupancy of around 5 on average. Therefore, early transition metals with $N_d<5$ tend to form compounds with late transition metals with $N_d>5$. As electronegativity is lowest for the early transition metals and highest for the late transition metals, electronegativtity is well-correlated with this d-electron criterion, but electronegativity differences do not cause this phenomenon.
+
+\subsubsection{Is Valency a good predictor of mixing behavior?}
+Valency is in fact a good predictor of mixing, but it's beyond the scope of this course. In fact, the \emph{electron over atom ratio}, written $n/a$, strongly controls cohesion and stability of crystal structures in metals. This is for similar reasons as above: $n/a$ controls where the Fermi surface is, and a metal has lowest energy when the Fermi surface just touches the edge of the first Brillouin zone. The influence of the electron-over-atom ratio was first realized empirically by Hume-Rothery, and then explained quantum-mechanically by Mott. A really good discussion of this is in Mott, NF. \textit{Reports on Progress in Physics} 1962 (\href{http://dx.doi.org/10.1088/0034-4885/25/1/306}{link}).
+
+%The electron-over-atom ratio $n/a$ is indeed important.
+
+\subsection{Entropic Effects on Mixing}
+Energetics allow us to predict mixing behaviors at low temperatures. At higher temperatures, we must also take into account the entropy of the various states. of 
 
 
 \end{document}
