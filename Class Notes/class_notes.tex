@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{gensymb}
 
 \hypersetup{
     colorlinks=true,
@@ -12,6 +13,7 @@
 }
 \urlstyle{same}
 \graphicspath{ {figures/} }
+%This is an inexact differential: $\dbar$
 \def\dbar{{\mathchar'26\mkern-12mu d}}
 
 \begin{document}
@@ -964,12 +966,12 @@ Substituting gives:
 \subsubsection{Magnetic Maxwell relations}
 One can perform Maxwell relations including other work terms too. We demonstrate this here. In particular, let's say we wanted expressions relating the behavior of entropy in a magnetic field to other quantities that are more easily measured, say $\left(\frac{\partial S}{\partial P}\right)_{T,H}$ and $\left(\frac{\partial S}{\partial H}\right)_{T,P}$. Including magnetic work terms, $dU$ can be expressed as:
 \eqs
-dU = TdS - PdV + \mu_0 H_0 dM
+dU = TdS - PdV + \mu_0 \mathcal{H}_0 d \mathcal{M}
 \eqe
 Here we have $U(S,V,M)$, but we need a thermodynamic potential expressed as a natural function of $T, P, H$ to perform the desired Maxwell relations, i.e. we want $\phi (T,P,H)$.  First, we perform a Legendre Transform:
 \eqs
-\phi &= U-TS + PV - \mu_0 H_0 M\\
-d\phi &= -S dT + VdP - \mu_0 M dH\\
+\phi &= U-TS + PV - \mu_0 \mathcal{H}_0 \mathcal{M}\\
+d\phi &= -S dT + VdP - \mu_0 \mathcal{M} d\mathcal{H}\\
 \eqe
 This permits us to obtain the following relationships:
 \eqs
@@ -1121,13 +1123,13 @@ We can display the order of derivatives as follows:\\
  $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$
 \end{tabular}
 \end{center}
-If we add a \emph{magnetic field} our energy becomes $dU = TdS - PdV + H dM$.  The various derivatives of $\phi = U - ST + PV - HM$ result in the following order of (second) derivatives:
+If we add a \emph{magnetic field} our energy becomes $dU = TdS - PdV + \mathcal{H} d\mathcal{M}$.  The various derivatives of $\phi = U - ST + PV - \mathcal{H}\mathcal{M}$ result in the following order of (second) derivatives:
 \begin{center}
 \begin{tabular}{c | c | c | c}
-$\phi$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$& $\frac{\partial}{\partial H}$\\ \hline
-$\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V \cdot V$ & $-\frac{\partial M}{\partial T}$\\ \hline
+$\phi$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$& $\frac{\partial}{\partial \mathcal{H}}$\\ \hline
+$\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V \cdot V$ & $-\frac{\partial \mathcal{M}}{\partial T}$\\ \hline
 $\frac{\partial}{\partial P}$ & $\alpha_V \cdot V$ & $-\beta_T \cdot V$ & $V \cdot \gamma$\\ \hline
-$\frac{\partial}{\partial H}$ & $-\frac{\partial M}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
+$\frac{\partial}{\partial \mathcal{H}}$ & $-\frac{\partial \mathcal{M}}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
 \end{tabular}
 \end{center}
 You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are a result of the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because $U$ is convex up with respect to the extensive variables.
@@ -1136,18 +1138,18 @@ You can write a similar matrix for any thermodynamic potential you choose. All s
 \section{Lecture - September 24, 2014}
 Last lecture we started to look at the difference the choice of path makes in measuring thermodynamic quantities. So, we asked ourselves the following: what is the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field? %($\frac{\partial V}{\partial T}|_M$)
 \eqs
-\left(\frac{\partial V}{\partial T}\right)_M \to? \left(\frac{\partial V}{\partial T}\right)_H
+\left(\frac{\partial V}{\partial T}\right)_\mathcal{M} \to? \left(\frac{\partial V}{\partial T}\right)_\mathcal{H}
 \eqe
 We can apply the generalized chain rule, Eq. \ref{genChainRule}, in this situation:
 \eqs
-\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_M &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_H + \frac{1}{V}\left(\frac{\partial V}{\partial M}\right)_T \left(\frac{\partial M}{\partial T}\right)_H\\
-&= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_H + \frac{1}{V}\left(\frac{\partial V}{\partial M}\right)_T M'(T)\\
+\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{M} &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{H} + \frac{1}{V}\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T \left(\frac{\partial \mathcal{M}}{\partial T}\right)_\mathcal{H}\\
+&= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{H} + \frac{1}{V}\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T \mathcal{M}'(T)\\
 \eqe
-Where we abbreviate $\left(\frac{\partial M}{\partial T}\right)_H$ as $M'(T)$. We know $\left(\frac{\partial V}{\partial M}\right)_T = \left(\frac{\partial V}{\partial H}\right)_T \left(\frac{\partial H}{\partial M}\right)_T = \frac{\gamma}{\chi}$, thus:
+Where we abbreviate $\left(\frac{\partial \mathcal{M}}{\partial T}\right)_\mathcal{H}$ as $\mathcal{M}'(T)$. We know $\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T = \left(\frac{\partial V}{\partial \mathcal{H}}\right)_T \left(\frac{\partial \mathcal{H}}{\partial \mathcal{M}}\right)_T = \frac{\gamma}{\chi}$, thus:
 \eqs
-\alpha_M = \alpha_H + \frac{\gamma}{\chi}M'(T)
+\alpha_\mathcal{M} = \alpha_\mathcal{H} + \frac{\gamma}{\chi}\mathcal{M}'(T)
 \eqe
-Mostly materials are either paramagnetic or ferromagnetic, so $\chi > 0$.  For a ferromagnet, the magnetization is relatively constant until when $T$ gets close to the Curie temperature, $T_C$, at which it falls rapidly to zero.  Thus, we can assume $M'(T) < 0$.\\
+Mostly materials are either paramagnetic or ferromagnetic, so $\chi > 0$.  For a ferromagnet, the magnetization is relatively constant until when $T$ gets close to the Curie temperature, $T_C$, at which it falls rapidly to zero.  Thus, we can assume $\mathcal{M}'(T) < 0$.\\
 
 What about thermal expansion?
 \eqs
@@ -1487,18 +1489,20 @@ equation the intensive variables of interest were T and P, so we took $\phi  = U
 \eqe
 A similar relationship can be derived for a magnetic phase transition, taking
 instead: $\phi $ = U - TS + PV - HM such that
-\eqs \text{d$\phi $}=-S \text{dT}+V \text{dP}-M \text{dH}\eqe
+\eqs 
+d\phi =-S dT+V dP-\mathcal{M} d\mathcal{H}
+\eqe
 for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where we want to move along a two-phase equilibrium boundary in T-H space such that the different thermodynamic potentials are changing at the same rate:
 \eqs\text{d$\phi $}^1=\text{d$\phi $}^2\eqe
 \eqs
--S^1 \text{dT}+V^1 \text{dP}-M^1 \text{dH}-\left(-S^2 \text{dT}+V^2 \text{dP}-M^2 \text{dH}\right)=0
+-S^1 dT+V^1 dP-\mathcal{M}^1 d\mathcal{H}-\left(-S^2 dT+V^2 dP-\mathcal{M}^2 d\mathcal{H}\right)=0
 \eqe
 For a system at constant pressure, we
 can show that:
-\eqs\left(\frac{\partial H}{\partial T}\right)_P=-\frac{\text{$\Delta $S}}{\text{$\Delta $M}}\eqe
+\eqs\left(\frac{\partial \mathcal{H}}{\partial T}\right)_P=-\frac{\Delta S}{\Delta \mathcal{M}}\eqe
 In general, this can be written for any work term as:
 \eqs \boxed{
-\left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\text{$\Delta $S}}{\text{$\Delta $X}_j}
+\left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\Delta S}{\Delta X_j}
 }\eqe
 Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, Clausius-Clapeyron (C-C) relationships with $P$ have a negative sign.
 % \eqs
@@ -1514,14 +1518,14 @@ Where the intensive variables are on the left, and the extensive variables are o
 \subsection{Magnetic-induced phase transformation}
 Let's put some numbers onto this new C-C relationship to get a sense of how temperature can affect the $T$-$H$ phase boundary.
 \eqs
-dU &= TdS + \mu_0 H dM\\
-dG &= -SdT - \mu_0 M dH
+dU &= TdS + \mu_0 \mathcal{H} d\mathcal{M}\\
+dG &= -SdT - \mu_0 \mathcal{M} d\mathcal{H}
 \eqe
 \eqs
-\frac{dT}{dH} &= -\frac{\Delta M}{\Delta S}\\
+\frac{dT}{d\mathcal{H}} &= -\frac{\Delta \mathcal{M}}{\Delta S}\\
 \eqe
 \eqs
-\Delta M &= M_\text{ferro} - M_\text{para} \approx 4 \mu_B \approx 4 \cdot 10^{-5} \text{eV/Tesla}
+\Delta \mathcal{M} &= \mathcal{M}_\text{ferro} - \mathcal{M}_\text{para} \approx 4 \mu_B \approx 4 \cdot 10^{-5} \text{eV/Tesla}
 \eqe
 Where we assumed that the magnetization of the ferromagnetic material was 4 Bohr magneton per atom.  For spins, we can have two states, so 
 \eqs
@@ -1529,7 +1533,7 @@ Where we assumed that the magnetization of the ferromagnetic material was 4 Bohr
 \eqe
 Thus we can estimate our change in temperature with field
 \eqs
-\frac{dT}{dH} = -\frac{4 \cdot 10^{-5}}{8.617 \cdot 10^{-5} \cdot \ln(2)} = -0.66 \text{K/Tesla}
+\frac{dT}{d\mathcal{H}} = -\frac{4 \cdot 10^{-5}}{8.617 \cdot 10^{-5} \cdot \ln(2)} = -0.66 \text{K/Tesla}
 \eqe
 Note: a Tesla is a \emph{huge} magnetic field, so we see that phase boundaries between magnetic phases are super strongly affected by temperature, making them hard to study well if you don't have good control over $T$.
 
@@ -2286,6 +2290,7 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 
 
 \section{Lecture XX: The Physical Basis of Mixing}
+This section was heavily influenced by Professor Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.
 In this section, we will elucidate the physical reasons why some pairs of elements mix together to form random solutions and/or compounds, whereas others are immiscible. We will call this general process of allowing two elements to come together \emph{mixing}. It is illustrated in Fig. \ref{mixing_process}. We will mostly restrict ourselves to the solid state. From a thermodynamic perspective, pairs of elements mix because the free energy of forming the solution is negative relative to the pure state, $\Delta G_{mix} <0$. An element is immiscible in another if $\Delta G_{mix} >0$. It is useful to split $\Delta G_{mix}$ into its component parts, $\Delta H_{mix}$ and $\Delta S_{mix}$ in order to understand why mixing occurs. We'll begin with $\Delta H_{mix}$, and then address $\Delta S_{mix}$.  
 
 \begin{figure}[h]
@@ -2316,7 +2321,7 @@ The effects of atomic size are not limited to metals; similar size-based argumen
 Of all the heuristics commonly discussed in the literature, electronegativity differences have the largest effects on mixing.
 It is generally true that larger differences in electronegativity between two elements, are correlated with a greater the tendency for compound formation. Further, $|\chi_A - \chi_B|$ is correlated with more negative the enthalpies of formation. 
 
-(Eventually put in a plot of the enthalpy of formation of the elements versus the electronegativity difference here)
+(Eventually put in a plot of the enthalpy of formation of the all compounds versus the electronegativity difference here)
 
 There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, then the electrons from the more electronegative element are transfered from the less electronegative element to the more electronegative element. This process is show in Fig. \ref{chargeTransfer}.
 
@@ -2348,7 +2353,81 @@ Valency is in fact a good predictor of mixing, but it's beyond the scope of this
 %The electron-over-atom ratio $n/a$ is indeed important.
 
 \subsection{Entropic Effects on Mixing}
-Energetics allow us to predict mixing behaviors at low temperatures. At higher temperatures, we must also take into account the entropy of the various states. of 
+Knowledge of the internal energy allow us to predict mixing behaviors at low temperatures. At higher temperatures, we must also take into account the entropy of the mixed and un-mixed states. There are several types of entropy one could consider:
+\begin{itemize}
+\item \un{Configurational Entropy}: the number of different ways you could arrange the molecules on a lattice or in a liquid solution. This is essentially given by site occupation probabilities and correlations. This is the entropy that drives solutions to mix at higher temperatures. Other entropies may support or oppose mixing.
+\item \un{Vibrational Entropy}: the frequency/amplitude of vibrations gives more states at each site (Think Debye and Einstein models for the heat capacity).
+\item \un{Translational Entropy}: In the gas phase, the translational entropy is extremely large. Note: in the limit of large vibrations, translational entropy should be the same as vibrational entropy.
+\item \un{Electronic Entropy}: In some systems, the electrons can be thermally excited into many different states. This can end up affecting phase stability.
+\item \un{Magnetic Entropy}: Disordering or ordering of spins gives rise to magnetic entropy.
+\end{itemize} 
+
+\subsubsection{Configurational Entropy}
+This is the entropy that we usually think of when mixing occurs with increasing temperature; it drives solubility limits, as well as order-disorder transformations. To first approximation, the configurational entropy is given be the random mixing entropy:
+\eqs S_{\text{configurational}}=-k_B\sum x_i \ln x_i \eqe
+
+\subsubsection{Vibrational Entropy}
+Talk about the spacing of energy levels as proportional to root k/m.
+What this tells us is that if m is constant (i.e. we hold the elemental identities constant), softer phases should be favored at higher temperatures, as the system gains access to more vibrational states.
+BCC tends to be softer than FCC/HCP, so you tend to get closed packed-to-BCC transitions. Ex: Zr, Ti, Hf exhibit this, so does Fe in the $\gamma$ to $\delta$ transition at very high temperatures.\footnote{The BCC phase is } Some of the alkali metals (e.g. Li and Na), which we traditionally think of as BCC, are actually close-packed below room temperature; their melting temperatures are just so low that these transitions occur much earlier than in the more cohesive transition metals.\footnote{Note: only the acoustic modes are really proportional to the moduli (and thus the stiffness) of a material, so only the acoustic contribtion to the vibrational entropy can be explained from moduli. The optical modes are fairly independent. This approximation works for the elements because they have very simple unit cells, and so there aren't optical modes!}
+
+\subsubsection{Electronic Entropy}
+
+
+\section{Bonus Topic: Chemical thermodynamics of polymers}
+This section will attempt to apply much of what we have learned in 3.20 to systems that we didn't touch as much in class: polymers.\footnote{This section was inspired by and draws heavily A.H. Windle's \textit{A metallurgist's guide to polymers}, in Physical Metallurgy, eds. Cahn and Haasen, 1997. Since MIT teaches materials science from a metallurgist's perspective, this article is an especially good intro to polymers for people from MIT's department.} The reason is not because polymers are too complex, but rather because if we taught chemical thermodyanmics from the perspective of polymers, it would be too simple.\footnote{The other reason is that polymers often don't come to true equilibrium: those long chains can often make the approach to equilibrium \emph{slow}.} By the end of this, you should develop a fairly good intution for what happens when you blend two polymers together. 
+
+Polymers exhibit  interesting phase behavior relative to other systems in that they don't really mix that well when you heat them up, even when they come to equilibrium. This is actually not because it's hard to get the chains to wiggle into one another (i.e. this is not because of kinetics), but rather because of basic thermodynamics, as we'll show. Despite this fact, polymer scientists rarely useful phase diagrams, though. This is for several reasons. First, there are way more polymers than there are elements, so the number of polymer phase diagrams would be extremely large. Even such details as the polymer's molecular weight have a significant influnce on phase behavior. Second, polymers simply don't mix very well: they tend to phase separate, or be \emph{immiscible} in the language of polymers. Even when they are miscible (e.g. soluble), they never form compounds, so really, there are only two basic phase behaviors for polymers: miscible, and immiscible. We'll illustrate this with a simple example. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{deuterated_comparing}
+\caption{The phase diagram for mixtures of deuterated and protonated polybutadiene with $N_i$ ~ 3200 formula units each exhibiting a miscibility gap (UCST) at ~60 \degree C.}
+\label{deuterated_comparison}
+\end{figure}
+
+Consider blends of deuterated and non-deuterated polybutadiene.\footnote{Polymer scientists use the term \emph{blend} for what others might call mixtures or alloys.} The only difference between  the two polymers being blended is that one polmer has hydrogens that don't have a neutron (called protium), while the other polymer has hydrogen atoms that contain a neutron (called deuterium). These polymers should thus behave identically chemically, and we might naively expect them to form an ideal solution.  Compare this expectation to the experimentally-determined phase diagram in Fig \ref{deuterated_comparison}, where we see that the chemically 'identical' polymers exhibit a miscibility gap up to ~333 K (60 \degree C), which is a fairly high temperature for a polymer. Note: in polymer science, the critical temperature at the top of the miscibility gap is called the upper critical solution temperature, abbreviated UCST. Of course, polymers which differ in their chemistry can be expected to exhbit significantly larger interactions than this one, and so their UCST values are often even higher. So, we see that somehow, our intuition for what drives mixing is  off in polymers.
+
+\subsubsection{Why don't polymers mix when we heat them up?}
+It turns out that the reason polymers don't mix well is because polymers are highly correlated in terms of their atomic positions: each repeat unit is chemically bonded to all of the others, and so their configurational entropies are greatly reduced. Thus, the drivng force for mixing is greatly reduced as well. More quantitatively, the entropy of mixing of a polymer was given approximately by Flory and Huggins as:
+\eqs
+\Delta S_\text{mix}=-R\left [\frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2  \right ]
+\eqe
+where $\phi_i$ refers to the volume fraction of monomers of component $i$, and $N_i$ is the number of monomers per polymer chainfor poymeric component i. Note the similarity to the ideal entropy of mixing of a molecular solution: $\Delta S=-k_B\sum x_i \ln x_i $; the volume fractions of monomers, $\phi_i$, are exactly analogous to the concentrations $x_i$. However, the entropy terms are divided by the degree of polymerization of each polymer. It's as if each polymer is 'ball' that is ideally mixing instead of each molecular unit ideally mixing. As the degree of polymerization is usually on the order of 1000 or more, \emph{the entropy of mixing of polymers is approximately three orders of magnitude smaller than that of molecular solutions.} 
+ 
+The natural next step in discussing the mixing of polymers is to define an enthalpy of mixing, such that we can write out the free energy of mixing. Generally, a version of the regular solution approximation is sufficient to describe the enthalpy of mixing of polymers. Polymer scientists like to write the free energy of mixing as:
+\eqs
+\Delta G_\text{mix}=RT \left [ \chi \phi_1\phi_2 + \frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2  \right ]
+\eqe
+This is calle the \emph{Flory-Huggins equation}. Looking closely, you can identify the enthalpy of mixing as:
+\eqs
+\Delta H_\text{mix}=RT\chi \phi_1 \phi_2
+\eqe
+Again, there is a close analogy here between the concentrations $x_i$ from alloy theory and the volume fractions $\phi_i$ in polymer mixing. In the regular solution approximation, $\Delta H_\text{mix}=z\omega x_1 x_2$, so we see that $RT\chi$ is then analogous to the pairwise interactions between polymers, just as $z\omega$ represented the pairwise interactions between alloying elements in regular solution theory. It might at first strike you as silly that polymer scientists write an enthalpic term as proportional to the temperature, as it looks like an entropic term. Indeed, from the perspective clearly separating enthalpies and entropies, this is inconvenient, and $\chi$ itself must be temperature-dependent even to model temperature-indepedendent interactions in the blend. However, the Flory-Huggins free energy offers a great convenience or polymer scientists in that it is easily non-dimensionalized:
+\eqs
+\frac{\Delta G_\text{mix}}{RT}= \chi \phi_1\phi_2 + \frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2 
+\eqe
+Rememer, the phase behavior of a system is not controled by the absolute scale of the free energy, but by the shape of the free energy curves. Thus, this normalization just serves to eliminate temperature as a needed thermodynamic descriptor for the system. There are thus only three variables now to describe mixing for all polymers that behave according to Flory-Huggins theory: $\chi, N_1,N_2$ The Flory-Huggins expression is thus useful for polymers because it is so transferable across systems, and the number of systems in the polymer world is very large. As you might be able to infer from this discussion, $\chi$ is a very important parameter in polymer science.
+
+So, what is generally the sign of $\chi$? Well, the phrase 'like dissolves like' is very applicable in understanding miscibility in polymers. Nothing is more like one type of polymer than the same polymer, so they tend to like to stay with themselves rather than with mix: $\chi$ is more often positive than negative. Due to the tiny entropric forces for mixing, even small values for $\chi$ result in immiscibility.
+
+\textbf{Exercise}: Derive the value of $\chi$ from the value of the UCST using Flory-Huggins theory. Compare this value to values for the heat of mixing for typical metallic and ionic systems. 
+
+Now, this isn't to say there aren't polymer systems which exhibit miscibility, there are. Such systems occur when the side-groups on the chains of the two polymers interact favorably. Interestingly, these systems often phase separate at higher temperatures. The mechanism for this is not too complex, but we'll end this discussion here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
