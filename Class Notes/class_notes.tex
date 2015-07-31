@@ -23,7 +23,7 @@
 \section{Lecture 1: Introduction and Preliminaries}
 %This is an inexact differential: $\dbar$
 
-Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics and an understanding of energy scales.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
+Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics, energy scales in materials processes, phase stability and phase diagrams.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
 
 \subsection{Definitions}
 To begin our journey, we will define some frequently used terms for convenience.
@@ -38,15 +38,15 @@ To begin our journey, we will define some frequently used terms for convenience.
 \begin{equation}
 V = V_1 + V_2
 \end{equation}
-\item \un{Intensive Variables}: Variables that are independent of the system size. Intensive variables do \emph{not} scale with system size (i.e. pressure, temperature, E-field, etc.).  For example, the sum of two system's pressures is not equal to the pressure of the sum of both systems:
+\item \un{Intensive Variables}: Variables that are independent of the system size. Intensive variables do \emph{not} scale with system size (i.e. pressure, temperature, electric field, etc.).  For example, the sum of two system's pressures is not equal to the pressure of the sum of both systems:
 \eqs
 P \neq P_1 + P_2
 \eqe
-\item \un{State Variables}: The variables required to fully characterize a system (T, P, n, ...).  These are \emph{not} equal to the \bold{state} of a system. However, at equiliibrium, there is a one-to-one mapping between the macroscopic state of the system and the full set of state variables; the state variables fully define the macroscopic equilibrium state.
-\item \un{Boundaries}: Conditions that are defined for a system.  These strongly depend on the system of interest. Boundaries can have properties such as: permeable (open to mass flow, changing $n$), impermeable (closed to mass flow), adiabatic (closed to heat flow), diathermal (open to heat flow), rigid (constant volume), deformable, etc. The nature of the boundary defines how the system's state variables can change as it is subjected to different processes. For example, while a system with a rigid boundary is subject to possessing a constant volume during arbitrary processes, a system with a deformable boundary will, for sufficicently slow processes, have the same pressure as its surroundings.
+\item \un{State Variables}: The variables required to fully characterize a system (T, P, n, ...).  These are \emph{not} equal to the \bold{state} of a system. However, at equilibrium, there is a one-to-one mapping between the macroscopic state of the system and the full set of state variables; the state variables fully define the macroscopic equilibrium state. % A function of is actually not the proper word here: A  function can map many inputs onto a single output (e.g. x^2 = 1 at x = 1 and -1). The mapping from macroscopic states to the state variables is what one would call a bijective function, as it has the special property of being a one-to-one mapping.
+\item \un{Boundaries}: Conditions that are defined for a system.  These strongly depend on the system of interest. Boundaries can have properties such as: permeable (open to mass flow, changing $n$), impermeable (closed to mass flow), adiabatic (closed to heat flow), diathermal (open to heat flow), rigid (constant volume), deformable, etc. The nature of the boundary defines how the system's state variables can change as it is subjected to different processes. For example, while a system with a rigid boundary is subject to possessing a constant volume during arbitrary processes, a system with a deformable boundary will, for sufficiently slow processes, have the same pressure as its surroundings.
 \end{enumerate}
 
-In thermodynamics, we will look at the transfer of energy and other extensive variables at the borders of systems as they undergo processes. Note that this approach treats the system as a black box; we have no idea what is going on microscopically inside the system. We will derive laws regarding the conservation and creation of the extensive variables. Using these laws of conservation, we will be able to define exactly how the macroscopic state of the system changes by only keeping track of what goes on at the boundaries of the system. We will then develop constitutive equations which relate changes in the thermodynamic state variables to one another during arbitrary processes. Integration of these constitutive equations is a powerful and general way to calculate changes in system processes during arbitrary processes. Last, we will use these constitutive relationships to look at a special set of processes; phase transitions, and derive laws for how the conditions under which these phase transitions should occur have to change as the boundary conditions on the system change.
+In the first third of the the course (classical thermodynamics), we will look at the transfer of energy and other extensive variables through the borders of systems as they undergo processes. Note that this approach treats the system as a black box; we have no idea what is going on microscopically inside the system. We will derive laws regarding the conservation and creation of the extensive variables. Using these laws of conservation, we will be able to define exactly how the macroscopic state of the system changes by only keeping track of what goes on at the boundaries of the system. We will then develop constitutive equations which relate changes in the thermodynamic state variables to one another during arbitrary processes. Integration of these constitutive equations is a powerful and general way to calculate changes in system processes during arbitrary processes. Last, we will use these constitutive relationships to look at a special set of processes; phase transitions, and derive laws for how the conditions under which phase transitions occur must change as the boundary conditions on the system change.
 
 \subsection{Energy and Forces}
 What ``forms'' of energy do we have?
@@ -63,13 +63,14 @@ For 3.20, we will assume that changes in the total energy $E$ of our system are 
 \begin{equation}
 \Delta E = \Delta U
 \end{equation}
-This is tantamount to neglecting changes in the translational energy of the system as a whole. We assume that $U$ exists, that $U$ is a function of only the extensive thermodynamic variables ($U$ is a \un{state variable}), and that all types of energy exchange that can change the internal state of the system can be represented as work terms represent changes in $U$. We discuss this final assumption next.
+This is tantamount to neglecting changes in the translational energy of the system as a whole. We assume that $U$ exists and that $U$ is a function of only the extensive thermodynamic variables ($U$ is a \un{state variable}). We will also assume that all types of energy exchange that %can change the internal state of the system 
+can be represented as work terms represent changes in $U$, except for exchange of heat. We define work next.
 
-%I am not sure 'assumption' is right for some of these; they are not all assumptions... some are implied by others... I think it is fine for teach purposes.
+%I am not sure 'assumption' is right for some of these; they are not all assumptions... some are implied by others... I think it is fine for teaching purposes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture 2: Heat and Work}
-Let's look at one form of energy transfer: \un{work}. A differential amount of work is equal to the force dotted with the displacement:
+One commonly observed form of energy transfer is \un{work}. A differential amount of work is equal to the force dotted with the displacement:
 \eqs
 \delta W = \vec{F} \cdot d\vec{r}
 \eqe
@@ -105,7 +106,7 @@ Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsil
 &= V \varepsilon_0 \mathcal{E} d\mathcal{E} + \mathcal{E} d\mathcal{P}
 \eqe
 
-Note how the $\delta W$ nicely seperates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
+Note how the $\delta W$ nicely separates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
 \eqs
 \delta W = \sum_i y_i dx_i
 \eqe
@@ -2289,8 +2290,8 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 
 
 
-\section{Lecture XX: The Physical Basis of Mixing}
-This section was heavily influenced by Professor Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.
+\section{The Physical Basis of Mixing}
+This section was heavily influenced by Professor Gerbrand Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.\\
 In this section, we will elucidate the physical reasons why some pairs of elements mix together to form random solutions and/or compounds, whereas others are immiscible. We will call this general process of allowing two elements to come together \emph{mixing}. It is illustrated in Fig. \ref{mixing_process}. We will mostly restrict ourselves to the solid state. From a thermodynamic perspective, pairs of elements mix because the free energy of forming the solution is negative relative to the pure state, $\Delta G_{mix} <0$. An element is immiscible in another if $\Delta G_{mix} >0$. It is useful to split $\Delta G_{mix}$ into its component parts, $\Delta H_{mix}$ and $\Delta S_{mix}$ in order to understand why mixing occurs. We'll begin with $\Delta H_{mix}$, and then address $\Delta S_{mix}$.  
 
 \begin{figure}[h]

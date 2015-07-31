@@ -87,8 +87,8 @@
 \contentsline {subsection}{\numberline {14}Joule-Thompson Expansion (Throttling)}{71}{subsection.13.14}
 \contentsline {subsection}{\numberline {15}Material Properties (useful 2nd derivatives of energy functions):}{72}{subsection.13.15}
 \contentsline {subsection}{\numberline {16}Random constants we may need to know:}{72}{subsection.13.16}
-\contentsline {section}{\numberline {14}Lecture XX: The Physical Basis of Mixing}{72}{section.14}
-\contentsline {section}{Lecture XX: The Physical Basis of Mixing}{73}{section.14}
+\contentsline {section}{\numberline {14}The Physical Basis of Mixing}{72}{section.14}
+\contentsline {section}{The Physical Basis of Mixing}{73}{section.14}
 \contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{73}{subsection.14.1}
 \contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{74}{subsubsection.14.1.1}
 \contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{75}{subsubsection.14.1.2}
