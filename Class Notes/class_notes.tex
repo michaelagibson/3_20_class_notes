@@ -72,24 +72,24 @@ can be represented as work terms represent changes in $U$, except for exchange o
 \section{Lecture 2: Heat and Work}
 One commonly observed form of energy transfer is \un{work}. A differential amount of work is equal to the force dotted with the displacement:
 \eqs
-\delta W = \vec{F} \cdot d\vec{r}
+\dbar W = \vec{F} \cdot d\vec{r}
 \eqe
-The formalism for work is $\delta W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive). Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
+The formalism for work is $\dbar W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive). Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
 \subsection{Two examples of work}
 \bold{Example 1: Deformation of a material}: The work resulting from a change in strain energy is 
 \eqs
-\delta W = V \bar{\bar{\sigma}} \cdot d\bar{\bar{\epsilon}}
+\dbar W = V \bar{\bar{\sigma}} \cdot d\bar{\bar{\epsilon}}
 \eqe 
 where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and the volume element $[\text{m}^3]$ together produce a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
 \eqs
-\delta W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
+\dbar W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
 &= -P V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33})
 \eqe
 We note that the strain is defined as $\epsilon_{11} \equiv \Delta l_1 / l_1^{\text{initial}}$, and $l_1 l_2 l_3 = V$, so we can substitute $V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33}) = dV$:
 \begin{equation}
-\delta W_\text{pressure} = -P dV
+\dbar W_\text{pressure} = -P dV
 \end{equation}
-To solve these, we need an equation of state $P(V)$ or $\sigma(\epsilon)$.  We also have
+To make these quantitative, we need an equation of state $P(V)$ or $\sigma(\epsilon)$.  We also have
 \begin{equation}
 \frac{\partial \epsilon_{ij}}{\partial \sigma_{kl}} = c_{ijkl}
 \end{equation}
@@ -97,29 +97,31 @@ where $c_{ijkl}$ is the generalized elastic compliance.  If our material is \un{
 
 \bold{Example 2: Electrical work on an isotropic dielectric medium}: The voltage between two sides of a dielectric is given by the internal electric field and the length as $V = \mathcal{E} \cdot l$.  The energy stored in this capacitor is a product of the voltage and the charge.  If the charge, $q$, changes, we can produce a work term:
 \eqs
-\delta W = V dq
+\dbar W = V dq
 \eqe
 Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{A\cdot l}$.  $\mathcal{P}$ is the total polarization and it is normalized by the volume, $A\cdot l$. We can do some algebra to arrive at a new expression for this work term:
 \eqs
-\delta W &= \mathcal{E} l  \cdot d(A (\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{lA}))\\
+\dbar W &= \mathcal{E} l  \cdot d(A (\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{lA}))\\
 &= \mathcal{E}lA \cdot d(\varepsilon_0 \mathcal{E} + \frac{\mathcal{P}}{lA})\\
 &= V \varepsilon_0 \mathcal{E} d\mathcal{E} + \mathcal{E} d\mathcal{P}
 \eqe
 
-Note how the $\delta W$ nicely separates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an elecric field to a system. You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
+Note how the $\dbar W$ nicely separates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an electric field to a system. %This is disctinct from the application of an electrical potential. Shifting the electrical potential of an entire system drives net charge transfer to/from the system, while applying the gradient of the potential drives the formation of charge gradients (i.e. polarization) within the system. There is a beautiful symmetry here.
+
+You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
 \eqs
-\delta W = \sum_i y_i dx_i
+\dbar W = \sum_i y_i dx_i
 \eqe
 where each $y_i$ represents a generalized force, and each $x_i$ represents a generalized displacement.
 
 %We will now discuss how we derive the form of this summation of orthogonal work terms. 
-You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms are \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
+You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms is \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
 \begin{itemize}
-\item \un{exact differentials}: The integral of an exact differential is path independent; it is only a function of the endpoints.
-\item \un{inexact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints.
+\item \un{exact differentials}: The integral of an exact differential is path independent; it is only a function of the endpoints. We (try to) use a $d$ for exact differentials.
+\item \un{inexact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints. We (try to) use a $\dbar$ for exact differentials.
 \end{itemize}
 This is illustratted below with two examples.
-%%%%%%Next, we can relate this quantity to the characteristic potential energy function of our system.  We know that $\Delta U = U^\text{final} - U^\text{initial}$, and $\delta W = y_i dx_i = F d\vec{r}$.  The force from a potential energy function $\phi$ is $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$.  Therefore, we have
+%%%%%%Next, we can relate this quantity to the characteristic potential energy function of our system.  We know that $\Delta U = U^\text{final} - U^\text{initial}$, and $\dbar W = y_i dx_i = F d\vec{r}$.  The force from a potential energy function $\phi$ is $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$.  Therefore, we have
 %%%%%%\begin{align*}
 %%%%%%F_x &= -\frac{\partial \phi}{\partial x}|_y \\
 %%%%%%F_y &= -\frac{\partial \phi}{\partial y}|_x
@@ -152,18 +154,18 @@ Ultimately, the energy change (or work required to move us) from $h_1 \rightarro
 
  In thermodynamics, you can get an inexact differential for two reasons. As described above, dissipation leads to inexact differentials. A second, related way, is simply not taking into account all of the forces during your integration. Such an incomplete description will result in path-dependent integrals, even if the underlying vector field is conservative. For example, if we are moving in three dimensions and do not describe the force in the $y$-direction, $F_y'$, then we would (incorrectly) describe the work when moving in three dimensions as:
 \begin{align*}
-\delta W_\text{incomplete} = \delta W_x + \delta W_z = F_x \dot dx + F_z \dot dz 
+\dbar W_\text{incomplete} = \dbar W_x + \dbar W_z = F_x \dot dx + F_z \dot dz 
 \end{align*}
-Consider two different paths in a conservative 3D vector field.  The integrated amount of work done due to the x- and z- forces may be different between the two paths, even though the total work is the same. This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \delta W_x + \delta W_z = \int F_x dx + F_z dz = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  This is analogous to describing the changes in internal energy of a system through only work terms; we are missing an entire component of the internal energy change, the change to due to \un{heat} flow into a system.
+Consider two different paths in a conservative 3D vector field.  The integrated amount of work done due to the x- and z- forces may be different between the two paths, even though the total work is the same. This results in a path dependence in the energy acquired while moving.  For path \#1 we might have $\int \dbar W_x + \dbar W_z = \int F_x dx + F_z dz = 0$ whereas for path \#2 we could very well have $W_x = \int F_x dx \neq 0$.  This is analogous to describing the changes in internal energy of a system through only work terms; we are missing an entire component of the internal energy change, the change to due to \un{heat} flow into a system.
 
 
 
 \subsection{Heat}
-Heat is energy transferred between two bodies not due to work or mass transfer\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisible liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (a.k.a. Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}.  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\delta Q = 0$.  The \un{first postulate of thermodynamics} is
+Heat is energy transferred between two bodies not due to work or mass transfer\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisible liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (a.k.a. Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}.  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\dbar Q = 0$.  The \un{first postulate of thermodynamics} is
 \begin{equation}\boxed{
-dU = \delta W + \delta Q
+dU = \dbar W + \dbar Q
 }\end{equation}
-where again, the work terms can be written as $\delta W = \sum_i y_i dx_i$.The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\delta$, but the sum of the two as $dU$. We illustrated this with an example:
+where again, the work terms can be written as $\dbar W = \sum_i y_i dx_i$.The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\dbar$, but the sum of the two as $dU$. We illustrated this with an example:
 
 \bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, wherein the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
 \eqs
@@ -194,18 +196,18 @@ Clearly, the amount of work done when changing between two states can be differe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 8, 2014}
-Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \delta Q + \sum y_i dx_i$.  
+Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \dbar Q + \sum y_i dx_i$.  
 %\subsection{Today}
 We now want to quantify the first term, or \un{quantify heat exchange}.  We do this by defining the \emph{heat capacity} for a system as:  %(normalized by $n$) 
 
 \begin{align*}
-C_\text{path} (T) &= \frac{(\delta Q)_\text{path}}{dT}\\
+C_\text{path} (T) &= \frac{(\dbar Q)_\text{path}}{dT}\\
 c_\text{path} (T) &= \frac{C_\text{path}}{N} %\frac{(\partial Q)_\text{path}}{dT}
 \end{align*}
 where $C_\text{path}$ is the system heat capacity along a given path, and $c_\text{path}$ is the specific heat capacity; the system heat capacity divided by the number of moles, $N$.\footnote{This convention is used throughout: system quantities are uppercase, molar quantities are lowercase}   If we consider a \un{simple system}\footnote{In a simple system, work can only be done on the system via $PdV$ terms.} with state variables $(P,V)$ or $(V,T)$, we can define
 \begin{align*}
-c_p &= \frac{1}{N} \frac{(\delta Q)_p}{dT}\\
-c_v &=  \frac{1}{N} \frac{(\delta Q)_v}{dT}
+c_p &= \frac{1}{N} \frac{(\dbar Q)_p}{dT}\\
+c_v &=  \frac{1}{N} \frac{(\dbar Q)_v}{dT}
 \end{align*}
 as the heat capacities at constant temperature and volume, respectively. The two quantities are related; it is natural to wonder what this relationship is. %can wonder what is larger, $C_p$ or $C_v$.  
 The table below shows the molar heat capacity for a set of substances.
@@ -260,10 +262,10 @@ While $c_v$ is naturally defined as the derivative of the internal energy with r
 H &= U + PV\\
 dH &= dU + V dP + P dV
 \end{align*}
-and substitute $dU = \delta Q - P dV$
+and substitute $dU = \dbar Q - P dV$
 \begin{align*}
-dH &= \delta Q + V dP\\
-(dH)_p &= \delta Q
+dH &= \dbar Q + V dP\\
+(dH)_p &= \dbar Q
 \end{align*}
 Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state function. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experimental technique.  $H$ is often called the ``heat'' content.\\
 
@@ -369,7 +371,7 @@ In addition, we also have a nice \emph{equation of state} to relate changes in t
 
 First, we define our system as the gas which is released. It undergoes a sufficiently rapid expansion that the process can be approximated as adiabatic (not enough time for system to exchange heat with its environment). Then:
 \begin{align*}
-dU_\text{gas} &= \delta Q + \delta W = \delta W \\
+dU_\text{gas} &= \dbar Q + \dbar W = \dbar W \\
 &= -P dV\\
 &= n C_V dT = -P dV
 \end{align*}
@@ -395,11 +397,11 @@ For the bike tube, this gives $T_2 = 206$K = -67\degree C.  Why didn't we actual
 \bold{What is happening through the valve?}  %\un{Joule-Thompson expansion} 
 We now define our system as the valve. In this case, the system is at constant volume, and the key process taking place is that gas is flowing through the system. These gas molecules have some well-defined internal energy, so there is an energy flux through the system due to the mass flux through the system:
 \begin{equation}
-dU_\text{valve} = U_\text{in} d n - U_\text{out} d n + \delta Q
+dU_\text{valve} = U_\text{in} d n - U_\text{out} d n + \dbar Q
 \end{equation}
-The gas enters with $P_\text{in}$ and a specific volume $v_\text{in}$ then leaves with $P_\text{out}$ and $v_\text{out}$.  Even though the valve is a constant volume system, the mass flux implies that we will have a work term. The work done by the incoming gas is $P_\text{in} V_\text{in}$, the work done by the outgoing gas is $P_\text{out} V_\text{out}$. They have opposite signs due to the $dn$ term. $\delta Q$ is zero because the process is adiabatic, so:
+The gas enters with $P_\text{in}$ and a specific volume $v_\text{in}$ then leaves with $P_\text{out}$ and $v_\text{out}$.  Even though the valve is a constant volume system, the mass flux implies that we will have a work term. The work done by the incoming gas is $P_\text{in} V_\text{in}$, the work done by the outgoing gas is $P_\text{out} V_\text{out}$. They have opposite signs due to the $dn$ term. $\dbar Q$ is zero because the process is adiabatic, so:
 \begin{equation}
-dU_\text{valve} = \delta W = d n (P_\text{in} v_\text{in} - P_\text{out} v_\text{out})
+dU_\text{valve} = \dbar W = d n (P_\text{in} v_\text{in} - P_\text{out} v_\text{out})
 \end{equation}
 %The valve is an \un{open system} (can exchange particles with environment), and 
 Equating these two definitions of $dU_\text{valve}$ gives:
@@ -458,7 +460,7 @@ dS_\text{system} &= \frac{\dbar Q_1}{T_1} + \frac{\dbar Q_2}{T_2}\\
 &= \dbar Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
 &= \dbar Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
 \end{align*}
-If $T_2 > T_1$, $\delta Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{Heat flows from ``hot'' to ``cold''}.
+If $T_2 > T_1$, $\dbar Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{Heat flows from ``hot'' to ``cold''}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 10, 2014}
@@ -776,7 +778,7 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 15, 2014}
+\section{Legendre Transforms}
 
 
 %\subsection{Equilibrium under the most general conditions}
@@ -1425,7 +1427,7 @@ Typical slopes:  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 26, 2014}
-Last time we calculated the Clausius-Clapeyron general relation.  Now we would like to find a simplified expression of the Clausius-Clapeyron equation for the condensed phase and vapor equilibrium.  We can assume the vapor is an ideal gas $V = \frac{RT}{P}$ and make the approximation $\Delta V \approx V_g$, since the volume in condensed phases are generally much smaller than the volume of the gas phase.
+Last time we derived the Clausius-Clapeyron relation.  Now we would like to find a simplified expression of the Clausius-Clapeyron equation for the condensed phase and vapor equilibrium.  We can assume the vapor is an ideal gas $V = \frac{RT}{P}$ and make the approximation $\Delta V \approx V_g$, since the volume of a condensed phase are generally much smaller than the volume of the gas phase.
 \eqs
 \Delta V = V_v - V_l \approx V_v\\
 \eqe
@@ -1594,13 +1596,13 @@ H' &= U + PV - Fl\\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 29, 2014}
+\section{Introduction to Solution Theory}
 We now begin the section on chemical thermodynamics and solution theory, which is all about what happens when the substances we are dealing with are no longer pure. 
 
 Readings regarding solution theory will be from \textit{ Chemical Thermodynamics of Materials} by Claude H.P. Lupis (a former member of MIT DMSE) and will be posted to Stellar when possible. Readings on specific topics are listed below, under the corresponding heading.\\
-In general, Denigh{'}s \textit{ The Principles of Chemical Equillibrium} is also a good reference on these topics. This book is somewhat verbose, but very good if you want a second, different viewpoint.\\
+In general, Denbigh{'}s \textit{ The Principles of Chemical Equillibrium} is also a good reference on these topics. This book is somewhat verbose, but very good if you want a second, different viewpoint.\\
 \textbf{Phase Diagrams:}\\
-\textit{ Principles of Phase Diagams in Materials Systems} by Paul Gordon is a very thorough reference for phase diagrams. It seems to be out of print and so we will post the chapters as needed.\\
+\textit{Principles of Phase Diagams in Materials Systems} by Paul Gordon is a very thorough reference for phase diagrams. It seems to be out of print and so we will post the chapters as needed.\\
 The ASM Phase Diagram Database is an extremely useful tool for materials scientists. The link is found \href{http://www1.asminternational.org/asmenterprise/apd/BrowseAPD.aspx}{here}. We will look at a lot of phase diagrams from here throughout the last part of this course.
 
 \subsection{Adding composition as a work term in G}
@@ -2308,15 +2310,15 @@ Some possible heuristic rules for mixing are the following. We'll discuss them i
 \begin{itemize}
 \item \un{Size}: The hypothesis would be that atoms might mix well if they are the same size; they need to fit together.
 \item \un{Crystal Structure}: The hypothesis would be that elements with the same crystal structure should mix. This turns out to be a bad heuristic. Don't use it.
-\item \un{Electronegativity}: The hypothesis would be that a large difference in electronegativity should drive compound formation due to charge transfer: large $\Delta \chi$ should be associated with large electronegativity differences.
-\item \un{Valency}: One might also hypothesize that there should be some relationship between the number of valence electrons that each mixing element has.
-\item \un{The Miedema Rules}: A set of rules developed by Miedema and co-workers to predict whether transition metals will form compounds or be immiscible which worked astoundingly well. It turns out Miedema got the right result, but got the physical picture entirely wrong, so we won't get into his theory.\footnote{For a proper discussion of cohesion in transition metal alloys, see: \textit{A Quantum-Mechanical Critique of the Miedema Rules for Alloy Formation}, D.G. Pettifor, Solid State Physics \bold{40} 1987 (\href{http://libraries.mit.edu/get/ssp}{link})} 
+\item \un{Electronegativity ($\chi$)}: The hypothesis would be that a large difference in electronegativity should drive compound formation due to charge transfer: large $\Delta \chi$ should be associated with large, negative energies of compound formation.
+\item \un{Valency}: One might also hypothesize that there should be some relationship between the number of valence electrons that each mixing element has to promote mixing.
+\item \un{The Miedema Rules}: A set of rules developed by Miedema and co-workers to predict whether transition metals will form compounds or be immiscible which worked astoundingly well. It turns out Miedema got the right result, but got the physical picture entirely wrong, so we won't get into his theory.\footnote{For a proper discussion of cohesion in transition metal alloys, and why Miedema got it wrong, see: \textit{A Quantum-Mechanical Critique of the Miedema Rules for Alloy Formation}, D.G. Pettifor, Solid State Physics \bold{40} 1987 (\href{http://libraries.mit.edu/get/ssp}{link})} 
 \end{itemize}
 
 \subsubsection{Is size a good predictor of mixing behavior?}
 Size is indeed a good predictor of mixing behavior, especially in terms of forming solid solutions: two elements can only coexist in a lattice if they both `fit' in the same sites. More specifically, in metals, Hume-Rothery found that large ranges of solid solubility are only found for pairs of elements whose  atomic radii differ by less than 15\%.\footnote{Hume-Rothery developed a series of rules for the behavior of metallic solutions based on the properties of the elements, called the Hume-Rothery rules. The 15\% rule is the first Hume-Rothery rule. They're very useful, even if they're a bit primitive compared to quantum mechanics.} This behavior comes about because there is an energetic penalty accosiated with the straining at atom to fit in a given site. Note that this rule is a necesarry but not sufficient condition for solubility: it tells you when dissolution is possible, but doesn't guarantee when it will occur. This is because it only considers \emph{size}, but there's a lot more going one when you mix two things together: bands can hybridize, charge transfer can occur, and chemical bonds can form. These are what one might call chemical effects. Atomic size differences will determine miscibility in the absence of chemical effects.
 
-The effects of atomic size are not limited to metals; similar size-based arguments hold for the mixing of other systems where chemical effects are small. For example, when you mix isovalent\footnote{Isovalent means \emph{having the same charge}; a isovalent oxides would be CaO and MgO, where both cations have the same charge, +2, as compared to Al$_2$O$_3$ and Mg), where the cations have different charges.} oxides, there really isn't any chemistry going on; the cations are separated from one another by the oxygen atoms and the cations' charge remains the same. Therefore, the biggest factor in determining whether two isovalent oxides mix is whether they can fit on the same lattice in terms of their sizes. Similarly, the miscibility of solutions of semiconductor compounds with from the same families \footnote{e.g. the alloying of III-V compounds with one another versus alloying a III-V with a II-VI} is mostly determined by atomic size arguments.
+The effects of atomic size are not limited to metals; similar size-based arguments hold for the mixing of other systems where chemical effects are small. For example, when you mix isovalent\footnote{Isovalent means \emph{having the same charge}; a isovalent oxides would be CaO and MgO, where both cations have the same charge, +2, as compared to Al$_2$O$_3$ and MgO, where the cations have different charges.} oxides, there really isn't any chemistry going on; the cations are separated from one another by the oxygen atoms and the cations' charge remains the same. Therefore, the biggest factor in determining whether two isovalent oxides mix is whether they can fit on the same lattice in terms of their sizes. Similarly, the miscibility of solutions of semiconductor compounds with from the same families \footnote{e.g. the alloying of III-V compounds with one another versus alloying a III-V with a II-VI} is mostly determined by atomic size arguments.
 
 \subsubsection{Is electronegativity a good predictor of mixing behavior?}
 Of all the heuristics commonly discussed in the literature, electronegativity differences have the largest effects on mixing.
@@ -2324,20 +2326,27 @@ It is generally true that larger differences in electronegativity between two el
 
 (Eventually put in a plot of the enthalpy of formation of the all compounds versus the electronegativity difference here)
 
-There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, then the electrons from the more electronegative element are transfered from the less electronegative element to the more electronegative element. This process is show in Fig. \ref{chargeTransfer}.
+There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, the electrons from the more electronegative element are transfered from the less electronegative element to the more electronegative element. This process is shown in Fig. \ref{chargeTransfer}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{chargeTransferLargeElectroneg2}
-\caption{A schematic of charge transfer for the case of large electronegativity differences. The three panels are flipped density-of-states diagrams. The high-energy electrons of B are transfered into the empty states above the Fermi level of A. When compounds form, stoichiometry is generally optimized so that maximal charge transfer occurs (e.g. Al donates three electrons when forming an oxide, while O only accepts 2, leading to the Al$_2$O$_3$ stoichiometry), meaning the low-energy band is completely filled, and the high energy band is completely empty. This is why ionic compounds are insulators.}
+\caption{A schematic of charge transfer for the case of large electronegativity differences. The three panels are flipped density-of-states diagrams. The high-energy valence electrons of B are transfered into the empty states above the Fermi level of A. When compounds form, stoichiometry is generally optimized so that maximal charge transfer occurs (e.g. Al donates three electrons when forming an oxide, while O only accepts 2, leading to the Al$_2$O$_3$ stoichiometry), meaning the low-energy band is completely filled, and the high energy band is completely empty. This is why ionic compounds are insulators.}
 \label{chargeTransfer}
 \end{figure}
 
 This is essentially what happens in ionic bonding; the electrons from one element are transfered to the other, filling the lower-energy band up, and emptying the higher energy band.
 
-The physics are different when compounds form when there are small differences in electronegativity, typically with pairs of transition metals. Compound formation between pairs of transition metals is also well-predicted by electronegativity differences, but there is not a clear-cut case for charge transfer, because the bands overlap, and the electrons are not well-localized. In fact, when you go into quantum-mechanical calculations and look at the charge on atoms in metals, you find that they are essentially neutral. Therefore, we know that electrostatics isn't actually driving compound formation. 
+The physics are different when compounds form when there are small differences in electronegativity, typically with pairs of transition metals. Note that in this case, we can't ignore hybridization because the bands overlap. Compound formation between pairs of transition metals is also well-predicted by electronegativity differences, but there is not a clear-cut case for charge transfer; the bands overlap (and thus hybridize when alloyed), and the valence electrons are not well-localized. In fact, when you go into quantum-mechanical calculations and look at the charge on atoms in metals, you find that they are essentially neutral. Therefore, we know that electrostatics isn't actually driving compound formation in binaries with low $\Delta \chi$; electronegativity differences are a red herring here.
 
-What's actually happening in transition metal alloys is a metallic version of the octet rule. You can derive from tight-binding arguments that the cohesive energy should be maximal when the d-band is half full; think of this as filling all the bonding states in the d-band but none of the antibonding states, this is shown in the lower left-hand panel of Fig. \ref{cohesion_in_TMs}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{bandFilingSchematic}
+\caption{A schematic of band hybridization for the case of small electronegativity differences. The three panels are flipped density-of-states diagrams. The d-band of element A is underfilled, while the that of element B is overfilled. When the two bands hybridize, the filling is much closer to the optimal halfway mark. After Pettifor, DG \textit{Quantum mechanics in alloy design}, in Alloy Phase Stability, eds. Stocks and Gonis, 1989.}
+\label{bandOverlap}
+\end{figure}
+
+What's actually happening in transition metal alloys is a metallic version of the octet rule. You can derive from tight-binding arguments that the cohesive energy should be maximal when the d-band is half full ($N_d=5$); think of this as filling all the bonding states in the d-band but none of the antibonding states. The process of band filling in TM's is schematized in Fig \ref{bandOverlap}. Data supporting the band-filling arguments are shown in the lower left-hand panel of Fig. \ref{cohesion_in_TMs}.
 
 \begin{figure}[h]
 \centering
@@ -2346,12 +2355,10 @@ What's actually happening in transition metal alloys is a metallic version of th
 \label{cohesion_in_TMs}
 \end{figure}
 
-Thus, when two transition metals are mixed, compounds will form when the two metals can achieve a d-band occupancy of around 5 on average. Therefore, early transition metals with $N_d<5$ tend to form compounds with late transition metals with $N_d>5$. As electronegativity is lowest for the early transition metals and highest for the late transition metals, electronegativtity is well-correlated with this d-electron criterion, but electronegativity differences do not cause this phenomenon.
+Thus, when two transition metals are mixed, compounds will form when the two metals can achieve a d-band occupancy of around 5 on average. Therefore, early transition metals with $N_d<5$ tend to form compounds with late transition metals with $N_d>5$. As electronegativity is lowest for the early transition metals and highest for the late transition metals, electronegativtity is well-correlated with this d-band filling criterion, but electronegativity differences do not cause this phenomenon.
 
 \subsubsection{Is Valency a good predictor of mixing behavior?}
-Valency is in fact a good predictor of mixing, but it's beyond the scope of this course. In fact, the \emph{electron over atom ratio}, written $n/a$, strongly controls cohesion and stability of crystal structures in metals. This is for similar reasons as above: $n/a$ controls where the Fermi surface is, and a metal has lowest energy when the Fermi surface just touches the edge of the first Brillouin zone. The influence of the electron-over-atom ratio was first realized empirically by Hume-Rothery, and then explained quantum-mechanically by Mott. A really good discussion of this is in Mott, NF. \textit{Reports on Progress in Physics} 1962 (\href{http://dx.doi.org/10.1088/0034-4885/25/1/306}{link}).
-
-%The electron-over-atom ratio $n/a$ is indeed important.
+Valency is in fact a good predictor of mixing, but it's beyond the scope of this course. In fact, the number of valence electrons per atom or \emph{electron over atom ratio}, written $n/a$, strongly controls cohesion and stability of crystal structures in metals. This is for similar, quantum mechanical reasons as above: $n/a$ controls where the Fermi surface is, and a metal has lowest energy when the Fermi surface just touches the edge of the first Brillouin zone. As different crystal structures achieve this touching at different valence electron concentrations, different crystal structures are favored at different $n/a$. By introducing progressively more alloying element into a crystal structure, you are effectively 'scanning' the Fermi energy by changing the number of valence electrons. In doing so, the metal adopts different crystal structures which optimize the location of the first Brillouin zone relative to the Fermi energy. Thus, $n/a$ arguments (along with size arugments) generally justify the progression of crystal structures within a binary, while band-filling arguments justify whether or not compounds form at all. The influence of the electron-over-atom ratio was first realized empirically by Hume-Rothery, and then explained quantum-mechanically by Mott. A really good discussion of this is in Mott, NF. \textit{Reports on Progress in Physics} 1962 (\href{http://dx.doi.org/10.1088/0034-4885/25/1/306}{link}).
 
 \subsection{Entropic Effects on Mixing}
 Knowledge of the internal energy allow us to predict mixing behaviors at low temperatures. At higher temperatures, we must also take into account the entropy of the mixed and un-mixed states. There are several types of entropy one could consider:
@@ -2364,13 +2371,13 @@ Knowledge of the internal energy allow us to predict mixing behaviors at low tem
 \end{itemize} 
 
 \subsubsection{Configurational Entropy}
-This is the entropy that we usually think of when mixing occurs with increasing temperature; it drives solubility limits, as well as order-disorder transformations. To first approximation, the configurational entropy is given be the random mixing entropy:
+This is the entropy that we usually think of when mixing occurs with increasing temperature; it drives solubility limits, as well as order-disorder transformations. To first approximation, the configurational entropy is given by the random mixing entropy:
 \eqs S_{\text{configurational}}=-k_B\sum x_i \ln x_i \eqe
 
 \subsubsection{Vibrational Entropy}
 Talk about the spacing of energy levels as proportional to root k/m.
 What this tells us is that if m is constant (i.e. we hold the elemental identities constant), softer phases should be favored at higher temperatures, as the system gains access to more vibrational states.
-BCC tends to be softer than FCC/HCP, so you tend to get closed packed-to-BCC transitions. Ex: Zr, Ti, Hf exhibit this, so does Fe in the $\gamma$ to $\delta$ transition at very high temperatures.\footnote{The BCC phase is } Some of the alkali metals (e.g. Li and Na), which we traditionally think of as BCC, are actually close-packed below room temperature; their melting temperatures are just so low that these transitions occur much earlier than in the more cohesive transition metals.\footnote{Note: only the acoustic modes are really proportional to the moduli (and thus the stiffness) of a material, so only the acoustic contribtion to the vibrational entropy can be explained from moduli. The optical modes are fairly independent. This approximation works for the elements because they have very simple unit cells, and so there aren't optical modes!}
+BCC tends to be softer than FCC/HCP, so you tend to get closed packed-to-BCC transitions. Ex: Zr, Ti, Hf exhibit this, so does Fe in the $\gamma$ to $\delta$ transition at very high temperatures.\footnote{The low-temperature BCC phase, $\alpha$-Fe, is stabilized by magnetic effects. One can stabilize the FCC by alloying, typically with Ni.} Some of the alkali metals (e.g. Li and Na), which we traditionally think of as BCC, are actually close-packed below room temperature; their melting temperatures are just so low that these transitions occur much earlier than in the more cohesive transition metals.\footnote{Note: only the acoustic modes are really proportional to the moduli (and thus the stiffness) of a material, so only the acoustic contribtion to the vibrational entropy can be explained from moduli. The optical modes are fairly independent. This approximation works for the elements because they have very simple unit cells, and so there aren't optical modes!}
 
 \subsubsection{Electronic Entropy}
 Please refer to the \href{https://en.wikipedia.org/wiki/Electronic_entropy}{wikipedia page on electronic entropy}. It was authored specifically with this course in mind.
@@ -2384,13 +2391,13 @@ Polymers exhibit  interesting phase behavior relative to other systems in that t
 \begin{figure}[h]
 \centering
 \includegraphics[width=8cm]{deuterated_comparing}
-\caption{The phase diagram for mixtures of deuterated and protonated polybutadiene with $N_i$ ~ 3200 formula units each exhibiting a miscibility gap (UCST) at ~60 \degree C.}
+\caption{The phase diagram for mixtures of deuterated and protonated polybutadiene with $N_i\approx3200$ formula units each exhibiting a miscibility gap (UCST) at ~60 \degree C.}
 \label{deuterated_comparison}
 \end{figure}
 
 Consider blends of deuterated and non-deuterated polybutadiene.\footnote{Polymer scientists use the term \emph{blend} for what others might call mixtures or alloys.} The only difference between  the two polymers being blended is that one polmer has hydrogens that don't have a neutron (called protium), while the other polymer has hydrogen atoms that contain a neutron (called deuterium). These polymers should thus behave identically chemically, and we might naively expect them to form an ideal solution.  Compare this expectation to the experimentally-determined phase diagram in Fig \ref{deuterated_comparison}, where we see that the chemically 'identical' polymers exhibit a miscibility gap up to ~333 K (60 \degree C), which is a fairly high temperature for a polymer. Note: in polymer science, the critical temperature at the top of the miscibility gap is called the upper critical solution temperature, abbreviated UCST. Of course, polymers which differ in their chemistry can be expected to exhbit significantly larger interactions than this one, and so their UCST values are often even higher. So, we see that somehow, our intuition for what drives mixing is  off in polymers.
 
-\subsubsection{Why don't polymers mix when we heat them up?}
+\subsection{Why don't polymers mix when we heat them up?}
 It turns out that the reason polymers don't mix well is because polymers are highly correlated in terms of their atomic positions: each repeat unit is chemically bonded to all of the others, and so their configurational entropies are greatly reduced. Thus, the drivng force for mixing is greatly reduced as well. More quantitatively, the entropy of mixing of a polymer was given approximately by Flory and Huggins as:
 \eqs
 \Delta S_\text{mix}=-R\left [\frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2  \right ]
@@ -2401,7 +2408,7 @@ The natural next step in discussing the mixing of polymers is to define an entha
 \eqs
 \Delta G_\text{mix}=RT \left [ \chi \phi_1\phi_2 + \frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2  \right ]
 \eqe
-This is calle the \emph{Flory-Huggins equation}. Looking closely, you can identify the enthalpy of mixing as:
+This is called the \emph{Flory-Huggins equation}. Looking closely, you can identify the enthalpy of mixing as:
 \eqs
 \Delta H_\text{mix}=RT\chi \phi_1 \phi_2
 \eqe
@@ -2409,17 +2416,23 @@ Again, there is a close analogy here between the concentrations $x_i$ from alloy
 \eqs
 \frac{\Delta G_\text{mix}}{RT}= \chi \phi_1\phi_2 + \frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2 
 \eqe
-Rememer, the phase behavior of a system is not controled by the absolute scale of the free energy, but by the shape of the free energy curves. Thus, this normalization just serves to eliminate temperature as a needed thermodynamic descriptor for the system. There are thus only three variables now to describe mixing for all polymers that behave according to Flory-Huggins theory: $\chi, N_1,N_2$ The Flory-Huggins expression is thus useful for polymers because it is so transferable across systems, and the number of systems in the polymer world is very large. As you might be able to infer from this discussion, $\chi$ is a very important parameter in polymer science.
+Rememer, the phase behavior of a system is not controled by the absolute scale of the free energy, but by the \emph{shape} of the free energy curves. Thus, this normalization just serves to eliminate temperature as a needed thermodynamic descriptor for polymeric system. There are thus only three variables needed to describe mixing for all polymers that behave according to Flory-Huggins theory: $\chi, N_1,N_2$. The Flory-Huggins expression is thus useful for polymers because it is so transferable across systems, and the number of systems in the polymer world is very large. As you might be able to infer from this discussion, $\chi$ is a very important parameter in polymer science.
 
-So, what is generally the sign of $\chi$? Well, the phrase 'like dissolves like' is very applicable in understanding miscibility in polymers. Nothing is more like one type of polymer than the same polymer, so they tend to like to stay with themselves rather than with mix: $\chi$ is more often positive than negative. Due to the tiny entropric forces for mixing, even small values for $\chi$ result in immiscibility.
+So, what is generally the sign of $\chi$? Well, the phrase 'like dissolves like' is very applicable in understanding miscibility in polymers. Nothing is more like one type of polymer than the same polymer, so they tend to like to stay with themselves rather than with mix: $\chi$ is more often positive than negative. Due to the tiny entropric forces for mixing, even small values for $\chi$ result in immiscibility, as you will demonstrate in the below exercise.
 
 \textbf{Exercise}: Derive the value of $\chi$ from the value of the UCST using Flory-Huggins theory. Compare this value to values for the heat of mixing for typical metallic and ionic systems. 
 
-Now, this isn't to say there aren't polymer systems which exhibit miscibility, there are. Such systems occur when the side-groups on the chains of the two polymers interact favorably. Interestingly, these systems often phase separate at higher temperatures. The mechanism for this is not too complex, but we'll end this discussion here.
+Now, this isn't to say there aren't polymer systems which exhibit miscibility. Many miscible blends exist. Such systems occur when the side-groups on the chains of the two polymers interact favorably. Interestingly, these systems often phase separate at higher temperatures. The mechanism for this is not too complex, and has its origins in statistical mechanics.
 
+\subsection{Why do miscible blends phase separate at high temperatures?}
 
+Talk about how miscibility happens due to favorable interactions between side chains. As the temperature increases, the chains tend to wiggle a lot more, a process termed reptation. The contact between the favorable groups on the side chains cannot be maintained (one could also view this as activating out of this local energy well to the plethora of states outside of it). This then leads to the interactions becoming unfavorable on average, and the systems phase separate. This should take you off guard; it's entropically-driven phase separation! 
 
+ADD FIGURE: an LCST
 
+Last, talk about systems that exhibit an LCST and a UCST through a combination of both of these effects; entropically-driven phase separation at low temperatures and then entropically-driven mixing at high temperatures. This is baout as complex as polymer phase diagrams get as long as we don't get into liquid crystal phase diagrams.
+
+ADD FIGURE: a simulatenous LCST and UCST
 
 
 

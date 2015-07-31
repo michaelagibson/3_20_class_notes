@@ -29,8 +29,8 @@
 \BOOKMARK [3][-]{subsubsection.6.2.1}{Thermal Equilibrium}{subsection.6.2}% 29
 \BOOKMARK [3][-]{subsubsection.6.2.2}{Mechanical Equilibrium}{subsection.6.2}% 30
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Chemical Equilibrium from Mass Flow}{subsection.6.2}% 31
-\BOOKMARK [1][-]{section.7}{Lecture - September 15, 2014}{}% 32
-\BOOKMARK [1][-]{section.7}{Lecture - September 15, 2014}{}% 33
+\BOOKMARK [1][-]{section.7}{Legendre Transforms}{}% 32
+\BOOKMARK [1][-]{section.7}{Legendre Transforms}{}% 33
 \BOOKMARK [2][-]{subsection.7.1}{Legendre Transforms}{section.7}% 34
 \BOOKMARK [2][-]{subsection.7.2}{Named Free Energies}{section.7}% 35
 \BOOKMARK [2][-]{subsection.7.3}{A First Look at Manipulating Thermodynamic Functions}{section.7}% 36
@@ -64,8 +64,8 @@
 \BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 64
 \BOOKMARK [2][-]{subsection.11.3}{Magnetic-induced phase transformation}{section.11}% 65
 \BOOKMARK [2][-]{subsection.11.4}{Thermoelasticity}{section.11}% 66
-\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 67
-\BOOKMARK [1][-]{section.12}{Lecture - September 29, 2014}{}% 68
+\BOOKMARK [1][-]{section.12}{Introduction to Solution Theory}{}% 67
+\BOOKMARK [1][-]{section.12}{Introduction to Solution Theory}{}% 68
 \BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 69
 \BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 70
 \BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 71
@@ -99,4 +99,5 @@
 \BOOKMARK [3][-]{subsubsection.14.2.3}{Electronic Entropy}{subsection.14.2}% 99
 \BOOKMARK [1][-]{section.15}{Bonus Topic: Chemical thermodynamics of polymers}{}% 100
 \BOOKMARK [1][-]{section.15}{Bonus Topic: Chemical thermodynamics of polymers}{}% 101
-\BOOKMARK [2][-]{subsubsection.15.0.4}{Why don't polymers mix when we heat them up?}{section.15}% 102
+\BOOKMARK [2][-]{subsection.15.1}{Why don't polymers mix when we heat them up?}{section.15}% 102
+\BOOKMARK [2][-]{subsection.15.2}{Why do miscible blends phase separate at high temperatures?}{section.15}% 103

@@ -29,8 +29,8 @@
 \contentsline {subsubsection}{\numberline {2.1}Thermal Equilibrium}{31}{subsubsection.6.2.1}
 \contentsline {subsubsection}{\numberline {2.2}Mechanical Equilibrium}{32}{subsubsection.6.2.2}
 \contentsline {subsubsection}{\numberline {2.3}Chemical Equilibrium from Mass Flow}{32}{subsubsection.6.2.3}
-\contentsline {section}{\numberline {7}Lecture - September 15, 2014}{32}{section.7}
-\contentsline {section}{Lecture - September 15, 2014}{33}{section.7}
+\contentsline {section}{\numberline {7}Legendre Transforms}{32}{section.7}
+\contentsline {section}{Legendre Transforms}{33}{section.7}
 \contentsline {subsection}{\numberline {1}Legendre Transforms}{33}{subsection.7.1}
 \contentsline {subsection}{\numberline {2}Named Free Energies}{35}{subsection.7.2}
 \contentsline {subsection}{\numberline {3}A First Look at Manipulating Thermodynamic Functions}{35}{subsection.7.3}
@@ -64,8 +64,8 @@
 \contentsline {subsection}{\numberline {2}Generalization of Clausius-Clapeyron}{56}{subsection.11.2}
 \contentsline {subsection}{\numberline {3}Magnetic-induced phase transformation}{57}{subsection.11.3}
 \contentsline {subsection}{\numberline {4}Thermoelasticity}{57}{subsection.11.4}
-\contentsline {section}{\numberline {12}Lecture - September 29, 2014}{59}{section.12}
-\contentsline {section}{Lecture - September 29, 2014}{60}{section.12}
+\contentsline {section}{\numberline {12}Introduction to Solution Theory}{59}{section.12}
+\contentsline {section}{Introduction to Solution Theory}{60}{section.12}
 \contentsline {subsection}{\numberline {1}Adding composition as a work term in G}{60}{subsection.12.1}
 \contentsline {subsection}{\numberline {2}Solutions, Molar Quantities, and Partial Molar Quantities}{61}{subsection.12.2}
 \contentsline {subsection}{\numberline {3}Ex: Partial Molar Volumes}{62}{subsection.12.3}
@@ -92,11 +92,12 @@
 \contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{73}{subsection.14.1}
 \contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{74}{subsubsection.14.1.1}
 \contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{75}{subsubsection.14.1.2}
-\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{77}{subsubsection.14.1.3}
-\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{77}{subsection.14.2}
-\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{77}{subsubsection.14.2.1}
+\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{76}{subsubsection.14.1.3}
+\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{78}{subsection.14.2}
+\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{78}{subsubsection.14.2.1}
 \contentsline {subsubsection}{\numberline {2.2}Vibrational Entropy}{78}{subsubsection.14.2.2}
-\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{78}{subsubsection.14.2.3}
-\contentsline {section}{\numberline {15}Bonus Topic: Chemical thermodynamics of polymers}{78}{section.15}
-\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{79}{section.15}
-\contentsline {subsubsection}{\numberline {0.4}Why don't polymers mix when we heat them up?}{79}{subsubsection.15.0.4}
+\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{79}{subsubsection.14.2.3}
+\contentsline {section}{\numberline {15}Bonus Topic: Chemical thermodynamics of polymers}{79}{section.15}
+\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{80}{section.15}
+\contentsline {subsection}{\numberline {1}Why don't polymers mix when we heat them up?}{80}{subsection.15.1}
+\contentsline {subsection}{\numberline {2}Why do miscible blends phase separate at high temperatures?}{82}{subsection.15.2}
