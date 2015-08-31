@@ -4,7 +4,8 @@
 \usepackage{booktabs}
 \usepackage{array} % for better arrays (eg matrices) in maths
 \usepackage{gensymb}
-
+\usepackage{fixltx2e} %Text subscripting and superscripting.
+\usepackage{mhchem} %nice chemical formulas using the \ce{} command
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -23,7 +24,7 @@
 \section{Lecture 1: Introduction and Preliminaries}
 %This is an inexact differential: $\dbar$
 
-Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics, energy scales in materials processes, phase stability and phase diagrams.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
+Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics, energy scales in materials processes, phase stability, and phase diagrams.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
 
 \subsection{Definitions}
 To begin our journey, we will define some frequently used terms for convenience.
@@ -42,11 +43,11 @@ V = V_1 + V_2
 \eqs
 P \neq P_1 + P_2
 \eqe
-\item \un{State Variables}: The variables required to fully characterize a system (T, P, n, ...).  These are \emph{not} equal to the \bold{state} of a system. However, at equilibrium, there is a one-to-one mapping between the macroscopic state of the system and the full set of state variables; the state variables fully define the macroscopic equilibrium state. % A function of is actually not the proper word here: A  function can map many inputs onto a single output (e.g. x^2 = 1 at x = 1 and -1). The mapping from macroscopic states to the state variables is what one would call a bijective function, as it has the special property of being a one-to-one mapping.
-\item \un{Boundaries}: Conditions that are defined for a system.  These strongly depend on the system of interest. Boundaries can have properties such as: permeable (open to mass flow, changing $n$), impermeable (closed to mass flow), adiabatic (closed to heat flow), diathermal (open to heat flow), rigid (constant volume), deformable, etc. The nature of the boundary defines how the system's state variables can change as it is subjected to different processes. For example, while a system with a rigid boundary is subject to possessing a constant volume during arbitrary processes, a system with a deformable boundary will, for sufficiently slow processes, have the same pressure as its surroundings.
+\item \un{State Variables}: The variables required to fully characterize a system ($T$, $P$, $n$, ...).  These are \emph{not} equal to the \bold{state} of a system. However, at equilibrium, there is a one-to-one mapping between the macroscopic state of the system and the full set of state variables; the state variables fully define the macroscopic equilibrium state.\footnote{Some people say the macroscopic state is a\emph{function} of the the state variables. A function of is actually not the proper word here: A  function can map many inputs onto a single output (e.g. $x^2 = 1$ at $x = 1$ and $x=-1$). The mapping from macroscopic states to the state variables is what one would call a bijective function; it has the special property of being a one-to-one mapping.}
+\item \un{Boundaries}: Conditions that are defined for the flow of extensive variables into or out of a system.  These strongly depend on the system of interest. Boundaries can have properties such as: permeable (open to mass flow, $dn$), impermeable (closed to mass flow), adiabatic (closed to heat flow), diathermal (open to heat flow), rigid (constant volume), deformable, etc. The nature of the boundary defines how the system's state variables can change as it is subjected to different processes. For example, while a system with a rigid boundary is subject to possessing a constant volume during arbitrary processes, a system with a deformable boundary will, for sufficiently slow processes, have the same pressure as its surroundings.
 \end{enumerate}
 
-In the first third of the the course (classical thermodynamics), we will look at the transfer of energy and other extensive variables through the borders of systems as they undergo processes. Note that this approach treats the system as a black box; we have no idea what is going on microscopically inside the system. We will derive laws regarding the conservation and creation of the extensive variables. Using these laws of conservation, we will be able to define exactly how the macroscopic state of the system changes by only keeping track of what goes on at the boundaries of the system. We will then develop constitutive equations which relate changes in the thermodynamic state variables to one another during arbitrary processes. Integration of these constitutive equations is a powerful and general way to calculate changes in system processes during arbitrary processes. Last, we will use these constitutive relationships to look at a special set of processes; phase transitions, and derive laws for how the conditions under which phase transitions occur must change as the boundary conditions on the system change.
+In the first third of the course (classical thermodynamics), we will look at the transfer of energy and other extensive variables through the borders of systems as they undergo processes. Note that this approach treats the system as a black box; we have no idea what is going on microscopically inside the system. We will derive laws regarding the conservation and creation of the extensive variables. Using these laws of conservation, we will be able to define exactly how the macroscopic state of the system changes by only keeping track of what goes on at the boundaries of the system. We will then develop constitutive equations which relate changes in the thermodynamic state variables to one another during arbitrary processes. Integration of these constitutive equations is a powerful and general way to calculate changes in a systems during arbitrary processes. Last, we will use these constitutive relationships to look at a special set of processes; phase transitions. We will derive laws for how the conditions under which phase transitions occur must change as the boundary conditions on the system change.
 
 \subsection{Energy and Forces}
 What ``forms'' of energy do we have?
@@ -63,37 +64,39 @@ For 3.20, we will assume that changes in the total energy $E$ of our system are 
 \begin{equation}
 \Delta E = \Delta U
 \end{equation}
-This is tantamount to neglecting changes in the translational energy of the system as a whole. We assume that $U$ exists and that $U$ is a function of only the extensive thermodynamic variables ($U$ is a \un{state variable}). We will also assume that all types of energy exchange that %can change the internal state of the system 
-can be represented as work terms represent changes in $U$, except for exchange of heat. We define work next.
+This is tantamount to neglecting changes in the translational energy of the system as a whole. We assume that $U$ exists and that $U$ is a function of only the extensive thermodynamic variables.\footnote{Since $U$ is a function of only the state variables, we call it a \textbf{state function}} %($U$ is a \un{state function}). 
+We will also assume that all types of energy exchange that %can change the internal state of the system 
+can be represented as work terms represent changes in $U$, except for exchange of heat. We will define \emph{work} and \emph{heat} next.
 
 %I am not sure 'assumption' is right for some of these; they are not all assumptions... some are implied by others... I think it is fine for teaching purposes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture 2: Heat and Work}
-One commonly observed form of energy transfer is \un{work}. A differential amount of work is equal to the force dotted with the displacement:
+One commonly observed form of energy transfer is \textbf{work}. A differential amount of work is equal to a force dotted with a displacement:
 \eqs
 \dbar W = \vec{F} \cdot d\vec{r}
 \eqe
-The formalism for work is $\dbar W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive). Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
+%The formalism for work is $\dbar W_i = y_i dx_i$, where $y_i$ is the force (intensive) and $dx_i$ is the response (extensive). Combined, $(y_i, x_i)$ is a \bold{conjugate pair}.
 \subsection{Two examples of work}
-\bold{Example 1: Deformation of a material}: The work resulting from a change in strain energy is 
+\bold{Example 1: Deformation of a material}: \\
+The work resulting from a change in strain energy is 
 \eqs
 \dbar W = V \bar{\bar{\sigma}} \cdot d\bar{\bar{\epsilon}}
 \eqe 
-where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and the volume element $[\text{m}^3]$ together produce a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
+where the double overbars indicate that $\sigma, \epsilon$ are tensors.  To check the validity of this statement, we note that the stress $\sigma$ has units of [Pa]=[N/$\text{m}^2$], the strain $\epsilon$ is dimensionless, and the volume $[\text{m}^3]$ together produce a quantity of [N$\cdot$ m] = [Joules]. We note that the shear stresses in this example are denoted by off-diagonals of $\sigma$ ($\sigma_{12}, \sigma_{13}, \sigma_{23}$).  If we consider only hydrostatic pressure, we will have $\sigma_{11}=\sigma_{22}=\sigma_{33}=-P$.
 \eqs
 \dbar W_\text{pressure} &= V \cdot (-P) d(\epsilon_{11} + \epsilon_{22}+\epsilon_{33})\\
 &= -P V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33})
 \eqe
 We note that the strain is defined as $\epsilon_{11} \equiv \Delta l_1 / l_1^{\text{initial}}$, and $l_1 l_2 l_3 = V$, so we can substitute $V (d\epsilon_{11}+d\epsilon_{22}+d\epsilon_{33}) = dV$:
 \begin{equation}
-\dbar W_\text{pressure} = -P dV
+\dbar W_\text{pressure} = -P \, dV \label{stressWork}
 \end{equation}
-To make these quantitative, we need an equation of state $P(V)$ or $\sigma(\epsilon)$.  We also have
+To make Eq. \ref{stressWork} quantitative, we need an equation of state $P(V)$ or $\sigma(\epsilon)$. In mechanics, the equation of state for a crystal is the elastic compliance, $c_{ijkl}$:
 \begin{equation}
-\frac{\partial \epsilon_{ij}}{\partial \sigma_{kl}} = c_{ijkl}
+\frac{\partial \epsilon_{ij}}{\partial \sigma_{kl}} = c_{ijkl}.
 \end{equation}
-where $c_{ijkl}$ is the generalized elastic compliance.  If our material is \un{isotropic}, then we will see that $\frac{\partial V}{\partial P}|_T = V \cdot \beta_T$ where $\beta_T$ is the isothermal compressibility - a property of the material that describes volume changes at constant temperature. Hence, using this constitutive relation, $\beta_T(P,T)$, we can define the work done upon the system. \\
+If our material is \un{isotropic}, then we will see that $\frac{\partial V}{\partial P}|_T = V \cdot \beta_T$ where $\beta_T$ is the isothermal compressibility -- a property of the material that describes volume changes at constant temperature. Hence, using this constitutive relation, $\beta_T(P,T)$, we can quantify the work done upon the system during an isothermal process. \\
 
 \bold{Example 2: Electrical work on an isotropic dielectric medium}: The voltage between two sides of a dielectric is given by the internal electric field and the length as $V = \mathcal{E} \cdot l$.  The energy stored in this capacitor is a product of the voltage and the charge.  If the charge, $q$, changes, we can produce a work term:
 \eqs
@@ -106,9 +109,9 @@ Also, $q=D \cdot A$ where $D$, the electric displacement, is equal to $\varepsil
 &= V \varepsilon_0 \mathcal{E} d\mathcal{E} + \mathcal{E} d\mathcal{P}
 \eqe
 
-Note how the $\dbar W$ nicely separates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an electric field to a system. %This is disctinct from the application of an electrical potential. Shifting the electrical potential of an entire system drives net charge transfer to/from the system, while applying the gradient of the potential drives the formation of charge gradients (i.e. polarization) within the system. There is a beautiful symmetry here.
+Note how the $\dbar W$ nicely separates into a response that is independent of the system and one that is determined by the material properties of the system. Some energy, $V \varepsilon_0 \mathcal{E} d\mathcal{E}$, is stored even when an electric field is applied to a vacuum. We are not interested in this energy. $\mathcal{E} d\mathcal{P}$, on the other hand, is system-dependent. This is the work term appropriate to the application of an electric field to a system. \\%This is disctinct from the application of an electrical potential. Shifting the electrical potential of an entire system drives net charge transfer to/from the system, while applying the gradient of the potential drives the formation of charge gradients (i.e. polarization) within the system. There is a beautiful symmetry here.
 
-You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which appear in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
+You will notice some commonalities between the mechanical work terms discussed previously and the electrical work term: both products result in units of energy, and both can be written as the product of a generalized force (an intensive thermodynamic variable, $P,\mathcal{E}$), and a generalized displacement (an extensive thermodynamic variable, $dV,d\mathcal{P}$). These traits are commmon to all work terms which cause changes in the internal energy. A differential amount of work done upon a system can thus be written as a sum over orthogonal work terms:
 \eqs
 \dbar W = \sum_i y_i dx_i
 \eqe
@@ -117,10 +120,10 @@ where each $y_i$ represents a generalized force, and each $x_i$ represents a gen
 %We will now discuss how we derive the form of this summation of orthogonal work terms. 
 You might have noticed that we were careful to define the compressibility of a system, $\beta$, over a specific path. Specifically, we defined a compressibility wherein the system was held at constant temperature, $\beta_T$. This is because the compressibility is a function of the boundary conditions under which the compression takes place. \footnote{For example, it takes more energy to compress a gas if you don't let heat flow out of the gas during the compression; the adiabatic compressibility is larger than the isothermal compressiblity.} This concept can be generalized to all work terms: \emph{the work done in changing an extensive variable is a function of the path along which the work takes place}. Put simply, the change in internal energy due to the work terms is \un{path dependent}. In thermodynamics, we make a distinction between path-dependent and path-independent intergrals via exact differentials and inexact differentials. 
 \begin{itemize}
-\item \un{exact differentials}: The integral of an exact differential is path independent; it is only a function of the endpoints. We (try to) use a $d$ for exact differentials.
-\item \un{inexact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints. We (try to) use a $\dbar$ for exact differentials.
+\item \un{exact differentials}: The integral of an exact differential is path independent; it is only a function of the endpoints. We use a $d$ for exact differentials.
+\item \un{inexact differentials}: The integral of an inexact differential is path dependent; the integral depends both on the endpoints and the path to get to these two endpoints. We use a $\dbar$ for inexact differentials.
 \end{itemize}
-This is illustratted below with two examples.
+This is illustrated below with two examples.
 %%%%%%Next, we can relate this quantity to the characteristic potential energy function of our system.  We know that $\Delta U = U^\text{final} - U^\text{initial}$, and $\dbar W = y_i dx_i = F d\vec{r}$.  The force from a potential energy function $\phi$ is $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$.  Therefore, we have
 %%%%%%\begin{align*}
 %%%%%%F_x &= -\frac{\partial \phi}{\partial x}|_y \\
@@ -134,7 +137,8 @@ This is illustratted below with two examples.
 
 \subsection{Practice with Differentials}
 \bold{Case 1, Exact Differentials:}
-Consider heights as a function of position, $h(x,y)$.  We will travel from some height $h_1 \rightarrow h_2$.  Anytime we move downwards, we will simply gain kinetic energy.  Anytime we move up a hill, we will first use any kinetic energy we have and then use some stored energy (say, from a battery).  Once we have reached $h_2$, we will give all our kinetic energy to the environment (say from some thermal energy dissipation, like brakes) and we will allow the environment to replenish the energy in our batteries.  The change in potential energy between the two heights is $\Delta E_\text{field}$ and the energy of the environment, i.e. the work required to move us to this new spot, is $\Delta E_\text{system}$.  From conservation of energy,
+Consider heights as a function of position, $h(x,y)$.  We will travel from some height $h_1 \rightarrow h_2$.  Anytime we move downwards, we will simply gain kinetic energy.  Anytime we move up a hill, we will first use any kinetic energy we have and then use some stored energy (say, from a battery).  Once we have reached $h_2$, we will give all our kinetic energy to the environment (say from some thermal energy dissipation, like brakes). %and we will allow the environment to replenish the energy in our batteries.  
+The change in potential energy between the two heights is $\Delta E_\text{field}$ and the energy of the environment, i.e. the work required to move us to this new spot, is $\Delta E_\text{system}$.  From conservation of energy,
 \eqs
 \Delta E_\text{system} + \Delta E_\text{field} = 0
 \eqe
@@ -161,32 +165,32 @@ Consider two different paths in a conservative 3D vector field.  The integrated 
 
 
 \subsection{Heat}
-Heat is energy transferred between two bodies not due to work or mass transfer\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisible liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (a.k.a. Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.}.  The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\dbar Q = 0$.  The \un{first postulate of thermodynamics} is
+Heat is energy transferred between two bodies not due to work or mass transfer.\footnote{Historically, people used to think heat was transferred between bodies via the flow of an invisibile substance, \textit{phlogiston}. Hot bodies contained more of this self-repelling fluid than cold bodies. However, Antoine Lavoisier showed that metals gained mass when they oxidized, even though they were supposed to lose phlogiston, so phlogiston would need to have negative mass. This lead to phlogiston theory being replaced by caloric theory, in which calor, another invisible liquid, flowed from hot to cold bodies. All caloric theories assumed that calor was conserved. Sir Benjamin Thompson (a.k.a. Lord Rumford) disproved this theory by showing that repeatedly boring a cannon could repeatedly produce heat, showing that heat was not a conserved quantity, but rather, could be generated. This lead to Rudolf Clausius proposing that it is not heat which is conserved, but rather energy. This was the birth of modern thermodynamics.} The variable we will use to denote heat is $Q$.  A system surrounded by an adiabatic boundary does not transfer heat across its boundaries, and so we say the heat exhanged between the system and the surroundings is 0; $\dbar Q = 0$.  The \textbf{first postulate of thermodynamics} is that energy is conserved. This can be expressed by stating that the energy of a system can only change due to work done upon the system or heat transfered to the system. Since such changes must be accompanied by equal and opposite changes in the surroundings of the system, the energy of the universe is constant.\footnote{As Clausis stated in 1865, \textit{Die energie der welt ist konstant}}
 \begin{equation}\boxed{
-dU = \dbar W + \dbar Q
+dU_{\text{system}} = \dbar W_{\text{system}} + \dbar Q_{\text{system}}
 }\end{equation}
-where again, the work terms can be written as $\dbar W = \sum_i y_i dx_i$.The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \un{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\dbar$, but the sum of the two as $dU$. We illustrated this with an example:
+where again, the work terms can be written as $\dbar W = \sum_i y_i \, dx_i$.The value of $U$ is path independent via the conservation of energy. As such, $U$ is a function of solely the system's state. Appropriately, functions which are completely defined by the thermodynamic state of the system are called \textbf{state functions}; their differentials must thus be exact differentials. On the contrary, $W$ and $Q$ are \un{path dependent}; transfer of energy can be accomplished in a multitude of ways.  This is why we write both changes in heat and work with the inexact differential symbol, $\dbar$, but the sum of the two as $dU$. We illustrated this with an example:
 
-\bold{Example:} Consider a simple system with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, wherein the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
+\bold{Example:} Consider a simple system\footnote{In a simple system, work can only be done on the system via $P\,dV$ terms.} with all variables fixed except for the volume, like a piston.  It then evolves ``slowly'' through a series of equilibrium states.\footnote{We call such infinitely slow processes, wherein the system can be approximated as being in equilibrium the whole time  \un{quasistatic processes}.}  
 \eqs
-W = -\int P dV
+W = -\int P \, dV
 \eqe
-Assuming we are dealing with an ideal gas, we have the following equation of state $P = \frac{nRT}{V}$.  Inserting this into the above (and assuming constant temperature), we have an expression for work in terms of the initial and final volumes.
+Assuming we are dealing with an ideal gas, we have the following equation of state: $P = \frac{nRT}{V}$.  Inserting this into the above (and assuming an isothermal compression), we have an expression for work in terms of the initial and final volumes.
 \eqs
 W &= -nRT\int \frac{dV}{V}\\
-&= nRT \ln\Big(\frac{V_f}{V_i}\Big)
+&= nRT \ln\left(\frac{V_f}{V_i}\right)
 \eqe
-It is often useful to think of these changes as paths in a pressure versus volume plot.  Let's consider a path $a$ where both the pressure and volume can change.  We will compress the gas isothermally from a volume $V_1$ to a final volume $V_f = V_1/2$.  Also, we are at room temperature, $T=298K$.
+It is often useful to think of these changes as paths in a pressure versus volume plot.  Let's consider a path, $\xi$, where both the pressure and volume can change.  We will compress the gas isothermally from a volume $V_1$ to a final volume $V_f = V_1/2$.  Also, we are at room temperature, $T=298K$.
 %%%% We should insert the relevant P-V diagram here!
 \eqs
-W_a &= -nRT\int \frac{dV}{V}\\
-&= -nRT \ln\Big(\frac{V_f}{V_i}\Big)\\
+W_\xi &= -nRT\int \frac{dV}{V}\\
+&= -nRT \ln\left(\frac{V_f}{V_i}\right)\\
 &= nRT \ln(2)\\
 &= 1717 \frac{\text{J}}{\text{mol}}
 \eqe
-Let's now consider a separate path $b$ that is first isobarically compressed ($dP=0$), and then isochorically warmed ($dV = 0$), such that both the initial and final states are the same as those in $a$.  For the constant volume pressure change, there will be no work done since $dV=0$ and $W=-PdV$.  Therefore all the work will come from the initial constant pressure process, or isobaric compression.
+Let's now consider a separate path, $\eta$, that is first isobarically compressed ($dP=0$), and then isochorically warmed ($dV = 0$), such that both the initial and final states are the same as those in $\xi$.  For the constant volume pressure change, there will be no work done since $dV=0$ and $W=-P\, dV$.  Therefore all the work will come from the initial constant pressure process, or isobaric compression.
 \begin{align*}
-W_b &= -P_i \int dV\\
+W_\eta &= -P_i \int dV\\
 &= \frac{P_i V_i}{2}\\
 &= \frac{nRT}{2}\\
 &= 1239 \frac{\text{J}}{\text{mol}}
@@ -204,7 +208,7 @@ We now want to quantify the first term, or \un{quantify heat exchange}.  We do t
 C_\text{path} (T) &= \frac{(\dbar Q)_\text{path}}{dT}\\
 c_\text{path} (T) &= \frac{C_\text{path}}{N} %\frac{(\partial Q)_\text{path}}{dT}
 \end{align*}
-where $C_\text{path}$ is the system heat capacity along a given path, and $c_\text{path}$ is the specific heat capacity; the system heat capacity divided by the number of moles, $N$.\footnote{This convention is used throughout: system quantities are uppercase, molar quantities are lowercase}   If we consider a \un{simple system}\footnote{In a simple system, work can only be done on the system via $PdV$ terms.} with state variables $(P,V)$ or $(V,T)$, we can define
+where $C_\text{path}$ is the system heat capacity along a given path, and $c_\text{path}$ is the specific heat capacity; the system heat capacity divided by the number of moles, $N$.\footnote{This convention is used throughout: system quantities are uppercase, molar quantities are lowercase}   If we consider a simple system with state variables $(P,V)$ or $(V,T)$, we can define
 \begin{align*}
 c_p &= \frac{1}{N} \frac{(\dbar Q)_p}{dT}\\
 c_v &=  \frac{1}{N} \frac{(\dbar Q)_v}{dT}
@@ -225,16 +229,16 @@ The table below shows the molar heat capacity for a set of substances.
 \end{tabular}
 \end{center}
 
-You might notice a few things. First, that the heat capacity increases with increasing molecular weight; this is general. Next, that $c_p > c_v$ for all cases. Both of these phenomena are general. Last, you might see that $c_p \approx c_v$ for $H_2O$. This is also general for condensed phases. We will prove the generality of these statements. %A heuristic arugment is as follows: at constant $V$, $\Delta U = Q$.  At constant $P$, $\Delta U = Q + W = Q - p \Delta V$.  If you raise the temperature of the system, the amount you need to put in  $\Delta U$ and $T$ will be less.\\
+You might notice a few things. First, the heat capacity increases with increasing molecular weight. Next, $c_p > c_v$ for all cases. Both of these phenomena are general. Last, you might see that $c_p \approx c_v$ for $H_2O$. This is also general for condensed phases. We will prove the generality of these statements. %A heuristic arugment is as follows: at constant $V$, $\Delta U = Q$.  At constant $P$, $\Delta U = Q + W = Q - p \Delta V$.  If you raise the temperature of the system, the amount you need to put in  $\Delta U$ and $T$ will be less.\\
 You can quickly estimate heat capacities for some substances using \href{http://en.wikipedia.org/wiki/Equipartition_theorem}{equipartition theory}, wherein each degree of freedom contributes $R/2$ to the molar heat capacity:
 
-(a) \un{Gases}: If we assume that an ideal, monatomic gas has a degree of freedom for every direction it can translate it, we get three degrees of freedom, so:
+(a) \un{Gases}: If we assume that an ideal, monatomic gas has a degree of freedom for every direction it can translate in, each gas molecules possesses three degrees of freedom, so:
 \begin{equation}
 c_v^{\text{monatomic gas}} = \frac{3}{2} R = 12.471 \text{ J/mol/K}
 \end{equation}
-Note how close this is to the value for argon, which exists as a monatomic gas.   %$R = 8314 \text{J}/\text{mol}/\text{K}$ and $R = N_a \times k_B$.  
-A diatomic gas, can be modelled as two atoms are attached by a spring, free to rotate about their center of mass. At low temperatures, this gives 2 rotational degrees of freedom in addition to the original translational degrees of freedom, so at low temperatures, the heat capacity of a diatomic gas is: $c_v^{\text{diatomic, low }T} = \frac{5}{2} R$.
-at higher temperatures, the two vibrational degrees of freedom are excited, giving: $c_v^{\text{diatomic, high }T} = \frac{7}{2} R$
+Note how close this is to the value for argon, which exists as a monatomic gas.\\   %$R = 8314 \text{J}/\text{mol}/\text{K}$ and $R = N_a \times k_B$.  
+A diatomic gas, can be modelled as two atoms attached by a spring, free to rotate about their center of mass. At low temperatures, this gives 2 rotational degrees of freedom in addition to the original translational degrees of freedom, so at low temperatures, the heat capacity of a diatomic gas is: $c_v^{\text{diatomic, low }T} = \frac{5}{2} R$.
+at higher temperatures, two more vibrational degrees of freedom are excited, giving: $c_v^{\text{diatomic, high }T} = \frac{7}{2} R$
 This is borne out in the experimental data, as shown in Figure \ref{CPofgases}:
 \begin{figure}[h]
 \centering
@@ -243,52 +247,52 @@ This is borne out in the experimental data, as shown in Figure \ref{CPofgases}:
 \label{CPofgases}
 \end{figure}
 
-\begin{align*}
-C_p &= C_v + R\\
-&= \frac{7}{2} R =  29 \text{J}/\text{mol}/\text{K}
-\end{align*}
+% \begin{align*}
+% C_p &= C_v + R\\
+% &= \frac{7}{2} R =  29 \text{J}/\text{mol}/\text{K}
+% \end{align*}
 
 
-(b) \un{Solids}: At room temp., for an element, Dulong and Petit (1819) observed that
+(b) \un{Solids}: At room temperatures Dulong and Petit (1819) observed that all elemental solids seem to have a similar heat capacity:
 \begin{align*}
 C_v &\approx 3 R = 25 \text{J}/\text{mol}/\text{K}\\
 C_p & \approx C_v
 \end{align*}
-We will talk in detail about solid-state heat capacities during statistical mechanics, but for now it is enough to know that each atom has 6 degrees of freedom for its vibrations: 3 translational and 3 positional. So, by equipartition, $c_v$ should be $~6 \frac{R}{2}=3R$. For a non-metallic salt such as Mg, there are twice as many atoms per formula unit, so $c_p \approx 6 R = 50\text{J}/\text{mol}/\text{K}$.   If we examine some measured  $c_p$, we see that at high T carbon reaches the $3R$ plateau.  It takes a while to reach this because of the nature of carbon's strong covalent bonds (we will explain this in detail in statistical mechanics as well).  There are discontinutities in Fe's diagram at 1550 \degree C because at this point it melts.  Same with Hg, which becomes a gas at low T.  For H\2O at RT we have $C_p = 75 \text{ J}/\text{mol}/\text{K}$.
+We will talk in detail about solid-state heat capacities during statistical mechanics, but for now it is enough to know that each atom has 6 degrees of freedom for its vibrations: 3 translational and 3 positional. So, by equipartition, $c_v$ should be $~6 \frac{R}{2}=3R$. For a non-metallic salt such as MgO, there are twice as many atoms per formula unit, so $c_p \approx 6 R = 50\text{J}/\text{mol}/\text{K}$.   If we examine some measured  $c_p$, we see that at high T carbon reaches the $3R$ plateau.  It takes a while to reach this because of the nature of carbon's strong covalent bonds (we will explain this in detail in statistical mechanics as well).  There are discontinutities in Fe's diagram at 1550 \degree C because at this point it melts.  Same with Hg, which becomes a gas at low T.  For H\2O at RT we have $C_p = 75 \text{ J}/\text{mol}/\text{K}$.
 
 \subsection{We need another energy function}
-While $c_v$ is naturally defined as the derivative of the internal energy with respect to temperature at constant volume: $c_v = \frac{1}{N} \left(\frac{\partial U}{\partial T}\right)_V$, the constant pressure heat capacity, $c_p$, is often what we meaure in the lab. It would be convenient to have a energy function for which $c_p$ is the derivative of the free energy with respect to temperature. The \bold{enthalpy}, $H$, is this function.
+While $c_v$ is naturally defined as the derivative of the internal energy with respect to temperature at constant volume: $c_v = \frac{1}{N} \left(\frac{\partial U}{\partial T}\right)_V$, the constant pressure heat capacity, $c_p$, is often what we measure in the lab. It would be convenient to have an energy function for which $c_p$ is the derivative of the free energy with respect to temperature. The \bold{enthalpy}, $H$, is this function.
 \begin{align*}
 H &= U + PV\\
-dH &= dU + V dP + P dV
+dH &= dU + V \, dP + P \, dV
 \end{align*}
-and substitute $dU = \dbar Q - P dV$
+and substitute $dU = \dbar Q - P \, dV$
 \begin{align*}
-dH &= \dbar Q + V dP\\
+dH &= \dbar Q + V \, dP\\
 (dH)_p &= \dbar Q
 \end{align*}
 Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state function. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experimental technique.  $H$ is often called the ``heat'' content.\\
 
 If we write down what $(dH)_p$ is, we get
 \begin{align*}
-(dH)_p &= n C_p (dT)_p\\
-\Big(\frac{\partial H}{\partial T}\Big)_p &= C_p\\
+(dH)_p &= C_p \,(dT)_p\\
+\left(\frac{\partial H}{\partial T}\right)_p &= C_p\\
 \end{align*}
 If we heat a substance through a phase transition, the enthalpy of the system can be broken into three parts:
 \eqs
-H(T) &= H(T_0) +  \int_{T_0}^{T_f}C_p  dT + \Delta H_{\phi T}
+H(T) &= H(T_0) +  \int_{T_0}^{T_f}C_p  \, dT + \Delta H_{\phi T}
 \eqe
-where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a function of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$\footnote{Only relative energies between states are physically measurable}.  As such, we often reference these state functions to their \emph{standard states}. Under the this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101,325$ Pa) and temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is often exchanged when a chemical reaction takes place.\\
+where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a function of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$\footnote{Only relative energies between states are physically measurable}.  As such, we often reference these state functions to their \emph{standard states}. Under this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101,325$ Pa) and room temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is generally exchanged when a chemical reaction takes place.\\
 
 %(H\degree(Fe))
-The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1500\degree C Fe is the $\delta$ (BCC2) phase. Above 1500\degree C , Fe melts. Fe evaporates near $2900 \degree$C. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
+The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1535\degree C Fe is the $\delta$ (BCC2) phase. Above 1535\degree C , Fe melts. Fe evaporates near $2900 \degree$C. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
 \begin{figure}[h]
 \centering
 \includegraphics[width = \textwidth]{H_of_T_labeled.png}
 \caption{$H\degree (T)$ for Fe over two temperature scales.}
 \label{enthalpy_vs_T}
 \end{figure}
-The solid$\to$solid phase transitions' discontinuitites are barely visible on the left curve. This is because the latent heats of the different phase transitions differ by several orders of magnitude: $\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol. A large enthalpy for a solid$\to$solid phase transition is observed for zirconia's \href{http://en.wikipedia.org/wiki/Diffusionless_transformation#Martensitic_transformation}{martensitic phase transformation}, where $\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  
+The solid$\to$solid phase transitions' discontinuitites are barely visible on the left curve. This is because the latent heats of the different phase transitions differ by several orders of magnitude: $\Delta H_\text{Fe}^{\alpha \rightarrow \gamma} \approx 1$ kJ/mol and $\Delta H_\text{Fe}^{\gamma \rightarrow \delta} \approx 1$ kJ/mol. A ``large'' enthalpy for a solid$\to$solid phase transition is observed for zirconia's \href{http://en.wikipedia.org/wiki/Diffusionless_transformation#Martensitic_transformation}{martensitic phase transformation}, where $\Delta H_{\text{ZrO}_2}^{\text{tetra}\rightarrow \text{non}} \approx 6$ kJ/mol.  
 
 The enthalpy of fusion (equivalently, the enthalpy of melting) is generally much higher. Richard's rule says that the enthalpy of fusion is proportional to the melting temperature of an element. 
 %\begin{figure}[h]
@@ -300,7 +304,7 @@ The enthalpy of fusion (equivalently, the enthalpy of melting) is generally much
 \begin{equation}
 \Delta H_\text{fusion} [\text{J/mol}] \approx 9 T_\text{fusion} [\text{K}]
 \end{equation}
-In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The elemental heat of vaporization follows a similar rule, Trouton's rule, which states that the the enthalpy of vaporization is proportional to the boiling temperature\footnote{As we will learn later, these rules imply that the entropies of melting and boiling are approximately equivalent for all of the elements}.
+In most metals $\Delta H_\text{fusion}$ is on the order of 10 kJ/mol.  The elemental heat of vaporization follows a similar rule, Trouton's rule, which states that the enthalpy of vaporization is proportional to the boiling temperature\footnote{As we will learn later, these rules imply that the entropies of melting and boiling are approximately equivalent for all of the elements: $\frac{\Delta H}{T}=\Delta S = \text{constant}$}..
 \begin{equation}
 \Delta H_\text{vap} \approx 90 T_\text{vap}
 \end{equation}
@@ -309,20 +313,20 @@ In most metals,  $\Delta H_\text{vap}$ is on the order of 100 kJ/mol.  The bindi
 \begin{figure}[h]
 \centering
 \includegraphics[width = 10cm]{Trouton_and_Richards_rules.png}
-\caption{Elemental phase transition temperatures and enthalpies on a log-log scale. The slope of this correlation (on a linear scale) gives the characteristic entropy of these phase transitions. The correlation is stronger for boiling as compared to melting because the liquid$\to$gas transition's entropy change is dominated by the gain of translational degrees of freedom, whereas the gain in entropy upon melting can be appreciably changed by the local interactions in the solids and liquids of the elements. Positive deviations from Richard's rule occur for heavy semimetals: Sb, Bi, Sn, Te have larger entropies of melting than expected. Negative deviations occur for elements with unfilled f-orbitals: Pu, Ce, Nd have smaller entropies of melting than expected. Simple metals and transition metals are well-behaved.}
+\caption{Elemental phase transition temperatures and enthalpies on a log-log scale. The slope of this correlation (on a linear scale) gives the entropy change of these phase transitions. The correlation is stronger for boiling as compared to melting because the liquid$\to$gas transition's entropy change is dominated by the gain of translational degrees of freedom, whereas the gain in entropy upon melting can be appreciably changed by the local interactions in the solids and liquids of the elements. Positive deviations from Richard's rule occur for heavy semimetals: Sb, Bi, Sn, Te have larger entropies of melting than expected. Negative deviations occur for elements with unfilled f-orbitals: Pu, Ce, Nd have smaller entropies of melting than expected. Simple metals and transition metals are well-behaved.}
 \label{Trouton_Richard}
 \end{figure}
 
-Now, what is the relative contribution of the $PdV$ term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^{-5} \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is $\sim$ 10\% $\Delta V$.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, except at very high pressures}.
+Now, what is the relative contribution of the $P\, dV$ term to these phase transition enthalpies?  We can estimate this by plugging in approximate numbers. We'll consider the case of two condensed phases, phase I $\rightarrow$ phase II.  In a metal, $V_{molar} \approx 10 \text{ cm}^3\text{/ mol}=10^{-5} \text{ m}^3\text{/ mol}$ and a good upper bound on the volume change is $\sim$ 10\% of the molar volume.  At atmospheric pressure, P\degree = $10^5$ Pa, so $P \Delta V = 10^5 \cdot 10^{-6} = 0.1 \text{ J/mol}$. Note the use of J/mol instead of kJ/mol here. Remember, the enthalpies of solid-solid transitions are arounf 1 kJ/mol, so about $10^4$ times bigger: \emph{the energy scale associated with pressure-volume effects can only moderately perturb the energetics of condensed-matter phase transitions, except at very high pressures}.
 
-Just as it is useful to understand the energy scales associated with P-V work, it is also useful for us to understand the energy scales associated with chemical reactions. In chemistry, this is characterized by the enthalpy of formation of molecules, in the solid state, the relevant quantity is the enthalpy of formation of compounds:\\
+Just as it is useful to understand the energy scales associated with P-V work, it is also useful for us to understand the energy scales associated with chemical reactions. In chemistry, this is characterized by the enthalpy of formation of molecules, in the solid state, the relevant quantity is the enthalpy of formation of compounds, e.g. Fe$_2$O$_3$ from Fe and O$_2$\footnote{ Most common minerals have names. Fe$_2$O$_3$ is known as \textit{hematite}.}:\\
 
 At room temperature and pressure:
 %I am confused what you were trying to say here, any idea, Derek?
 \begin{equation}
 2 Fe_{(s)}^{\alpha} + \frac{3}{2}O_{2 (g)} \rightarrow Fe_2O_{3 (s)}^{\alpha} + (\Delta Q)_p
 \end{equation}
-with $(\Delta Q)_p$ = -1963 kcal/mol.  The sum enthalpy of the reaction $\Delta_v H$ is then:
+with $(\Delta Q)_p$ = -820.5 kJ/mol.  The enthalpy of the reaction $\Delta H$ is sum of the enthalpies of the initial and final states:
 \begin{equation}
 \Delta_v H = \Delta H^0_{Fe_2O_3} - \Delta H^0_{Fe} - \frac{3}{2} \Delta H^0_{O_2}
 \end{equation}
@@ -335,18 +339,18 @@ and, for reference, we have:
 \Delta H^0_{CO_2} &= -393.51 \cdot \text{kJ}/\text{mol}
 \end{align*}
 
-There are plenty of references to get these values, such as \href{http://kinetics.nist.gov/janaf/}{Janaf tables}. They provide $H^0$, $G^0$, $C_p^0$, etc.
+There are plenty of references to get these values, such as \href{http://kinetics.nist.gov/janaf/}{Janaf tables}. They provide $H^0$, $G^0$, $C_p (T)$, etc. One could similarly calculate the enthalpies of formation for various combinations of C and O:
 
 \begin{align*}
-C_{(s)} + O_{2 (g)} &\rightleftharpoons CO_{2 (g)}\\
+\text{C}_{(s)} + \text{O}_{2 (g)} &\rightleftharpoons \text{CO}_{2 (g)}\\
 \Delta_r H^0 &= -393.52 \text{ kJ}/\text{mol}\\
-C_{(s)} + \frac{1}{2} O_{2 (g)} &\rightleftharpoons CO_{(g)}\\
+\text{C}_{(s)} + \frac{1}{2} \text{O}_{2 (g)} &\rightleftharpoons CO_{(g)}\\
 \Delta_r H^0 &= -110.52 \text{ kJ}/\text{mol}\\
-C_{(s)} + CO_{2 (g)} &\rightleftharpoons 2 CO_{(g)}\\
+\text{C}_{(s)} + \text{CO}_{2 (g)} &\rightleftharpoons 2 \text{CO}_{(g)}\\
 \Delta_r H^0 &= +172.47 \text{ kJ}/\text{mol}\\
 \end{align*}
 
-The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{going to happen}. Exothermic reactions release heat, which tells you that a given reaction is favorable in terms of its bonding. The first two reactions are exothermic; carbon and oxygen prefer to bond to one another. The last reaction is endothermic, meaning that the formation of $CO_{(g)}$ is not energetically favorable from  $CO_{2 (g)}$ and $C_{(s)}$. However, enthalpy is not the whole story in determining the spontaneity of reactions: energy conservation alone cannot tell you in which direction a reaction will occur.
+The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you which reaction is \emph{spontaneous}. Exothermic reactions release heat, conceptually, this tells you that a given reaction is favorable in terms of its bonding. The first two reactions are exothermic; carbon and oxygen prefer to bond to one another. The last reaction is endothermic, meaning that the formation of $CO_{(g)}$ is not energetically favorable from CO$_{2 (g)}$ and C$_{(s)}$. However, enthalpy is not the whole story in determining the spontaneity of reactions: energy conservation alone cannot tell you in which direction a reaction will occur.
 %Be careful with the idea of ``heat'' content.  The fact that a reaction re't mean we're going to harvest this energy as heat. The first law is also silent about the directions of change $\rightleftharpoons$.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -360,7 +364,7 @@ In previous lectures, we worked with the first law with both the heat and work t
 
 \bold{An aside on the ideal gas}:  The ideal gas is a convenient system to examine thermodynamically because its internal energy can be defined in terms of just one state variable, the temperature: $U = U(T)$. Specifically, the internal energy of an ideal gas is\footnote{We'll prove this in statistical mechanics, but it is proven from the ideal gas law \href{http://pruffle.mit.edu/3.00/Lecture_11_web/node1.html}{here}.}:
 \begin{align*}
-dU=C_V dT=(C_P-nR)dT\\
+dU=C_V \, dT=(C_P-nR)\, dT\\
 \Delta U=C_V \Delta T = (C_P-nR) \Delta T
 \end{align*}
 In addition, we also have a nice \emph{equation of state} to relate changes in the thermodynamic state variables to one another, the ideal gas law, $PV=nRT$.
@@ -372,27 +376,27 @@ In addition, we also have a nice \emph{equation of state} to relate changes in t
 First, we define our system as the gas which is released. It undergoes a sufficiently rapid expansion that the process can be approximated as adiabatic (not enough time for system to exchange heat with its environment). Then:
 \begin{align*}
 dU_\text{gas} &= \dbar Q + \dbar W = \dbar W \\
-&= -P dV\\
-&= n C_V dT = -P dV
+&= -P \, dV\\
+&= n C_V \, dT = -P \, dV
 \end{align*}
 Note that $V = nR\frac{T}{P}$, taking the total differential of $V$:
 $$
-dV = \frac{n R}{P} dT - nRT \frac{dP}{P^2}
+dV = \frac{n R}{P} \, dT - nRT \, \frac{dP}{P^2}
 $$
 
 % \begin{align*}
 % V &= nR\frac{T}{P}\\
-% dV &= \frac{n R}{P} dT - nRT \frac{dP}{P^2}
+% dV &= \frac{n R}{P} \, dT - nRT \, \frac{dP}{P^2}
 % \end{align*}
 
 Plugging in this definition of $dV$ above gives the final temperature in terms of the initial temperature and the ratio of the pressures:
 \begin{align*}
-nC_V dT &= -nRdT + RT \frac{dP}{P}\\
-\Big(\frac{T_2}{T_1}\Big)^{C_P/ R} &= \frac{P_2}{P_1}\\
-T_2 &= T_1 \Big(\frac{P_1}{P_2}\Big)^{R/C_P}
+nC_V \, dT &= -nR\, dT + RT \, \frac{dP}{P}\\
+\left(\frac{T_2}{T_1}\right)^{C_P/ R} &= \frac{P_2}{P_1}\\
+T_2 &= T_1 \left(\frac{P_1}{P_2}\right)^{R/C_P}
 \end{align*}
 
-For the bike tube, this gives $T_2 = 206$K = -67\degree C.  Why didn't we actually reach this temperature?  Well, the gas flowed through a nozzle instead of simply isotropically expanding, and the pressure outside the gas was not equal to the pressure inside the gas during the expansion. Clearly, we need to examine this process from a different perspective. Often, in thermodynamics, this means you need to re-define your system. We do so below.\\
+For the bike tube, this gives $T_2 = 206$K = -67\degree C.  Why didn't we actually reach this temperature?  Well, the gas flowed through a nozzle instead of simply expanding in an unconstrained manner, and the pressure outside the gas was not equal to the pressure inside the gas during the expansion. Clearly, we need to examine this process from a different perspective. Often, in thermodynamics, this means you need to re-define your system. We do so below.\\
 
 \bold{What is happening through the valve?}  %\un{Joule-Thompson expansion} 
 We now define our system as the valve. In this case, the system is at constant volume, and the key process taking place is that gas is flowing through the system. These gas molecules have some well-defined internal energy, so there is an energy flux through the system due to the mass flux through the system:
@@ -415,7 +419,7 @@ n C_V \Delta T = nR(\Delta T)
 $$
 This implies that either $C_V = R$, or $\boxed{\Delta T=0}$. It turns out that an ideal gas undergoing this process should have $\Delta T = 0$. 
 
-Note how changing the way we interpet the process generally leads to a different answer. In this case, we needed to use an interpretation where the pressure on the gas during the expansion was not equal to its internal pressure. This means that the process is non-equilibrium and irreversible. This process is called a Joule-Thomson process. You can learn more about it on wikipedia, or refer to \bold{Callen pg. 95}.
+Note how changing the way we interpet the process generally leads to a different answer. In this case, we needed to use an interpretation where the pressure on the gas during the expansion was not equal to its internal pressure. This means that the process is non-equilibrium and irreversible. This process is called a Joule-Thomson process. You can learn more about it on wikipedia, and/or refer to \bold{Callen pg. 95}.
 
 In general, we categorize processes in the following way: 
 
@@ -424,6 +428,25 @@ In general, we categorize processes in the following way:
 \item Continuous but not necessarily at equilibrium with environment.  This is considered \un{quasi-static}.  Can be both reversible and irreversible.  See Figure 3.
 \item Discontinuous and not in equilibrium.  We can not do equilibrium thermodynamics for this  (i.e. an explosion with H\2 + O\2 will proceed so fast we can not tell what is happening to get us to the final stage).  See Figure 4.
 \end{enumerate}
+
+\textbf{Second Law of Thermodynamics:}  In a closed system, there exists a state function, S, for which:
+\begin{equation}
+dS_\text{system} \geq \frac{\dbar Q}{T}.
+\end{equation}
+ %\\
+
+If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\dbar Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\dbar Q}{T}$ (or $dS_\text{irrev}=dS_\text{rev} + \xi$ where $\xi >0$). Note that this fixes the directions in which processes can occur, due to the inequality. Taking our system as the universe, a process will move forward if, for a given process ($1\rightarrow 2$) if $dS_\text{universe} > 0$ or backward $dS_\text{universe} < 0$. If $dS_\text{universe} > 0$ for a process, that process is stationary/reversible.
+
+The first law said that $U$ exists and
+\begin{equation}
+dU = \dbar Q + \sum y_i \, dx_i
+\end{equation}
+while the second law says $S$ exists and for a closed system
+\begin{equation}
+dS \geq \frac{\dbar Q}{T}
+\end{equation}
+
+
 
 \subsection{Quasistatic Piston}
 We now consider a piston slowly compressing a gas. See Callen Figure 5.
@@ -436,22 +459,7 @@ Let's assume that $dS = \frac{\dbar Q}{T}$.\\
 \bold{Process 1}: Let's take a reservoir that is adiabatically isolated with $T_1$.  Let's transfer $\dbar Q$ to the reservoir.  The resulting temperature will then be $T_2$.\\
 \bold{Process 2:} Now we have a propeller going into our reservoir with adiabatic walls and $T_1$.  Here, we have $dS_1 = dS_2 \neq \frac{\dbar Q}{T}$.\\
 
-Second Law of Thermodynamics:  There exists a state function (property S) for which holds (closed system)
-\begin{equation}
-dS_\text{system} \geq \frac{\dbar Q}{T}
-\end{equation}
-it fixes the direction of change.  Forward ($1\rightarrow 2$) if $dS_f \geq \frac{\dbar Q_f}{T}$ or backward ($2\rightarrow 1$) if $dS_b \geq \frac{\dbar Q_b}{T}$.\\
-
-If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\dbar Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\dbar Q}{T}$ (or $dS_\text{rev} + \xi$ where $\xi >0$).  The first law said that $U$ exists and
-\begin{equation}
-dU = \dbar Q + \sum y_i dx_i
-\end{equation}
-while the second law says $S$ exists and for a closed system
-\begin{equation}
-dS \geq \frac{\dbar Q}{T}
-\end{equation}
-
-Back to the example of two compartments that are connected (one at $T_1$ and the other at $T_2$), see Figure 6, we get
+If two compartments are connected (one at $T_1$ and the other at $T_2$), see Figure 6, we get
 \begin{align*}
 \dbar Q_1 &= -\dbar Q_2\\
 dS_\text{system} &= dS_1 + dS_2\\
@@ -466,11 +474,11 @@ If $T_2 > T_1$, $\dbar Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \tex
 \section{Lecture - September 10, 2014}
 As a reminder, the 1st law stated that $U$ is a state function where
 \beq
-dU = \dbar Q + \sum y_i dx_i
+dU = \dbar Q + \sum y_i \, dx_i
 \ceq
 The 2nd law states that $S$ is also a state function, and for a \emph{isolated system} under any arbitrary process,
 \beq dS \geq \frac{\dbar Q}{T} \ceq
-If the process is reversible then, $TdS = \dbar Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
+If the process is reversible then, $T\, dS = \dbar Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
 Key properties of entropy:
 \begin{enumerate}[(I)]
 \item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system by increasing the entropy of the surroundings). 
@@ -480,21 +488,22 @@ Key properties of entropy:
 \end{enumerate}
 \subsection{Consequences of the 2nd law:}
 \begin{enumerate}[(I)]
-\item \un{Irreversibility and `lost work'}: For processes with the same initial and final states, the work done by a system upon its surroundings during a reversible process is greater than or equal to the work done by a system during an irreversible process.
-\beq \dbar W_\text{reversible} < \dbar W_\text{irreversible} \ceq
-For a reversible path, \beq dU_\text{reversible} = \dbar Q_\text{reversible} + \dbar W_\text{reversible} \ceq
-and the second law allows us to replace $\dbar Q_\text{reversible}$ by $TdS$.  For an irreversible path, U is a state function, so $dU$ is the same:
+\item \un{Irreversibility and `lost work'}: For processes with the same initial and final states, the work done by a system upon its surroundings during a reversible process is greater than or equal to the work done by a system during an irreversible process:
+\beq \dbar W_\text{reversible} < \dbar W_\text{irreversible} \label{workInequality}\ceq
+We prove Eq. \ref{workInequality} below. For a reversible path, 
+\beq dU_\text{reversible} = \dbar Q_\text{reversible} + \dbar W_\text{reversible} \ceq
+and the second law allows us to replace $\dbar Q_\text{reversible}$ by $T\, dS$.  For an irreversible path, U is a state function, so $dU$ is the same:
 
 \beq dU_\text{reversible} = dU_\text{irreversible}  = \dbar Q_\text{irreversible} + \dbar W_\text{irreversible} \ceq
-Since $T dS > \dbar Q_\text{irreversible} $ for an irreversible process, we have
+Since $T \, dS > \dbar Q_\text{irreversible} $ for an irreversible process, we have
 
-\begin{align} T dS + \dbar W_\text{reversible} &= \dbar Q_\text{irreversible} + \dbar W_\text{irreversible}\\
-T dS -\dbar Q_\text{irreversible}  &= \dbar W_\text{irreversible} - \dbar W_\text{reversible} > 0
+\begin{align} T \, dS + \dbar W_\text{reversible} &= \dbar Q_\text{irreversible} + \dbar W_\text{irreversible}\\
+T \, dS -\dbar Q_\text{irreversible}  &= \dbar W_\text{irreversible} - \dbar W_\text{reversible} > 0
 \end{align}
 so
 \beq \boxed{\dbar W_\text{reversible} < \dbar W_\text{irreversible}}
 \ceq
-Note that our sign convention in these notes is $dU = \dbar Q + \dbar W$, so negative work is work done by the systems upon the surroundings. The important physical implication is that that if you want to extract work from a system, you get the most work out if the work is performed reversibly. Work that is not obtained from a process due to irreversibilities is sometimes called \emph{lost work}. Similarly, and perhaps more intuitively, if you want to do work upon a system, you will expend the least energy if the work is done reversibly: \\ \emph{The dissipation inherent in irreversible processes is bad for efficiency, regardless of whether work is done by a system, or work is performed upon system.} %\footnote{This has significant implications for the operation of batteries and the  materials production, wherein we are generally aiming to make things as reversible as possible}
+Note that our sign convention in these notes is $dU = \dbar Q + \dbar W$, so negative work is work done by the systems upon the surroundings. The important physical implication is that that if you want to extract work from a system, you get the most work out if the work is performed reversibly. Work that is not obtained from a process due to irreversibilities is sometimes called \emph{lost work}. Similarly, and perhaps more intuitively, if you want to do work upon a system, you will expend the least energy if the work is done reversibly: \\ \emph{The dissipation inherent in irreversible processes reduces efficiency, regardless of whether work is done by a system, or work is performed upon system.} \footnote{This has significant implications for the operation of batteries, fuel cells, and the  materials production, wherein we are generally aiming to make things as reversible as possible.}
 \item \un{Limits to heat-work conversion}: 
 Since a reversible process leads to the highest efficiencies, it is then logical to use a reversible process to set a limit on the amount of work that we can get from a heat source, i.e. by reversibly transfering heat from hot to cold. One can consider any process to do so, here we consider a non-specific process. The steps are worked out, but not explained. An animated explanation can be found on \href{https://www.khanacademy.org/science/physics/thermodynamics/v/efficiency-of-a-carnot-engine}{Khan Academy}\footnote{Sal Khan is an MIT alum!}, and a good written explanation is on \href{https://en.wikipedia.org/wiki/Carnot_cycle}{wikipedia}.
 %\begin{align*}
@@ -517,12 +526,12 @@ This gives us the Carnot efficiency $\eta = \frac{-W}{Q_H}$ and
 \beq 
 \boxed{\eta_{\text{heat$\to$work}} = 1 - \frac{T_L}{T_H}}
 \ceq
-To give a sense of these efficiencies, with $T_H = 100^0$ C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. Significant gains in efficiency can be gained by going to higher temperatures: if $T_H$ = 550\degree C, $\eta \approx 63$\%.
+To give a sense of these efficiencies, with $T_H$ = 100\degree C = 373 K and $T_L$ = 25\degree C = 298 K, $\eta \approx 20$\%. Significant gains in efficiency can be gained by going to higher temperatures: if $T_H$ = 550\degree C, $\eta \approx 63$\%. Carnot is a big deal, as most of our energy still comes from making heat and converting it to electricity. Increasing the operating temperatures of the turbines used to create electricity from heat is thus a huge opportunity for making more energy with the same amount of fuel, and an active area of materials research.
 
-We can also use work to move heat.  This process is also limited by the second law, but is characterized by a different efficiency. Moving heat from hot to cold is spontaneous, so we are usually concerned with how much heat we can move from cold to hot. When making something that is already warm warmer, we have a \un{heat pump} and when making something cold colder, we have a refrigerator (or an air conditioner). The logical way to characterize such an efficiency is the amount of heat moved per unit work used (this is often referred to as the ``coefficient of performance'', or COP of a heat pump). One can derive that:
-\beq COP_\text{heat pump} = \frac{-Q_H}{W} = \frac{T_H}{T_H - T_L} \ceq
-\beq COP_\text{refrigerator} = \frac{Q_L}{W} = \frac{T_L}{T_H - T_L} \ceq
-With $T_H = 25$C and $T_C = 0$C, $COP_\text{refridgerator} = 11$.\footnote{This counterintuitively means that burning a fire is actually an extremely inefficient way to heat a home. You could get an order of magnitude more bang-for-your-Joule if you could convert that chemical energy to work, and use a heat pump!}
+We can also use work to move heat.  This process is also limited by the second law, but is characterized by a different efficiency. Moving heat from hot to cold is spontaneous, so we are usually concerned with how much heat we can move from cold to hot. When making something that is already warm warmer, we have a \un{heat pump} and when making something cold colder, we have a refrigerator (or an air conditioner). The logical way to characterize such an efficiency is the amount of heat moved per unit energy input into the machine (this is often referred to as the ``coefficient of performance'', or COP of a heat pump). One can derive that:
+\beq \text{COP}_\text{heat pump} = \frac{-Q_H}{W} = \frac{T_H}{T_H - T_L} \ceq
+\beq \text{COP}_\text{refrigerator} = \frac{Q_L}{W} = \frac{T_L}{T_H - T_L} \ceq
+With $T_H = 25$\degree C and $T_L = 0$\degree C, $COP_\text{refridgerator} = 11$.\footnote{This counterintuitively means that burning a fire is actually an extremely inefficient way to heat a home. You could get an order of magnitude more bang-for-your-Joule if you could convert that chemical energy to work, and use a heat pump!}
 
 Note that in the above derivation, no reference was made to a specific mechanism: \emph{the Carnot limit applies any time heat is being converted to work}. One example of an exotic device that does this is a thermoelectric. One can apply some basic thermoelectric theory to show that thermoelectrics will never be as efficient as steam engines unless the thermoelectric figure of merit, $ZT$, increases by around an order of magnitude.\footnote{See \href{http://dx.doi.org/10.1038/nmat2361}{Nature Materials Vol 8 Feb 2009 ``An inconvenient truth about thermoelectrics''}}. This is not to say that thermoelectrics are a bad topic to research, but that one should not believe that they will replace a conventional heat engine for turning heat into energy, unless the given application prohibits the use of a heat engine.
 
@@ -532,14 +541,14 @@ Note that in the above derivation, no reference was made to a specific mechanism
 
 %\un{Practically}, we use a fluid for heat transfer.  We add heat $Q_H$ to water that turns into steam and runs a turbine generating work $W$.  We take some heat $Q_L$ away from the  steam (often called a working fluid), causing the steam to condense. The cold condensate at $T_L$ is then flowed it back to the heat source.  We can have inefficiencies turning the turbine, condensing the steam back into water, and we can increase efficiency by going to higher temperatures. These are excellent and practical materials problems to work on in energy. % I would like to do a recitation on steam engines in the future.
 
-Now that we have an expression for a differential change in entropy, we can compute  entropy changes from arbitrary processes, $\Delta S_{\text{process}}$.  We know the temperature dependence of $S$:
-\beq C_c = \frac{(\dbar Q)_c}{dT} \ceq
-Where the subscript c is for ``constant path''. A reversible process along such a path must have:
+Now that we have an expression for a differential change in entropy, we can compute  entropy changes from arbitrary processes, $\Delta S_{\text{process}}$.  We that, for an arbitrary reversible path, $c$, the entropy change is:
+\beq dS = \frac{(\dbar Q)_c}{T} \ceq
+Thus:
 \begin{align*}
 T(dS)_c &= (\dbar Q)_c\\
-\Big(\frac{\partial S}{\partial T}\Big)_c &= \frac{C_c}{T} \\
-\Big(\frac{\partial S}{\partial T}\Big)_p &= \frac{C_p}{T}\\
-\Big(\frac{\partial S}{\partial T}\Big)_v &= \frac{C_v}{T}\\
+\left(\frac{\partial S}{\partial T}\right)_c &= \frac{C_c}{T} \\
+\left(\frac{\partial S}{\partial T}\right)_p &= \frac{C_p}{T}\\
+\left(\frac{\partial S}{\partial T}\right)_v &= \frac{C_v}{T}\\
 \end{align*}
 
 Ultimately, because temperature has an absolute zero, entropy should also have some reference value when $T=0$ K.  How do we come up with a reference entropy $S$?  Nernst got the Nobel prize for it in 1920.
@@ -578,15 +587,15 @@ We would first need to extract the heat during a process when the material is in
 \begin{enumerate}[(I)]
 \item \un{Adiabatic expansion} of an ideal gas.  How much does the entropy change? You could try integrating the heat capacity along the path:
 \beq T_2/T_1 = \frac{P_1}{P_2}^{R/C_v} \ceq
-But that's kind of silly. You know that because it's adiabatic ($\dbar Q = 0$) then $d S = 0$.
-\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\dbar Q}{T} = -\frac{\dbar W}{T} = \frac{PdV}{T} = nR \frac{dV}{V}$ (Know this since $U=U(T)$, and T constant means $\Delta U = 0 = Q + W$)
+However, such an integration would be a very inefficient way to calculate the entropy change. Instead, you could realaize that the process is adiabatic, so ($\dbar Q = 0$), meaning $d S = 0$.
+\item \un{Isothermal} reversible expansion of an ideal gas.  $dS = \frac{\dbar Q}{T} = -\frac{\dbar W}{T} = \frac{P\, dV}{T} = nR \, \frac{dV}{V}$ (Know this since $U=U(T)$, and T constant means $\Delta U = 0 = Q + W$): chr
 
 \beq 
-\Delta S = nR\ln\Big(\frac{V_2}{V_1}\Big) 
+\Delta S = nR\ln\left(\frac{V_2}{V_1}\right) 
 \ceq
-As volume goes up, entropy will too.
+As system's volume increases, entropy will too.
 \item Arbitrary change of an ideal gas.  Since $S$ is a state function, we only need to find the reversible path.  We can break it up:
-\beq dS = dS_\text{isobaric} + dS_\text{isothermal} = C_p \frac{dT}{T} - R\frac{dP}{P} \ceq
+\beq dS = dS_\text{isobaric} + dS_\text{isothermal} = C_p \, \frac{dT}{T} - R \, frac{dP}{P} \ceq
 
 \end{enumerate}
 
@@ -595,11 +604,11 @@ As volume goes up, entropy will too.
 Now that the entropy has been defined, we are ready to start thinking about $U$ in terms of equilibrium processes, where we can replace $\dbar Q$ by $TdS$. In this case, an arbitrary change in the state of our system can be represented as:
 
 \eqs
-dU = TdS + \sum_i Y_i dX_i
+dU = T\, dS + \sum_i Y_i \, dX_i
 \eqe
 The above equation is sometimes called the \emph{combined first and second law}. It is also called the \emph{fundamental equation of physical chemistry}, because it is used to derive the rest of thermodynamics. Performing equilibrium thermodynamics in terms of $dU$ and its transformations is called the Legendre formulation of thermodynamics. One can equivalently formulate thermodynamics in terms of changes in the entropy of a system during arbitrary, reversible processes:
 \eqs
-dS = \frac{1}{T}dU +\frac{P}{T}dV - \sum_i \frac{\mu_i}{T}dN_i
+dS = \frac{1}{T}\, dU +\frac{P}{T}\, dV - \sum_i \frac{\mu_i}{T}\, dN_i
 \eqe
 Energetic calculations are usually easier to do in the Legendre formulation, which is posed in terms of energy. The Massieu formulation is easier to use to think about the reversibility of processes, as it is posed in terms of entropy.
 
@@ -635,13 +644,13 @@ Now, this next part seems trivial, but it's actually a nice, subtle trick. We us
 $\frac{\partial U(S, X,...)}{\partial S} = T$, $\frac{\partial U(S, X,...)}{\partial X} = Y$, and so on for all of the extensive variables.
 Remembering that the right hand side is $U(S,X,...)$, this allows us to show that U is defined as:
 \eqs
-U(S,X,...) = TS + \sum_i Y_i X_i
+U(S,X,...) = TS + \sum_i Y_i X_i \label{Euler}
 \eqe
 
-This definition is very useful, so it's important we have a rigorous basis for it (which we just showed above!). It gives us the Gibbs-Duhem equations, and also allows us to make changes of variables to other free energy functions which have different natural variables, such as the enthalpy, which has natural variables of $S$ and $P$:
+This is the \textbf{Euler Relation} is very useful, so it's important we have a rigorous basis for it (which we just showed above!). It will give us the Gibbs-Duhem equations, and also allows us to make changes of variables to other free energy functions which have different natural variables, such as the enthalpy, which has natural variables of $S$ and $P$:
 \eqs H = U + PV \eqe
 Plugging in the combined first and second law and the total differential of $PV$ gives:
-\eqs dH = TdS +VdP \eqe
+\eqs dH = T\, dS +V\, dP \eqe
 Note how the exact differential of $dH$ is naturally written in terms of new variables. We'll go in-depth into this type of transformation, a Legendre transform, and its implications in the next section.
 
 
@@ -670,37 +679,40 @@ Note how the exact differential of $dH$ is naturally written in terms of new var
 % U = TS + yx
 % \eqe
 \subsubsection{The Gibbs-Duhem equation: The intensive variables are not independent}
-The Euler relation can give an independent definition of $dU$ by taking its total differential:
+The Euler relation (\ref{Euler}) can give an independent definition of $dU$ by taking its total differential:
 \eqs
-d U(S,X,...) = T dS + S dT + \sum_i Y_i d X_i + \sum_i X_i d Y_i 
+d U(S,X,...) = T \, dS + S \, dT + \sum_i Y_i \, d X_i + \sum_i X_i \, d Y_i 
 \eqe
 Setting this equal to the definition of $dU$ from the combined first and second law gives:
-\begin{align*}
-TdS + \sum_i Y_i dX_i&=T dS + S dT + \sum_i Y_i d X_i + \sum_i X_i d Y_i \\
-0 &=S dT + \sum_i X_i d Y_i
-\end{align*} 
+\eqs
+%\begin{align}
+T \, dS + \sum_i Y_i \,dX_i&=T \,dS + S\,dT + \sum_i Y_i \, d X_i + \sum_i X_i \,d Y_i \\
+0 &=S \, dT + \sum_i X_i \, d Y_i \label{GD} %\end{align*} 
+\eqe
 
-This is called a \emph{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. They have a variety of convenient uses, and we will come back to them frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:\\
+This is called a \emph{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. Eq \ref{GD} can be applied in a variety of situations, and we will come back to Eq \ref{GD} frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:\\
 
 Let's think about how the chemical potential of a binary system changes. In particular, we'll consider the experimentally relevant case where the system is at constant pressure and temperature ($dP=dT=0$), and we are varying the chemical potential of one component (say by flowing a vapor with different concentrations through the system). Then, the Gibbs-Duhem equation simplifies to:
-\eqs N_1 d \mu_1 = -N_2 d \mu_2 \eqe
+\eqs N_1 \, d \mu_1 = -N_2 \, d \mu_2 \eqe
 In words, this says that varying the chemical potential of one component automatically causes the chemical potential of the other component to change in the opposite direction, and that the rate of this change is related to the mole numbers  of the two components in the system. This is a deep and unintuitive truth.
 
 \subsubsection{Equations of state contain partial information about U}
-Equations of state of $U$ are expressions of the intensive variables in terms of the independent variables. As a thermodynamic state is completely defined by the extensive variables alone, the equations of state provide the relation between the independent, extensive state variables and the dependent, intensive state variables. For example, $P\equiv (\partial U / \partial V)_{S,N_i}$, which implies that P is a function of the entropy and mole numbers at which the derivative was taken: $P = P(S,N,V)$. This expression, $P(S,N,V)$, is one equation of state for a simple system. The others are $T(S,V,N),\mu(S,V,N) $. As the equations of state are the derivatives of the free energy, if you know enough of them, you can combine their integrals to get the free energy function as a function of its natural variables referenced to some initial state. For a system where the mole numbers are constant:
-\eqs U(V,S)= \int_{V_0}^{V} \left(\frac{\partial U}{\partial V} \right)_{S_0} \,dV+\int_{S_0}^{S} \left( \frac{\partial U}{\partial S}\right)_{V}\,dS = \int_{V_0}^{V} P dV +\int_{S_0}^{S} TdS \eqe
+Equations of state of $U$ are expressions of the intensive variables in terms of the independent variables. As a thermodynamic state is completely defined by the extensive variables alone, the equations of state provide the relation between the independent, extensive state variables and the dependent, intensive state variables. For example, $P\equiv (\partial U / \partial V)_{S,N_i}$, which implies that P is a function of the entropy and mole numbers at which the derivative was taken: $P = P(S,N,V)$. This expression, $P(S,N,V)$, is one equation of state for a simple system. The others are $T(S,N,V),\mu(S,N,V) $. As the equations of state are the derivatives of the free energy, if you know enough of them, you can combine their integrals to get the free energy function as a function of its natural variables referenced to some initial state. For a system where the mole numbers are constant:
+\eqs U(S,V)= \int_{S_0}^{S} \left( \frac{\partial U}{\partial S}\right)_{V}\,dS +\int_{V_0}^{V} \left(\frac{\partial U}{\partial V} \right)_{S_0} \,dV= \int_{S_0}^{S} T\,dS +\int_{V_0}^{V} P \, dV \eqe
 However, such an integration can only be performed if you have as many independent equations of state as you have free variables, and you know them in terms of the proper variables (S and V in the case of U).
 
 
 
 \subsection{Equilibrium and evolution of isolated systems}
-We now use the Massieu formulation and the second law to derive the conditions of equilibrium for a variety of cases. The conclusion is: \emph{at equilibrium in an isolated, unconstrained system, the intensive variables are homogeneous (constant across the whole system)}. Below, we treat temperature, chemical potential, and pressure individually, but the results are general\footnote{This is similar to the discussion in Callen Chapter 4.4}.
+We now use the Massieu formulation and the second law to derive the conditions of equilibrium for a variety of cases. The conclusion is: \emph{at equilibrium in an isolated, unconstrained system, the intensive variables are homogeneous (constant across the whole system)}. Below, we treat temperature, chemical potential, and pressure individually, but the results are general.\footnote{This is similar to the discussion in Callen Chapter 4.4}
 
 %\subsubsection{An open and isolated system}
 We consider a system where the possible work terms are exchange of energy, mole numbers, and volume. The chemical potential, $\mu$, is the intensive conjugate of $dN$ which is the change in number of particles.
 \eqs
 U &= TS - PV + \sum_i \mu_i N_i\\
-dU - dU  &= 0 = SdT - VdP + N_i d\mu_i
+dU &= T\,dS - P\,dV + \sum_i \mu_i \,dN_i
+dU - dU  &= 0 = S\, dT - V\, dP + N_i \, d\mu_i
+\label{equilibrium_of_isolated_systems}
 \eqe
 
 For an isolated system, the 1st law says $U_\text{system}$ \& $ V_\text{system}$ are constant ($dV_\text{system}=dU_\text{system}=0$). The 2nd law says $dS_\text{system} \geq 0$.  S is maximized over the set of thermodynamic states that are consistent with the constraints on the extensive variables, i.e. the boundaries.  The equilibrium state is then the one with maximal S for our boundary conditions.\\
@@ -712,7 +724,7 @@ dU &= 0 = dU_I+dU_{II}\\
 dU_I &= -dU_{II}\\
 dS &= dS_I + dS_{II}\\
 dS &= \frac{dU_I}{T_I} + \frac{dU_{II}}{T_{II}} \text{ (by Massieu/second law)}\\
-dS &= dU_I \Big(\frac{1}{T_I}-\frac{1}{T_{II}}\Big)
+dS &= dU_I \left(\frac{1}{T_I}-\frac{1}{T_{II}}\right)
 \eqe
 Now, if $T_I < T_{II}$ and $dU_I > 0$, then $dS > 0$ and we are \bold{not at equilibrium}.  If $T_I > T_{II}$ and $dU_I < 0$, then $dS > 0$ and we are also \bold{not at equilibrium}.  Equilibrium then occurs when $\frac{1}{T_I}-\frac{1}{T_{II}} = 0$, or $T_I = T_{II}$.
 
@@ -721,15 +733,15 @@ Consider two compartments of an isolated container separated by an diathermal, m
 \eqs
 dU_1 &= -dU_2\\
 dV_1 &= -dV_2\\
-dS &= dU_1 \Big(\frac{1}{T_1}-\frac{1}{T_{2}}\Big) + dV_1 \Big(\frac{P_1}{T_1}-\frac{P_2}{T_{2}}\Big)\\
+dS &= dU_1 \left(\frac{1}{T_1}-\frac{1}{T_{2}}\right) + dV_1 \left(\frac{P_1}{T_1}-\frac{P_2}{T_{2}}\right)\\
 \eqe
 thus $S$ is maximal for $T_1 = T_2$ and $P_1 = P_2$.
 \subsubsection{Chemical Equilibrium from Mass Flow}
-Similarly, we can add a $\mu dN$ term to the energy change (or $-\frac{\mu}{T}dN$ in the entropy representation).  We then get an additional term to $dS$ of 
+Similarly, we can consider the $\mu dN$ term in Eq \ref{equilibrium_of_isolated_systems} (or $-\frac{\mu}{T}dN$ in the entropy (Massieu) representation).  We then get an additional term to $dS$ of 
 \eqs
-dS = ... -\Big(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2}\Big)dN_1
+dS = ... -\left(\frac{\mu_1}{T_1}-\frac{\mu_2}{T_2}\right)\, dN_1
 \eqe
-which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.  Enforcing thermal equilibrium means that $\mu_1=\mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$, as we would expect from a potential\footnote{In terms of kinetics, a gradient of $\frac{\mu}{T}$ generates mass flow (i.e. a diffusional relaxation toward equilibrium).}.
+which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.  Enforcing thermal equilibrium means that $\mu_1=\mu_2$.  We can see from the signs of $dN_1$ and $dN_2$ that matter flows from high $\mu$ to lower $\mu$, as we would expect from a potential.\footnote{Diffusion is thus caused by a gradient of $\frac{\mu}{T}$ (i.e. a diffusional relaxation toward equilibrium).}
 
 % \subsubsection{Chemical Equilibrium from Reactions}
 % Given the reaction
@@ -738,8 +750,8 @@ which results in equilibrium so long as $\frac{\mu_1}{T_1} = \frac{\mu_2}{T_2}$.
 % \eqe
 In general, we can maximize the entropy by:
 \begin{itemize}
-\item defining the variables which are free to move in the system. For example: can subsystems exchange volume or mass? If so, $dV$ and $dN$ would be appropriate internal variables.
-\item writing $dS$ as a function of the \emph{internal} variables in the Masseu formulation.
+\item defining the internal variables which may be exchanged within the system. For example: can subsystems exchange volume or mass? If so, $dV$ and $dN$ would be appropriate internal variables.
+\item writing $dS$ as a function of these \emph{internal} variables in the Masseu formulation.
 \item imposing $dS_\text{system} = 0$ for all the variations.
 \end{itemize}
 Thus, given appropriate internal variables, we can directly extract the equilibrium conditions.  For energy exchange, $dU_{1\rightarrow 2}$, we get $T_1 = T_2$.  For energy and volume exchange, $dU_{1\rightarrow 2}$ and $dV_{1\rightarrow 2}$, we have $T_1 = T_2$ and $P_1 = P_2$.  Another example would be charge exchange, $dq_{1\rightarrow 2}$, which implies a homogenous electrostatic potential: $\phi_1 = \phi_2$.
@@ -749,12 +761,12 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 
 %% We can perform a Legendre Transformation to come up with new representations of our system's energy
 %% \eqs
-%% dU = TdS + \sum_i y_i dx_i
+%% dU = T\,dS + \sum_i y_i \,dx_i
 %% \eqe
 %% Let's consider a simple system.  We can write it in terms of several ``natural functions'' ($U(S,V)$ or $S(U,V)$)
 %% \eqs
-%% dU &= T dS - P dV\\
-%% dS &= \frac{1}{T}dU + \frac{P}{T}dV
+%% dU &= T \,dS - P \,dV\\
+%% dS &= \frac{1}{T}\,dU + \frac{P}{T}\,dV
 %% \eqe
 %% also, we may integrate our function
 %% \eqs
@@ -823,7 +835,7 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 
 % \un{For a simple system}
 % \eqs
-% dU - TdS + P dV \leq 0
+% dU - T\,dS + P \,dV \leq 0
 % \eqe
 % We can control the extensive variables for our system in the following ways
 % \begin{itemize}
@@ -833,38 +845,38 @@ Thus, given appropriate internal variables, we can directly extract the equilibr
 
 \subsection{Legendre Transforms} \label{LegendreTransforms}
 %$U$ is defubed a function of the extensive parameters $U(S,X,...)$. Frequently, we want a function $\phi(y)$ that is naturally a function of the intensive variables, raher than the extensive variables; it would be nice if we could specify the temperature instead of the entropy. 
-The difficulty in working with the internal energy, $U$, is that it is a natural function of the wrong set of variables: V is the natural, `independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural `independent' variable of U for reversible heat exchange\footnote{You can think of reversible heating as T-S work if you'd like.}, but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, `independent' variables. \emph{Taking the Legendre transform is a general procedure to `switch' which variables are the natural variables in your thermodynamic potential of interest.}\\
+The difficulty in working with the internal energy, $U$, is that it is a natural function of an awkward set of variables: V is the natural, `independent' variable of U for P-V work, whereas systems are usually kept at constant pressure, and S is the natural `independent' variable of U for reversible heat exchange\footnote{You can think of reversible heating as T-S work if you'd like.}, but systems are usually kept at constant temperature. What we seek is an alternative formulation of the internal energy which has the appropriate intensive variables as its natural, `independent' variables. \emph{Taking the Legendre transform is a general procedure to `switch' which variables are the natural variables in your thermodynamic potential to match the system and boundaries of interest.}\\
 
 \textbf{How To Take a Legendre Transform}\\
 If we want to transform U such that an intensive variable, $Y_i$, is the natural variable of the new, transformed potential, which we will call $\phi$, then we define $\phi$ as the difference of $U$ and the product $Y_i \cdot X_i$:
 \eqs
 \phi &= U - Y_i X_i\\
-d\phi &= dU - Y_i dX_i - X_i dY_i
+d\phi &= dU - Y_i \,dX_i - X_i \,dY_i
 \eqe
-where $dU = [...] + Y_j dX_j$.
+where $dU = [...] + Y_j \, dX_j$.
 Note that if U is composed of a sum of extensive variables times their intensives conjugates, $U=\sum_{j} Y_j X_j$, then $\phi=\sum_{j\neq i} Y_j X_j$. The total derivative of $\phi$ is then given by:
 \eqs
-d\phi &= \sum_{j\neq i} Y_j dX_j - X_i dY_i
+d\phi &= \sum_{j\neq i} Y_j \, dX_j - X_i \, dY_i
 \eqe
 This has the desired property that $Y_i$ is a natural variable of $\phi$, $\phi = f(X_{j\neq i},Y_i)$.
 Let's look at an example of an isobaric, isentropic ($dS=0$) system, considering the \bold{enthalpy}, $H$:
 \eqs
-dU &= TdS - PdV\\
+dU &= T\,dS - P\,dV\\
 H &= U + PV\\
-dH &= dU + PdV + VdP\\
-dH&= TdS + VdP\\
+dH &= dU + P\,dV + V\,dP\\
+dH&= T\,dS + V\,dP\\
 \eqe
-and we can retrieve the following relations from $dH(S,P) = \Big(\frac{\partial H}{\partial S}\Big)_P dS + \Big(\frac{\partial H}{\partial P}\Big)_S dP$:
+and we can retrieve the following relations from $dH(S,P) = \left(\frac{\partial H}{\partial S}\right)_P \, dS + \left(\frac{\partial H}{\partial P}\right)_S \, dP$:
 \eqs
-T &= \Big(\frac{\partial H}{\partial S}\Big)_P\\
-V &= \Big(\frac{\partial H}{\partial P}\Big)_S
+T &= \left(\frac{\partial H}{\partial S}\right)_P\\
+V &= \left(\frac{\partial H}{\partial P}\right)_S
 \eqe\\
 
 \textbf{Properties of Legendre Transforms}\\
 \begin{enumerate}
-\item $\Big(\frac{\partial \phi}{\partial Y_i}\Big)_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
-\item $\phi$ has analogous extremal properties to U: Just as the equilibrium state when all of the extensive variables are set occurs when $U$ is minimal, so the equilibrium state for a given Legendre transform, $\phi$, occurs $\phi$ under the appropriate boundary conditions. For example, the equilibrium state at constant temperature and pressure is the state with minimal Gibbs free energy, the equilibrium state at constant entropy and pressure is the state with minimal enthalpy, etc. 
-\item A corollary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this T and P will correspond to the T and P that we originally minimized the Gibbs free energy for.
+\item $\left(\frac{\partial \phi}{\partial Y_i}\right)_{X_{i\neq j}}=-X_i$; the derivative of $\phi$ with respect to the appropriate intensive variable is minus its conjugate extensive variable.
+\item $\phi$ has analogous extremal properties to U: Just as the equilibrium state when all of the extensive variables are constant occurs when $U$ is minimal, so \emph{the equilibrium state for a given Legendre transform, $\phi$, occurs when $\phi$ is minimal under the appropriate boundary conditions.} For example, the equilibrium state at constant temperature and pressure is the state with minimal Gibbs free energy, the equilibrium state at constant entropy and pressure is the state with minimal enthalpy, etc. 
+\item A corollary to (2) is that the choice of boundary conditions is arbitrary: each equilibrium state corresponds to a minimum in the appropriate free energy for the final set of state variables. To give a concrete example, if we take a system at constant temperature and pressure and allow it to equilibrate, the Gibbs free energy will be minimal. But, this equilibrium state will also have some well-defined volume and entropy at equilibrium. If, instead, we allowed a system to equilibrate at the volume and entropy which correspond to the equilibrium state from above (i.e. we minimize the internal energy for the analogous state), it will also have some temperature and pressure at equilibrium, and this $T$ and $P$ will correspond to the $T$ and $P$ that we originally minimized the Gibbs free energy for.
 \item The pure double derivatives of $\phi$ are the negative inverse of the pure double derivatives of $U$. For example:
  \eqs \frac{\partial^2 U }{\partial V^2}_{S,N,...}&=-\frac{\partial P }{\partial V}_{S,N,...} &=(\beta_S V)^{-1}\\
  \frac{\partial^2 H }{\partial P^2}_{S,N,...} &=-\frac{\partial V }{\partial P}_{S,N,...} &=-\beta_S V \eqe
@@ -880,7 +892,7 @@ The Legendre transform works because it is an effective switch of coordinate sys
 \label{LegendreGraph}
 \end{figure}
 
-The one-to-one mapping of the slope of U with respect to its extensive variables and the extensive variables themselves means we can construct a new function from U that has the slope as its natural variable with no loss of information;  all the original thermodynamic information contained in U is also contained in its Legendre transforms, although in a different form. %The true convenience is that it still has units of energy, and that it has intuitive changes in concavity.
+The one-to-one mapping of the slope of $U$ with respect to its extensive variables and the extensive variables themselves means we can construct a new function from U that has the slope as its natural variable with no loss of information;  all the original thermodynamic information contained in U is also contained in its Legendre transforms, although in a different form. %The true convenience is that it still has units of energy, and that it has intuitive changes in concavity.
 
 
 %%%%%%%%%%%%%
@@ -888,13 +900,13 @@ The one-to-one mapping of the slope of U with respect to its extensive variables
 There are several other common Legendre transforms which have names. It would be wise to memorize these. The \bold{Helmholtz Free Energy} is:
 \eqs
 F &= U - TS\\
-dF &= -SdT - P dV
+dF &= -S\, dT - P \, dV
 \eqe
 If we have a system where the temperature and volume are set experimentally, it makes sense to consider $F(T,V)$ since we will only need to minimize $F$ ($dF \leq 0$, $dV = 0$, $dT=0$).\\  
 Similarly, the \bold{Gibbs Free Energy} is:
 \eqs
 G &= U-TS+PV\\
-dG &= -SdT +VdP
+dG &= -S\,dT +V\,dP
 \eqe
 and we will have $dG \leq 0$ for a system where the temperature and pressure are set experimentally.  
 
@@ -910,25 +922,25 @@ $\begin{array}{>{\centering\bfseries}m{1.8in} >{\centering}m{1.8in} >{\centering
 \hline %inserts double horizontal lines
 \textbf{T.D. potential} & \textbf{Differential} & \textbf{Natural variables} & \textbf{ Maxwell's}\\[2ex] 
 \hline  % inserts single horizontal line
-U & $dU=T\cdot dS -P \cdot dV$ & U(S,V) &  $(\frac{\partial{T}}{\partial{V}})_{S}=-(\frac{\partial{P}}{\partial{S}})_{V}$ \\[2ex]
-F=U-TS & $dF=-S\cdot dT-P \cdot dV$ & F(T,V) & $(\frac{\partial{S}}{\partial{V}})_{T}=(\frac{\partial{P}}{\partial{T}})_{V}$\\[2ex]
-H=U+PV & $dH=T\cdot dS+V \cdot dP$ & H(S,P) & $(\frac{\partial{T}}{\partial{P}})_{S}=(\frac{\partial{V}}{\partial{S}})_{P}$\\[2ex]
-G=U-TS+PV=H-TS & $dG=-S\cdot dT+V \cdot dP$ & G(T,P) & $-(\frac{\partial{S}}{\partial{P}})_{T}=(\frac{\partial{V}}{\partial{T}})_{P}$\\[2ex]
+U & $dU=T\cdot dS -P \cdot dV$ & U(S,V) &  $\left(\frac{\partial{T}}{\partial{V}}\right)_{S}=-\left(\frac{\partial{P}}{\partial{S}}\right)_{V}$ \\[2ex]
+F=U-TS & $dF=-S\cdot dT-P \cdot dV$ & F(T,V) & $\left(\frac{\partial{S}}{\partial{V}}\right)_{T}=\left(\frac{\partial{P}}{\partial{T}}\right)_{V}$\\[2ex]
+H=U+PV & $dH=T\cdot dS+V \cdot dP$ & H(S,P) & $\left(\frac{\partial{T}}{\partial{P}}\right)_{S}=\left(\frac{\partial{V}}{\partial{S}}\right)_{P}$\\[2ex]
+G=U-TS+PV=H-TS & $dG=-S\cdot dT+V \cdot dP$ & G(T,P) & $-\left(\frac{\partial{S}}{\partial{P}}\right)_{T}=\left(\frac{\partial{V}}{\partial{T}}\right)_{P}$\\[2ex]
 %$\Phi_G$=U-TS-$\mu$N & $d\Phi =-S \cdot dT-P \cdot dV-\mu \cdot dN$ &  $\Phi_G(T,P)$ & \\[2ex]
 \bottomrule
 \end{array}$
 \end{table}
 
 \subsection{A First Look at Manipulating Thermodynamic Functions}
-Let's now look at a simple system using the Gibbs free energy $G(T,P)$.  First, we know from the above that $S = -\Big(\frac{\partial G}{\partial T}\Big)_P$ and $V = \Big(\frac{\partial G}{\partial P}\Big)_T$.  The change in volume is
+Let's now look at a simple system using the Gibbs free energy $G(T,P)$.  First, we know from the above that $S = -\left(\frac{\partial G}{\partial T}\right)_P$ and $V = \left(\frac{\partial G}{\partial P}\right)_T$.  The change in volume is
 \eqs
-dV &= \Big(\frac{\partial V}{\partial T}\Big)_P dT + \Big(\frac{\partial V}{\partial P}\Big)_T dP\\
-&= \alpha_V V dT - V \beta_T dP
+dV &= \left(\frac{\partial V}{\partial T}\right)_P \, dT + \left(\frac{\partial V}{\partial P}\right)_T \, dP\\
+&= \alpha_V V \, dT - V \beta_T \, dP
 \eqe
 since $\alpha_V = \frac{1}{V} \left( \frac{\partial V}{\partial T}\right)_P$ is the volumetric thermal expansion and $\beta_T = -\frac{1}{V} \left(\frac{\partial V}{\partial P}\right)_T$ is the compressibility.  Likewise, the change in entropy is
 \eqs
-dS &= \Big(\frac{\partial S}{\partial T}\Big)_P dT + \Big(\frac{\partial S}{\partial P}\Big)_T dP\\
-&= \frac{c_P}{T}dT + \Big(\frac{\partial S}{\partial P}\Big)_T dP
+dS &= \left(\frac{\partial S}{\partial T}\right)_P \,dT + \left(\frac{\partial S}{\partial P}\right)_T \,dP\\
+&= \frac{c_P}{T}\, dT + \left(\frac{\partial S}{\partial P}\right)_T \, dP
 \eqe
 It's not really obvious what $\left(\frac{\partial S}{\partial P}\right)_T$ is. We can use a \bold{Maxwell Relation} to gain some insight.  For this, we note that the second derivative of a function does not depend upon the order in which the derivatives are exchanged.
 \eqs
@@ -938,9 +950,9 @@ It's not really obvious what $\left(\frac{\partial S}{\partial P}\right)_T$ is. 
 \eqe
 and from here we can make our substitution into the above
 \eqs
-dS &= \frac{c_P}{T}dT - \alpha_V V dP
+dS &= \frac{c_P}{T}\, dT - \alpha_V V \, dP
 \eqe
-This might seem a bit strange. The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily measurable experimental quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about.  We can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}.
+This might seem a bit strange. The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily measurable experimental quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about.  We can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it.\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 17, 2014}
@@ -956,25 +968,25 @@ The $ \pm $ in the above expression happens because the sign flips whenever you 
 \end{enumerate}
 We now review some applications of Maxwell relations. 
 \subsubsection{Maxwell relations for an Ideal Gas}
-In general, $dS = \frac{c_P}{T}dT - \alpha_V V dP$. However, we can apply this in the case of an ideal gas to get a concrete expression for the change in entropy under changes in temperature and pressure:%, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
+In general, $dS = \frac{c_P}{T}\,dT - \alpha_V V \,dP$. However, we can apply this in the case of an ideal gas to get a concrete expression for the change in entropy under changes in temperature and pressure:%, we saw that $-\frac{\partial S}{\partial P}|_T = \frac{\partial V}{\partial T}|_P$ and
 \eqs
-d(PV) = nR dT &= V dP +P dV\\
-\Big(\frac{\partial V}{\partial T}\Big)_P &= \frac{nR}{P}
+d(PV) = nR \, dT &= V \, dP +P \, dV\\
+\left(\frac{\partial V}{\partial T}\right)_P &= \frac{nR}{P}
 \eqe
 Substituting gives: 
 \eqs
-\boxed{dS = -nR \frac{dP}{P} + c_P \frac{dT}{T}}
+\boxed{dS = -nR \, \frac{dP}{P} + c_P \, \frac{dT}{T}}
 \eqe
 
 \subsubsection{Magnetic Maxwell relations}
 One can perform Maxwell relations including other work terms too. We demonstrate this here. In particular, let's say we wanted expressions relating the behavior of entropy in a magnetic field to other quantities that are more easily measured, say $\left(\frac{\partial S}{\partial P}\right)_{T,H}$ and $\left(\frac{\partial S}{\partial H}\right)_{T,P}$. Including magnetic work terms, $dU$ can be expressed as:
 \eqs
-dU = TdS - PdV + \mu_0 \mathcal{H}_0 d \mathcal{M}
+dU = T\, dS - P\, dV + \mu_0 \mathcal{H}_0 \, d \mathcal{M}
 \eqe
 Here we have $U(S,V,M)$, but we need a thermodynamic potential expressed as a natural function of $T, P, H$ to perform the desired Maxwell relations, i.e. we want $\phi (T,P,H)$.  First, we perform a Legendre Transform:
 \eqs
 \phi &= U-TS + PV - \mu_0 \mathcal{H}_0 \mathcal{M}\\
-d\phi &= -S dT + VdP - \mu_0 \mathcal{M} d\mathcal{H}\\
+d\phi &= -S \, dT + V\,dP - \mu_0 \mathcal{M} \, d\mathcal{H}\\
 \eqe
 This permits us to obtain the following relationships:
 \eqs
@@ -1002,9 +1014,9 @@ This is good if you can't take a derivative of f with respect to X, but you can 
 
 \textbf{Triplet rule}:
 \eqs
-\Big(\frac{\partial f}{\partial x}\Big)_y \Big(\frac{\partial x}{\partial y}\Big)_f \Big(\frac{\partial y}{\partial f}\Big)_x = -1
+\left(\frac{\partial f}{\partial x}\right)_y \left(\frac{\partial x}{\partial y}\right)_f \left(\frac{\partial y}{\partial f}\right)_x = -1
 \eqe
-This is good for changing paths: you get to hold different variables constant when taking the other two derivatves
+This is good for changing paths: you get to hold different variables constant when taking the other two derivatives
 
 \textbf{Another, unnamed rule} (Mike calls it the generalized chain rule):
 %\eqs
@@ -1023,12 +1035,12 @@ Thermodynamic derivations are usually all about simplifying messy derivatives. T
 \item \un{Bring the thermodynamic potentials to the numerator.}\\
 e.g. given  Joule-Thompson expansion (isenthalpic), we can remove the constraint of a derivative at constant enthalpy (which we don't know how to take) by using the triplet rule:
 \eqs
-\Big(\frac{\partial T}{\partial P}\Big)_H = -\frac{\Big(\frac{\partial H}{\partial P}\Big)_T}{\Big(\frac{\partial H}{\partial T}\Big)_P}
+\left(\frac{\partial T}{\partial P}\right)_H = -\frac{\left(\frac{\partial H}{\partial P}\right)_T}{\left(\frac{\partial H}{\partial T}\right)_P}
 \eqe
 \item \un{Always bring $S$ to the numerator and turn it into a heat capacity.}\\
 e.g. from $dH = TdS + VdP$:
 \eqs
-\left(\frac{\partial H}{\partial P}\right)_T &= T \Big(\frac{\partial S}{\partial P}\Big)_T + V\\
+\left(\frac{\partial H}{\partial P}\right)_T &= T \left(\frac{\partial S}{\partial P}\right)_T + V\\
 \left(\frac{\partial H}{\partial T}\right)_P &= T \left(\frac{\partial S}{\partial T}\right)_P\\
 \left(\frac{\partial T}{\partial P}\right)_H &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{T \left(\frac{\partial S}{\partial T}\right)_P}\\
 &= \frac{-(T \left(\frac{\partial S}{\partial P}\right)_T + V)}{c_P}\\
@@ -1060,31 +1072,31 @@ c_P - c_V &= T\left[\frac{-\alpha_V V}{-\beta_T V} \alpha_V V\right]\\
 
 %%%%%
 \subsubsection{Example: A rod under tension}
-Consider a rod that doesn't change volume and evolves adiabatically.  We apply a force $F$ to each end of the rod and obtain a change in pressure $dP$ as a result.  What happens to the temperature?
+Consider a rod that doesn't change volume and evolves adiabatically.  We apply a force $F$ to each end of the rod and obtain a change in length $dl$ as a result.  What happens to the temperature?
 \eqs
-dS &= \left(\frac{\partial S}{\partial T}\right)_F dT + \left(\frac{\partial S}{\partial F}\right)_T dF\\
-dU &= TdS + Fdl
+dS &= \left(\frac{\partial S}{\partial T}\right)_F \, dT + \left(\frac{\partial S}{\partial F}\right)_T \,dF\\
+dU &= T\,dS + F\,dl
 \eqe
 From the triplet rule, $\left(\frac{\partial T}{\partial F}\right)_S \left(\frac{\partial F}{\partial S}\right)_T \left(\frac{\partial S}{\partial T}\right)_F = -1$, and thus
 \eqs
 \left(\frac{\partial T}{\partial F}\right)_S &= -\frac{\left(\frac{\partial S}{\partial F}\right)_T}{\left(\frac{\partial S}{\partial T}\right)_F}\\
 &=-\frac{\left(\frac{\partial S}{\partial F}\right)_T}{\frac{c_F}{T}}\\
 \eqe
-Now what is $\left(\frac{\partial S}{\partial F}\right)_T$?  We can define a new potential
+Now what is $\left(\frac{\partial S}{\partial F}\right)_T$?  We can define a new potential 
 \eqs
 \phi &= U - TS - Fl\\
-d\phi &= -SdT - ldF
+d\phi &= -S\,dT - l\,dF
 \eqe
-which yields
+which yields (note this was the same as using a Maxwell relation)
 \eqs
-\left(\frac{\partial S}{\partial F}\right)_T = \left(\frac{\partial l}{\partial T}\right)_F = \alpha_L
+\left(\frac{\partial S}{\partial F}\right)_T = \left(\frac{\partial l}{\partial T}\right)_F = \alpha_l
 \eqe
-The thermal expansion coefficient $\alpha_L = \frac{1}{l} \left(\frac{\partial l}{\partial T}\right)_F$.  Putting this all together,
-\eqs\boxed{\left(\frac{\partial T}{\partial F}\right)_S = - T l \left(\frac{\alpha_L}{c_F}\right)}
+The thermal expansion coefficient $\alpha_l = \frac{1}{l} \left(\frac{\partial l}{\partial T}\right)_F$.  Putting this all together,
+\eqs\boxed{\left(\frac{\partial T}{\partial F}\right)_S = - T l \left(\frac{\alpha_l}{c_F}\right)}
 \eqe
-Now all we need is the materials parameters.  $c_F \approx c_P \approx 25$ J/molK and $\alpha_L \approx 2 \cdot 10^{-5}$ 1/K, $\Delta (F/A) \approx 100 MPa$:
+Now all we need is the materials parameters.  $c_F \approx c_P \approx 25$ J/molK and $\alpha_l \approx 2 \cdot 10^{-5}$ 1/K, $\Delta (F/A) \approx 100 MPa$:
 \eqs
-\Delta T = -\left(\Delta \frac{F}{A}\right) (A \cdot l) T \frac{\alpha_L}{c_F}
+\Delta T = -\left(\Delta \frac{F}{A}\right) (A \cdot l) T \frac{\alpha_l}{c_F}
 \eqe
 This results in a value of $\Delta T = -0.1 $K.  
 
@@ -1092,7 +1104,7 @@ This results in a value of $\Delta T = -0.1 $K.
 \subsection{Natural Variables}
 A question we may ask after all of this is: ``What are the natural variables for $U(S,V)$?'' Can we write $U(T,P)$? If so, what are the consequences?
 \eqs
-dU = \left(\frac{\partial U}{\partial T}\right)_P dT + \left(\frac{\partial U}{\partial P}\right)_T dP
+dU = \left(\frac{\partial U}{\partial T}\right)_P \,dT + \left(\frac{\partial U}{\partial P}\right)_T \,dP
 \eqe
 now let's take partials of the $U(S,V)$ we already know:
 \eqs
@@ -1107,39 +1119,58 @@ Similarly,
 \eqe
 and thus we can write
 \eqs
-dU = (n c_P - PV \alpha_V)dT + V(P \beta_T - T \alpha_V)dP
+dU = (n c_P - PV \alpha_V)\,dT + V(P \beta_T - T \alpha_V)\,dP
 \eqe
 Clearly, it is possible to think about $dU$ in terms of variations in the intensive variables, but it's much more natural to think of $dU$ in terms of $dV$ and $dS$.
 \subsection{A systematic way to think about derivatives} \label{systematicWayDerivatives}
-We're starting to build up a large number of derivatives and second derivatives of the free energies, it would be nice to have systematic way of representing and thinking of these derivatives. It turns out you can represent these derivatives as matrices. Let's look at the order of some derivatives of $G(T,P) \rightarrow dG = -S dT + V dP$:
+We're starting to build up a large number of derivatives and second derivatives of the various thermodynamic potentials, it would be nice to have systematic way of representing and thinking of these derivatives. It turns out you can represent these derivatives as matrices. Let's look at some derivatives of $G(T,P) \rightarrow dG = -S \, dT + V \, dP$:
 \eqs
 \left(\frac{\partial G}{\partial T}\right)_P &= -S\\
 \left(\frac{\partial G}{\partial P}\right)_T &= V\\
 \left(\frac{\partial^2 G}{\partial T^2}\right)_P &= -\frac{c_P}{T}\\
 \left(\frac{\partial^2 G}{\partial P^2}\right)_T &= -\beta_T V\\
 \eqe
-We can display the order of derivatives as follows:\\
-\begin{center}
-\begin{tabular}{c | c | c}
- $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$\\ \hline
- $\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V V$\\ \hline
- $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$
-\end{tabular}
-\end{center}
-If we add a \emph{magnetic field} our energy becomes $dU = TdS - PdV + \mathcal{H} d\mathcal{M}$.  The various derivatives of $\phi = U - ST + PV - \mathcal{H}\mathcal{M}$ result in the following order of (second) derivatives:
-\begin{center}
-\begin{tabular}{c | c | c | c}
-$\phi$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$& $\frac{\partial}{\partial \mathcal{H}}$\\ \hline
-$\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V \cdot V$ & $-\frac{\partial \mathcal{M}}{\partial T}$\\ \hline
-$\frac{\partial}{\partial P}$ & $\alpha_V \cdot V$ & $-\beta_T \cdot V$ & $V \cdot \gamma$\\ \hline
-$\frac{\partial}{\partial \mathcal{H}}$ & $-\frac{\partial \mathcal{M}}{\partial T}$ & $V \cdot \gamma$ & $-V \cdot \chi$
-\end{tabular}
-\end{center}
+We can display these derivatives as follows:\\
+
+
+\begin{table}[ht]
+  \centering
+  \Large
+ \caption{The derivatives of $G$}
+ \renewcommand{\arraystretch}{1.5}% Spread rows out...
+ $\begin{array}{c | c c}
+ %$\begin{array}{>{\centering\bfseries}m{1.8in} >{\centering}m{1.8in} >{\centering}m{1in}} 
+ %\toprule
+ %\hline %inserts double horizontal lines
+ G                           & \frac{\partial}{\partial T} & \frac{\partial}{\partial P} \\%[2ex]
+ \hline
+ \frac{\partial}{\partial T} & -\frac{c_P}{T}              & \alpha_V V                  \\%[2ex]
+ \frac{\partial}{\partial P} & \alpha_V V                  & -\beta_T V                  \\%[2ex]
+ %\bottomrule
+ \end{array}$
+\end{table}
+%\end{center}
+
+
+
+If we add a \emph{magnetic field} our energy becomes $dU = T\, dS - P\, dV + \mathcal{H} \, d\mathcal{M}$.  The various derivatives of $\phi = U - ST + PV - \mathcal{H}\mathcal{M}$ result in the following order of (second) derivatives:
+\begin{table}[ht]
+  \centering
+  \Large
+ \caption{The derivatives of $\phi = U - ST + PV - \mathcal{H}\mathcal{M}$}
+ \renewcommand{\arraystretch}{1.5}% Spread rows out...
+ $\begin{array}{c | c c c}
+\phi & \frac{\partial}{\partial T} & \frac{\partial}{\partial P}& \frac{\partial}{\partial \mathcal{H}}\\ \hline
+\frac{\partial}{\partial T} & -\frac{c_P}{T} & \alpha_V \cdot V & -\frac{\partial \mathcal{M}}{\partial T}\\ %\hline
+\frac{\partial}{\partial P} & \alpha_V \cdot V & -\beta_T \cdot V & V \cdot \gamma\\ %\hline
+\frac{\partial}{\partial \mathcal{H}} & -\frac{\partial \mathcal{M}}{\partial T} & V \cdot \gamma & -V \cdot \chi
+ \end{array}$
+\end{table}
 You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are a result of the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because $U$ is convex up with respect to the extensive variables.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lecture - September 24, 2014}
-Last lecture we started to look at the difference the choice of path makes in measuring thermodynamic quantities. So, we asked ourselves the following: what is the relationship between the change in volume with respect to temperature at constant magnetization and its derivative at constant magnetic field? %($\frac{\partial V}{\partial T}|_M$)
+Last lecture we started to look at the difference the path makes in some thermodynamic quantities, such as the heat capacity. Here, we consider another path change: what is the relationship between the change in volume with respect to temperature at constant magnetization and the same quantity at constant magnetic field? %($\frac{\partial V}{\partial T}|_M$)
 \eqs
 \left(\frac{\partial V}{\partial T}\right)_\mathcal{M} \to? \left(\frac{\partial V}{\partial T}\right)_\mathcal{H}
 \eqe
@@ -1148,7 +1179,7 @@ We can apply the generalized chain rule, Eq. \ref{genChainRule}, in this situati
 \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{M} &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{H} + \frac{1}{V}\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T \left(\frac{\partial \mathcal{M}}{\partial T}\right)_\mathcal{H}\\
 &= \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_\mathcal{H} + \frac{1}{V}\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T \mathcal{M}'(T)\\
 \eqe
-Where we abbreviate $\left(\frac{\partial \mathcal{M}}{\partial T}\right)_\mathcal{H}$ as $\mathcal{M}'(T)$. We know $\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T = \left(\frac{\partial V}{\partial \mathcal{H}}\right)_T \left(\frac{\partial \mathcal{H}}{\partial \mathcal{M}}\right)_T = \frac{\gamma}{\chi}$, thus:
+Where we abbreviate $\left(\frac{\partial \mathcal{M}}{\partial T}\right)_\mathcal{H}$ as $\mathcal{M}'(T)$. We know $\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T = \left(\frac{\partial V}{\partial \mathcal{H}}\right)_T \left(\frac{\partial \mathcal{H}}{\partial \mathcal{M}}\right)_T $, letting $\gamma = \left(\frac{\partial V}{\partial \mathcal{H}}\right)_T$ (called the \textit{magnetostriction}) and $\chi= \left(\frac{\partial \mathcal{M}}{\partial \mathcal{H}}\right)_T$ gives: $\left(\frac{\partial V}{\partial \mathcal{M}}\right)_T = \frac{\gamma}{\chi}$. Thus:
 \eqs
 \alpha_\mathcal{M} = \alpha_\mathcal{H} + \frac{\gamma}{\chi}\mathcal{M}'(T)
 \eqe
@@ -1163,7 +1194,7 @@ What about thermal expansion?
 &= \beta_T \left(\frac{\partial S}{\partial V}\right)_T
 \eqe
 %If a rod changes in length by $\Delta l$, then $\Delta E \propto \Delta l^2$.
-As we'll see in stat mech, $S$ is a measure of the number of states the system can occupy.  As the volume goes up, the number of states should go up, so the entropy should also go up, so Eq. \ref{entropicElastic} makes sense. 
+As we'll see in stat mech, $S$ is a measure of the number of states the system can occupy.  As the volume goes up, the number of states should go up, so the entropy should also go up, so Eq. \ref{entropicElastic} makes sense. However, there are exceptions, specifically when the thermal expansion coefficient is negative.
 
 Can $\alpha_V < 0?$
 \begin{figure}[h]
@@ -1172,7 +1203,7 @@ Can $\alpha_V < 0?$
 \caption{The reason polymers have a negative thermal expansion coefficient is because of entropy: there are more ways for the polymer to wiggle around when it isn't stretched out. We'll get quantitative about this in stat mech.}
 \label{shortLongEntropy}
 \end{figure}
-Yes! Indeed, this is observed in many systems. This happens when molecules gain degrees of freedom as the system size decreases. One examples is in polymers: there are more configurations when the chains in a polymer are bent. Thus as temperature increases, polymers tend to shrink!
+Yes! Indeed, this is observed in many systems. This happens when molecules gain degrees of freedom as the system size decreases. One examples is in polymers: there are more configurations when the ends of a polymer are closer together (Fig \ref{shortLongEntropy}). Thus as temperature increases, polymers tend to shrink!
 
 
 \subsection{Check in: What you should be able to do by now}
@@ -1187,15 +1218,15 @@ Yes! Indeed, this is observed in many systems. This happens when molecules gain 
 
 
 \subsection{Equilibrium Conditions for Multicomponent Systems}\label{eqMultiComponent}
-Let's return to systems where we consider the mole numbers. We can write $dU$ for a multicomponent system as
+Let's return to systems where the mole numbers may change. We can write $dU$ for a multicomponent system as
 \eqs
-dU = TdS - PdV + \sum_i \mu_i dn_i
+dU = T\, dS - P\, dV + \sum_i \mu_i \, dn_i
 \eqe
-where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j^{(1)}\}$ describing the first and $S^{(2)}, V^{(2)}, \{n_j^{(2)}\}$ describing the second.  We know
+where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j^{(1)}\}$ describing the first phase and $S^{(2)}, V^{(2)}, \{n_j^{(2)}\}$ describing the second phase.  We know
 \eqs
-\partial S^{(1)} &= -\partial S^{(2)}\\
-\partial V^{(1)} &= -\partial V^{(2)}\\
-\partial n_j^{(1)} &= -\partial n_j^{(2)}
+d S^{(1)} &= -d S^{(2)}\\
+d V^{(1)} &= -d V^{(2)}\\
+d n_j^{(1)} &= -d n_j^{(2)}
 \eqe
 where $j=[1,...,r]$.  Meanwhile
 \eqs
@@ -1205,14 +1236,14 @@ V&= \sum_{\alpha} V^{\alpha}\\
 N&= \sum_{\alpha} n^{\alpha}\\
 \eqe
 \eqs
-d U = \sum_\alpha T^{(\alpha)} (d S)^\alpha - P^{(\alpha)} (d V)^\alpha + \sum_{j=1}^v \mu_j (d n_j)^\alpha
+d U = \sum_{\alpha=1}^2 T^{\alpha} \,d S^\alpha - P^{\alpha} \, d V^\alpha + \sum_{j=1}^v \mu_j^\alpha \, d n_j^\alpha
 \eqe
-This is the first order displacement of $U$.  If the system is at equilibrium, $d U \geq 0$.  If true equilibrium, $d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, just as charge is not coupled to mass flow in say, a battery), then the intensive variables in any subsystem must be the same as in any other subsystem.  If the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually this means:
+This is the first order displacement of $U$.  If the system is at equilibrium, $d U \geq 0$.  At true equilibrium, $d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, just as charge is not coupled to mass flow in say, a battery), then the intensive variables in any subsystem must be the same as in any other subsystem.  If the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually this means:
 \begin{itemize}
 \item we always formulate the conditions for equilibrium in terms of the intensive variables.
-\item we can supply a bunch of constraints on the intensive variables of the different phases: they all need to be equal to one another. We derive these constraints in the next section.
+\item each independent phase adds an independent constraint on the way the intensive variables can vary via a Gibbs-Duhem equation for that phase. We derive these constraints in the next section.
 \end{itemize}
-If the exchange of extensive variables is coupled, it is the coupled sum of the the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous. If we denote $\mu^*$ as the electrochemical potential, it is easy to show that
+If the exchange of extensive variables is coupled, it is the coupled sum of the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous. If we denote $\mu^*$ as the electrochemical potential, it is easy to show that
 $\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.\\
 
 \subsection{Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule} \label{phaseRule}
@@ -1220,13 +1251,15 @@ For a system of $n$ well-behaved algebraic equations with $m$ variables, we may 
 \eqs f=m-n \eqe
 We call $f$ the degrees of freedom of the system of equations. We define a phase as a part of a system which is measurably distinct in terms of its thermodynamic variables from another part of the subsystem.
 
-When multiple phases are in equilibrium with each other, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, we increase the vapor pressure of the gas for it to remain in equlibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust itself when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
-As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. Let there be $p$ phases, and let there be $c$ components in the system. We know that in each phase $\alpha$, a Gibbs-Duhem equation must hold:
+When multiple phases are in equilibrium with each other, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, we increase the vapor pressure of the gas for it to remain in equilibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust itself when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
+As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. 
+
+Let there be $p$ phases and $c$ components in the system. We know that for each phase, $\alpha$, a Gibbs-Duhem equation must hold:
 
 \eqs
-S^{\alpha }\text{dT}^{\alpha }-V^{\alpha }\text{dP}^{\alpha }+\underset{i=1}{\overset{c}{\Sigma }}N^{\alpha }\text{d$\mu $}_i^{\alpha }=0\eqe
+S^{\alpha }\, dT^{\alpha }-V^{\alpha }\, dP^{\alpha }+\sum_{i=1}^c N^{\alpha }\, \text{d$\mu $}_i^{\alpha }=0\eqe
 
-Hence, for each phase, there are \textit{ c} + 1 independent intensive variables, which we can write in terms of $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials: $\mu _i^{\alpha}$. The number of variables is thus the number of phases times $c + 1$: 
+Hence, for each phase, there are $c + 1$ independent intensive variables, e.g. $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials: $\mu _i^{\alpha}$. The total number of variables is thus the number of phases times $c + 1$: 
 \eqs m = p(c + 1) \eqe
 The number of constraints from the intensive variables being equal to each other in each phase (such as $\mu_i^\alpha = \mu_i^\beta$, $T^\alpha=T^\beta$) is the number of intensive variables in each phase
 times the number of phases minus 1:
@@ -1255,11 +1288,11 @@ These are all versions of the Gibbs phase rule. It has important implications fo
 % be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
 
 \subsection{Stability Conditions on the free energy} 
-Here, we use a Taylor expansion to make some insights into the shape of $U$, and thus its Legendre transforms. $U$ can be expressed as a Taylor expansion in the extensive variables as:
+Here, we use a Taylor expansion to provide constaints on the shape of $U$, and thus its Legendre transforms. $U$ can be expressed as a Taylor expansion in the extensive variables as:
 \eqs
 (\Delta U)_{S,V,n_j} = d U + d^2 U + ... > 0\\
 \eqe
-At equilibrium, we know that $d U = 0$. Therefore $dU \approx d^2U > 0$.  Thus, if we know that the second-order terms in a Taylor expansion of $U$ should all be positive to guarantee $U$ is minimal. More concretely, this corresponds to the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable to such perturbations, as illustrated in figure \ref{stability}. 
+At equilibrium, we know that $d U = 0$. Therefore $\delta U \approx d^2U > 0$. $U$ is minimal at equilibrium, therefore the second-order terms in a Taylor expansion of $U$ should all be positive. The physical process considered in this Taylor expansion is the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable with respect to such perturbations, as illustrated in figure \ref{stability}. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{StabilityWRTPerturbations}
@@ -1284,7 +1317,7 @@ Substituting in our known derivatives of $U$:
 \partial^2U &= \frac{1}{2}(d S^{(1)2})\left[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\right]\\
 T\left[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}\right] &\geq 0\\
 \eqe
-Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
+Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single extensive variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
 
 \subsection{Phase stability}
 $G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. There are similar guarantees on the second derivatives of G. 
@@ -1307,7 +1340,7 @@ Therefore, as a system passes through a two phase equilibrium, it should exhibit
 \left(\frac{\partial G}{\partial P}\right)_T &= V\\
 \left(\frac{\partial^2 G}{\partial P^2}\right)_T &= -\beta_T V <0\\
 \eqe
-For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$.
+For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for solid water and $G(T)$ for water vapor, we will see that at lower temperatures $G(T)$ for the solid is lowest, then at higher $T$, $G(T)_\text{water}$ becomes lower, and finally at even higher $T$ $G(T)_\text{vapor}$ is the lowest.  The derivatives of $G(T)$ get steeper from solid to liquid to vapor and are all negative, because $S_\text{solid} \ll S_\text{liquid} \ll S_\text{gas}$. This is shown schematically in Figure \ref{phaseGCurves}.
 
 
 %With $T,P$ fixed and a closed system, we want to know ``what phase is stable?''  Since $T,P$ are fixed, we want to do a Legendre transform to $G$ so that $dG = 0$ for our equilibrium condition.  
@@ -1319,26 +1352,26 @@ From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liq
 \eqs
 \Delta G_{l\rightarrow v}(T_B) = 0
 \eqe
-We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta S_{l\rightarrow v} = 120$ J/mol/K, and $T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.  How do we evaluate $\Delta G_{l\rightarrow v}(T)$?  We know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation.
+We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta S_{l\rightarrow v} = 120$ J/mol/K, and $T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.  How do we evaluate $\Delta G_{l\rightarrow v}(T)$?  We know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation. If we approximate $\Delta H_{l\to v}$ and $\Delta S_{l\to v}$ as constant, we can write:
 \eqs
 \Delta G_{l\rightarrow v}(T) &\approx \Delta H - T \Delta S\\
 &= \Delta H_{\phi T}-T\frac{\Delta H_{\phi T}}{T_{\phi T}} = \Delta H_{\phi T}(1-\frac{T}{T_{\phi T}})
 \eqe
-Remember to check your $\Delta c_P$.  If this is not correct, try $c_P^{l}$ or $c_P^{v}$.\\
+Note that this approximation assumes that the heat capacities of the two phases are constant. This may lead to significant errors far from the phase transition if the difference in heat capacities is large.\\
 
 \subsection{Ehrenfest classification of $\phi T$ (phase transitions)}
-Since free energies curves of individual phases are continuous, the equilibrium free energy which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy curve will have discontinuities where different curves intersect, giving rise to a convenient way to describe phase transformations. 
+Since free energies curves of individual phases are continuous, the equilibrium free energy curve, which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy envelope will have discontinuities where the different curves intersect, giving rise to a convenient way to describe phase transformations. 
 
-The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be uniquely identified by discontinuities in the derivatives of the appropriate free energy. First order transitions display discontinuities in the first order derivatives (volume, mole number, and entropy), while second order transitions display continuous first derivatives but discontinuties in the curvature of G (i.e. things like compressibilities and heat capacities are discontinuous).
-\un{1st order}:  The first derivative of the potential is discontinuous (S, V, ...)\\
-\un{2nd order}:  The second derivative of the potential is also discontinuous (but this implies that the first derivative is not)\\
-Classifications beyond second order usually are not made, but presumably third-order phase transitions exist under the Ehrenfest classification, they just aren't as useful in real life, so we don't bother talking about them.
+The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be identified by discontinuities in the extensive variables or their derivatives as a function of the intensive variables (also called the response functions). First order transitions display discontinuities in the extensive variables themselves (volume, mole number, and entropy), while second order transitions display continuous extensive variables, but exhibit discontinuties in their response functions (i.e. things like compressibilities and heat capacities are discontinuous). One can eqivalently think of the Ehrenfest classification in terms of discontinuities in the derivatives of $G$:\\
+\un{1st order transition}:  The first derivative of $G$ is discontinuous (S, V, ...)\\
+\un{2nd order transition}:  The second derivative of $G$ is discontinuous (but the first derivative is not)\\
+Classifications beyond second order are not usually made because they are not useful in real life, so we don't bother talking about them.
 
 %\un{3rd order}: Third derivative of the potential...\\
 \subsection{Elemental Phase Diagrams} \label{elementalPhaseDiagrams}
 
 A \un{phase diagram} is a map of the conditions under which different phases are stable at equilibrium.\\
-As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensive variables are a natural way to describe equilibrium between phases. As such, we will first talk about phase diagrams which have intensive variables as their axes, in particular, we begin with the simple case of $T$-$P$ phase diagrams for one-component systems, shown in Figure \ref{phaseDiagramCO2} for $\text{CO}_2$. 
+As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensive variables are a natural way to describe equilibrium between phases. As such, we will first talk about phase diagrams which have intensive variables as their axes, in particular, we begin with the simple case of $T$-$P$ phase diagrams for one-component systems, shown in Figure \ref{phaseDiagramCO2} for $\ce{CO2}$. 
 % \begin{figure}
 %   \centering
 %   \def\svgwidth{\columnwidth}
@@ -1359,9 +1392,9 @@ As described in sections \ref{eqMultiComponent} and \ref{phaseRule}, the intensi
 % \label{phaseDiagramCO2}
 % \end{figure}
 
-The open areas in Figure \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of lines to three phase regions, called triple points. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a border\footnote{We'll talk more about the meaning of critical points and the interesting phsyics which occur at criticality in statistical mechanics.}.
+The open areas in Figure \ref{phaseDiagramCO2} correspond to single-phase regions, the lines to two-phase regions, and the intersection of the lines to a three phase region, called a triple point. A special point, called a critical point, marks a special case where it is no longer possible to distinguish between the two phases for which there was previously a transition between \footnote{We'll talk more about the meaning of critical points and the interesting physics which occur at criticality in statistical mechanics.}.
 
-\textbf{Exercise}: Prove using the phase rule that for a single-component system, the one-phase regions must be two-dimensional, the two-phse regions must be one-dimensional, and the three-phases regions must occur at a point in $T$-$P$ space.
+\textbf{Exercise}: Prove using the phase rule that for a single-component system, the one-phase regions must be two-dimensional, the two-phase regions must be one-dimensional, and the three-phases regions must occur at a point in $T$-$P$ space.
 
 One thing that is pretty universal about phase diagrams is that the pressures are really high compared to the pressures we normally think about; note the logarithmic scale in Figure \ref{phaseDiagramCO2}, and the fact that 1 bar = 0.1 MPa. We demonstrate why large pressures are needed to effect phase stability with an order of magnitude comparison: we'll calculate the work done per mole during a phase transition with some change in volume for `normal' pressures:
 %How much does pressure affect the solid phases stability?
@@ -1379,7 +1412,7 @@ A typical molar volume for an element is $V = 5 \cdot 10^{-6}$m\three/mol, and a
 Here we demonstrate that the slopes of the lines on phase diagrams are dictated by thermodynamics, and that you can usually guess them pretty well with a bit of knowledge. %Given a pressure vs temperature ($P$ vs. $T$) curve with a phase $\alpha$ above and $\beta$ below, we want to find the equation for our coexistence line.  $G_{T,P}^\alpha = G_{T,P}^\beta$ results in $dG_{T,P}^\alpha = dG_{T,P}^\beta$ and we have
 We know that two phases are at equilibrium at a given temperature and pressure when their free energies are equal, $G_{T,P}^\alpha = G_{T,P}^\beta$. If we change the experimental conditions a bit, the phases will only remain in equilibrium if the free energy change of $\alpha$ is equal to the free energy change of $\beta$, $dG_{T,P}^\alpha = dG_{T,P}^\beta$. Expanding this expression gives:
 \eqs
--S^\alpha dT + V^\alpha dP = -S^\beta dT + V^\beta dP
+-S^\alpha \,dT + V^\alpha \,dP = -S^\beta \,dT + V^\beta \,dP
 \eqe
 This can be manipulated to give insight into the slope of the phase boundary in T-P space. Defining the differences in volume and entropy between the two phases and simplifying gives: %at the phase transformation $\alpha \rightarrow \beta$
 \eqs
@@ -1398,7 +1431,7 @@ so we can eliminate $\Delta S^{\alpha \rightarrow \beta}$:
 \eqs
 \frac{dP}{dT} &= \frac{\Delta H^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta} \Delta V^{\alpha \rightarrow \beta}}\\
 \eqe
-This relation actual tells us a very simple thing: if the temperature changes a bit when two phases are at equilibrium, the resulting difference in free energies is $\Delta S^{\alpha \rightarrow \beta}dP$. If the phases are to remain at equilibrium, a compensating change in the free energy due to pressure must be made: $-\Delta V^{\alpha \rightarrow \beta}dT$, so the rate at which the pressure changes with respect to temperature along a phase boundary is proportional to the ratio of their conjugates.
+This relation actual tells us a very simple thing: if the temperature changes a bit when two phases are at equilibrium, the resulting difference in free energies is $\Delta S^{\alpha \rightarrow \beta} \, dP$. If the phases are to remain at equilibrium, a compensating change in the free energy due to pressure must be made: $-\Delta V^{\alpha \rightarrow \beta}\, dT$, so the rate at which the pressure changes with respect to temperature along a phase boundary is proportional to the ratio of their conjugates.
 
 \subsection{Example: solid to liquid transition}
 Here we just put some numbers to the Clausius-Clapeyron relationship for liquid-solid relationships so that you can get a feel for some numbers. 
@@ -1467,51 +1500,48 @@ P_i = \frac{n_i}{n_\text{total}} P_\text{total}
 \eqe
 Because gases are ideal, if we have a liquid $A$ in a container with some other gas atmosphere, the partial pressure of the vapor $A$ is actually independent of the gas atmosphere. Vapor pressures are only defined by the chemical potentials in the condensed phases, in this case the liquid $A$.\\
 
-\un{Example:} $P_{H_2O}(25^0) = 0.03$ atm.  At 45\degree it is 0.07 and at 100\degree it is 1 (boiling point).  The relative humidity is expressed by $\frac{P_{H_2O}}{P_{H_2O}^*}$.
+\un{Example:} The equilibrium vapor pressure of \ce{H2O} at 25\degree C is $P_{\ce{H2O}}^{\text{eq}} = 0.03$ atm.  At 45\degree C $P_{\ce{H2O}}^{\text{eq}}= 0.07$ and at 100\degree C it is $P_{\ce{H2O}}^{\text{eq}}= 1$ (boiling point). The relative humidity is expressed by $\frac{P_{\ce{H_2O}}}{P_{\ce{H_2O}}^{\text{eq}}}$. This is actually what people mean when they talk about 80\% humidity. The dew point is the temperature at which $P_{\ce{H2O}}^{\text{eq}}$ drops below the ambient vapor pressure, so that the air becomes supersatured with \ce{H2O}, causing dewy to form.
 
-Note: saturated water vapor does not behave like an ideal gas. If we have a system of 100\% pure humid air and we compress the system, the vapor pressure of the water will remain constant and some of the water will condense. %If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
+Note: saturated water vapor does not behave like an ideal gas. If we have a system of 100\% pure humid air and we compress the system, the concentration of the water vapor would be above its equilibrium vapor pressure, and so some of the water will condense. %If we have a system with an ice block inside of it, we will have water vapor forming and then to compensate for the energy (?) the ice cube will condense on the walls of the container.
 
 
 \subsection{Le Chatelier-Braun principle}
  %If a system in equilibrium is subjected to constraints which displace the equilibrium, the transformation (reaction) proceeds in such  direction as to accommodate the constraints and \emph{partially} nullify their effects.
 \un{Definition:} When a system, initially at equilibrium, is perturbed from its equilibrium state, the system adjusts itself to counteract the effect of the applied change in establishing a new equilibrium.\footnote{Callen provides a good discussion of this in Ch. 8-4 (p. 210)}\\
 
-The most common examples of this are in chemistry.  When you add a reactant A to a system which was previously in some equilibrium governed by
-\eqs A+B \longleftrightarrow C+D\eqe
-then adding some A acts as a \emph{ perturbation} to this system, and the system \emph{ adjusts itself} by reacting to partly eliminate this perturbation,
-coming to a new equilibrium in the process.\footnote{Throwing away the thermo jargon: if you put a bit of $A$ in, some of that $A$ reacts, so the concentration of $A$ becomes less.} Thermodynamically, this is tantamount to increasing the chemical potential of A, with the forward reaction
-acting to then homogenize this perturbation in the chemical potential. \footnote{Historical note: Le Chatelier and Braun discovered this principle independently,
-so in 3.20 we give attribution to both of them!}
+Condensation of water from a saturated vapor after a compression is one example of the Le Chatelier-Braun principle: the pressure of the system is increased, and the system responds by forming more of a lower-volume phase, lowering the pressure and counteracting the increase in pressure. The most common examples of this are in chemistry, though.  When you add a reactant A to a system which was previously in some equilibrium governed by
+\eqs\ce{ A+B <--> C+D}\eqe
+then adding some A acts as a \emph{ perturbation} to this system, and the system \emph{ adjusts itself} by reacting to partly eliminate this additional A, coming to a new equilibrium in the process.\footnote{Throwing away the thermo jargon: if you put a bit of $A$ in, some of that $A$ reacts, so the concentration of $A$ becomes less.} Thermodynamically, this is tantamount to increasing the chemical potential of A, with the forward reaction
+then acting to homogenize this perturbation in the chemical potential. \footnote{Historical note: Le Chatelier and Braun discovered this principle independently, so in 3.20 we give attribution to both of them!}
 
 \subsection{Generalization of Clausius-Clapeyron}
 The method used to generate the Clausius-Clapeyron equation can be applied to any two sets of work terms by taking the proper Legendre transform such
 that the intensive variables of interest are the natural variables for the thermodynamic potential. For example, in the case of the Clausis-Clapeyron
 equation the intensive variables of interest were T and P, so we took $\phi  = U-TS+PV$, which turns out to be the Gibbs free energy. Along a phase boundary, this gave rise to the relation:
 \eqs
-\frac{d P}{d T}=\frac{\text{$\Delta $s}}{\text{$\Delta $v}}
+\frac{d P}{d T}=\frac{\Delta s}{\Delta v}
 \eqe
 A similar relationship can be derived for a magnetic phase transition, taking
-instead: $\phi $ = U - TS + PV - HM such that
+instead: $\phi  = U - TS + PV - \mathcal{H}\mathcal{M}$ such that
 \eqs 
-d\phi =-S dT+V dP-\mathcal{M} d\mathcal{H}
+d\phi =-S \, dT+V \, dP-\mathcal{M} \, d\mathcal{H}
 \eqe
-for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where we want to move along a two-phase equilibrium boundary in T-H space such that the different thermodynamic potentials are changing at the same rate:
+for the system as a whole. We again consider the case where the system is composed of two phases in equilibrium with one another, and where we want to move along a two-phase equilibrium boundary in $T\!-\!\mathcal{H} $ space such that the different thermodynamic potentials are changing at the same rate:
 \eqs\text{d$\phi $}^1=\text{d$\phi $}^2\eqe
 \eqs
--S^1 dT+V^1 dP-\mathcal{M}^1 d\mathcal{H}-\left(-S^2 dT+V^2 dP-\mathcal{M}^2 d\mathcal{H}\right)=0
+-S^1 \, dT+V^1 \, dP-\mathcal{M}^1 \, d\mathcal{H}-\left(-S^2 \, dT+V^2 \,dP-\mathcal{M}^2 \, d\mathcal{H}\right)=0
 \eqe
-For a system at constant pressure, we
-can show that:
+For a system at constant pressure, we can show that:
 \eqs\left(\frac{\partial \mathcal{H}}{\partial T}\right)_P=-\frac{\Delta S}{\Delta \mathcal{M}}\eqe
 In general, this can be written for any work term as:
 \eqs \boxed{
 \left(\frac{\partial Y_j}{\partial T}\right)_{Y_{i\neq j}}=-\frac{\Delta S}{\Delta X_j}
 }\eqe
-Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, Clausius-Clapeyron (C-C) relationships with $P$ have a negative sign.
+Where the intensive variables are on the left, and the extensive variables are on the right. Due to the weird sign convention with $P$, Clausius-Clapeyron (C-C) relationships with $P$ have a reversed sign.
 % \eqs
-% dU &= TdS + \sum_i y_i dx_i\\
-% G &= U-TS - y_idx_i\\
-% dG &= -SdT - \sum x_i dy_i
+% dU &= T\,dS + \sum_i y_i \,dx_i\\
+% G &= U-TS - y_i x_i\\
+% dG &= -S\,dT - \sum x_i \,dy_i
 % \eqe
 % Say the change in temperature is not equal to zero ($dT \neq 0$) and the change in other components isn't either ($dy_j \neq 0$, $dy_{i\neq j} = 0$).  How does the equilibrium change when varying those variables?
 % \eqs
@@ -1521,8 +1551,8 @@ Where the intensive variables are on the left, and the extensive variables are o
 \subsection{Magnetic-induced phase transformation}
 Let's put some numbers onto this new C-C relationship to get a sense of how temperature can affect the $T$-$H$ phase boundary.
 \eqs
-dU &= TdS + \mu_0 \mathcal{H} d\mathcal{M}\\
-dG &= -SdT - \mu_0 \mathcal{M} d\mathcal{H}
+dU &= T\,dS + \mu_0 \mathcal{H} \,d\mathcal{M}\\
+dG &= -S\,dT - \mu_0 \mathcal{M} \,d\mathcal{H}
 \eqe
 \eqs
 \frac{dT}{d\mathcal{H}} &= -\frac{\Delta \mathcal{M}}{\Delta S}\\
@@ -1556,7 +1586,7 @@ Keep in mind what you see in Fig \ref{superElasticity} \textbf{A}; a discontinui
 If we plot G vs. T, both phases exhibit downward slopes and negative curvature, as in Fig \ref{superElasticity} \textbf{B}. The higher entropy austenitic phase will have a larger, negative slope, and thus become stable at higher temperature. We want to investigate the effect of force on the temperature of the superelastic transition, so we set up our relevant potential:
 
 \eqs
-dU &= TdS + F dL\\
+dU &= T\,dS + F \,dL\\
 G &= U- T\cdot S - F \cdot L\\
 L &= -\left(\frac{\partial G}{\partial F}\right)_{T_i}
 \eqe
@@ -1566,7 +1596,7 @@ Say we're talking about Cu-Al-Zn at $T_0 = 300K$, $V \approx 8 \cdot 10^{-6}$ m\
 \eqs
 \frac{1}{A} \frac{dF}{dT} &= -\frac{\Delta S}{\Delta L}\frac{1}{A}\\
 A \Delta L &= V_m \Delta \epsilon\\
-\frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^-6 \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
+\frac{d\sigma}{dT} &= -\frac{\Delta S}{V_m \Delta \epsilon} = (8 \cdot 10^{-6} \cdot 7.5 \cdot 10^{-3})^{-1} = 1.66 \text{MPa/K}
 \label{superElastCC}
 \eqe
 The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it's just a line with a slope given by Equation \ref{superElastCC}.
@@ -1574,14 +1604,14 @@ The resulting phase diagram is shown in Fig. \ref{superElasticity}\textbf{C}, it
 In general, what would be the heat involved if we apply a stress?
 \eqs
 H &= U+PV\\
-dH &= \dbar Q +VdP + F dl\\
-(dH)_p &= (\dbar Q)_P F dl
+dH &= \dbar Q +V\, dP + F \,dl\\
+(dH)_p &= (\dbar Q)_P +F \,dl
 \eqe
 Universal enthalpy
 \eqs
 H &= U - \sum y_i x_i\\
 H' &= U + PV - Fl\\
-(dH') &= (\dbar Q)_P - l dF
+(dH') &= (\dbar Q)_P - l \,dF
 \eqe
 %%%%%%%%%%%%%%
 %\subsection{EXAM 1 MATERIAL ENDS HERE}
@@ -1610,14 +1640,33 @@ G is defined as $G = U-TS+PV$. Recognizing that $U = TS - PV + \Sigma \mu _iN_i$
 leaving out! G can thus be defined as (ignoring other work terms like $\mathcal{H}$d$\mathcal{M}$, $\mathcal{E}$d$\mathcal{P}$, etc):\\
 \eqs G = \Sigma \mu _iN_i\eqe
 We get a whole new class of properties by taking derivatives of G with respect to G. We call these partial molar quantities, and we can add them to our matrix of derivatives:
-\begin{center}
-\begin{tabular}{c | c | c | c}
- $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$ & $\frac{\partial}{\partial n_i}$\\ \hline
- $\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V V$ & $-\bar{S_i}$\\ \hline
- $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$ & $\bar{V_i}$\\ \hline
- $\frac{\partial}{\partial n_i}$ & $-\bar{S_i}$ & $\bar{V_i}$ & $\frac{\partial \mu_i}{\partial n_i}$
-\end{tabular}
-\end{center}
+% \begin{center}
+% \begin{tabular}{c | c | c | c}
+%  $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$ & $\frac{\partial}{\partial n_i}$\\ \hline
+%  $\frac{\partial}{\partial T}$ & $-\frac{c_P}{T}$ & $\alpha_V V$ & $-\bar{S_i}$\\ \hline
+%  $\frac{\partial}{\partial P}$ & $\alpha_V V$ & $-\beta_T V$ & $\bar{V_i}$\\ \hline
+%  $\frac{\partial}{\partial n_i}$ & $-\bar{S_i}$ & $\bar{V_i}$ & $\frac{\partial \mu_i}{\partial n_i}$
+% \end{tabular}
+% \end{center}
+
+\begin{table}[ht]
+  \centering
+  \Large
+ \caption{The derivatives of $G$}
+ \renewcommand{\arraystretch}{1.5}% Spread rows out...
+ $\begin{array}{c | c c c}
+ %$\begin{array}{>{\centering\bfseries}m{1.8in} >{\centering}m{1.8in} >{\centering}m{1in}} 
+ %\toprule
+ %\hline %inserts double horizontal lines
+ G                           & \frac{\partial}{\partial T} & \frac{\partial}{\partial P} & \frac{\partial}{\partial n_i} \\%[1.2ex]
+ \hline
+ \frac{\partial}{\partial T}  & -\frac{c_P}{T}              & \alpha_V V                  & -\bar{S_i}\\%[1.2ex]
+ \frac{\partial}{\partial P}  & \alpha_V V                  & -\beta_T V                  & \bar{V_i}\\%[1.2ex]
+ \frac{\partial}{\partial n_i}& -\bar{S_i}                  & \bar{V_i}                   & \frac{\partial \mu_i}{\partial n_i}\\%[1.2ex]
+ %\bottomrule
+ \end{array}$
+\end{table}
+%\end{center}
 
 % \begin{center}
 % \begin{tabular}{c | c | c | c}
@@ -1655,7 +1704,7 @@ In practice, one way to calculate partial molar volumes is by taking a relativel
 \eqs\bar{V}_{\text{EtOH}}\simeq \left(\frac{\text{$\Delta $V}}{\text{$\Delta $n}_{\text{EtOH}}}\right)_{n_{H_2O}, T, P}
 \label{approxPMV}
 \eqe
-In this situation, the mols of $N_i$ and the change in volume are small relative to the mole numbers and volume of the system, so Eq. \ref{approxPMV} approximates the differential volume change per mole of solute added.
+In this situation, the moles of $N_i$ and the change in volume are small relative to the mole numbers and volume of the system, so Eq. \ref{approxPMV} approximates the differential volume change per mole of solute added.
 
 \begin{figure}[h]
 \centering
@@ -1678,7 +1727,7 @@ Shown in Fig \ref{PMVexamp}\textbf{B} is the excess volume of mixing for water a
 
 The ability to sum the individual partial molar quantities to calculate the total molar quantity is a general (and useful) property of partial molar quantities. We now discuss general properties of partial molar quantities.
 
-\textbf{The Sum of the partial molar quantities yields the molar quantity of the solution}\\
+\textbf{The sum of the partial molar quantities yields the molar quantity of the solution}\\
 In general, one might think that we would need to integrate all of the partial molar volumes one by one with respect to their mole numbers to reach
 the volume of the solution:\\
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\int_0^{n_i} \bar{V}_i\left(n_i,n_j=0\right) \, dn_i+\int_0^{n_j} \bar{V}_j\left(n_i,n_j\right)
@@ -1687,7 +1736,7 @@ More compactly:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\int_0^{n_i} \bar{V}_i\left(\left\{n_i\right\}\right) \, dn_i \eqe
 where this sum is carried out in sequence over the components.\\
 However, the volume of the solution is a state function of the composition, so we are free to choose whatever path in composition space we want in
-intergrating these partial molar volumes. The path which makes the most sense is to simply add all of the components at the same time in the proportions
+integrating these partial molar volumes. The path which makes the most sense is to simply add all of the components at the same time in the proportions
 found in the final solution. This way, the partial molar volume of each component is constant, and is given by the partial molar volume of the component
 in the final solution. Then, the volume of the solution is given by:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\bar{V}_i\int _0^{n_i}dn_i\eqe
@@ -1725,6 +1774,8 @@ First part of test is True/False questions.  An example of a question would be:\
 
 ``A one component material undergoes a pressure induced phase transformation at $P_{\phi T}$.  The material has the same equation of state in both phases.  True or False?'' (20 questions like this)\\
 
+There might then be a question like:
+
 ``In the $\alpha$ phase, $\beta P = a + b \beta \mu$ ($\mu$ is the chemical potential, $\beta = 1/T$), in $\gamma$ phase, $\beta P = c + d (\beta \mu)^2$.  $a,b,c,d$ are positive functions of $\beta$, and we know $d > b$, $c < a$.  What is the density differences between $\alpha$ and $\gamma$ at the phase transformation?  What $P_{\phi T}$ does the transition happen at?''
 
 \un{Solution:} We know that at the phase transformation $\mu_\alpha = \mu_\beta$ and $\beta^{(\alpha)} = \beta^{(\gamma)}$, and $\rho = 1/V$.
@@ -1759,7 +1810,7 @@ First part of test is True/False questions.  An example of a question would be:\
 \item \bold{Relative Humidity:} $\frac{P_{H_2O}}{P_{H_2O}^*}$ where the numerator is the partial pressure of water vapor \emph{in the mixture} and the denominator is the \emph{equilibrium vapor pressure} of water.
 \item \bold{The Fundamental Equation:}
 \eqs
-dU = TdS - PdV + \sum_i^k \mu_i dn_i + ...
+dU = T\, dS - P\, dV + \sum_i^k \mu_i \, dn_i + ...
 \eqe
 \item \bold{Heat Capacity:} The amount of heat that changes with changing temperature.  For example:
 \eqs
@@ -1773,9 +1824,9 @@ c_P &= \left(\frac{\partial Q}{\partial T}\right)_P = \frac{d H}{d T}
 %%%%%%%%%
 \subsection{Thermodynamic Laws}
 \begin{enumerate}[(1)]
-\item $dU = \partial W + \partial Q$.  If adiabatic, $dU = \partial W$
-\item Reversible: $dS_\text{system} = \frac{\partial Q}{T}$\\
-Irreversible: $dS_\text{system} = \frac{\partial Q}{T}$
+\item $dU = \dbar W + \dbar Q$.  If adiabatic, $dU = \dbar W$
+\item Reversible: $dS_\text{system} = \frac{\dbar Q}{T}$\\
+Irreversible: $dS_\text{system} = \frac{\dbar Q}{T}$
 \item As temperature $T$ approaches zero, the magnitude of entropy change ($dS$) in any reversible process is zero (Thus heat capacity at $T=0$ is zero also).
 \end{enumerate}
 
@@ -1809,7 +1860,7 @@ Irreversible: $dS_\text{system} = \frac{\partial Q}{T}$
 \subsection{Gibbs-Duhem}
 Results from comparing the total derivative of the Euler equation $U = TS - PV + \sum\mu_i N_i$ to the first law.
 \eqs
-0=SdT - VdP + \sum N_i d\mu_i
+0=S\,dT - V\,dP + \sum N_i \, d\mu_i
 \eqe
 %%%%%
 \subsection{Internal energy $U$, enthalpy $H$, Helmholtz $F$, and Gibbs $G$}
@@ -1899,10 +1950,10 @@ which, for an ideal gas and where $\Delta V = V_{(g)}-V_{(l)} \approx V_{(g)}$ l
 \bold{Derivation:}
 \eqs
 d\underline{G}^\alpha &= d\underline{G}^\beta\\
--\underline{S}^\alpha dT + \underline{V}^\alpha dP &= -\underline{S}^\beta dT + \underline{V}^\beta dP\\
+-\underline{S}^\alpha \,dT + \underline{V}^\alpha \,dP &= -\underline{S}^\beta \,dT + \underline{V}^\beta \,dP\\
 \Delta \underline{V}^{\alpha \rightarrow \beta} &= \underline{V}^\beta - \underline{V}^\alpha\\
 \Delta \underline{S}^{\alpha \rightarrow \beta} &= \underline{S}^\beta - \underline{S}^\alpha\\
-\Delta \underline{S}^{\alpha \rightarrow \beta}dT + \Delta \underline{V}^{\alpha \rightarrow \beta} dP &= 0\\
+\Delta \underline{S}^{\alpha \rightarrow \beta}\,dT + \Delta \underline{V}^{\alpha \rightarrow \beta} \,dP &= 0\\
 \frac{dP}{dT} &= \frac{\Delta \underline{S}^{\alpha \rightarrow \beta}}{\Delta \underline{V}^{\alpha \rightarrow \beta}}\\
 \Delta \underline{S}^{\alpha \rightarrow \beta} &= \frac{\Delta \underline{H}^{\alpha \rightarrow \beta}}{T^{\alpha \rightarrow \beta}}
 \eqe
@@ -1963,10 +2014,10 @@ Q_{i\rightarrow f} &= H(V_f, P, N) - H(V_i, P, N)
 Here's a derivation of an equation useful when dealing with ideal gases that start at different pressures:
 \eqs
 dU &= \partial Q + \partial W = \partial W\\
-nc_V dT &= -P dV\\
+nc_V \, dT &= -P \, dV\\
 V &= nRT/P\\
-dV &= \frac{nR}{P}dT - nRT\frac{dP}{P^2}\\
-(c_V + R)\frac{dT}{T} &= R\frac{dP}{P}\\
+dV &= \frac{nR}{P}\, dT - nRT \,\frac{dP}{P^2}\\
+(c_V + R)\, \frac{dT}{T} &= R\, \frac{dP}{P}\\
 \left(\frac{T_2}{T_1}\right)^{c_V+R} &= \left(\frac{P_2}{P_1}\right)^R\\
 T_2 &= T_1 \left(\frac{P_1}{P_2}\right)^{R/c_P}\\
 \mu_{JT}&=\left(\frac{\partial T}{\partial P}\right)_H = \frac{V}{c_P}(\alpha T - 1)
@@ -2002,6 +2053,11 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 
 \end{itemize}
 
+\section{Introduction to Statistical Mechanics}
+\begin{center}
+In the mixture of such gases by diffusion an increase of entropy would take place, although the process of mixture, dynamically considered, might be absolutely identical in its minutest details (even with respect to the precise path of each atom) with processes which might take place without any increase of entropy. In such respects, \textbf{entropy stands strongly contrasted with energy} \dots
+In other words, \textbf{the impossibility of an uncompensated decrease of entropy seems to be reduced to improbability.}--  J.W. Gibbs, \textit{On the Equilibrium of Heterogeneous Substances}, p. 167
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - October 6, 2014}
@@ -2029,7 +2085,7 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 %\eqe
 %where $R$ is the radius in the $n_x-n_y-n_z$-space.  The number of states between energy $E$ and $E+\Delta E$ is
 %\eqs
-%\Phi(E+\Delta E) - \Phi(E) = dE = \frac{\pi}{4} \Big(\frac{8 m L^2}{h^2}\Big)^{3/2} E^{1/2} dE
+%\Phi(E+\Delta E) - \Phi(E) = dE = \frac{\pi}{4} \left(\frac{8 m L^2}{h^2}\right)^{3/2} E^{1/2} dE
 %\eqe
 %If we plug in some values, say $\Delta E = 0.01 E$, T=300K, m=10$^{-22}$g, L=10cm, then the number of states is on the order of $10^{28}$.
 %
@@ -2191,7 +2247,7 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 %The expectation value of the energy is
 %\eqs
 %\bar{E} &= \sum_j P_j E_j(N,V)\\
-%d\bar{E} &= \sum_j E_j dP_j + \sum_j P_j dE_j
+%d\bar{E} &= \sum_j E_j \, dP_j + \sum_j P_j \, dE_j
 %\eqe
 %where the first term is the change in population, and the second term is the change in energy level of state (\bold{work}!).  We can write the $j$th energy as
 %\eqs
@@ -2199,22 +2255,22 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 %\eqe
 %but $P_j = -\frac{e^{-\beta E_j}}{Z}$, so
 %\eqs
-%\sum_j E_j dP_j = -\sum_j \frac{\ln(P_j)}{\beta}dP_j + \sum_j \ln(Z) dP_j
+%\sum_j E_j \, dP_j = -\sum_j \frac{\ln(P_j)}{\beta}\, dP_j + \sum_j \ln(Z) \, dP_j
 %\eqe
 %but the second term is
 %\eqs
-%\sum_j \ln(Z) dP_j = \ln(Z) \sum_j dP_j = \ln Z d(\sum_j P_j) = 0
+%\sum_j \ln(Z) \, dP_j = \ln(Z) \sum_j \, dP_j = \ln Z \, d(\sum_j P_j) = 0
 %\eqe
 %and the first term becomes
 %\eqs
-%\sum_j \ln(P_j) dP_j = d(\sum_j P_j \ln(P_j) - \sum_j \frac{P_j dP_j}{P_j}) = d(\sum_j P_j \ln(P_j))
+%\sum_j \ln(P_j) \, dP_j = d(\sum_j P_j \ln(P_j) - \sum_j \frac{P_j \, dP_j}{P_j}) = d(\sum_j P_j \ln(P_j))
 %\eqe
 %%%%%
 %From the beginning, we now have
 %\eqs
-%d\bar{E} = -\frac{1}{\beta}d(\sum_j P_j \ln(P_j)) - \bar{P}dV
+%d\bar{E} = -\frac{1}{\beta}\, d(\sum_j P_j \ln(P_j)) - \bar{P}\,dV
 %\eqe
-%From previously in the course, we know $dE = TdS - PdV$, so
+%From previously in the course, we know $dE = T\, dS - P\, dV$, so
 %\eqs
 %TdS = -k_B T d(\sum_j P_j \ln(P_j))
 %\eqe
@@ -2270,20 +2326,20 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 %\eqe
 %Call $\phi$ the number of states $\phi = \frac{1}{8}\frac{4}{3} \pi R^3$.  If we want the number of points in a narrow volume, we have
 %\eqs
-%\frac{d\phi}{dE} dE = \frac{\pi}{4}\Big(\frac{8 m a^2}{h^2} \Big)^{3/2} \sqrt{E} dE
+%\frac{d\phi}{dE} dE = \frac{\pi}{4}\left(\frac{8 m a^2}{h^2} \right)^{3/2} \sqrt{E} dE
 %\eqe
 %Back to Helmholtz, using Stirling's approx $\ln N! = N \ln N - N$
 %\eqs
-%A = -k_B T \ln Q &= -k_B T \ln \Big(\frac{q^N}{N!}\Big)\\
+%A = -k_B T \ln Q &= -k_B T \ln \left(\frac{q^N}{N!}\right)\\
 %&= - N k_B T \ln q + k_B + N \ln(N) - N k_B T\\
-%&= - N k_B T \ln \Big(  \frac{2 \pi m k_B T}{h^2} \Big)^{3/2} \frac{V}{N} - N k_B T
+%&= - N k_B T \ln \left(  \frac{2 \pi m k_B T}{h^2} \right)^{3/2} \frac{V}{N} - N k_B T
 %\eqe
 %
 %\eqs
 %P &= -\frac{\partial A}{\partial V} |_{N, T} = -N k_B T \frac{\partial \ln V}{\partial V} = \frac{N k_B T}{V}\\
 %E &= k_B T^2 \frac{\partial \ln Q}{\partial T} = \frac{3}{2}N k_B T\\
 %\mu &= \frac{\partial A}{\partial N}|_{T,P} = k_B T \ln P\\
-%S &= N k_B \ln \Big[ \Big(\frac{2\pi m k_B T}{h^2} \Big)^{3/2} \frac{V}{N} c^{5/2}... \text{(see text?)}
+%S &= N k_B \ln \Big[ \left(\frac{2\pi m k_B T}{h^2} \right)^{3/2} \frac{V}{N} c^{5/2}... \text{(see text?)}
 %\eqe
 %where the above expression for entropy is the ``Sackur-Tetrode'' equation.
 
@@ -2294,7 +2350,8 @@ and for an ideal gas, $\alpha = T^{-1}$ so $\mu_{JT}=0$.
 
 \section{The Physical Basis of Mixing}
 This section was heavily influenced by Professor Gerbrand Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.\\
-In this section, we will elucidate the physical reasons why some pairs of elements mix together to form random solutions and/or compounds, whereas others are immiscible. We will call this general process of allowing two elements to come together \emph{mixing}. It is illustrated in Fig. \ref{mixing_process}. We will mostly restrict ourselves to the solid state. From a thermodynamic perspective, pairs of elements mix because the free energy of forming the solution is negative relative to the pure state, $\Delta G_{mix} <0$. An element is immiscible in another if $\Delta G_{mix} >0$. It is useful to split $\Delta G_{mix}$ into its component parts, $\Delta H_{mix}$ and $\Delta S_{mix}$ in order to understand why mixing occurs. We'll begin with $\Delta H_{mix}$, and then address $\Delta S_{mix}$.  
+\\
+In this section, we will elucidate the physical reasons why some pairs of elements mix together to form random solutions and/or compounds, whereas others are immiscible. We will call this general process of allowing two elements to come together \emph{mixing}. It is illustrated in Fig. \ref{mixing_process}. We will mostly restrict ourselves to the solid state. From a thermodynamic perspective, pairs of elements mix because the free energy of forming the solution is negative relative to the pure state, $\Delta G_{\text{mix}} <0$. An element is immiscible in another if $\Delta G_{\text{mix}} >0$. It is useful to split $\Delta G_{\text{mix}}$ into its component parts, $\Delta H_{\text{mix}}$ and $\Delta S_{\text{mix}}$ in order to understand why mixing occurs. We'll begin with $\Delta H_{\text{mix}}$, and then address $\Delta S_{\text{mix}}$.  
 
 \begin{figure}[h]
 \centering
@@ -2316,7 +2373,7 @@ Some possible heuristic rules for mixing are the following. We'll discuss them i
 \end{itemize}
 
 \subsubsection{Is size a good predictor of mixing behavior?}
-Size is indeed a good predictor of mixing behavior, especially in terms of forming solid solutions: two elements can only coexist in a lattice if they both `fit' in the same sites. More specifically, in metals, Hume-Rothery found that large ranges of solid solubility are only found for pairs of elements whose  atomic radii differ by less than 15\%.\footnote{Hume-Rothery developed a series of rules for the behavior of metallic solutions based on the properties of the elements, called the Hume-Rothery rules. The 15\% rule is the first Hume-Rothery rule. They're very useful, even if they're a bit primitive compared to quantum mechanics.} This behavior comes about because there is an energetic penalty accosiated with the straining at atom to fit in a given site. Note that this rule is a necesarry but not sufficient condition for solubility: it tells you when dissolution is possible, but doesn't guarantee when it will occur. This is because it only considers \emph{size}, but there's a lot more going one when you mix two things together: bands can hybridize, charge transfer can occur, and chemical bonds can form. These are what one might call chemical effects. Atomic size differences will determine miscibility in the absence of chemical effects.
+Size is indeed a good predictor of mixing behavior, especially in terms of forming solid solutions: two elements can only coexist in a lattice if they both `fit' in the same sites. More specifically, in metals, Hume-Rothery found that large ranges of solid solubility are only found for pairs of elements whose  atomic radii differ by less than 15\%.\footnote{Hume-Rothery developed a series of rules for the mixing behavior of metallic solutions based on the properties of the elements, called the Hume-Rothery rules. The 15\% rule is the first Hume-Rothery rule. They're very useful, even if they're a bit primitive compared to quantum mechanics.} This behavior comes about because there is an energetic penalty accosiated with the straining at atom to fit in a given site. Note that this rule is a necesarry but not sufficient condition for solubility: it tells you when dissolution is possible, but doesn't guarantee when it will occur. This is because it only considers \emph{size}, but there's a lot more going one when you mix two things together: bands can hybridize, charge transfer can occur, and chemical bonds can form. These are what one might call chemical effects. Atomic size differences determine miscibility in the absence of chemical effects.
 
 The effects of atomic size are not limited to metals; similar size-based arguments hold for the mixing of other systems where chemical effects are small. For example, when you mix isovalent\footnote{Isovalent means \emph{having the same charge}; a isovalent oxides would be CaO and MgO, where both cations have the same charge, +2, as compared to Al$_2$O$_3$ and MgO, where the cations have different charges.} oxides, there really isn't any chemistry going on; the cations are separated from one another by the oxygen atoms and the cations' charge remains the same. Therefore, the biggest factor in determining whether two isovalent oxides mix is whether they can fit on the same lattice in terms of their sizes. Similarly, the miscibility of solutions of semiconductor compounds with from the same families \footnote{e.g. the alloying of III-V compounds with one another versus alloying a III-V with a II-VI} is mostly determined by atomic size arguments.
 
@@ -2326,7 +2383,7 @@ It is generally true that larger differences in electronegativity between two el
 
 (Eventually put in a plot of the enthalpy of formation of the all compounds versus the electronegativity difference here)
 
-There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, the electrons from the more electronegative element are transfered from the less electronegative element to the more electronegative element. This process is shown in Fig. \ref{chargeTransfer}.
+There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, the electrons from the less electronegative element are transfered to the more electronegative element. This process is shown in Fig. \ref{chargeTransfer}.This charge transfer is essentially what happens in ionic bonding; the electrons from one element are transfered to the other, filling the lower-energy band up, and emptying the higher energy band.
 
 \begin{figure}[h]
 \centering
@@ -2335,9 +2392,7 @@ There are actually two mechanisms at work in explaining why electronegativity di
 \label{chargeTransfer}
 \end{figure}
 
-This is essentially what happens in ionic bonding; the electrons from one element are transfered to the other, filling the lower-energy band up, and emptying the higher energy band.
-
-The physics are different when compounds form when there are small differences in electronegativity, typically with pairs of transition metals. Note that in this case, we can't ignore hybridization because the bands overlap. Compound formation between pairs of transition metals is also well-predicted by electronegativity differences, but there is not a clear-cut case for charge transfer; the bands overlap (and thus hybridize when alloyed), and the valence electrons are not well-localized. In fact, when you go into quantum-mechanical calculations and look at the charge on atoms in metals, you find that they are essentially neutral. Therefore, we know that electrostatics isn't actually driving compound formation in binaries with low $\Delta \chi$; electronegativity differences are a red herring here.
+The physics are different when compounds form when there are small differences in electronegativity, typically with pairs of transition metals. Note that in this case, we can't ignore hybridization because the bands overlap. Compound formation between pairs of transition metals is also well-predicted by electronegativity differences, but we know from \emph{ab-initio} studies that charge transfer does not occur in transition metal compounds; the bands overlap (and thus hybridize when alloyed), and the valence electrons are not well-localized. Therefore, we know that electrostatics isn't actually driving compound formation in binaries with low $\Delta \chi$; electronegativity differences are a red herring here.
 
 \begin{figure}[h]
 \centering
@@ -2346,7 +2401,7 @@ The physics are different when compounds form when there are small differences i
 \label{bandOverlap}
 \end{figure}
 
-What's actually happening in transition metal alloys is a metallic version of the octet rule. You can derive from tight-binding arguments that the cohesive energy should be maximal when the d-band is half full ($N_d=5$); think of this as filling all the bonding states in the d-band but none of the antibonding states. The process of band filling in TM's is schematized in Fig \ref{bandOverlap}. Data supporting the band-filling arguments are shown in the lower left-hand panel of Fig. \ref{cohesion_in_TMs}.
+What's actually happening in transition metal alloys is a metallic version of the octet rule; the bands in metals like to have certain occupancy levels. You can derive from tight-binding arguments that the doning energy of a $d$-band should be maximal when the $d$-band is half full ($N_d=5$); think of this as filling all the bonding states in the $d$-band but none of the antibonding states. The process of band filling in TM's is schematized in Fig \ref{bandOverlap}. Data supporting the band-filling arguments are shown in the lower left-hand panel of Fig. \ref{cohesion_in_TMs}.
 
 \begin{figure}[h]
 \centering
@@ -2355,10 +2410,10 @@ What's actually happening in transition metal alloys is a metallic version of th
 \label{cohesion_in_TMs}
 \end{figure}
 
-Thus, when two transition metals are mixed, compounds will form when the two metals can achieve a d-band occupancy of around 5 on average. Therefore, early transition metals with $N_d<5$ tend to form compounds with late transition metals with $N_d>5$. As electronegativity is lowest for the early transition metals and highest for the late transition metals, electronegativtity is well-correlated with this d-band filling criterion, but electronegativity differences do not cause this phenomenon.
+Thus, when two transition metals are mixed, compounds will form when the two metals can achieve a $d$-band occupancy of around 5 on average. Therefore, early transition metals with $N_d<5$ tend to form compounds with late transition metals with $N_d>5$. As electronegativity is lowest for the early transition metals and highest for the late transition metals, electronegativtity is well-correlated with this $d$-band filling criterion, but electronegativity differences do not cause this phenomenon.
 
 \subsubsection{Is Valency a good predictor of mixing behavior?}
-Valency is in fact a good predictor of mixing, but it's beyond the scope of this course. In fact, the number of valence electrons per atom or \emph{electron over atom ratio}, written $n/a$, strongly controls cohesion and stability of crystal structures in metals. This is for similar, quantum mechanical reasons as above: $n/a$ controls where the Fermi surface is, and a metal has lowest energy when the Fermi surface just touches the edge of the first Brillouin zone. As different crystal structures achieve this touching at different valence electron concentrations, different crystal structures are favored at different $n/a$. By introducing progressively more alloying element into a crystal structure, you are effectively 'scanning' the Fermi energy by changing the number of valence electrons. In doing so, the metal adopts different crystal structures which optimize the location of the first Brillouin zone relative to the Fermi energy. Thus, $n/a$ arguments (along with size arugments) generally justify the progression of crystal structures within a binary, while band-filling arguments justify whether or not compounds form at all. The influence of the electron-over-atom ratio was first realized empirically by Hume-Rothery, and then explained quantum-mechanically by Mott. A really good discussion of this is in Mott, NF. \textit{Reports on Progress in Physics} 1962 (\href{http://dx.doi.org/10.1088/0034-4885/25/1/306}{link}).
+Valency is in fact a good predictor of mixing, but it's beyond the scope of this course. In fact, the number of valence electrons per atom, called the \emph{electron over atom ratio} $n/a$, strongly controls cohesion and stability of crystal structures in metals. This is for similar, quantum mechanical reasons as above: $n/a$ controls where the Fermi surface is, and a metal has the lowest energy when the Fermi surface just touches the edge of the first Brillouin zone. As different crystal structures achieve this touching at different $n/a$, different crystal structures are favored at different $n/a$. By introducing progressively more alloying element into a crystal structure, you are effectively 'scanning' the Fermi energy by changing the number of valence electrons. In doing so, the metal adopts different crystal structures which optimize the location of the first Brillouin zone relative to the Fermi energy. Thus, $n/a$ arguments (along with size arugments) generally justify the progression of crystal structures within a binary, while band-filling arguments justify whether or not compounds form at all. The influence of the electron-over-atom ratio was first realized empirically by Hume-Rothery, and then explained quantum-mechanically by Mott. A really good discussion of this is in Mott, NF. \textit{Reports on Progress in Physics} 1962 (\href{http://dx.doi.org/10.1088/0034-4885/25/1/306}{link}).
 
 \subsection{Entropic Effects on Mixing}
 Knowledge of the internal energy allow us to predict mixing behaviors at low temperatures. At higher temperatures, we must also take into account the entropy of the mixed and un-mixed states. There are several types of entropy one could consider:

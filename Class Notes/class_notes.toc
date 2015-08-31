@@ -18,86 +18,88 @@
 \contentsline {section}{Lecture - September 10, 2014}{23}{section.5}
 \contentsline {subsection}{\numberline {1}Consequences of the 2nd law:}{23}{subsection.5.1}
 \contentsline {subsection}{\numberline {2}The 3rd law}{26}{subsection.5.2}
-\contentsline {section}{\numberline {6}Lecture - September 12, 2014}{27}{section.6}
-\contentsline {section}{Lecture - September 12, 2014}{28}{section.6}
-\contentsline {subsection}{\numberline {1}Mathematical Properties of $U$}{28}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {1.1}U is first order homogeneous of the extensive variables, as is S}{28}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {1.2}U can be defined in terms of a sum of the conjugate pairs}{28}{subsubsection.6.1.2}
-\contentsline {subsubsection}{\numberline {1.3}The Gibbs-Duhem equation: The intensive variables are not independent}{29}{subsubsection.6.1.3}
-\contentsline {subsubsection}{\numberline {1.4}Equations of state contain partial information about U}{30}{subsubsection.6.1.4}
-\contentsline {subsection}{\numberline {2}Equilibrium and evolution of isolated systems}{31}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {2.1}Thermal Equilibrium}{31}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {2.2}Mechanical Equilibrium}{32}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {2.3}Chemical Equilibrium from Mass Flow}{32}{subsubsection.6.2.3}
-\contentsline {section}{\numberline {7}Legendre Transforms}{32}{section.7}
-\contentsline {section}{Legendre Transforms}{33}{section.7}
-\contentsline {subsection}{\numberline {1}Legendre Transforms}{33}{subsection.7.1}
-\contentsline {subsection}{\numberline {2}Named Free Energies}{35}{subsection.7.2}
-\contentsline {subsection}{\numberline {3}A First Look at Manipulating Thermodynamic Functions}{35}{subsection.7.3}
-\contentsline {section}{\numberline {8}Lecture - September 17, 2014}{37}{section.8}
-\contentsline {section}{Lecture - September 17, 2014}{37}{section.8}
-\contentsline {subsection}{\numberline {1}Maxwell Relations}{37}{subsection.8.1}
-\contentsline {subsubsection}{\numberline {1.1}Maxwell relations for an Ideal Gas}{37}{subsubsection.8.1.1}
-\contentsline {subsubsection}{\numberline {1.2}Magnetic Maxwell relations}{37}{subsubsection.8.1.2}
-\contentsline {subsection}{\numberline {2}How to perform thermodynamic derivations}{38}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {2.1}Very useful relationships of $f(x,y)$}{38}{subsubsection.8.2.1}
-\contentsline {subsubsection}{\numberline {2.2}Strategy to reduce variables}{39}{subsubsection.8.2.2}
-\contentsline {subsubsection}{\numberline {2.3}Example: A rod under tension}{40}{subsubsection.8.2.3}
-\contentsline {subsection}{\numberline {3}Natural Variables}{41}{subsection.8.3}
-\contentsline {subsection}{\numberline {4}A systematic way to think about derivatives}{41}{subsection.8.4}
-\contentsline {section}{\numberline {9}Lecture - September 24, 2014}{42}{section.9}
-\contentsline {section}{Lecture - September 24, 2014}{43}{section.9}
-\contentsline {subsection}{\numberline {1}Check in: What you should be able to do by now}{44}{subsection.9.1}
-\contentsline {subsection}{\numberline {2}Equilibrium Conditions for Multicomponent Systems}{44}{subsection.9.2}
-\contentsline {subsection}{\numberline {3}Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule}{45}{subsection.9.3}
-\contentsline {subsection}{\numberline {4}Stability Conditions on the free energy}{47}{subsection.9.4}
-\contentsline {subsection}{\numberline {5}Phase stability}{48}{subsection.9.5}
-\contentsline {section}{\numberline {10}Lecture - September 25, 2014}{49}{section.10}
-\contentsline {section}{Lecture - September 25, 2014}{50}{section.10}
-\contentsline {subsection}{\numberline {1}Ehrenfest classification of $\phi T$ (phase transitions)}{50}{subsection.10.1}
-\contentsline {subsection}{\numberline {2}Elemental Phase Diagrams}{50}{subsection.10.2}
-\contentsline {subsection}{\numberline {3}Determining Phase Diagrams}{52}{subsection.10.3}
-\contentsline {subsection}{\numberline {4}Example: solid to liquid transition}{53}{subsection.10.4}
-\contentsline {section}{\numberline {11}Lecture - September 26, 2014}{53}{section.11}
-\contentsline {section}{Lecture - September 26, 2014}{54}{section.11}
-\contentsline {subsection}{\numberline {1}Le Chatelier-Braun principle}{55}{subsection.11.1}
-\contentsline {subsection}{\numberline {2}Generalization of Clausius-Clapeyron}{56}{subsection.11.2}
-\contentsline {subsection}{\numberline {3}Magnetic-induced phase transformation}{57}{subsection.11.3}
-\contentsline {subsection}{\numberline {4}Thermoelasticity}{57}{subsection.11.4}
-\contentsline {section}{\numberline {12}Introduction to Solution Theory}{59}{section.12}
-\contentsline {section}{Introduction to Solution Theory}{60}{section.12}
-\contentsline {subsection}{\numberline {1}Adding composition as a work term in G}{60}{subsection.12.1}
-\contentsline {subsection}{\numberline {2}Solutions, Molar Quantities, and Partial Molar Quantities}{61}{subsection.12.2}
-\contentsline {subsection}{\numberline {3}Ex: Partial Molar Volumes}{62}{subsection.12.3}
-\contentsline {section}{\numberline {13}Review of Exam 1 materials}{64}{section.13}
-\contentsline {section}{Review of Exam 1 materials}{65}{section.13}
-\contentsline {subsection}{\numberline {1}Definitions}{65}{subsection.13.1}
-\contentsline {subsection}{\numberline {2}Thermodynamic Laws}{66}{subsection.13.2}
-\contentsline {subsection}{\numberline {3}All the heat capacities, expansion coefficients, etc.}{66}{subsection.13.3}
-\contentsline {subsection}{\numberline {4}Maxwell Relations}{67}{subsection.13.4}
-\contentsline {subsection}{\numberline {5}Gibbs-Duhem}{67}{subsection.13.5}
-\contentsline {subsection}{\numberline {6}Internal energy $U$, enthalpy $H$, Helmholtz $F$, and Gibbs $G$}{67}{subsection.13.6}
-\contentsline {subsection}{\numberline {7}Legendre Transforms:}{67}{subsection.13.7}
-\contentsline {subsection}{\numberline {8}Some useful math identities:}{68}{subsection.13.8}
-\contentsline {subsection}{\numberline {9}Carnot Engines:}{68}{subsection.13.9}
-\contentsline {subsection}{\numberline {10}Le Chatelier-Braun principle}{69}{subsection.13.10}
-\contentsline {subsection}{\numberline {11}Clausius-Clapeyron}{69}{subsection.13.11}
-\contentsline {subsection}{\numberline {12}Raoult's Law:}{70}{subsection.13.12}
-\contentsline {subsection}{\numberline {13}Phase changes:}{70}{subsection.13.13}
-\contentsline {subsection}{\numberline {14}Joule-Thompson Expansion (Throttling)}{71}{subsection.13.14}
-\contentsline {subsection}{\numberline {15}Material Properties (useful 2nd derivatives of energy functions):}{72}{subsection.13.15}
-\contentsline {subsection}{\numberline {16}Random constants we may need to know:}{72}{subsection.13.16}
-\contentsline {section}{\numberline {14}The Physical Basis of Mixing}{72}{section.14}
-\contentsline {section}{The Physical Basis of Mixing}{73}{section.14}
-\contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{73}{subsection.14.1}
-\contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{74}{subsubsection.14.1.1}
-\contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{75}{subsubsection.14.1.2}
-\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{76}{subsubsection.14.1.3}
-\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{78}{subsection.14.2}
-\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{78}{subsubsection.14.2.1}
-\contentsline {subsubsection}{\numberline {2.2}Vibrational Entropy}{78}{subsubsection.14.2.2}
-\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{79}{subsubsection.14.2.3}
-\contentsline {section}{\numberline {15}Bonus Topic: Chemical thermodynamics of polymers}{79}{section.15}
-\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{80}{section.15}
-\contentsline {subsection}{\numberline {1}Why don't polymers mix when we heat them up?}{80}{subsection.15.1}
-\contentsline {subsection}{\numberline {2}Why do miscible blends phase separate at high temperatures?}{82}{subsection.15.2}
+\contentsline {section}{\numberline {6}Lecture - September 12, 2014}{28}{section.6}
+\contentsline {section}{Lecture - September 12, 2014}{29}{section.6}
+\contentsline {subsection}{\numberline {1}Mathematical Properties of $U$}{29}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {1.1}U is first order homogeneous of the extensive variables, as is S}{29}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {1.2}U can be defined in terms of a sum of the conjugate pairs}{29}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {1.3}The Gibbs-Duhem equation: The intensive variables are not independent}{30}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {1.4}Equations of state contain partial information about U}{31}{subsubsection.6.1.4}
+\contentsline {subsection}{\numberline {2}Equilibrium and evolution of isolated systems}{32}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {2.1}Thermal Equilibrium}{32}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {2.2}Mechanical Equilibrium}{33}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {2.3}Chemical Equilibrium from Mass Flow}{33}{subsubsection.6.2.3}
+\contentsline {section}{\numberline {7}Legendre Transforms}{33}{section.7}
+\contentsline {section}{Legendre Transforms}{34}{section.7}
+\contentsline {subsection}{\numberline {1}Legendre Transforms}{34}{subsection.7.1}
+\contentsline {subsection}{\numberline {2}Named Free Energies}{36}{subsection.7.2}
+\contentsline {subsection}{\numberline {3}A First Look at Manipulating Thermodynamic Functions}{36}{subsection.7.3}
+\contentsline {section}{\numberline {8}Lecture - September 17, 2014}{38}{section.8}
+\contentsline {section}{Lecture - September 17, 2014}{38}{section.8}
+\contentsline {subsection}{\numberline {1}Maxwell Relations}{38}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {1.1}Maxwell relations for an Ideal Gas}{38}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {1.2}Magnetic Maxwell relations}{38}{subsubsection.8.1.2}
+\contentsline {subsection}{\numberline {2}How to perform thermodynamic derivations}{39}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {2.1}Very useful relationships of $f(x,y)$}{39}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {2.2}Strategy to reduce variables}{40}{subsubsection.8.2.2}
+\contentsline {subsubsection}{\numberline {2.3}Example: A rod under tension}{41}{subsubsection.8.2.3}
+\contentsline {subsection}{\numberline {3}Natural Variables}{42}{subsection.8.3}
+\contentsline {subsection}{\numberline {4}A systematic way to think about derivatives}{43}{subsection.8.4}
+\contentsline {section}{\numberline {9}Lecture - September 24, 2014}{44}{section.9}
+\contentsline {section}{Lecture - September 24, 2014}{45}{section.9}
+\contentsline {subsection}{\numberline {1}Check in: What you should be able to do by now}{46}{subsection.9.1}
+\contentsline {subsection}{\numberline {2}Equilibrium Conditions for Multicomponent Systems}{46}{subsection.9.2}
+\contentsline {subsection}{\numberline {3}Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule}{47}{subsection.9.3}
+\contentsline {subsection}{\numberline {4}Stability Conditions on the free energy}{49}{subsection.9.4}
+\contentsline {subsection}{\numberline {5}Phase stability}{50}{subsection.9.5}
+\contentsline {section}{\numberline {10}Lecture - September 25, 2014}{51}{section.10}
+\contentsline {section}{Lecture - September 25, 2014}{52}{section.10}
+\contentsline {subsection}{\numberline {1}Ehrenfest classification of $\phi T$ (phase transitions)}{52}{subsection.10.1}
+\contentsline {subsection}{\numberline {2}Elemental Phase Diagrams}{53}{subsection.10.2}
+\contentsline {subsection}{\numberline {3}Determining Phase Diagrams}{54}{subsection.10.3}
+\contentsline {subsection}{\numberline {4}Example: solid to liquid transition}{55}{subsection.10.4}
+\contentsline {section}{\numberline {11}Lecture - September 26, 2014}{55}{section.11}
+\contentsline {section}{Lecture - September 26, 2014}{56}{section.11}
+\contentsline {subsection}{\numberline {1}Le Chatelier-Braun principle}{57}{subsection.11.1}
+\contentsline {subsection}{\numberline {2}Generalization of Clausius-Clapeyron}{58}{subsection.11.2}
+\contentsline {subsection}{\numberline {3}Magnetic-induced phase transformation}{59}{subsection.11.3}
+\contentsline {subsection}{\numberline {4}Thermoelasticity}{59}{subsection.11.4}
+\contentsline {section}{\numberline {12}Introduction to Solution Theory}{61}{section.12}
+\contentsline {section}{Introduction to Solution Theory}{62}{section.12}
+\contentsline {subsection}{\numberline {1}Adding composition as a work term in G}{62}{subsection.12.1}
+\contentsline {subsection}{\numberline {2}Solutions, Molar Quantities, and Partial Molar Quantities}{63}{subsection.12.2}
+\contentsline {subsection}{\numberline {3}Ex: Partial Molar Volumes}{64}{subsection.12.3}
+\contentsline {section}{\numberline {13}Review of Exam 1 materials}{66}{section.13}
+\contentsline {section}{Review of Exam 1 materials}{67}{section.13}
+\contentsline {subsection}{\numberline {1}Definitions}{67}{subsection.13.1}
+\contentsline {subsection}{\numberline {2}Thermodynamic Laws}{68}{subsection.13.2}
+\contentsline {subsection}{\numberline {3}All the heat capacities, expansion coefficients, etc.}{68}{subsection.13.3}
+\contentsline {subsection}{\numberline {4}Maxwell Relations}{69}{subsection.13.4}
+\contentsline {subsection}{\numberline {5}Gibbs-Duhem}{69}{subsection.13.5}
+\contentsline {subsection}{\numberline {6}Internal energy $U$, enthalpy $H$, Helmholtz $F$, and Gibbs $G$}{69}{subsection.13.6}
+\contentsline {subsection}{\numberline {7}Legendre Transforms:}{69}{subsection.13.7}
+\contentsline {subsection}{\numberline {8}Some useful math identities:}{70}{subsection.13.8}
+\contentsline {subsection}{\numberline {9}Carnot Engines:}{70}{subsection.13.9}
+\contentsline {subsection}{\numberline {10}Le Chatelier-Braun principle}{71}{subsection.13.10}
+\contentsline {subsection}{\numberline {11}Clausius-Clapeyron}{71}{subsection.13.11}
+\contentsline {subsection}{\numberline {12}Raoult's Law:}{72}{subsection.13.12}
+\contentsline {subsection}{\numberline {13}Phase changes:}{72}{subsection.13.13}
+\contentsline {subsection}{\numberline {14}Joule-Thompson Expansion (Throttling)}{73}{subsection.13.14}
+\contentsline {subsection}{\numberline {15}Material Properties (useful 2nd derivatives of energy functions):}{74}{subsection.13.15}
+\contentsline {subsection}{\numberline {16}Random constants we may need to know:}{74}{subsection.13.16}
+\contentsline {section}{\numberline {14}Introduction to Statistical Mechanics}{74}{section.14}
+\contentsline {section}{Introduction to Statistical Mechanics}{75}{section.14}
+\contentsline {section}{\numberline {15}The Physical Basis of Mixing}{75}{section.15}
+\contentsline {section}{The Physical Basis of Mixing}{76}{section.15}
+\contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{76}{subsection.15.1}
+\contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{77}{subsubsection.15.1.1}
+\contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{78}{subsubsection.15.1.2}
+\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{79}{subsubsection.15.1.3}
+\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{81}{subsection.15.2}
+\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{81}{subsubsection.15.2.1}
+\contentsline {subsubsection}{\numberline {2.2}Vibrational Entropy}{81}{subsubsection.15.2.2}
+\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{82}{subsubsection.15.2.3}
+\contentsline {section}{\numberline {16}Bonus Topic: Chemical thermodynamics of polymers}{82}{section.16}
+\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{83}{section.16}
+\contentsline {subsection}{\numberline {1}Why don't polymers mix when we heat them up?}{83}{subsection.16.1}
+\contentsline {subsection}{\numberline {2}Why do miscible blends phase separate at high temperatures?}{85}{subsection.16.2}
