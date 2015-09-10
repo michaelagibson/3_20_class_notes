@@ -21,7 +21,7 @@
 \includepdf[pages=-]{titlepage.pdf}
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture 1: Introduction and Preliminaries}
+\section{Preliminaries, Vocab, Energy, and Forces}
 %This is an inexact differential: $\dbar$
 
 Welcome to 3.20, Materials at Equilibrium.  This course is designed to provide all incoming students with a grounding in equilibrium thermodynamics, energy scales in materials processes, phase stability, and phase diagrams.  The material in this course is broadly applicable to all fields of materials science and engineering and will serve you well throughout your research as a graduate student.  For information related to the course, including lecture content, problem sets, exams, staff policies, and grading please refer to your course syllabus found on Stellar, or contact the professor directly at \texttt{allanore@mit.edu}.
@@ -71,7 +71,7 @@ can be represented as work terms represent changes in $U$, except for exchange o
 %I am not sure 'assumption' is right for some of these; they are not all assumptions... some are implied by others... I think it is fine for teaching purposes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture 2: Heat and Work}
+\section{Heat, Work, and Path Dependence}
 One commonly observed form of energy transfer is \textbf{work}. A differential amount of work is equal to a force dotted with a displacement:
 \eqs
 \dbar W = \vec{F} \cdot d\vec{r}
@@ -199,7 +199,7 @@ W_\eta &= -P_i \int dV\\
 Clearly, the amount of work done when changing between two states can be different, although the change in internal energy must be the same. Thus, there must have been different amounts of heat transferred along each path as well; both work and heat are path-dependent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 8, 2014}
+\section{Heat Capacities, Enthalpy}
 Last time, we stated the first law of thermodynamics, namely that energy can only be transferred in and out of a system as work and heat: $dU = \dbar Q + \sum y_i dx_i$.  
 %\subsection{Today}
 We now want to quantify the first term, or \un{quantify heat exchange}.  We do this by defining the \emph{heat capacity} for a system as:  %(normalized by $n$) 
@@ -354,7 +354,7 @@ The $\Delta H$ only tells you how much heat is exchanged, it doesn't tell you wh
 %Be careful with the idea of ``heat'' content.  The fact that a reaction re't mean we're going to harvest this energy as heat. The first law is also silent about the directions of change $\rightleftharpoons$.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 9, 2014}
+\section{Choice of Systems, The Second Law I}
 % In previous lectures we worked with the first law with both the heat and work terms.  In continuation, imagine we have a lightbulb.  We can model the work as
 % \begin{align*}
 % W_\text{electric} = \partial Q + E_{\hbar v}
@@ -471,7 +471,7 @@ dS_\text{system} &= \frac{\dbar Q_1}{T_1} + \frac{\dbar Q_2}{T_2}\\
 If $T_2 > T_1$, $\dbar Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{Heat flows from ``hot'' to ``cold''}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 10, 2014}
+\section{Second Law II, The Third Law}
 As a reminder, the 1st law stated that $U$ is a state function where
 \beq
 dU = \dbar Q + \sum y_i \, dx_i
@@ -600,7 +600,7 @@ As system's volume increases, entropy will too.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 12, 2014}
+\section{The Fundamental Equation, Properties of $U$, Equilibrium Conditions}
 Now that the entropy has been defined, we are ready to start thinking about $U$ in terms of equilibrium processes, where we can replace $\dbar Q$ by $TdS$. In this case, an arbitrary change in the state of our system can be represented as:
 
 \eqs
@@ -955,8 +955,8 @@ dS &= \frac{c_P}{T}\, dT - \alpha_V V \, dP
 This might seem a bit strange. The change in entropy with respect to pressure at a constant temperature is equal to minus the thermal expansion coefficient. This is not intuitive, but it pops right out of the mathematical structure of thermodynamics. Maxwell relations can be useful in this way, as they allow us to express difficult-to-measure quantities in terms of easily measurable experimental quantities. Further, they allow us to reason about the sign of quantities which we might not otherwise have much intuition about.  We can now say with certainty that except in cases where the thermal expansion coefficient is negative, the entropy of a substance decreases when you compress it.\footnote{You can think of this heuristically as being true because the number of microstates becomes smaller as you confine a group of particles to a smaller space.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 17, 2014}
-\subsection{Maxwell Relations}
+\section{Maxwell Relations, Manipulating Potentials}
+%\subsection{}
 Previously we discussed \bold{Maxwell relations}, which allow us to swap a derivative in terms of some thermodynamic variables $x$ and $y$ for a derivative in terms of the conjugates of $x$ and $y$. They may be defined generally as
 \eqs \boxed{
 \left(\frac{\partial x}{\partial y}\right)_{\text{conj}[x]} = \pm \left(\frac{\partial {\text{conj}[y]}}{\partial {\text{conj}[x]}}\right)_{y}}
@@ -1169,7 +1169,7 @@ If we add a \emph{magnetic field} our energy becomes $dU = T\, dS - P\, dV + \ma
 You can write a similar matrix for any thermodynamic potential you choose. All such matrices are symmetric because of the Maxwell relations. The signs of the off-diagonal terms are a result of the Legendre transforms needed to get to the potential of interest. The signs of the diagonal terms are positive if the thermodynamic variable of interest is extensive, and negative if the variable of interest is intensive. This is because of the properties of the Legendre transform, and ultimately because $U$ is convex up with respect to the extensive variables.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 24, 2014}
+\section{Practice Derivations, Phase Rule, Phase Stability}
 Last lecture we started to look at the difference the path makes in some thermodynamic quantities, such as the heat capacity. Here, we consider another path change: what is the relationship between the change in volume with respect to temperature at constant magnetization and the same quantity at constant magnetic field? %($\frac{\partial V}{\partial T}|_M$)
 \eqs
 \left(\frac{\partial V}{\partial T}\right)_\mathcal{M} \to? \left(\frac{\partial V}{\partial T}\right)_\mathcal{H}
@@ -1347,7 +1347,7 @@ For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for sol
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 25, 2014}
+\section{Phase Transitions, Phase Diagrams, Clausius-Clapeyron}
 From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$.  What is our $T_B$ (boiling temp.)?
 \eqs
 \Delta G_{l\rightarrow v}(T_B) = 0
@@ -1459,7 +1459,7 @@ Typical slopes:  For solid to liquid, we get $\Delta H = 10$ kJ, $\Delta V = 1$ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lecture - September 26, 2014}
+\section{General Clapeyron Relations, Le Chatelier-Braun Principle}
 Last time we derived the Clausius-Clapeyron relation.  Now we would like to find a simplified expression of the Clausius-Clapeyron equation for the condensed phase and vapor equilibrium.  We can assume the vapor is an ideal gas $V = \frac{RT}{P}$ and make the approximation $\Delta V \approx V_g$, since the volume of a condensed phase are generally much smaller than the volume of the gas phase.
 \eqs
 \Delta V = V_v - V_l \approx V_v\\
@@ -2430,18 +2430,21 @@ This is the entropy that we usually think of when mixing occurs with increasing 
 \eqs S_{\text{configurational}}=-k_B\sum x_i \ln x_i \eqe
 
 \subsubsection{Vibrational Entropy}
-Talk about the spacing of energy levels as proportional to root k/m.
-What this tells us is that if m is constant (i.e. we hold the elemental identities constant), softer phases should be favored at higher temperatures, as the system gains access to more vibrational states.
-BCC tends to be softer than FCC/HCP, so you tend to get closed packed-to-BCC transitions. Ex: Zr, Ti, Hf exhibit this, so does Fe in the $\gamma$ to $\delta$ transition at very high temperatures.\footnote{The low-temperature BCC phase, $\alpha$-Fe, is stabilized by magnetic effects. One can stabilize the FCC by alloying, typically with Ni.} Some of the alkali metals (e.g. Li and Na), which we traditionally think of as BCC, are actually close-packed below room temperature; their melting temperatures are just so low that these transitions occur much earlier than in the more cohesive transition metals.\footnote{Note: only the acoustic modes are really proportional to the moduli (and thus the stiffness) of a material, so only the acoustic contribtion to the vibrational entropy can be explained from moduli. The optical modes are fairly independent. This approximation works for the elements because they have very simple unit cells, and so there aren't optical modes!}
+The vibrational entropy should be proportional to the number of vibrational quantum states within $k_B T$ of the ground state. As we know from quantum mechanics and our study of the Einstein model, the spacing of energy levels in a quantum harmonic oscilator is proportional to the frequency of the oscillator, and thus proportional to $ \sqrt{k/m}$.
+
+What this tells us is that for a given element and/or composition, (i.e. if $m$ is constant), softer phases should be favored at higher temperatures, as the system gains access to more vibrational states due to their lower spacing between energy levels. 
+
+As a rule, BCC phases tend to be softer than FCC/HCP phases, so you would expect to observe closed packed$\to$BCC transitions upon heating. This does indeed occur: Zr, Ti, and Hf all exhibit such transitions, as does Fe in the $\gamma$ to $\delta$ transition at very high temperatures.\footnote{The low-temperature BCC phase, $\alpha$-Fe, is stabilized by magnetic effects. One can stabilize the FCC by alloying, typically with Ni.} Some of the alkali metals (e.g. Li and Na), which we traditionally think of as BCC, are actually close-packed below room temperature; their melting temperatures are just so low that their vibrationally-driven transitions occur much earlier than in the more cohesive transition metals. These allotropic phase transitions tend to be very important in microstructure evolution during solidification. For example, Ti and Fe are very weld-able metals because they undergo allotropic phases transformations. Thus, vibrational entropy does play an observable and important role in the behavior of materials.\footnote{Note: We restricted our discussion to the elememts because only the acoustic modes are really proportional to the moduli (and thus the stiffness) of a material, so only the acoustic contribtion to the vibrational entropy can be explained from moduli. The optical modes are fairly independent of the moduli. This approximation works for the elements because they have very simple unit cells, and so there aren't optical modes!}
 
 \subsubsection{Electronic Entropy}
 Please refer to the \href{https://en.wikipedia.org/wiki/Electronic_entropy}{wikipedia page on electronic entropy}. It was authored specifically with this course in mind.
 
 
 \section{Bonus Topic: Chemical thermodynamics of polymers}
-This section will attempt to apply much of what we have learned in 3.20 to systems that we didn't touch as much in class: polymers.\footnote{This section was inspired by and draws heavily A.H. Windle's \textit{A metallurgist's guide to polymers}, in Physical Metallurgy, eds. Cahn and Haasen, 1997. Since MIT teaches materials science from a metallurgist's perspective, this article is an especially good intro to polymers for people from MIT's department.} The reason is not because polymers are too complex, but rather because if we taught chemical thermodyanmics from the perspective of polymers, it would be too simple.\footnote{The other reason is that polymers often don't come to true equilibrium: those long chains can often make the approach to equilibrium \emph{slow}.} By the end of this, you should develop a fairly good intution for what happens when you blend two polymers together. 
+This section will attempt to apply much of what we have learned in 3.20 to systems that we didn't touch as much in class: polymers.\footnote{This section was inspired by and draws heavily A.H. Windle's \textit{A metallurgist's guide to polymers}, in Physical Metallurgy, eds. Cahn and Haasen, 1997. Since MIT teaches materials science from a metallurgist's perspective, this article is an especially good intro to polymers for people trained in MIT's department.} The reason is not because polymers are too complex, but rather because if we taught chemical thermodyanmics from the perspective of polymers, it would often be too simple.\footnote{The other reason is that polymers often don't come to true equilibrium: those long chains can often make the approach to equilibrium \emph{slow}.} By the end of this, you should develop a fairly good intution for what happens when you blend two polymers together. 
 
-Polymers exhibit  interesting phase behavior relative to other systems in that they don't really mix that well when you heat them up, even when they come to equilibrium. This is actually not because it's hard to get the chains to wiggle into one another (i.e. this is not because of kinetics), but rather because of basic thermodynamics, as we'll show. Despite this fact, polymer scientists rarely useful phase diagrams, though. This is for several reasons. First, there are way more polymers than there are elements, so the number of polymer phase diagrams would be extremely large. Even such details as the polymer's molecular weight have a significant influnce on phase behavior. Second, polymers simply don't mix very well: they tend to phase separate, or be \emph{immiscible} in the language of polymers. Even when they are miscible (e.g. soluble), they never form compounds, so really, there are only two basic phase behaviors for polymers: miscible, and immiscible. We'll illustrate this with a simple example. 
+%Polymers exhibit  interesting phase behavior relative to other systems in that they don't really mix that well when you heat them up, even when they come to equilibrium. This is actually not because it's hard to get the chains to wiggle into one another (i.e. this is not because of kinetics), but rather because of basic thermodynamics, as we'll show. 
+Polymer scientists rarely use phase diagrams. This is for several reasons. First, there are way more polymers than there are elements, so the number of polymer phase diagrams would be extremely large. Even such details as the polymer's molecular weight have a significant influnce on phase behavior. Second, polymers simply don't mix very well: they tend to phase separate, or be \emph{immiscible} in the language of polymers. Even when they are miscible (e.g. soluble), they never form compounds, so really, there are only two basic phase behaviors for polymers: miscible, and immiscible, with most polymers being immiscible. We'll illustrate this with a simple example. 
 
 \begin{figure}[h]
 \centering
@@ -2450,14 +2453,14 @@ Polymers exhibit  interesting phase behavior relative to other systems in that t
 \label{deuterated_comparison}
 \end{figure}
 
-Consider blends of deuterated and non-deuterated polybutadiene.\footnote{Polymer scientists use the term \emph{blend} for what others might call mixtures or alloys.} The only difference between  the two polymers being blended is that one polmer has hydrogens that don't have a neutron (called protium), while the other polymer has hydrogen atoms that contain a neutron (called deuterium). These polymers should thus behave identically chemically, and we might naively expect them to form an ideal solution.  Compare this expectation to the experimentally-determined phase diagram in Fig \ref{deuterated_comparison}, where we see that the chemically 'identical' polymers exhibit a miscibility gap up to ~333 K (60 \degree C), which is a fairly high temperature for a polymer. Note: in polymer science, the critical temperature at the top of the miscibility gap is called the upper critical solution temperature, abbreviated UCST. Of course, polymers which differ in their chemistry can be expected to exhbit significantly larger interactions than this one, and so their UCST values are often even higher. So, we see that somehow, our intuition for what drives mixing is  off in polymers.
+Consider blends of deuterated and non-deuterated polybutadiene.\footnote{Polymer scientists use the term \emph{blend} for what others materials scientists might call mixtures or alloys.} The only difference between  the two polymers being blended is that one polymer has hydrogens that don't have a neutron (called protium), while the other polymer has hydrogen atoms that contain a neutron (called deuterium). These polymers should thus behave identically chemically, and we might naively expect them to form an ideal solution.  Compare this expectation to the experimentally-determined phase diagram in Fig \ref{deuterated_comparison}, where we see that the chemically 'identical' polymers exhibit a miscibility gap up to ~333 K (60 \degree C), which is a fairly high temperature for a polymer. In polymer science, the critical temperature at the top of the miscibility gap is called the upper critical solution temperature, abbreviated UCST. Of course, polymers which differ in their chemistry can be expected to exhbit significantly larger interactions than those between two polymers which differ merely in their isotopes, and so their UCST values are often much higher. So, we see that somehow, our intuition for what drives mixing is off in polymers.
 
 \subsection{Why don't polymers mix when we heat them up?}
-It turns out that the reason polymers don't mix well is because polymers are highly correlated in terms of their atomic positions: each repeat unit is chemically bonded to all of the others, and so their configurational entropies are greatly reduced. Thus, the drivng force for mixing is greatly reduced as well. More quantitatively, the entropy of mixing of a polymer was given approximately by Flory and Huggins as:
+It turns out that the reason polymers don't mix well is because polymers are highly correlated in terms of their atomic positions: each repeat unit is chemically bonded to all of the others, and so the configurational entropy of a polymer chain is greatly reduced relative to the same number of monomers. Thus, the configurational drivng force for mixing is greatly reduced as well. More quantitatively, the entropy of mixing of a polymer was given approximately by Flory and Huggins as:
 \eqs
 \Delta S_\text{mix}=-R\left [\frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2  \right ]
 \eqe
-where $\phi_i$ refers to the volume fraction of monomers of component $i$, and $N_i$ is the number of monomers per polymer chainfor poymeric component i. Note the similarity to the ideal entropy of mixing of a molecular solution: $\Delta S=-k_B\sum x_i \ln x_i $; the volume fractions of monomers, $\phi_i$, are exactly analogous to the concentrations $x_i$. However, the entropy terms are divided by the degree of polymerization of each polymer. It's as if each polymer is 'ball' that is ideally mixing instead of each molecular unit ideally mixing. As the degree of polymerization is usually on the order of 1000 or more, \emph{the entropy of mixing of polymers is approximately three orders of magnitude smaller than that of molecular solutions.} 
+where $\phi_i$ refers to the volume fraction of monomers of component $i$, and $N_i$ is the number of monomers per polymer chainfor poymeric component i. Note the similarity to the ideal entropy of mixing of a molecular solution: $\Delta S=-k_B\sum x_i \ln x_i $; the volume fractions of monomers, $\phi_i$, are exactly analogous to the concentrations $x_i$. However, the entropy terms are divided by the degree of polymerization of each polymer. It's as if each polymer is `ball' that is ideally mixing instead of each molecular unit ideally mixing. As the degree of polymerization is usually on the order of 1000 or more, \emph{the configurational entropy of mixing of polymers is approximately three orders of magnitude smaller than that of molecular solutions (or even smaller).} 
  
 The natural next step in discussing the mixing of polymers is to define an enthalpy of mixing, such that we can write out the free energy of mixing. Generally, a version of the regular solution approximation is sufficient to describe the enthalpy of mixing of polymers. Polymer scientists like to write the free energy of mixing as:
 \eqs
@@ -2467,27 +2470,37 @@ This is called the \emph{Flory-Huggins equation}. Looking closely, you can ident
 \eqs
 \Delta H_\text{mix}=RT\chi \phi_1 \phi_2
 \eqe
-Again, there is a close analogy here between the concentrations $x_i$ from alloy theory and the volume fractions $\phi_i$ in polymer mixing. In the regular solution approximation, $\Delta H_\text{mix}=z\omega x_1 x_2$, so we see that $RT\chi$ is then analogous to the pairwise interactions between polymers, just as $z\omega$ represented the pairwise interactions between alloying elements in regular solution theory. It might at first strike you as silly that polymer scientists write an enthalpic term as proportional to the temperature, as it looks like an entropic term. Indeed, from the perspective clearly separating enthalpies and entropies, this is inconvenient, and $\chi$ itself must be temperature-dependent even to model temperature-indepedendent interactions in the blend. However, the Flory-Huggins free energy offers a great convenience or polymer scientists in that it is easily non-dimensionalized:
+Again, there is a close analogy here between the concentrations $x_i$ from metallurgical alloy theory and the volume fractions $\phi_i$ in polymer mixing. In the regular solution approximation, $\Delta H_\text{mix}=z\omega x_1 x_2$, so we see that $RT\chi$ is then analogous to the pairwise interactions between polymers, just as $z\omega$ represented the pairwise interactions between alloying elements in regular solution theory. It might at first strike you as silly that polymer scientists write an enthalpic term as proportional to the temperature, as it looks like an entropic term. Indeed, from the perspective clearly separating enthalpies and entropies, this is inconvenient, and $\chi$ itself must be temperature-dependent even to model temperature-indepedendent interactions in the blend. However, the Flory-Huggins free energy offers a great convenience for polymer scientists in that it is easily non-dimensionalized:
 \eqs
 \frac{\Delta G_\text{mix}}{RT}= \chi \phi_1\phi_2 + \frac{\phi_1}{N_1} \ln \phi_1 +  \frac{\phi_2}{N_2} \ln \phi_2 
 \eqe
-Rememer, the phase behavior of a system is not controled by the absolute scale of the free energy, but by the \emph{shape} of the free energy curves. Thus, this normalization just serves to eliminate temperature as a needed thermodynamic descriptor for polymeric system. There are thus only three variables needed to describe mixing for all polymers that behave according to Flory-Huggins theory: $\chi, N_1,N_2$. The Flory-Huggins expression is thus useful for polymers because it is so transferable across systems, and the number of systems in the polymer world is very large. As you might be able to infer from this discussion, $\chi$ is a very important parameter in polymer science.
+Remember, the phase behavior of a system is not controled by the absolute scale of the free energy, but by the \emph{shape} of the free energy curves. Thus, this normalization just serves to eliminate temperature as a needed thermodynamic descriptor for polymeric system. There are thus only three variables needed to describe mixing for all polymers that behave according to Flory-Huggins theory: $\chi, N_1,N_2$. The Flory-Huggins expression is thus useful for polymers because it is so transferable across systems, and the number of systems in the polymer world is very large. As you might be able to infer from this discussion, $\chi$ is a very important parameter in polymer science.
 
-So, what is generally the sign of $\chi$? Well, the phrase 'like dissolves like' is very applicable in understanding miscibility in polymers. Nothing is more like one type of polymer than the same polymer, so they tend to like to stay with themselves rather than with mix: $\chi$ is more often positive than negative. Due to the tiny entropric forces for mixing, even small values for $\chi$ result in immiscibility, as you will demonstrate in the below exercise.
+So, what is generally the sign of $\chi$? Well, the chemical addage \emph{like dissolves like} is very useful in understanding miscibility in polymers. Nothing is more like one type of polymer than the same polymer, so they tend to like to stay with themselves rather than with mix: $\chi$ is more often positive than negative. Due to the tiny entropric forces for mixing, even small values for $\chi$ result in immiscibility, as you will demonstrate in the below exercise.
 
-\textbf{Exercise}: Derive the value of $\chi$ from the value of the UCST using Flory-Huggins theory. Compare this value to values for the heat of mixing for typical metallic and ionic systems. 
+\textbf{Exercise}: Derive the value of $\chi$ from the value of the UCST in Figure \ref{deuterated_comparison} using Flory-Huggins theory. Compare this value to values for the heat of mixing for typical metallic and ionic systems. 
 
 Now, this isn't to say there aren't polymer systems which exhibit miscibility. Many miscible blends exist. Such systems occur when the side-groups on the chains of the two polymers interact favorably. Interestingly, these systems often phase separate at higher temperatures. The mechanism for this is not too complex, and has its origins in statistical mechanics.
 
 \subsection{Why do miscible blends phase separate at high temperatures?}
 
-Talk about how miscibility happens due to favorable interactions between side chains. As the temperature increases, the chains tend to wiggle a lot more, a process termed reptation. The contact between the favorable groups on the side chains cannot be maintained (one could also view this as activating out of this local energy well to the plethora of states outside of it). This then leads to the interactions becoming unfavorable on average, and the systems phase separate. This should take you off guard; it's entropically-driven phase separation! 
+Again, miscibility of polymers occurs due to favorable interactions between polymeric side chains. As the temperature increases, the chains tend to wiggle a lot more, a process termed \emph{reptation}. The contact between the favorable groups on the side chains cannot be maintained with increaing temperature; the side groups desorb from one another (one could also view this as the polymer activating out of this local energy well to the plethora of states outside of it). This then leads to the interactions becoming unfavorable on average, and the systems phase separate. A related mechanism which can drive polymers to phase separate at higher temperatures is that miscible polymers tend to maximize the degree of contact with the other member of the blend. The polymers thus  stretch out in solution to minimize contact with themselves. Per Figure \ref{shortLongEntropy}, this is a lower entropy conformation, and thus the polymer gains entropy upon coiling back up during the phase separation process. The conformations of the polymers in solution, along with schematics of the UCST and LCST are shown in Figure \ref{LCST_UCST_illustration} This should take you off guard; it's entropically-driven phase separation! 
 
-ADD FIGURE: an LCST
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{LCST_UCST_sketch}
+\caption{A schematic of the polymer confirmations in LCST and UCST behavior, courtesy of Gibson and O'Reilly, Chem. Soc. Rev., 2013, 42, 7204-7213 (\href{http://pubs.rsc.org/en/content/articlehtml/2013/cs/c3cs60035a}{link}).}
+\label{LCST_UCST_illustration}
+\end{figure}
 
-Last, talk about systems that exhibit an LCST and a UCST through a combination of both of these effects; entropically-driven phase separation at low temperatures and then entropically-driven mixing at high temperatures. This is baout as complex as polymer phase diagrams get as long as we don't get into liquid crystal phase diagrams.
+To finish this discussion, many systems that exhibit both an LCST and a UCST through a combination of both of these effects; entropically-driven phase separation at low temperatures and then entropically-driven mixing at high temperatures (Figure \ref{LCST_and_UCST}). This is about as complex as polymer phase diagrams get as long as we don't get into liquid crystalline phase diagrams.
 
-ADD FIGURE: a simulatenous LCST and UCST
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{LCST-UCST_plot}
+\caption{A schematic of a polymer phase diagram exhibiting an LCST and a UCST, courtesy of \href{https://commons.wikimedia.org/wiki/File:LCST-UCST_plot.svg}{wikimedia commons}.}
+\label{LCST_and_UCST}
+\end{figure}
 
 
 
