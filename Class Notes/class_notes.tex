@@ -271,18 +271,18 @@ and substitute $dU = \dbar Q - P \, dV$
 dH &= \dbar Q + V \, dP\\
 (dH)_p &= \dbar Q
 \end{align*}
-Note how the enthalpy is naturally expressed with pressure held constant than volume held constant. Because H is defined in terms of state functions, the enthalpy is also a state function. It is the state function that describes the heat change at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experimental technique.  $H$ is often called the ``heat'' content.\\
+Note how the enthalpy is naturally expressed with pressure held constant rather than volume held constant. Because $H$ is defined in terms of state functions, the enthalpy is also a state function. In a somewhat too simplistic terms, $H$ is the state function that describes heat exchange at constant pressure.  It is thus the natural energy for discussing \textbf{calorimetry}, which is a major experimental technique.  $H$ is often called the ``heat'' content.\\
 
 If we write down what $(dH)_p$ is, we get
 \begin{align*}
 (dH)_p &= C_p \,(dT)_p\\
 \left(\frac{\partial H}{\partial T}\right)_p &= C_p\\
 \end{align*}
-If we heat a substance through a phase transition, the enthalpy of the system can be broken into three parts:
+If we heat a substance through a phase transition, the enthalpy change of the system can be broken into three parts:
 \eqs
 H(T) &= H(T_0) +  \int_{T_0}^{T_f}C_p  \, dT + \Delta H_{\phi T}
 \eqe
-where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a function of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the latent heat of the transition\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$\footnote{Only relative energies between states are physically measurable}.  As such, we often reference these state functions to their \emph{standard states}. Under this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101,325$ Pa) and room temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy; heat is generally exchanged when a chemical reaction takes place.\\
+where the first term is the enthalpy of the system in its initial state, the second term is the contribution of the heat capacity as a function of temperature ignoring the phase transition, and $\Delta H_{\phi T}$ is the enthalpy due to the phase transition, often called the \emph{latent heat of the transition}\footnote{For example, the solid$\to$liquid phase transition has a \emph{latent heat of melting}}.  Unlike $T$ or $P$, there technically is no absolute zero for $H$ or $U$; only relative energies between states are physically measurable. As such, we often reference these state functions to their \emph{standard states}. Under this convention, $H=0$ for a pure element at atmospheric pressure ($P_0 = 101,325$ Pa) and room temperature ($T_0 = 298$ K). Note that because elements have zero enthalpy under standard conditions, compounds formed from reactions of several elements will generally have non-zero enthalpy relative to the stanadard state; heat is generally exchanged when a chemical reaction takes place.\\
 
 %(H\degree(Fe))
 The enthalpy as a function of temperature is plotted below for Fe over two temperature scales. The slope of these lines, $\frac{(dH)_p}{dT}$, is the heat capacity.  Below 900\degree C, Fe is in the $\alpha$ (BCC) phase, from $900^0 < T < 1400^0$ it is in the $\gamma$ (FCC) phase, and from 1400$\to$1535\degree C Fe is the $\delta$ (BCC2) phase. Above 1535\degree C , Fe melts. Fe evaporates near $2900 \degree$C. Each of these can be observed as discontinuities in the $H(T)$ curve. \\
@@ -424,9 +424,9 @@ Note how changing the way we interpet the process generally leads to a different
 In general, we categorize processes in the following way: 
 
 \begin{enumerate}[(I)]
-\item Continuous and at equilibrium with environment (reversible). See Figure 2.
-\item Continuous but not necessarily at equilibrium with environment.  This is considered \un{quasi-static}.  Can be both reversible and irreversible.  See Figure 3.
-\item Discontinuous and not in equilibrium.  We can not do equilibrium thermodynamics for this  (i.e. an explosion with H\2 + O\2 will proceed so fast we can not tell what is happening to get us to the final stage).  See Figure 4.
+\item Continuous and at equilibrium with environment (reversible). See Figure 2 in Callen.
+\item Continuous but not necessarily at equilibrium with environment.  This is considered \un{quasi-static}.  Can be both reversible and irreversible.  See Figure 3 in Callen.
+\item Discontinuous and not in equilibrium.  We can not do equilibrium thermodynamics for this  (i.e. an explosion with H\2 + O\2 will proceed so fast we can not tell what is happening to get us to the final stage).  See Figure 4 in Callen.
 \end{enumerate}
 
 \textbf{Second Law of Thermodynamics:}  In a closed system, there exists a state function, S, for which:
@@ -435,7 +435,7 @@ dS_\text{system} \geq \frac{\dbar Q}{T}.
 \end{equation}
  %\\
 
-If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\dbar Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\dbar Q}{T}$ (or $dS_\text{irrev}=dS_\text{rev} + \xi$ where $\xi >0$). Note that this fixes the directions in which processes can occur, due to the inequality. Taking our system as the universe, a process will move forward if, for a given process ($1\rightarrow 2$) if $dS_\text{universe} > 0$ or backward $dS_\text{universe} < 0$. If $dS_\text{universe} > 0$ for a process, that process is stationary/reversible.
+If a process is \un{reversible} (quasi-static), then we have $dS = \frac{\dbar Q}{T}$.  If it is \un{irreversible}, $dS > \frac{\dbar Q}{T}$ (or $dS_\text{irrev}=dS_\text{rev} + \xi$ where $\xi >0$). Note that this fixes the directions in which processes can occur, due to the inequality. Taking our system as the universe, a process will move forward if, for a given process ($1\rightarrow 2$) if $dS_\text{universe} > 0$ or backward $dS_\text{universe} < 0$. If $dS_\text{universe} = 0$ for a process, that process is stationary/reversible.
 
 The first law said that $U$ exists and
 \begin{equation}
@@ -468,7 +468,7 @@ dS_\text{system} &= \frac{\dbar Q_1}{T_1} + \frac{\dbar Q_2}{T_2}\\
 &= \dbar Q_1 (\frac{1}{T_1} - \frac{1}{T_2})\\
 &= \dbar Q_1 (\frac{T_2 - T_1}{T_1 T_2}) \geq 0\\
 \end{align*}
-If $T_2 > T_1$, $\dbar Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{Heat flows from ``hot'' to ``cold''}.
+If $T_2 > T_1$, $\dbar Q_1 > 0$.  Or if $T_2 < T_1$, then $\dbar Q_1 < 0$.  \textbf{The second law dictates that heat flows from hot to cold}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Second Law II, The Third Law}
@@ -476,12 +476,12 @@ As a reminder, the 1st law stated that $U$ is a state function where
 \beq
 dU = \dbar Q + \sum y_i \, dx_i
 \ceq
-The 2nd law states that $S$ is also a state function, and for a \emph{isolated system} under any arbitrary process,
+The 2nd law states that $S$ is also a state function, and for an \emph{isolated system} under any arbitrary process,
 \beq dS \geq \frac{\dbar Q}{T} \ceq
 If the process is reversible then, $T\, dS = \dbar Q$.  The change in the entropy for the entire system must increase ($dS_\text{system} \geq 0$).
 Key properties of entropy:
 \begin{enumerate}[(I)]
-\item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system by increasing the entropy of the surroundings). 
+\item $S$ of a system is \emph{not} a conserved quantity; entropy can be removed from a system, even during an irreversible process (This is what a refrigerator does, it irreversibly cools a system, the food, while increasing the entropy of the surroundings). 
 \item $S$ of the \emph{universe} is only conserved during reversible processes. Otherwise, $S_\text{universe}$ is an increasing quantity (Imagine the case where we stir an isolated bucket with a propeller).
 \item $S$ of an adiabatic system is constant or increases.  This is because the $\dbar Q$ term is zero, so $dS \geq 0$. %This seems redundant to me...
 %\item $S$ \emph{can} decrease.  An example is allowing a liquid to cool and form a solid phase.  In this case the entropy of the system decreases.  The entropy of the environment, however, increases by an amount greater than or equal to the decrease of iron entropy.  Thus, $dS_\text{universe}$ is positive.
@@ -630,7 +630,7 @@ We can take the derivative of both sides of this equation to get:
 \eqs
 \frac{\partial}{\partial \lambda} U(\lambda S,\lambda X,...) =n \lambda^{n-1} U(S,X,...)
 \eqe
-For n = 1, the right hand side is just $U(S,X,...)$. We can expand the LHS in terms of its derivatives with respect to the natural variables of U (the extensive variables):
+For $n = 1$, the right hand side is just $U(S,X,...)$. We can expand the LHS in terms of its derivatives with respect to the natural variables of U (the extensive variables):
 \eqs
 \frac{\partial (\lambda S)}{\partial \lambda} \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda S)} + \frac{\partial (\lambda X)}{\partial \lambda} \frac{\partial U(\lambda S, \lambda X,...)}{\partial (\lambda X)} + ... = U(S,X,...)
 \eqe
@@ -690,17 +690,17 @@ T \, dS + \sum_i Y_i \,dX_i&=T \,dS + S\,dT + \sum_i Y_i \, d X_i + \sum_i X_i \
 0 &=S \, dT + \sum_i X_i \, d Y_i \label{GD} %\end{align*} 
 \eqe
 
-This is called a \emph{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. Eq \ref{GD} can be applied in a variety of situations, and we will come back to Eq \ref{GD} frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:\\
+This is called a \textbf{Gibbs-Duhem equation}. It states that all the intensive variables cannot be varied independently. Eq \ref{GD} can be applied in a variety of situations, and we will come back to Eq \ref{GD} frequently in the last section of the class. An example of how a Gibbs-Duhem equation might be applied is as follows:
 
 Let's think about how the chemical potential of a binary system changes. In particular, we'll consider the experimentally relevant case where the system is at constant pressure and temperature ($dP=dT=0$), and we are varying the chemical potential of one component (say by flowing a vapor with different concentrations through the system). Then, the Gibbs-Duhem equation simplifies to:
 \eqs N_1 \, d \mu_1 = -N_2 \, d \mu_2 \eqe
-In words, this says that varying the chemical potential of one component automatically causes the chemical potential of the other component to change in the opposite direction, and that the rate of this change is related to the mole numbers  of the two components in the system. This is a deep and unintuitive truth.
+In words, this says that \emph{varying the chemical potential of one component automatically causes the chemical potential of the other component to change in the opposite direction}, and that the rate of this change is related to the mole numbers  of the two components in the system. This is a deep and unintuitive truth.
 
 \subsubsection{Equations of state contain partial information about U}
-Equations of state of $U$ are expressions of the intensive variables in terms of the independent variables. As a thermodynamic state is completely defined by the extensive variables alone, the equations of state provide the relation between the independent, extensive state variables and the dependent, intensive state variables. For example, $P\equiv (\partial U / \partial V)_{S,N_i}$, which implies that P is a function of the entropy and mole numbers at which the derivative was taken: $P = P(S,N,V)$. This expression, $P(S,N,V)$, is one equation of state for a simple system. The others are $T(S,N,V),\mu(S,N,V) $. As the equations of state are the derivatives of the free energy, if you know enough of them, you can combine their integrals to get the free energy function as a function of its natural variables referenced to some initial state. For a system where the mole numbers are constant:
+Equations of state of $U$ are expressions of the intensive variables in terms of the independent variables. As a thermodynamic state is completely defined by the extensive variables alone, the equations of state provide the relation between the independent, extensive state variables and the dependent, intensive state variables. For example, $P\equiv (\partial U / \partial V)_{S,N_i}$, which implies that P is a function of the entropy and mole numbers at which the derivative was taken: $P = P(S,N,V)$. This expression, $P(S,N,V)$, is one equation of state for a simple system. The others are $T(S,N,V),\mu(S,N,V) $. As the equations of state are the derivatives of the free energy, if you know enough of them, you can combine their integrals to get $U(S,N,V)$%the free energy function as a function of its natural variables referenced to some initial state
+. For a system where the mole numbers are constant:
 \eqs U(S,V)= \int_{S_0}^{S} \left( \frac{\partial U}{\partial S}\right)_{V}\,dS +\int_{V_0}^{V} \left(\frac{\partial U}{\partial V} \right)_{S_0} \,dV= \int_{S_0}^{S} T\,dS +\int_{V_0}^{V} P \, dV \eqe
-However, such an integration can only be performed if you have as many independent equations of state as you have free variables, and you know them in terms of the proper variables (S and V in the case of U).
-
+However, such an integration can only be performed if you have as many independent equations of state as you have free variables, and you know them in terms of the proper variables (S and V in the case of U). This is experimentally difficult.
 
 
 \subsection{Equilibrium and evolution of isolated systems}
@@ -1222,42 +1222,46 @@ Let's return to systems where the mole numbers may change. We can write $dU$ for
 \eqs
 dU = T\, dS - P\, dV + \sum_i \mu_i \, dn_i
 \eqe
-where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a 2-phase system, we will have $S^{(1)}, V^{(1)}, \{n_j^{(1)}\}$ describing the first phase and $S^{(2)}, V^{(2)}, \{n_j^{(2)}\}$ describing the second phase.  We know
+where $\mu_i = \left(\frac{\partial U}{\partial n_i}\right)_{S,V,n_{i\neq j}}$ is the chemical potential of a species.  If we have a system with 2 phases, we will have $S^{(1)}, V^{(1)}, \{n_j^{(1)}\}$ describing the first phase and $S^{(2)}, V^{(2)}, \{n_j^{(2)}\}$ describing the second phase.  In an isolated system, the two phases can only exchange extensive quanities with each other:
 \eqs
 d S^{(1)} &= -d S^{(2)}\\
 d V^{(1)} &= -d V^{(2)}\\
 d n_j^{(1)} &= -d n_j^{(2)}
 \eqe
-where $j=[1,...,r]$.  Meanwhile
+where $j=[1,...,r]$.  Further, the extensive variables of the system as a whole are the sum of the extensive variables of the different phases
 \eqs
-U &=\sum_{\alpha=1}^v U^{\alpha}\\
-S&= \sum_{\alpha=1}^v S^{\alpha}\\
-V&= \sum_{\alpha} V^{\alpha}\\
-N&= \sum_{\alpha} n^{\alpha}\\
+U &=\sum_{\alpha=1}^2 U^{\alpha}\\
+S&= \sum_{\alpha=1}^2 S^{\alpha}\\
+V&= \sum_{\alpha=1}^2 V^{\alpha}\\
+N&= \sum_{\alpha=1}^2 n^{\alpha}\\
 \eqe
 \eqs
-d U = \sum_{\alpha=1}^2 T^{\alpha} \,d S^\alpha - P^{\alpha} \, d V^\alpha + \sum_{j=1}^v \mu_j^\alpha \, d n_j^\alpha
+d U = \sum_{\alpha=1}^2 \left[ T^{\alpha} \,d S^\alpha - P^{\alpha} \, d V^\alpha + \sum_{j=1}^v \mu_j^\alpha \, d n_j^\alpha \right] \label{multiCompEqm}
 \eqe
-This is the first order displacement of $U$.  If the system is at equilibrium, $d U \geq 0$.  At true equilibrium, $d U |_{S,V,n}= 0$.  For a single homogeneous phase, $T, P, \mu$ are constant throughout the phase. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another (i.e. the exchange of extensive variables between subsystems is uncoupled, just as charge is not coupled to mass flow in say, a battery), then the intensive variables in any subsystem must be the same as in any other subsystem.  If the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually this means:
+This is the first order displacement of $U$ with respect to exchange of extensive quantities by the two phases.  If the system is at equilibrium, $d U \geq 0$.  At true equilibrium, $d U |_{S,V,n}= 0$.  In order for $d U |_{S,V,n}= 0$ to hold for arbitrary exchanges of extensive variables, $T, P, \mu$ must be equal in the two phases. Put more generally, the takeaway here is that if the extensive variables are allowed to vary independently of one another, then the intensive variables in any subsystem must be the same as in any other subsystem; if the pressures aren't equal, then the higher pressure subsystem will expand into the lower pressure subsystem, higher temperature subsystems will exchange heat with lower temperature subsystems, etc. Conceptually this means:
 \begin{itemize}
 \item we always formulate the conditions for equilibrium in terms of the intensive variables.
 \item each independent phase adds an independent constraint on the way the intensive variables can vary via a Gibbs-Duhem equation for that phase. We derive these constraints in the next section.
 \end{itemize}
-If the exchange of extensive variables is coupled, it is the coupled sum of the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge exchange, then the electrical potential is coupled to the chemical potential of some species, and its electrochemical potential is homogeneous. If we denote $\mu^*$ as the electrochemical potential, it is easy to show that
-$\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.\\
+If the exchange of extensive variables is coupled, it is the coupled sum of the intensive variables that needs to be constant throughout a system at equilibrium. For example, if mass flow is coupled to charge flow for a given atomic species (i.e. the species exists as an \emph{ion}), then the electrical potential is coupled to the chemical potential of some species, and the \emph{electrochemical potential} is homogeneous. If we denote $\mu^*$ as the electrochemical potential, it is easy to show that
+$\mu^*=\mu+z F\phi$ must be constant across a system, where z is the charge on the species, F is Faraday's constant, and $\phi$ is the electrical potential.
+
+\textbf{Exercise:} Derive the the conditions for equilibrium in a system where charge and mass exchange are coupled between two systems, i.e. derive that $\mu^{*,1}=\mu^{*,2}$
 
 \subsection{Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule} \label{phaseRule}
-For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without invalidating (i.e. overspecifying) the system as:
+For a system of $n$ well-behaved algebraic equations with $m$ variables, we may define the number of variables which can be freely assigned without overspecifying the system as:
 \eqs f=m-n \eqe
-We call $f$ the degrees of freedom of the system of equations. We define a phase as a part of a system which is measurably distinct in terms of its thermodynamic variables from another part of the subsystem.
+We call $f$ the degrees of freedom of the system of equations. We define a phase as follows:
 
-When multiple phases are in equilibrium with each other, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, we increase the vapor pressure of the gas for it to remain in equilibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust itself when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
+\textbf{A phase is a part of a system which is homogeneous in its densities of the extensive variables at equilibrium.} In practice this simply means that a phase has a well-defined density, composition, and entropy per unit volume. Different phases differ in these quantities at equilibrium. 
+
+When multiple phases are in equilibrium with one another, their intensive variables are constrained to vary with one another. One example would be a unary system where the liquid is in equilibrium with its vapor. We know that the temperature and pressure of the gas and liquid need to be the same at equilibrium, and that if we raise the temperature of the liquid, the vapor pressure of the gas must increase for the vapor to remain in equilibrium with the liquid. Note that these are examples of \emph{constraints}: the liquid is \emph{constrained} to be at the same temperature and pressure as the gas, and the vapor pressure is \emph{constrained} to adjust its vapor pressure when the temperature is adjusted. Clearly, there is a non-trival coupling between the intensive variables in the different phases. \textbf{The Gibbs phase rule expresses the number of degrees of freedom for the intensive variables when you have multiple phases at equilibrium}. The derivation of the phase rule thus amounts to counting the possible variations of the intensive variables and then subtracting the constraints upon these variables due to equilibrium among the different phases.
 As stated above, we formulate the equilibrium between the different phases in terms of their intensive variables. 
 
 Let there be $p$ phases and $c$ components in the system. We know that for each phase, $\alpha$, a Gibbs-Duhem equation must hold:
 
-\eqs
-S^{\alpha }\, dT^{\alpha }-V^{\alpha }\, dP^{\alpha }+\sum_{i=1}^c N^{\alpha }\, \text{d$\mu $}_i^{\alpha }=0\eqe
+\begin{equation}
+S^{\alpha }\, dT^{\alpha }-V^{\alpha }\, dP^{\alpha }+\sum_{i=1}^c N^{\alpha }\, \text{d$\mu $}_i^{\alpha }=0 \footnote{Note: dividing the Gibbs-Duhem equation by the volume of each phase,$V^{\alpha}$, yields a condition formulated in terms of the \emph{densities of the extensive variables}. By our definition of a phase, there exist only as many unique constraints on the variation of the intensive variables for a system as there exist unique phases in said system.}\end{equation}
 
 Hence, for each phase, there are $c + 1$ independent intensive variables, e.g. $T^{\alpha },P^{\alpha }$, and the $c-1$ independent chemical potentials: $\mu _i^{\alpha}$. The total number of variables is thus the number of phases times $c + 1$: 
 \eqs m = p(c + 1) \eqe
@@ -1288,19 +1292,19 @@ These are all versions of the Gibbs phase rule. It has important implications fo
 % be careful to note that we are using $x_i = \frac{n_i}{n_T}$ (the mole fraction) so the sum of the fractions should be equal to 1.  For example, in a one component system $r=1$ and we will fix $T,P$.  This results in 2 independent variables to describe our equilibrium (if no coexisting phases).\\
 
 \subsection{Stability Conditions on the free energy} 
-Here, we use a Taylor expansion to provide constaints on the shape of $U$, and thus its Legendre transforms. $U$ can be expressed as a Taylor expansion in the extensive variables as:
+Here, we use a Taylor expansion to provide constaints on the shape of $U$. $U$ can be expressed as a Taylor expansion in the extensive variables as:
 \eqs
-(\Delta U)_{S,V,n_j} = d U + d^2 U + ... > 0\\
+(\Delta U)_{S,V,n_j} = d U + d^2 U + ...\\
 \eqe
-At equilibrium, we know that $d U = 0$. Therefore $\delta U \approx d^2U > 0$. $U$ is minimal at equilibrium, therefore the second-order terms in a Taylor expansion of $U$ should all be positive. The physical process considered in this Taylor expansion is the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable with respect to such perturbations, as illustrated in figure \ref{stability}. 
+In order for the internal energy to be minimal at constant entropy, two conditions must hold: $d U = 0$, and $\Delta U \approx d^2U > 0$. That is, because $U$ is minimal at equilibrium, the second-order terms in a Taylor expansion of $U$ should all be positive. The physical process considered in this Taylor expansion is the case where one subsystem exchanges some amount of an extensive variable with another subsystem, such that the total amount of the extensive variable is conserved. To be at equilibrium, a system must be stable with respect to such perturbations, as illustrated in figure \ref{stability}. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{StabilityWRTPerturbations}
-\caption{An illustration of a stable and unstable system with respect to volume perturbations. In the unstable case, subsystems can exchange volume and lower the energy of the systems. We call such instabilities to minute perturbations spinodal instabilities, and they evolve by special kinetics, termed spinodal decomposition.}
+\caption{An illustration of a stable and unstable system with respect to volume perturbations. In the unstable case, subsystems can exchange volume and lower the energy of both systems. We call such instabilities to minute perturbations spinodal instabilities. These instabilities evolve by special kinetics, termed spinodal decomposition.}
 \label{stability}
 \end{figure}
 
-To illustrate this mathematically, we'll consider composite system with a diathermal wall\footnote{Reminder: heat can be exchanged, but $n$, $V$, cannot be exchanged.}, and then fix $S,V,n$:
+To illustrate this mathematically, we'll consider a composite system with a diathermal wall\footnote{Reminder: heat can be exchanged, but $n$, $V$, cannot be exchanged.}, and then fix $S,V,n$:
 \eqs
 d S &= d S^{(1)} + d S^{(2)} = 0\\
 d V^{(1)}&= d V^{(2)} = 0\\
@@ -1317,10 +1321,17 @@ Substituting in our known derivatives of $U$:
 \partial^2U &= \frac{1}{2}(d S^{(1)2})\left[\frac{T^{(1)}}{c_V^{(1)}} + \frac{T^{(2)}}{c_V^{(2)}}\right]\\
 T\left[\frac{1}{c_V^{(1)}} + \frac{1}{c_V^{(2)}}\right] &\geq 0\\
 \eqe
-Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single extensive variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
+Thus we get the result that $c_V \geq 0$. There is nothing special about the heat capacity, all other double derivatives of $U$ with respect to a single extensive variable obey they same conditions; $U$ is concave up with respect to all the extensive variables.
+
+Remember, a Legendre transform causes a change in the sign of the concavity of the free energy with respect to the work terms involved in the transformation (ex: the sign of $\frac{\partial^2 U}{\partial S^2}$ is opposite the sign of $\frac{\partial^2G}{\partial T^2}$).Therefore, we also just derived the sign of all the unmixed double derivatives of all Legendre transforms. 
+
+\textbf{Exercise:} Derive the values of $\frac{\partial ^2G}{\partial T^2}$ and $\frac{\partial^2 H}{\partial P^2}$, prove that they have the proper signs.
+
+\textbf{Exercise:} What should be the sign of $\frac{\partial \mathcal{P}}{\partial \mathcal{E}}$ for a system at equilibrium?
+%Mathematically, $\frac{\partial^2f}{\partial x^{2}} > 0$ means we have convex upward (or convex positive) and likewise if $\frac{\partial^2f}{\partial x^{2}} < 0$ it is convex downward (convex negative).
 
 \subsection{Phase stability}
-$G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. There are similar guarantees on the second derivatives of G. 
+$G$ is minimal at equilibrium for a constant T, constant P system, so it would be useful to translate this knowledge of the shape of $U$ to a more experimentally relevant potential. As we discussed above, there are similar guarantees on the second derivatives of $G$. 
 If we imagine that each phase/state of matter has its own free energy curve $G(T)^{\alpha},G(T)^{\beta},...$, then \emph{the equilibrium free energy is simply the lower envelope of the free energy curves of the possible phases}. This is shown in Figure \ref{phaseGCurves}.
 \begin{figure}[h]
 \centering
@@ -1348,21 +1359,25 @@ For example, if we plot $G(T)$ for water, at 1atm of pressure and $G(T)$ for sol
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Phase Transitions, Phase Diagrams, Clausius-Clapeyron}
-From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$.  What is our $T_B$ (boiling temp.)?
+From last time, we looked at the plot of $G$ vs temperature $T$ for gaseous, liquid, and solid phases, finding that at low-T $G_\text{solid} < G_\text{liquid} <  G_\text{vapor}$, at $T$ greater than the melting temperature $G_\text{liquid} < G_\text{solid} <  G_\text{vapor}$, and then at $T$ greater than boiling $G_\text{vapor} < G_\text{liquid} <  G_\text{solid}$. If we know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta S_{l\rightarrow v} = 120$ J/mol/K for a certain substance, then what is its boiling temperature, $T_B$?
+
+Well, we know that at the boiling point, the free energies of the liquid and vapor phases are equal, or:
 \eqs
 \Delta G_{l\rightarrow v}(T_B) = 0
 \eqe
-We know $\Delta H_{l\rightarrow v} = 44$ kJ/mol, $\Delta S_{l\rightarrow v} = 120$ J/mol/K, and $T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.  How do we evaluate $\Delta G_{l\rightarrow v}(T)$?  We know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation. If we approximate $\Delta H_{l\to v}$ and $\Delta S_{l\to v}$ as constant, we can write:
+ As $\Delta G_{l\rightarrow v} = \Delta H_{l\rightarrow v}-T_B \Delta S_{l\rightarrow v}$, the boiling point can be calculated as :$T_B = \frac{\Delta H_{l\rightarrow v}}{\Delta S_{l\rightarrow v}} = 370 K$.
+
+One might further be interested in the difference in free energies as a function of temperature (for example, to evaluate the heat released by a supercooled vapor). How does one evaluate $\Delta G_{l\rightarrow v}(T)$?  Well, we know that $\Delta S_{l\rightarrow v} = \frac{\Delta H_{l\rightarrow v}}{T_{\phi T}}$ at the phase transformation. If we approximate $\Delta H_{l\to v}$ and $\Delta S_{l\to v}$ as constant, we can write:
 \eqs
 \Delta G_{l\rightarrow v}(T) &\approx \Delta H - T \Delta S\\
 &= \Delta H_{\phi T}-T\frac{\Delta H_{\phi T}}{T_{\phi T}} = \Delta H_{\phi T}(1-\frac{T}{T_{\phi T}})
 \eqe
-Note that this approximation assumes that the heat capacities of the two phases are constant. This may lead to significant errors far from the phase transition if the difference in heat capacities is large.\\
+Note that this approximation assumes that the heat capacities of the two phases are constant. This may lead to significant errors far from the phase transition if the difference in heat capacities is large.
 
-\subsection{Ehrenfest classification of $\phi T$ (phase transitions)}
+\subsection{Ehrenfest classification of phase transitions}
 Since free energies curves of individual phases are continuous, the equilibrium free energy curve, which consists of the lower envelope of all of these curves is also continuous. However, the derivatives of the equilibrium free energy envelope will have discontinuities where the different curves intersect, giving rise to a convenient way to describe phase transformations. 
 
-The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be identified by discontinuities in the extensive variables or their derivatives as a function of the intensive variables (also called the response functions). First order transitions display discontinuities in the extensive variables themselves (volume, mole number, and entropy), while second order transitions display continuous extensive variables, but exhibit discontinuties in their response functions (i.e. things like compressibilities and heat capacities are discontinuous). One can eqivalently think of the Ehrenfest classification in terms of discontinuities in the derivatives of $G$:\\
+The \textbf{Ehrenfest Classification of phase transitions} states that phase transitions can be identified by discontinuities in the extensive variables or their derivatives as a function of the intensive variables. First order transitions display discontinuities in the extensive variables themselves (volume, mole number, and entropy), while second order transitions display continuous extensive variables, but exhibit discontinuties in their response functions (i.e. things like compressibilities and heat capacities are discontinuous). One can eqivalently think of the Ehrenfest classification in terms of discontinuities in the derivatives of $G$:\\
 \un{1st order transition}:  The first derivative of $G$ is discontinuous (S, V, ...)\\
 \un{2nd order transition}:  The second derivative of $G$ is discontinuous (but the first derivative is not)\\
 Classifications beyond second order are not usually made because they are not useful in real life, so we don't bother talking about them.
