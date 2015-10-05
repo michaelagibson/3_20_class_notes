@@ -2,6 +2,7 @@
 \usepackage{class_notes}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{accents}
 \usepackage{array} % for better arrays (eg matrices) in maths
 \usepackage{gensymb}
 \usepackage{fixltx2e} %Text subscripting and superscripting.
@@ -16,7 +17,8 @@
 \graphicspath{ {figures/} }
 %This is an inexact differential: $\dbar$
 \def\dbar{{\mathchar'26\mkern-12mu d}}
-
+\newcommand\munderbar[1]{%
+  \underaccent{\bar}{#1}}
 \begin{document}
 \includepdf[pages=-]{titlepage.pdf}
 \tableofcontents
@@ -1628,6 +1630,81 @@ H &= U - \sum y_i x_i\\
 H' &= U + PV - Fl\\
 (dH') &= (\dbar Q)_P - l \,dF
 \eqe
+
+\subsection{Chemical Clausis-Clapeyron relationships}
+In this subsection we briefly elaborate on the calculation of the slopes of phase boundaries for phase diagrams relevant to chemistry: Temperature-composition diagrams. We present two alternative derivations that demonstrate the importance of boundary conditions and choice of potential in deriving easily-interpreted results from Clausius-Clapeyron relationships.
+
+Consider a system composed of only A and B atoms. We will, to mimic the processes of traversing a phase diagram, assume that the system is surrounded by a membrane such that whenever an atom of A leaves the system, and atom of B enters the system, i.e. the $dN_A=-dN_B$. We can then write $dU$ as:
+\begin{equation} 
+dU=T\, dS - P\, dV + \mu_A \, dN_A + \mu_B \, dN_B =T\, dS - P\, dV + (\mu_B-\mu_A) \, dN_B
+\end{equation} 
+Note that the constraint $dN_A=-dN_B$ means that the system is at constant total numbers of atoms, no matter what processes occur across the boundaries. For simplicity, we'll consider a single mole of atoms total. The system is kept at constant temperature and pressure. In addition, we externally fix the composite chemical potential $(\mu_B-\mu_A)$by flowing an A/B vapor of varying mole fractions of A and B across the system. 
+
+The relevant potential is then:
+\begin{equation}
+\phi = U-TS+PV-(\mu_B-\mu_A)N_B
+\end{equation}
+such that:
+\begin{equation}\begin{aligned}
+d\phi &= -S\,dT+V\,dP-N_B\, d(\mu_B-\mu_A) \ \ \text{at constant mole number $N_A$ + $N_B$} \\
+&= -S\,dT+V\,dP-N_B\, d\mu_B-N_A\, d\mu_A \ \ \text{at constant mole number $N_A$ + $N_B$}
+\end{aligned}\end{equation}
+
+If the system contained within our membrane is a two-phase system, then we can then change the external chemical potential difference by changing the composition of the vapor, and ask how the temperature of the system must change for the system to remain in two-phase equilibrium (at constant pressure). This is equivalent to saying that the change in the molar free energies of the two phases are equal:
+\begin{align}
+d\phi_\alpha &= d\phi_\beta \\
+-S_\alpha\,dT -N_{B,\alpha}\,d(\mu_B-\mu_A) &= -S_\beta\,dT -N_{B,\beta}\, d(\mu_B-\mu_A)\\
+\left(\frac{dT}{d(\mu_B-\mu_A)}\right)_{N_A+N_B,P}&=-\frac{\Delta N_{B,\alpha \to \beta}}{\Delta S_{\alpha \to \beta}}\label{genClap}
+\end{align}
+
+However, the number of moles of B in the $\alpha$ phase at constant mole number is the composition of phase $\alpha$ when in equilibrium with phase $\beta$: 
+$$\frac{N_{B,\alpha}}{N_{A,\alpha}+N_{B,\alpha}}=X_{B,\alpha}$$
+Same with the number of moles in phase $\beta$. Thus, we can reduce Eq. \ref{genClap} to:
+\begin{equation}
+\left(\frac{dT}{d(\mu_B-\mu_A)}\right)_{N_A+N_B,P} =-\frac{\Delta X_{B,\alpha \to \beta}}{\Delta S_{\alpha \to \beta}}
+\end{equation}
+$\Delta X_{B,\alpha \to \beta}$ can be read off of phase diagrams, and $\Delta S_{\alpha \to \beta}$ (The difference in entropy between a mole of $\beta$ phase and a mole of $\alpha$ phase) is often easily known or approximated.
+
+An analogous derivation for an open system is as follows:
+Consider a system composed of only A and B atoms. We will assume that the system is open to exchange of B, but closed to exhange of A , i.e. the $dN_A=0$. We can then write $dU$ as:
+\begin{equation} 
+dU=T\, dS - P\, dV + \mu_B \, dN_B
+\end{equation} 
+
+Note that the constraint $dN_A=0, dN_B\neq 0$ means that the system is at constant numbers of A atoms, but the total number of atoms changes. For simplicity, we'll consider a single mole of A atoms. The system is kept at constant temperature and pressure. In addition, we externally fix the composite chemical potential of B by flowing a vapor of varying partial pressures of B across the system. The relevant potential is then:
+\begin{equation}
+\phi = U-TS+PV-\mu_B N_B
+\end{equation}
+such that:
+\begin{equation}\begin{aligned}
+d\phi &= -S\,dT+V\,dP-N_B\, d\mu_B \ \ \text{at constant $N_A$} \\
+&= -S\,dT+V\,dP-N_B\, d\mu_B \ \ \text{at constant $N_A$}
+\end{aligned}\end{equation}
+
+If the system considered is a two-phase system, then we can  change the external chemical potential (via the vapor pressure of B), and ask how the temperature of the system must change for the system to remain in two-phase equilibrium (at constant pressure). This is equivalent to saying that the change in the molar free energies of the two phases are equal:
+\begin{align}
+d\phi_\alpha &= d\phi_\beta \\
+-S_\alpha\,dT -N_{B,\alpha}\,d\mu_B &= -S_\beta\,dT -N_{B,\beta}\, d\mu_B\\
+\left(\frac{dT}{d\mu_B}\right)_{N_A,P}&=-\frac{\Delta N_{\alpha \to \beta}}{\Delta S_{\alpha \to \beta}}\label{genClap2}
+\end{align}
+
+Note that in Eq \ref{genClap2} the term $\Delta N_{\alpha \to \beta}$ has a very different meaning: it is the number of moles transferred into the system per mole of A atoms during a phase transition from $\alpha \to \beta$. Similarly, the $\Delta S_{\alpha \to \beta}$ term is the change in system entropy per mole of A atoms during the same transition.
+
+We can relate Eqs \ref{genClap} and \ref{genClap2} by expanding Eq. \ref{genClap2} in terms of the underlieing molar quantities,
+writing:
+\begin{equation*}
+N_{B,\alpha}=N_\alpha X_{B,\alpha}, \quad N_{B,\beta}=N_\beta X_{B,\beta}, \\
+S_{B,\alpha}=N_\alpha \munderbar{S}_{B,\alpha}, \quad S_{B,\beta}=N_\beta \munderbar{S}_\beta.
+\end{equation*}
+This allows us to write:
+\begin{equation}
+\left(\frac{dT}{d\mu_B}\right)_{N_A,P}=\frac{X_{B,\beta}-\frac{N_\alpha}{N_\beta}X_{B,\alpha}}{\munderbar{S}_{B,\beta}-\frac{N_\alpha}{N_\beta}\munderbar{S}_{B,\alpha}}. \label{genClap3}
+\end{equation}
+Eq. \ref{genClap3} differs from \ref{genClap} by factors of $\frac{N_\alpha}{N_\beta}$. The phsyical origin for the similarity in these expressions but their slight discrepancy is that $\mu_B$ varies differently from $\mu_B-\mu_A$, but that their variations within a given phase are connected via a Gibbs-Duhem relation at constant $T$ and $P$ as:
+$$d\mu_B = -\frac{N_A}{N_B} \, d\mu_A$$
+
+For small differences in compositions between $\alpha$ and $\beta$, Eqs \ref{genClap}, \ref{genClap2}, and \ref{genClap3} are all equivalent, as:
+$$\frac{N_\alpha}{N_\beta}=\frac{1+\frac{X_{B,\alpha}}{1-X_{B,\alpha}}}{1+\frac{X_{B,\beta}}{1-X_{B,\beta}}}$$
 %%%%%%%%%%%%%%
 %\subsection{EXAM 1 MATERIAL ENDS HERE}
 %\begin{itemize}
