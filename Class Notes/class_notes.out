@@ -89,17 +89,26 @@
 \BOOKMARK [2][-]{subsection.13.16}{Random constants we may need to know:}{section.13}% 89
 \BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{}% 90
 \BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{}% 91
-\BOOKMARK [1][-]{section.15}{The Physical Basis of Mixing}{}% 92
-\BOOKMARK [1][-]{section.15}{The Physical Basis of Mixing}{}% 93
-\BOOKMARK [2][-]{subsection.15.1}{Energetic Effects on Mixing}{section.15}% 94
-\BOOKMARK [3][-]{subsubsection.15.1.1}{Is size a good predictor of mixing behavior?}{subsection.15.1}% 95
-\BOOKMARK [3][-]{subsubsection.15.1.2}{Is electronegativity a good predictor of mixing behavior?}{subsection.15.1}% 96
-\BOOKMARK [3][-]{subsubsection.15.1.3}{Is Valency a good predictor of mixing behavior?}{subsection.15.1}% 97
-\BOOKMARK [2][-]{subsection.15.2}{Entropic Effects on Mixing}{section.15}% 98
-\BOOKMARK [3][-]{subsubsection.15.2.1}{Configurational Entropy}{subsection.15.2}% 99
-\BOOKMARK [3][-]{subsubsection.15.2.2}{Vibrational Entropy}{subsection.15.2}% 100
-\BOOKMARK [3][-]{subsubsection.15.2.3}{Electronic Entropy}{subsection.15.2}% 101
-\BOOKMARK [1][-]{section.16}{Bonus Topic: Chemical thermodynamics of polymers}{}% 102
-\BOOKMARK [1][-]{section.16}{Bonus Topic: Chemical thermodynamics of polymers}{}% 103
-\BOOKMARK [2][-]{subsection.16.1}{Why don't polymers mix when we heat them up?}{section.16}% 104
-\BOOKMARK [2][-]{subsection.16.2}{Why do miscible blends phase separate at high temperatures?}{section.16}% 105
+\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{}% 92
+\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{}% 93
+\BOOKMARK [2][-]{subsection.15.1}{Motivation}{section.15}% 94
+\BOOKMARK [2][-]{subsection.15.2}{Chemical Potential of ideal gases}{section.15}% 95
+\BOOKMARK [3][-]{subsubsection.15.2.1}{ in a single component ideal gas}{subsection.15.2}% 96
+\BOOKMARK [3][-]{subsubsection.15.2.2}{ in a multicomponent ideal gas}{subsection.15.2}% 97
+\BOOKMARK [2][-]{subsection.15.3}{Fugacity and dealing with non-ideal gases}{section.15}% 98
+\BOOKMARK [2][-]{subsection.15.4}{Activity: adapting the fugacity formalism to condensed phases}{section.15}% 99
+\BOOKMARK [2][-]{subsection.15.5}{Models for activity}{section.15}% 100
+\BOOKMARK [1][-]{section.16}{The Physical Basis of Mixing}{}% 101
+\BOOKMARK [1][-]{section.16}{The Physical Basis of Mixing}{}% 102
+\BOOKMARK [2][-]{subsection.16.1}{Energetic Effects on Mixing}{section.16}% 103
+\BOOKMARK [3][-]{subsubsection.16.1.1}{Is size a good predictor of mixing behavior?}{subsection.16.1}% 104
+\BOOKMARK [3][-]{subsubsection.16.1.2}{Is electronegativity a good predictor of mixing behavior?}{subsection.16.1}% 105
+\BOOKMARK [3][-]{subsubsection.16.1.3}{Is Valency a good predictor of mixing behavior?}{subsection.16.1}% 106
+\BOOKMARK [2][-]{subsection.16.2}{Entropic Effects on Mixing}{section.16}% 107
+\BOOKMARK [3][-]{subsubsection.16.2.1}{Configurational Entropy}{subsection.16.2}% 108
+\BOOKMARK [3][-]{subsubsection.16.2.2}{Vibrational Entropy}{subsection.16.2}% 109
+\BOOKMARK [3][-]{subsubsection.16.2.3}{Electronic Entropy}{subsection.16.2}% 110
+\BOOKMARK [1][-]{section.17}{Bonus Topic: Chemical thermodynamics of polymers}{}% 111
+\BOOKMARK [1][-]{section.17}{Bonus Topic: Chemical thermodynamics of polymers}{}% 112
+\BOOKMARK [2][-]{subsection.17.1}{Why don't polymers mix when we heat them up?}{section.17}% 113
+\BOOKMARK [2][-]{subsection.17.2}{Why do miscible blends phase separate at high temperatures?}{section.17}% 114

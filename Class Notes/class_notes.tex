@@ -1719,19 +1719,19 @@ $$\frac{N_\alpha}{N_\beta}=\frac{1+\frac{X_{B,\alpha}}{1-X_{B,\alpha}}}{1+\frac{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction to Solution Theory}
-We now begin the section on chemical thermodynamics and solution theory, which is all about what happens when the substances we are dealing with are no longer pure. 
+We now begin the section on chemical thermodynamics and solution theory. Solution theory is concerned with the thermodynamics of multicomponent systems; it's what happens when the substances we are dealing with are no longer pure.
 
 Readings regarding solution theory will be from \textit{ Chemical Thermodynamics of Materials} by Claude H.P. Lupis (a former member of MIT DMSE) and will be posted to Stellar when possible. Readings on specific topics are listed below, under the corresponding heading.\\
-In general, Denbigh{'}s \textit{ The Principles of Chemical Equillibrium} is also a good reference on these topics. This book is somewhat verbose, but very good if you want a second, different viewpoint.\\
+In general, Denbigh's \textit{The Principles of Chemical Equillibrium} is also a good reference on these topics. This book is somewhat verbose, but very good if you want a second, different viewpoint.\\
 \textbf{Phase Diagrams:}\\
 \textit{Principles of Phase Diagams in Materials Systems} by Paul Gordon is a very thorough reference for phase diagrams. It seems to be out of print and so we will post the chapters as needed.\\
 The ASM Phase Diagram Database is an extremely useful tool for materials scientists. The link is found \href{http://www1.asminternational.org/asmenterprise/apd/BrowseAPD.aspx}{here}. We will look at a lot of phase diagrams from here throughout the last part of this course.
 
-\subsection{Adding composition as a work term in G}
-G is defined as $G = U-TS+PV$. Recognizing that $U = TS - PV + \Sigma \mu _iN_i$, we see that there are a bunch of chemical work terms we{'}ve been
-leaving out! G can thus be defined as (ignoring other work terms like $\mathcal{H}$d$\mathcal{M}$, $\mathcal{E}$d$\mathcal{P}$, etc):\\
-\eqs G = \Sigma \mu _iN_i\eqe
-We get a whole new class of properties by taking derivatives of G with respect to G. We call these partial molar quantities, and we can add them to our matrix of derivatives:
+\subsection{Adding composition as a work term in $G$}
+$G$ is defined as $G = U-TS+PV$. Recognizing that $U = TS - PV + \Sigma \mu _iN_i$, we see that there are a bunch of chemical work terms we've been
+leaving out! $G$ can thus be defined as (ignoring other work terms like $\mathcal{H}$d$\mathcal{M}$, $\mathcal{E}$d$\mathcal{P}$, etc):\\
+\eqs G = \Sigma \mu _i N_i\eqe
+We get a whole new class of properties by taking derivatives of $G$ with respect to the $n_i$. We call these partial molar quantities, and we can add them to our matrix of derivatives:
 % \begin{center}
 % \begin{tabular}{c | c | c | c}
 %  $G$ & $\frac{\partial}{\partial T}$ & $\frac{\partial}{\partial P}$ & $\frac{\partial}{\partial n_i}$\\ \hline
@@ -1773,25 +1773,25 @@ where the extra second derivatives are from
 \frac{\partial^2 G}{\partial T \partial n_i} &= -\frac{\partial S}{\partial n_i}|_{P,T,n_{j\neq i}} = -\bar{S_i}\\
 \frac{\partial^2 G}{\partial P \partial n_i} &=\frac{\partial V}{\partial n_i} = \bar{V_i}
 \eqe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solutions, Molar Quantities, and Partial Molar Quantities}
 \textbf{Readings}: DeHoff{'}s \textit{ Thermodynamics in Materials Science} (pgs 197-202) is the best for this. Lupis 2.3.3 also has a decent discussion.\\
-\textbf{Solutions}: A solution is defined as a single phase, $\alpha$, which has multiple elements. Note that we have not defined whether the solution is in the solid, liquid, or gas state. Solutions can exist in each of these phases, so while it is unintutive to think of a solid `solution', solutions definitely occur in the solid state. Disordered solid solutions are often called \emph{alloys}. Ordered solid solutions are called \emph{compounds}. Note that ordered phases are still solutions in the thermodynamic sense; they contain multiple elements, each element just has a tendency to exist
-at certain crystallographic sites.
+\textbf{Solutions}: A solution is defined as a single phase, $\alpha$, which has multiple elements. Note that we have not defined whether the solution is in the solid, liquid, or gas state. Solutions can exist in each of these phases, so while it is unintutive to think of a solid `solution', solutions definitely occur in the solid state. Disordered solid solutions are often called \emph{alloys}. Ordered solid solutions are called \emph{compounds}. Note that ordered phases are still solutions in the thermodynamic sense; they contain multiple elements; each element just has a tendency to exist at certain crystallographic sites.
 
-\textbf{Molar Quantities}: A molar quantity is any extensive property normalized on a molar basis. These are usually written with an underbar; the molar entropy would thus be written $\underline{S}=\frac{S}{N}$. A concrete example is that the molar volume of pure Ni is $\underline{V}_{\text{Ni}}=\frac{V}{N}=$ 7 $\left.\text{cm}^3\right/\text{mol}$, and that of water is $\underline{V}_{H_2O}=$18 $\left.\text{cm}^3\right/\text{mol}$. Molar quantities are well-tabulated for the elements. Molar properties can also be defined for solutions; solutions have well-defined extensive variables and mole numbers, so you can divide the extensive variables by the total number of moles in the solution and get a molar property.\\
+\textbf{Molar Quantities}: A \emph{molar quantity} is any extensive property normalized on a molar basis. These are usually written with an underbar; the molar entropy would thus be written $\underline{S}=\frac{S}{N}$. A concrete example is that the molar volume of pure Ni is $\underline{V}_{\text{Ni}}=\frac{V}{N}=$ 7 $\left.\text{cm}^3\right/\text{mol}$, and that of water is $\underline{V}_{H_2O}=$18 $\left.\text{cm}^3\right/\text{mol}$. Molar quantities are well-tabulated for the elements. Molar properties can also be defined for solutions; solutions have well-defined extensive variables and mole numbers, so you can divide the extensive variables by the total number of moles in the solution and get a molar property.
 
-Molar quantities are intensive: the molar volume of Ni does not change whether you have one or two moles of Ni. Note that the intensive nature of molar quantities makes it silly to define molar properties of the intensive variables, as the units get messed up: the temperature per mole does not make sense. Molar quantities are very related to (but distinct from) partial molar quantities. We will derive this relationship below.\\
+\emph{Molar quantities are intensive:} the molar volume of Ni does not change whether you have one or two moles of Ni. Note that the intensive nature of molar quantities makes it silly to define molar properties of the intensive variables, as the units get messed up: the temperature per mole does not make sense. Molar quantities are very related to (but distinct from) partial molar quantities. We will derive this relationship below.
 
 \textbf{Partial Molar Quantities:}\\
-A partial molar quantity (PMQ) is the derivative of any extensive property, X, with respect to the number of moles of a single species, $N_i$:\\
-\eqs \bar{X}_i=\left(\frac{\partial X}{\partial N_i}\right)_{T,P,N_{j\neq i}}\eqe
-PMQs are written with an overbar. Thus $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$. It is easy to show that the partial molar quantities are intensive properties of the system (i.e. they do not depend on the size of the system). The easiest example of PMQs being intensive is the chemical potential, we already know it is intensive:$\mu _i=\overline{G_i}=\left(\frac{\partial G}{\partial N_i}\right)_{T,P,N_{j\neq i}}$\\
-The discussion in these notes is meant to be self-contained, but it you need more info, there{'}s a really good Wikipedia page on these: \href{https://en.wikipedia.org/wiki/Partial_molar_property}{Wikipedia page on partial molar quantities}. We will first discuss a concrete example of PMQs with the partial molar volume of water-ethanol mixtures, and then give a general discussion of the properties of partial molar quantities.\\
+A \emph{partial molar quantity} (PMQ) is the derivative of any extensive property, $X$, with respect to the number of moles of a single species, $N_i$:\\
+\eqs \bar{X}_i=\left(\frac{\partial X}{\partial N_i}\right)_{T,P,N_{j\neq i}} \label{genPMQ}\eqe
+PMQ's are written with an overbar. Thus $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$. It is easy to show that the partial molar quantities are intensive properties of the system (i.e. they do not depend on the size of the system). The easiest example of PMQs being intensive is the chemical potential, we already know it is intensive:$\mu _i=\overline{G_i}=\left(\frac{\partial G}{\partial N_i}\right)_{T,P,N_{j\neq i}}$\\
+The discussion in these notes is meant to be self-contained, but it you need more info, there's a really good Wikipedia page on these: \href{https://en.wikipedia.org/wiki/Partial_molar_property}{Wikipedia page on partial molar quantities}. We will first discuss a concrete example of PMQs with the partial molar volume of water-ethanol mixtures, and then give a general discussion of the properties of partial molar quantities.\\
 
 \subsection{Ex: Partial Molar Volumes}
-One common example of a partial molar quantity is a \emph{partial molar volume}. The definition of the partial molar volume is: 
+One common example of a partial molar quantity is a \emph{partial molar volume}. By Eq \ref{genPMQ}, the definition of the partial molar volume is: 
 \eqs\bar{V}_i=\left(\frac{\partial V}{\partial n_i}\right)_{n_{j\neq i}, T, P}\eqe
-That is: the amount that the total volume of a system changes upon addition of a small amount of that substance. Partial molar volumes can be extremely important in technological applications. For example, the change in volume due to lithiation of various battery electrodes causes mechanical degradation of the electrodes. This turns out to be one of the key factors governing the cycling performance of the electrodes, with many next-generation electrodes limited by mechanical degradation.\\
+In words: $\bar{V}_i$ is the amount that the total volume of a system changes upon addition of a small amount of that substance, normalized by the amount of substance added. Partial molar volumes can be extremely important in technological applications.\footnote{For example, the change in volume due to lithiation of various battery electrodes causes mechanical degradation of the electrodes. This turns out to be one of the key factors governing the cycling performance of the electrodes, with many next-generation electrodes limited by mechanical degradation. See Woodford et al, JECS 2010 (\href{http://jes.ecsdl.org/content/157/10/A1052.short}{link})} \par
 In practice, one way to calculate partial molar volumes is by taking a relatively large solution (say of water) and adding a well-defined, small amount of solute to the solution (say one mole of ethanol). We will discuss a more clever way of measuring partial molar properties later. The partial molar volume is then given (approximately) by the volume change divided by the number of moles added:
 \eqs\bar{V}_{\text{EtOH}}\simeq \left(\frac{\text{$\Delta $V}}{\text{$\Delta $n}_{\text{EtOH}}}\right)_{n_{H_2O}, T, P}
 \label{approxPMV}
@@ -1806,12 +1806,12 @@ In this situation, the moles of $N_i$ and the change in volume are small relativ
 \end{figure}
 
 
-The volume of a solution or compound is often not the sum of the volume of its constituent elements. For example, shown in Fig. \ref{PMVexamp} the partial molar volumes of ethanol and water when mixed with one another. As can be seen, for almost all concentrations, the partial molar volume of the constituents is less than the molar volume of the constituents in their pure states (symbolically: $\bar{V}_{\text{EtOH}}(x)<\underline{V}_{\text{EtOH},\text{pure}}$ for all x). This means that there is a net contraction when you mix water and ethanol. 
+The volume of a solution or compound is generally not the sum of the volume of its constituent elements. For example, shown in Fig. \ref{PMVexamp} the partial molar volumes of ethanol and water when mixed with one another. As can be seen, for almost all concentrations, the partial molar volume of the constituents is less than the molar volume of the constituents in their pure states (symbolically: $\bar{V}_{\text{EtOH}}(x)<\underline{V}_{\text{EtOH},\text{pure}}$ for all $x<1$). This means that there is a net contraction when you mix water and ethanol. 
 
 This contraction relative to the equivalent mole numbers of the pure constituents can be considered an ``excess amount of volume which occurs due to mixing.'' This is called the \emph{excess volume of mixing}, and is written symbolically as: 
 \eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underline{V}_{\text{solution}}(x)-x_A\underline{V}_A-x_B\underline{V}_B\eqe
-A contraction upon mixing corresponds to a negative excess volume of mixing. Excess properties upon mixing can be defined for any extensive properties of interest, and we will spend a lot of time on them soon.\\
-One could derive the excess volume of mixing by integrating the partial molar volumes and subtracting the reference states. However, it turns out you can just add the partial volumes up weighted by their mole fractions and subtract the reference volumes to get the same answer: \\
+A contraction upon mixing corresponds to a negative excess volume of mixing. Excess properties upon mixing can be defined for any extensive properties of interest, and we will spend a lot of time on them soon. \par
+One could derive the excess volume of mixing by integrating the partial molar volumes and subtracting the reference states. However, it turns out you can just add the partial volumes up weighted by their mole fractions and subtract the reference volumes to get the same answer:
 \eqs\underline{V}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{V}_i\eqe
 and so:
 \eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underset{i}{\Sigma }x_i\left(\bar{V}_i-\underline{V}_i\right)\eqe
@@ -1820,37 +1820,29 @@ Shown in Fig \ref{PMVexamp}\textbf{B} is the excess volume of mixing for water a
 The ability to sum the individual partial molar quantities to calculate the total molar quantity is a general (and useful) property of partial molar quantities. We now discuss general properties of partial molar quantities.
 
 \textbf{The sum of the partial molar quantities yields the molar quantity of the solution}\\
-In general, one might think that we would need to integrate all of the partial molar volumes one by one with respect to their mole numbers to reach
-the volume of the solution:\\
+In general, one might think that we would need to integrate all of the partial molar volumes one by one with respect to their mole numbers to reach the volume of the solution:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\int_0^{n_i} \bar{V}_i\left(n_i,n_j=0\right) \, dn_i+\int_0^{n_j} \bar{V}_j\left(n_i,n_j\right)
 \, dn_j+\text{...}\eqe
 More compactly:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\int_0^{n_i} \bar{V}_i\left(\left\{n_i\right\}\right) \, dn_i \eqe
-where this sum is carried out in sequence over the components.\\
-However, the volume of the solution is a state function of the composition, so we are free to choose whatever path in composition space we want in
-integrating these partial molar volumes. The path which makes the most sense is to simply add all of the components at the same time in the proportions
-found in the final solution. This way, the partial molar volume of each component is constant, and is given by the partial molar volume of the component
-in the final solution. Then, the volume of the solution is given by:
+where this sum is carried out in sequence over the components.\par
+However, the volume of the solution is a state function of the composition, so we are free to choose whatever path in composition space we want in integrating these partial molar volumes. The path which makes the most sense is to simply add all of the components at the same time in the proportions found in the final solution. This way, the partial molar volume of each component is constant, and is given by the partial molar volume of the component in the final solution. Then, the volume of the solution is given by:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\bar{V}_i\int _0^{n_i}dn_i\eqe
-Note how we were able to pull the various partial molar volumes, $\bar{V}_i$, out of the integral because they are constant. This integral is then
-trivial and gives:
+Note how we were able to pull the various partial molar volumes, $\bar{V}_i$, out of the integral because they are constant. This integral is then trivial and gives:
 \eqs V_{\text{solution}}\left(\left\{n_i\right\}\right)=\underset{i}{\Sigma }\bar{V}_in_i\eqe
 Or, taking the molar volume of the solution and converting the \(n_i\) to mole fractions:
 \eqs \underline{V}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{V}_i \eqe
-The above procedure is valid for an choice of extensive variable and thus all extensive properties of solutions can be written in the general form
-written in class:
+The above procedure is valid for an choice of extensive variable and thus all extensive properties of solutions can be written in the general form written in class:
 \eqs \boxed{\underline{X}_{\text{solution}}\left(\left\{x_i\right\}\right)=\underset{i}{\Sigma }x_i\bar{X}_i}\eqe
+That is, \emph{the total molar quantity is given by a (weighted) sum of the partial molar quantities}.
 \\
 \textbf{The partial molar quantities are related by Maxwell relations}\\
-With the exception of $\mu _i$, the partial molar quantities are defined as derivatives of the extensive variables with respect to changes in mole
-number (ex: $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$). However, these extensive variables themselves are defined
-as derivatives of G: $S=-\left(\frac{\partial G}{\partial T}\right)_{P,N_{j\neq i}}$. Hence, these partial molar quantities are mixed partial derivatives
-of G. Therefore a Maxwell relation exists upon switching the order of differentiation: 
+With the exception of $\mu _i$, the partial molar quantities are defined as derivatives of some extensive variable with respect to changes in mole number. $\bar{S}_i=\left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}}$). However, these extensive variables themselves are defined as derivatives of $G$: $S=-\left(\frac{\partial G}{\partial T}\right)_{P,N_{j\neq i}}$. Hence, these partial molar quantities are mixed partial derivatives of $G$. Therefore a Maxwell relation exists upon switching the order of differentiation: 
 \eqs 
 \bar{S}_i &= \left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= -\left(\frac{\partial \mu _i}{\partial T}\right)_{P,N_j} \\
 \bar{V}_i &= \left(\frac{\partial V}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= \left(\frac{\partial\mu _i}{\partial P}\right)_{T,N_j}
 \eqe 
-This usually gives you a second, nice way of interpreting the meaning of the PMQs: they are also the rate at which the chemical potential changes with respect to changes in the appropriate extensive variable{'}s conjugate. To give an example of such an interpretation, the partial molar volume is the rate at which the chemical potential of each component changes as you increase the pressure, meaning elements which allow the system to attain a smaller volume are more favorable at higher pressures: the elements which effectively make a solution``bigger'' get ``squeezed out'' of the solution upon application of pressure.
+This gives you a second, nice way of interpreting the meaning of the PMQs: they are also the rate at which the chemical potential changes with respect to changes in the appropriate extensive variable's conjugate. To give an example of such an interpretation, \emph{the partial molar volume is the rate at which the chemical potential of each component changes as you increase the pressure}. This means elements that allow the system to attain a smaller volume are more favorable at higher pressures: the elements which effectively make a solution``bigger'' get ``squeezed out'' of the solution upon application of pressure.
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2151,6 +2143,7 @@ In the mixture of such gases by diffusion an increase of entropy would take plac
 In other words, \textbf{the impossibility of an uncompensated decrease of entropy seems to be reduced to improbability.}--  J.W. Gibbs, \textit{On the Equilibrium of Heterogeneous Substances}, p. 167
 \end{center}
 
+Sorry! Nothing here right now. Stick to Rickard Armiento's notes, or the various texts listed in the syllabus. We are working on incorporating Prof. Armiento's excellent notes into the course notes directly.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Lecture - October 6, 2014}
 %\begin{itemize}
@@ -2434,11 +2427,97 @@ In other words, \textbf{the impossibility of an uncompensated decrease of entrop
 %S &= N k_B \ln \Big[ \left(\frac{2\pi m k_B T}{h^2} \right)^{3/2} \frac{V}{N} c^{5/2}... \text{(see text?)}
 %\eqe
 %where the above expression for entropy is the ``Sackur-Tetrode'' equation.
+\section{Chemical potential as a function of composition}
+\begin{center}
+\emph{``A vague discomfort at the thought of the chemical potential is still characteristic of a physics education. This intellectual gap is is due to the obscurity of the writings of J. Willard Gibbs who discovered and understood the matter 100 years ago.''} - Charles Kittel, Introduction to Solid State Physics
+\end{center}\par
+\textbf{Readings:} All of the below books cover the material in this section, but in different manners. I personally prefer Dehoff's treatment, then Lupis', and last Gaskell's.\\
+R. Dehoff: 8.5-8.6\\
+C. Lupis: 4.1-4.4\\
+S. Gaskell: 8.6,8.7,9.1.9.2,9.3
+\subsection{Motivation}
+The chemical potential is homogeneous across a system at equilibrium. Understanding the chemical potential as a function of composition will allow us to understand phase equilibria. Further, when the chemical potential is inhomogeneous, elements diffuse and react down gradients in the chemical potential; the chemical potential is the driving for for chemical kinetics. Hence, if we can model the chemical potential, we have performed the first step in understanding the equilibrium and kinetics of any process where changes or gradients in composition occur such as phase equilibria, diffusion, solidification, etc. We thus need a convenient way to express the chemical potential as a function composition, temperature, and pressure.\footnote{People spend a lot of money and time for such models! In fact, the primary reason software like Thermocalc is useful is because it has an accurate, empirical database for chemical potentials as a function of $T$, $P$, and $n_i$. Generating phase diagrams once you have such a database is relatively trivial.}
 
+The first step in creating an interpretable model of chemical potential is to ask how we can measure the chemical potential. There are several ways we can measure the chemical potential well: by measuring vapor pressures, by using electrochemical methods to back out free energy changes, or by using calorimetry to back out free energy changes. Historically, chemical potentials were first measured in the gas phase. Hence, the vocabulary and formalism associated with the chemical potential was developed to have a close association with the gas phase. We trace the evolution of this formalism in hopes of providing insight into what the variety of terms in the formalism mean (as well as to define all of the terms you're likely to encounter in your materials career). As can be seen below, many authors have treated these derivations, and so I will not attempt to reproduce them, but merely to reproduce their results and give my own spin on the interpretation.
 
+\subsection{Chemical Potential of ideal gases}
+\subsubsection{$\mu$ in a single component ideal gas}
+The chemical potential of a single-component ideal gas is only a function of temperature and pressure. It can be derived to be (you can do this from simplifying the stat mech partition function, or see Craig Carter's notes (\href{http://pruffle.mit.edu/3.00/Lecture_20_web/node2.html}{link})):
+\eqs 
+\mu (T,P)=\mu_{\text{ref}}\left(T,P_{\text{ref}}\right)+R T \ln  \frac{P}{P_{\text{ref}}}
+\eqe
+letting $P_{\text{ref}}=1 \text{ atm}$ is customary, assuming this convention we can write:
+\eqs \mu (T,P)=\mu_{\text{ref}}(T)+R T \ln  P \ \ \ (P\text{ in units of atm})\eqe
+This is surprisingly useful, as it allows us to measure the chemical potential above a unary solid or liquid just by measuring the vapor pressure of the gas above it. However, this has limited utility for two reasons. The first: the gas must also be single-component for this to hold, and second: we are limited by the assumption of ideality of the gas. We deal with these two limitations in turn.
 
+\subsubsection{$\mu$ in a multicomponent ideal gas}
 
+You can also derive that the chemical potential of component $i$ in a mixture of ideal gases is given by (see DeHoff, 8.5, or Craig Carter's notes (\href{http://pruffle.mit.edu/3.00/Lecture_20_web/node2.html}{link})):
+\eqs
+\mu _i\left(T,P_i,P_{\text{total}}\right)=\mu _i{}^{\text{ref}}\left(T,P_{\text{total}}\right)+R T \ln  \frac{P_i}{P_{\text{total}}}
+\eqe
+where \(P_i\) is the partial pressure of a single component: \(P_i=x_iP_{\text{total}}\), \(x_i\) is the mole fraction of $i$ atoms in the gas, and \(P_{\text{total}}\)is the total pressure exhibited by the gas mixture. The reference state in this equation for each component is the individual gas at the total pressure of the gas mixture. The diffrence in chemical potential is thus due solely to the process of mixing the different, initially pure gases at constant total pressure. We see can re-write the chemical potential of component $i$ in terms of its mole fraction:
+\eqs 
+\mu _i\left(T,P_i,P_{\text{total}}\right)=\mu _i{}^{\text{ref}}\left(T,P_{\text{total}}\right)+R T \ln  x_i
+\eqe
+Because the reference state already contains \(P_{\text{total}}\), the \(R T \ln  x_i\) term is due soley to the presence of the other gas molecules, even though they don't interact. This term is thus a completely entropic effect. In fact, using \(\underline{G}_{\text{solution}}=\underset{i}{\Sigma}x_i\mu _i\), we see that the \(R T \ln  x_i\) terms give rise to the ideal entropy of mixing from statistical mechanics (plugging the equation for \(\mu_i\) above into \(\underline{G}\)):
+\eqs
+\underline{G}_{\text{solution}}=\underset{i}{\Sigma }x_i\mu _i^{\text{ref}}+R T x_i\ln  x_i
+\eqe
+Terms of the form \(R T \ln  x_i\) in chemical potentials are thus always due to ideal mixing, whether in solid, liquid, or gas solutions.
 
+\subsection{Fugacity and dealing with non-ideal gases}
+
+We have removed the constraint of having a single component in the gas phase. It is now time to remove the constraint of ideality (i.e. to include interactions). Once we have developed a formalism for conveniently expressing the chemical potential of non-ideal solutions, this will be easily transferable to the description of condensed phases, where the solutions are frequently not ideal. \par
+In the gas phase, we write the chemical potential of a non-ideal mixture of gases as:
+\eqs \text{d$\mu $}_i\left(T,P,\left\{x_j\right\}\right)=R T \, d \ln  f_i\left(T,P,\left\{x_j\right\}\right)
+\eqe
+where \(f_i\) is the \textbf{fugacity} of component $i$, and is a function of $T$, $P$ and composition. Integration of this differential form for the chemical potential gives us the chemical potential as a function of the fugacity, where we also need a reference state:
+\eqs 
+\mu _i\left(T,P,\left\{x_j\right\}\right)=\mu _i{}^{\text{ref}}\left(T,P_{\text{ref}}\right)+R T \ln f_i\left(T,P,\left\{x_j\right\}\right)
+\eqe
+The reference state is typically the pure substance at one atmosphere and the given temperature. Note that all of the chemical behavior (ideal and non-ideal) for component $i$ is contained in \(f_i\), and that \(f_i\) is a function of all of the compositional variables and pressure. \par
+In terms of interpretation, the \textit{fugacity is the effective partial pressure of the gas if the gas were to behave ideally}. Fugacities for pure gases are frequently tabulated as a function of $T$ and $P$. Hence, one can measure the chemical potential of a pure solid even in non-ideal gas conditions via measurement of the partial pressure above that solid and conversion to a fugacity. Further, fugacities for mixtures of gases generally behave pretty ideally: the fugacity of a single component $i$ in a mixture of gases is usually very close to its mole fraction in the gas times the fugacity of the pure gas at the total pressure of the mixture:
+\eqs 
+f_{i,\text{mixture}}\left(T,P,\left\{x_j\right\}\right)=x_i f_{i,\text{pure}}(T,P)
+\eqe
+Hence, using existing, tabulated fugacities, we can accurately estimate the chemical potentials of components in a solid or liquid solution from the corresponding gas phase equilibrium above the condensed phases. The chemical potential is now a readily measureable quantity, and not just
+an abstract concept. 
+
+\subsection{Activity: adapting the fugacity formalism to condensed phases}
+
+The main difference between chemical studies of gases and those of liquids and solids is that we frequently change the pressure on gases during processing, but we rarely pressurize condensed phases during their processing. Further, the chemical behavior of gases under varying pressure can change significantly, while the chemical behavior of solids and liquids is much less sensititve to pressure: solids and liquids are much less compressible, and don't undergo a non-interacting-to-interacting transition as pressure increases. Hence, for most practical applications, we like to define the refence state for a solid's chemical potential at the pressure that we are conducting our experiments at. This is in contrast to the fugacity, where the reference chemical potential is defined at 1 atm, and gives rise to a slightly different formula:
+\eqs \mu _i\left(T,P,\left\{X_j\right\}\right)=\mu _i{}^{\text{ref}}(T,P)+R T \ln  \mathit{a}_i\left(T,\left\{X_j\right\}\right)\eqe
+this is the formula for the chemical potential as a function of the \textbf{ activity}, \(\mathit{a}_i\left(T,\left\{X_j\right\}\right)\). Note that
+\(\mu _i{}^{\text{ref}}(T,P)\) is a function of the pressure, and the activity defined for this reference state is not a function of pressure. However,
+for reasonable pressures, the chemical potential of condensed phases is so weakly dependent on pressure that we can approximate the activity to be equal to the fugacity:\\
+\eqs \mathit{a}_i=\mathit{f}_i \ \ \ (\text{low } P) \eqe
+The activity is interpreted in a similar way to the fugacity: \textit{activity is the effective concentration of component $i$ in the solution if the solution were to be mixing ideally.} Another way of saying this it that \(a_i\) is the concentration component \textit{i} ``acts''
+as if it possessed in terms of its molar contribution to the free energy above \(\mu _i^{\text{ref}}\). To demonstrate this, we can again plug into the equation for the molar free energy:
+\eqs \underline{G}_{\text{solution}}=\underset{i}{\Sigma }x_i\mu _i=\underset{i}{\Sigma }x_i\mu _i^{\text{ref}}+R T x_i\ln  a_i \eqe
+We also see from the above that if the activities are known, it is easy to calculate the free energy change upon mixing, which is the free energy of the solution minus the pure references: \(\Delta \underline{G}_{\text{mix}}=\underline{G}_{\text{solution}}-\underset{i}{\Sigma }x_i\mu _i^{\text{ref}}=R T \underset{i}{\Sigma }x_i\ln  a_i\). A negative free energy of mixing means mixing will be spontaneous, a positive free energy of mixing
+means the substances will be immiscible.\par
+The activity is often written as an activity coefficient, \(\gamma _i\), times the concentration of the solute:
+\eqs \mathit{a}_i=\gamma _i x_i\eqe
+This is convenient because when you take the log of this term, it automatically splits up into an ideal mixing contribution, and a term that contains all of the non-idealities (Note: \(\gamma _i\) is generally a function of composition and $T$; it's not a constant in general):
+\eqs R T \ln  \gamma _ix_i=R T \ln  x_i+R T \ln  \gamma _i\eqe
+The \(R T \ln  \gamma _i\) has units of energy and tells us whether the chemical potential of component $i$ is higher or lower than we would expect from just ideal mixing. If the chemical potential is higher than we would expect from just ideal mixing, then there are unfavorable interactions in the solution and if the chemical potential is lower than we would expect from ideal mixing, there are favorable interactions in the solution.\footnote{The concepts of activity and the activity coefficient are covered well in DeHoff 8.6 and 8.7 (only 4 pages!), and more in depth in Lupis 4.1-4.4.}\par
+\subsection{Models for activity}
+We'll now discuss common ways of the thinking of the activity. Two of simplest models are those for an ideal (often called \textbf{Raoultian}) solution and a simply-interacting \textbf{Henrian} solution. \\
+In an ideal solution: \(a_i=x_i\). This is the simplest model for the chemical potential of a solution. 
+In a Henrian solution, the activity coefficient is a constant: \(a_i=\gamma_i x_i\). Doing the math out, you can see that this corresponds to a constant energy of interaction per solute atom (\(\mu_i=\mu_{\text{ideal}}+RT\ln \gamma_i=\mu_{\text{ideal}}+\text{constant}\)). \par
+These are both useful models for dilute solutions. Solvents tend to behave in Raoultian (i.e. ideal) manner when a dilute solute is present. Physically, this says that dilute solutes do not affect the chemical potential of the solvent beyond the effects of random mixing.
+Dilute solutes tend to behave as if none of the other solute atoms are present, because they are too far away from each other (i.e. feel like they are being put into a matrix of pure solvent). Therefore, the energy to add another solute atom is constant, and \(\gamma _i\) is constant.\footnote{Note: charged solutes, such as salts in water or aliovalent solutes in ceramics, have inherently long-range interactions. Their activity coefficients change very quickly with composition and should not be handled with a Henrian formalism, even in a dilute case.}\par 
+In Henrian solutions, \(\gamma _i<1\) means that \(\ln  \gamma _i<0\).Thus the solute has an energetically favorable interaction with the solvent. We call this a \emph{negative deviation from ideality}, and these solutes have an enthalpic \emph{and} entropic driving force for dissolution. These solutes are thus more difficult to get rid of during chemical purification than the case of positively deviating solutes. These solutes are often called
+\emph{negative heat of mixing} as well, because the change in enthalpy upon mixing the solute and solvent together is negative.\par
+Similarly, \(\gamma _i>1\) means that \(\ln  \gamma _i>0.\) Thus, the solute has an energetically unfavorable interaction with the solvent. We call this a \emph{positive deviation from ideality}, and it actually costs energy to put these solutes into the matrix. It is relatively easy to purify out positive heat of mixing solutes from a matrix, and these solutions tend to phase separate as you cool them down. Lowering the temperature removes the entropic driving force for mixing, and the unfavorable interactions force the constituents apart. The activities as a function of composition are schematized for ideally mixing, negative heat of mixing, and positive heat of mixing binaries in Fig. \ref{activityComposition}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{activities_with_composition}
+\caption{Schematics of activities as a function of composition for various binary liquid systems. In ideal systems (left), the activity is equal to the composition. In positively deviating systems (center), the activity falls above what would be expected from random mixing. In negatively deviating systems, the activity falls below what would be expected from random mixing. Note how the activity curves look like reflections of each other for Cu and Fe; metal-metal mixing is often like this due to the symmetry in bonding. In Si and Fe, the two are chemically disimilar (they prefer different coordinations, etc), and the mixing is less symetric. Note the approximately linear regions at dilute solute concentrations: this is where Henry's law applies.}
+\label{activityComposition}
+\end{figure}
 
 \section{The Physical Basis of Mixing}
 This section was heavily influenced by Professor Gerbrand Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.\\
