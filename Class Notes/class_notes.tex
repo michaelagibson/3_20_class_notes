@@ -1817,7 +1817,9 @@ and so:
 \eqs\underline{V}_{\text{mix}}^{\text{XS}}=\underset{i}{\Sigma }x_i\left(\bar{V}_i-\underline{V}_i\right)\eqe
 Shown in Fig \ref{PMVexamp}\textbf{B} is the excess volume of mixing for water and ethanol. As expected from the previous discussion, it is negative for all compositions.
 
-The ability to sum the individual partial molar quantities to calculate the total molar quantity is a general (and useful) property of partial molar quantities. We now discuss general properties of partial molar quantities.
+The ability to sum the individual partial molar quantities to calculate the total molar quantity is a general (and useful) property of partial molar quantities. 
+\subsection{General properties of partial molar quantities}
+We now discuss general properties of partial molar quantities.
 
 \textbf{The sum of the partial molar quantities yields the molar quantity of the solution}\\
 In general, one might think that we would need to integrate all of the partial molar volumes one by one with respect to their mole numbers to reach the volume of the solution:
@@ -1842,7 +1844,19 @@ With the exception of $\mu _i$, the partial molar quantities are defined as deri
 \bar{S}_i &= \left(\frac{\partial S}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= -\left(\frac{\partial \mu _i}{\partial T}\right)_{P,N_j} \\
 \bar{V}_i &= \left(\frac{\partial V}{\partial N_i}\right)_{T,P,N_{j\neq i}} &= \left(\frac{\partial\mu _i}{\partial P}\right)_{T,N_j}
 \eqe 
-This gives you a second, nice way of interpreting the meaning of the PMQs: they are also the rate at which the chemical potential changes with respect to changes in the appropriate extensive variable's conjugate. To give an example of such an interpretation, \emph{the partial molar volume is the rate at which the chemical potential of each component changes as you increase the pressure}. This means elements that allow the system to attain a smaller volume are more favorable at higher pressures: the elements which effectively make a solution``bigger'' get ``squeezed out'' of the solution upon application of pressure.
+This gives you a second, nice way of interpreting the meaning of the PMQs: they are also the rate at which the chemical potential changes with respect to changes in the appropriate extensive variable's conjugate. To give an example of such an interpretation, \emph{the partial molar volume is the rate at which the chemical potential of each component changes as you increase the pressure}. This means elements that allow the system to attain a smaller volume are more favorable at higher pressures: the elements which effectively make a solution``bigger'' get ``squeezed out'' of the solution upon application of pressure.\\
+\\
+\textbf{Partial molar quantities can be read from graphs of the molar quantity as a function of composition}\par
+A nice property of partial molar quantities is the tangent-intercept rule. It states that if you have a plot of a molar quantity versus composition for an A-B solution, the partial molar quantity for A and B are given by the y-intercepts of the line tangent to the curve:
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{intercept_rule}
+\caption{An illustration of the tangent-intercept construction for the partial molar entropy from the molar entropy.}
+\label{intercept_rule}
+\end{figure}
+Mathematically, we can write this as, for an arbitrary molar quantity, \(\bar{Y}\):
+\eqs \bar{Y}_A(x)=\underbar{Y}(x)-(1-x)\frac{\partial \underbar{Y}}{\partial x}.\eqe
+This is especially useful for reading the chemical potential off of plots of the the free energy versus composition. Fig. \ref{intercept_rule} demonstrates this construction for an arbitrary partial molar entropy curve. By symmetry arguments, a similar formula applies for the other component.
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2506,10 +2520,9 @@ The \(R T \ln  \gamma _i\) has units of energy and tells us whether the chemical
 We'll now discuss common ways of the thinking of the activity. Two of simplest models are those for an ideal (often called \textbf{Raoultian}) solution and a simply-interacting \textbf{Henrian} solution. \\
 In an ideal solution: \(a_i=x_i\). This is the simplest model for the chemical potential of a solution. 
 In a Henrian solution, the activity coefficient is a constant: \(a_i=\gamma_i x_i\). Doing the math out, you can see that this corresponds to a constant energy of interaction per solute atom (\(\mu_i=\mu_{\text{ideal}}+RT\ln \gamma_i=\mu_{\text{ideal}}+\text{constant}\)). \par
-These are both useful models for dilute solutions. Solvents tend to behave in Raoultian (i.e. ideal) manner when a dilute solute is present. Physically, this says that dilute solutes do not affect the chemical potential of the solvent beyond the effects of random mixing.
+These are both useful models for dilute solutions. Solvents tend to behave in Raoultian (i.e. ideal) manner when a dilute solute is present. Physically, this says that dilute solutes do not affect the chemical potential of the solvent beyond the entropic effects of random mixing.\\
 Dilute solutes tend to behave as if none of the other solute atoms are present, because they are too far away from each other (i.e. feel like they are being put into a matrix of pure solvent). Therefore, the energy to add another solute atom is constant, and \(\gamma _i\) is constant.\footnote{Note: charged solutes, such as salts in water or aliovalent solutes in ceramics, have inherently long-range interactions. Their activity coefficients change very quickly with composition and should not be handled with a Henrian formalism, even in a dilute case.}\par 
-In Henrian solutions, \(\gamma _i<1\) means that \(\ln  \gamma _i<0\).Thus the solute has an energetically favorable interaction with the solvent. We call this a \emph{negative deviation from ideality}, and these solutes have an enthalpic \emph{and} entropic driving force for dissolution. These solutes are thus more difficult to get rid of during chemical purification than the case of positively deviating solutes. These solutes are often called
-\emph{negative heat of mixing} as well, because the change in enthalpy upon mixing the solute and solvent together is negative.\par
+In Henrian solutions, \(\gamma _i<1\) means that \(\ln  \gamma _i<0\).Thus the solute has an energetically favorable interaction with the solvent. We call this a \emph{negative deviation from ideality}, and these solutes have an enthalpic \emph{and} entropic driving force for dissolution. These solutes are thus more difficult to get rid of during chemical purification than the case of positively deviating solutes. These solutes are often called \emph{negative heat of mixing} as well, because the change in enthalpy upon mixing the solute and solvent together is negative.\par
 Similarly, \(\gamma _i>1\) means that \(\ln  \gamma _i>0.\) Thus, the solute has an energetically unfavorable interaction with the solvent. We call this a \emph{positive deviation from ideality}, and it actually costs energy to put these solutes into the matrix. It is relatively easy to purify out positive heat of mixing solutes from a matrix, and these solutions tend to phase separate as you cool them down. Lowering the temperature removes the entropic driving force for mixing, and the unfavorable interactions force the constituents apart. The activities as a function of composition are schematized for ideally mixing, negative heat of mixing, and positive heat of mixing binaries in Fig. \ref{activityComposition}.
 
 \begin{figure}[h]

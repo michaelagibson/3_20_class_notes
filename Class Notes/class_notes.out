@@ -69,46 +69,47 @@
 \BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 69
 \BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 70
 \BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 71
-\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{}% 72
+\BOOKMARK [2][-]{subsection.12.4}{General properties of partial molar quantities}{section.12}% 72
 \BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{}% 73
-\BOOKMARK [2][-]{subsection.13.1}{Definitions}{section.13}% 74
-\BOOKMARK [2][-]{subsection.13.2}{Thermodynamic Laws}{section.13}% 75
-\BOOKMARK [2][-]{subsection.13.3}{All the heat capacities, expansion coefficients, etc.}{section.13}% 76
-\BOOKMARK [2][-]{subsection.13.4}{Maxwell Relations}{section.13}% 77
-\BOOKMARK [2][-]{subsection.13.5}{Gibbs-Duhem}{section.13}% 78
-\BOOKMARK [2][-]{subsection.13.6}{Internal energy U, enthalpy H, Helmholtz F, and Gibbs G}{section.13}% 79
-\BOOKMARK [2][-]{subsection.13.7}{Legendre Transforms:}{section.13}% 80
-\BOOKMARK [2][-]{subsection.13.8}{Some useful math identities:}{section.13}% 81
-\BOOKMARK [2][-]{subsection.13.9}{Carnot Engines:}{section.13}% 82
-\BOOKMARK [2][-]{subsection.13.10}{Le Chatelier-Braun principle}{section.13}% 83
-\BOOKMARK [2][-]{subsection.13.11}{Clausius-Clapeyron}{section.13}% 84
-\BOOKMARK [2][-]{subsection.13.12}{Raoult's Law:}{section.13}% 85
-\BOOKMARK [2][-]{subsection.13.13}{Phase changes:}{section.13}% 86
-\BOOKMARK [2][-]{subsection.13.14}{Joule-Thompson Expansion \(Throttling\)}{section.13}% 87
-\BOOKMARK [2][-]{subsection.13.15}{Material Properties \(useful 2nd derivatives of energy functions\):}{section.13}% 88
-\BOOKMARK [2][-]{subsection.13.16}{Random constants we may need to know:}{section.13}% 89
-\BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{}% 90
+\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{}% 74
+\BOOKMARK [2][-]{subsection.13.1}{Definitions}{section.13}% 75
+\BOOKMARK [2][-]{subsection.13.2}{Thermodynamic Laws}{section.13}% 76
+\BOOKMARK [2][-]{subsection.13.3}{All the heat capacities, expansion coefficients, etc.}{section.13}% 77
+\BOOKMARK [2][-]{subsection.13.4}{Maxwell Relations}{section.13}% 78
+\BOOKMARK [2][-]{subsection.13.5}{Gibbs-Duhem}{section.13}% 79
+\BOOKMARK [2][-]{subsection.13.6}{Internal energy U, enthalpy H, Helmholtz F, and Gibbs G}{section.13}% 80
+\BOOKMARK [2][-]{subsection.13.7}{Legendre Transforms:}{section.13}% 81
+\BOOKMARK [2][-]{subsection.13.8}{Some useful math identities:}{section.13}% 82
+\BOOKMARK [2][-]{subsection.13.9}{Carnot Engines:}{section.13}% 83
+\BOOKMARK [2][-]{subsection.13.10}{Le Chatelier-Braun principle}{section.13}% 84
+\BOOKMARK [2][-]{subsection.13.11}{Clausius-Clapeyron}{section.13}% 85
+\BOOKMARK [2][-]{subsection.13.12}{Raoult's Law:}{section.13}% 86
+\BOOKMARK [2][-]{subsection.13.13}{Phase changes:}{section.13}% 87
+\BOOKMARK [2][-]{subsection.13.14}{Joule-Thompson Expansion \(Throttling\)}{section.13}% 88
+\BOOKMARK [2][-]{subsection.13.15}{Material Properties \(useful 2nd derivatives of energy functions\):}{section.13}% 89
+\BOOKMARK [2][-]{subsection.13.16}{Random constants we may need to know:}{section.13}% 90
 \BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{}% 91
-\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{}% 92
+\BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{}% 92
 \BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{}% 93
-\BOOKMARK [2][-]{subsection.15.1}{Motivation}{section.15}% 94
-\BOOKMARK [2][-]{subsection.15.2}{Chemical Potential of ideal gases}{section.15}% 95
-\BOOKMARK [3][-]{subsubsection.15.2.1}{ in a single component ideal gas}{subsection.15.2}% 96
-\BOOKMARK [3][-]{subsubsection.15.2.2}{ in a multicomponent ideal gas}{subsection.15.2}% 97
-\BOOKMARK [2][-]{subsection.15.3}{Fugacity and dealing with non-ideal gases}{section.15}% 98
-\BOOKMARK [2][-]{subsection.15.4}{Activity: adapting the fugacity formalism to condensed phases}{section.15}% 99
-\BOOKMARK [2][-]{subsection.15.5}{Models for activity}{section.15}% 100
-\BOOKMARK [1][-]{section.16}{The Physical Basis of Mixing}{}% 101
+\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{}% 94
+\BOOKMARK [2][-]{subsection.15.1}{Motivation}{section.15}% 95
+\BOOKMARK [2][-]{subsection.15.2}{Chemical Potential of ideal gases}{section.15}% 96
+\BOOKMARK [3][-]{subsubsection.15.2.1}{ in a single component ideal gas}{subsection.15.2}% 97
+\BOOKMARK [3][-]{subsubsection.15.2.2}{ in a multicomponent ideal gas}{subsection.15.2}% 98
+\BOOKMARK [2][-]{subsection.15.3}{Fugacity and dealing with non-ideal gases}{section.15}% 99
+\BOOKMARK [2][-]{subsection.15.4}{Activity: adapting the fugacity formalism to condensed phases}{section.15}% 100
+\BOOKMARK [2][-]{subsection.15.5}{Models for activity}{section.15}% 101
 \BOOKMARK [1][-]{section.16}{The Physical Basis of Mixing}{}% 102
-\BOOKMARK [2][-]{subsection.16.1}{Energetic Effects on Mixing}{section.16}% 103
-\BOOKMARK [3][-]{subsubsection.16.1.1}{Is size a good predictor of mixing behavior?}{subsection.16.1}% 104
-\BOOKMARK [3][-]{subsubsection.16.1.2}{Is electronegativity a good predictor of mixing behavior?}{subsection.16.1}% 105
-\BOOKMARK [3][-]{subsubsection.16.1.3}{Is Valency a good predictor of mixing behavior?}{subsection.16.1}% 106
-\BOOKMARK [2][-]{subsection.16.2}{Entropic Effects on Mixing}{section.16}% 107
-\BOOKMARK [3][-]{subsubsection.16.2.1}{Configurational Entropy}{subsection.16.2}% 108
-\BOOKMARK [3][-]{subsubsection.16.2.2}{Vibrational Entropy}{subsection.16.2}% 109
-\BOOKMARK [3][-]{subsubsection.16.2.3}{Electronic Entropy}{subsection.16.2}% 110
-\BOOKMARK [1][-]{section.17}{Bonus Topic: Chemical thermodynamics of polymers}{}% 111
+\BOOKMARK [1][-]{section.16}{The Physical Basis of Mixing}{}% 103
+\BOOKMARK [2][-]{subsection.16.1}{Energetic Effects on Mixing}{section.16}% 104
+\BOOKMARK [3][-]{subsubsection.16.1.1}{Is size a good predictor of mixing behavior?}{subsection.16.1}% 105
+\BOOKMARK [3][-]{subsubsection.16.1.2}{Is electronegativity a good predictor of mixing behavior?}{subsection.16.1}% 106
+\BOOKMARK [3][-]{subsubsection.16.1.3}{Is Valency a good predictor of mixing behavior?}{subsection.16.1}% 107
+\BOOKMARK [2][-]{subsection.16.2}{Entropic Effects on Mixing}{section.16}% 108
+\BOOKMARK [3][-]{subsubsection.16.2.1}{Configurational Entropy}{subsection.16.2}% 109
+\BOOKMARK [3][-]{subsubsection.16.2.2}{Vibrational Entropy}{subsection.16.2}% 110
+\BOOKMARK [3][-]{subsubsection.16.2.3}{Electronic Entropy}{subsection.16.2}% 111
 \BOOKMARK [1][-]{section.17}{Bonus Topic: Chemical thermodynamics of polymers}{}% 112
-\BOOKMARK [2][-]{subsection.17.1}{Why don't polymers mix when we heat them up?}{section.17}% 113
-\BOOKMARK [2][-]{subsection.17.2}{Why do miscible blends phase separate at high temperatures?}{section.17}% 114
+\BOOKMARK [1][-]{section.17}{Bonus Topic: Chemical thermodynamics of polymers}{}% 113
+\BOOKMARK [2][-]{subsection.17.1}{Why don't polymers mix when we heat them up?}{section.17}% 114
+\BOOKMARK [2][-]{subsection.17.2}{Why do miscible blends phase separate at high temperatures?}{section.17}% 115
