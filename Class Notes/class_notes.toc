@@ -99,17 +99,24 @@
 \contentsline {subsection}{\numberline {3}Fugacity and dealing with non-ideal gases}{82}{subsection.15.3}
 \contentsline {subsection}{\numberline {4}Activity: adapting the fugacity formalism to condensed phases}{82}{subsection.15.4}
 \contentsline {subsection}{\numberline {5}Models for activity}{84}{subsection.15.5}
-\contentsline {section}{\numberline {16}The Physical Basis of Mixing}{84}{section.16}
-\contentsline {section}{The Physical Basis of Mixing}{85}{section.16}
-\contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{85}{subsection.16.1}
-\contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{87}{subsubsection.16.1.1}
-\contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{87}{subsubsection.16.1.2}
-\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{89}{subsubsection.16.1.3}
-\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{89}{subsection.16.2}
-\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{91}{subsubsection.16.2.1}
-\contentsline {subsubsection}{\numberline {2.2}Vibrational Entropy}{91}{subsubsection.16.2.2}
-\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{91}{subsubsection.16.2.3}
-\contentsline {section}{\numberline {17}Bonus Topic: Chemical thermodynamics of polymers}{91}{section.17}
-\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{92}{section.17}
-\contentsline {subsection}{\numberline {1}Why don't polymers mix when we heat them up?}{92}{subsection.17.1}
-\contentsline {subsection}{\numberline {2}Why do miscible blends phase separate at high temperatures?}{94}{subsection.17.2}
+\contentsline {section}{\numberline {16}Regular Solutions}{84}{section.16}
+\contentsline {section}{Regular Solutions}{85}{section.16}
+\contentsline {subsection}{\numberline {1}The fundamental quantities in solution theory illustrated with Regular solution theory.}{85}{subsection.16.1}
+\contentsline {subsection}{\numberline {2}Illustrating the common tangent construction using regular solution theory with positive heat of mixing systems}{86}{subsection.16.2}
+\contentsline {subsection}{\numberline {3}Negative heat of mixing systems: Taking compound formation into account}{89}{subsection.16.3}
+\contentsline {subsection}{\numberline {4}Short-range versus longe-range order}{90}{subsection.16.4}
+\contentsline {subsection}{\numberline {5}Negative heat of mixing systems and ordering}{91}{subsection.16.5}
+\contentsline {section}{\numberline {17}The Physical Basis of Mixing}{92}{section.17}
+\contentsline {section}{The Physical Basis of Mixing}{93}{section.17}
+\contentsline {subsection}{\numberline {1}Energetic Effects on Mixing}{93}{subsection.17.1}
+\contentsline {subsubsection}{\numberline {1.1}Is size a good predictor of mixing behavior?}{94}{subsubsection.17.1.1}
+\contentsline {subsubsection}{\numberline {1.2}Is electronegativity a good predictor of mixing behavior?}{95}{subsubsection.17.1.2}
+\contentsline {subsubsection}{\numberline {1.3}Is Valency a good predictor of mixing behavior?}{97}{subsubsection.17.1.3}
+\contentsline {subsection}{\numberline {2}Entropic Effects on Mixing}{97}{subsection.17.2}
+\contentsline {subsubsection}{\numberline {2.1}Configurational Entropy}{99}{subsubsection.17.2.1}
+\contentsline {subsubsection}{\numberline {2.2}Vibrational Entropy}{99}{subsubsection.17.2.2}
+\contentsline {subsubsection}{\numberline {2.3}Electronic Entropy}{99}{subsubsection.17.2.3}
+\contentsline {section}{\numberline {18}Bonus Topic: Chemical thermodynamics of polymers}{99}{section.18}
+\contentsline {section}{Bonus Topic: Chemical thermodynamics of polymers}{100}{section.18}
+\contentsline {subsection}{\numberline {1}Why don't polymers mix when we heat them up?}{100}{subsection.18.1}
+\contentsline {subsection}{\numberline {2}Why do miscible blends phase separate at high temperatures?}{102}{subsection.18.2}

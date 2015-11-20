@@ -2532,6 +2532,165 @@ Similarly, \(\gamma _i>1\) means that \(\ln  \gamma _i>0.\) Thus, the solute has
 \label{activityComposition}
 \end{figure}
 
+\section{Regular Solutions}
+
+\subsection{The fundamental quantities in solution theory illustrated with Regular solution theory.}
+
+In the regular solution model, we make several assumptions:
+\begin{enumerate}
+\item The energy of the system can be described by pairwise bonds only.
+\item The atoms mix randomly
+\item All atoms have the same coordination
+\end{enumerate}
+This gives rise to the following expressing for the mixing quantities (note: this is written with a convention for the sign of $\mathcal{W}$ which is opposite that from class to be consistent with the Bragg-Williams model discussed later):
+\begin{align}
+\Delta U_{\text{mix}} &= X_B\left(X_B-1\right)\mathcal{W}  \\ 
+\Delta S_{\text{mix}}&=-k_B\left[X_B\text{Log} X_B+\left(1-X_B\right)\text{Log} \left(1-X_B\right)\right] \\
+\Delta F_{\text{mix}}&=\Delta U_{\text{mix}}-T\Delta S_{\text{mix}} \\
+ &= X_B\left(X_B-1\right)\mathcal{W}+T k_B\left[X_B\text{Log} X_B+\left(1-X_B\right)\text{Log} \left(1-X_B\right)\right]  \label{freeEnergyRegGsoln}
+\end{align}
+If we assume that $P$-$V$ effects are small relative to chemical effects, as is usually the case in condensed matter, then \(\Delta G_{\text{mix}}\approx \Delta F_{\text{mix}}\), and so examining the behavior of Eq. \ref{freeEnergyRegGsoln} should yield all of the information
+needed to determine the chemical behavior of the system.\par
+We often speak about the \textbf{heat of mixing} of a system, \(\Delta H_{\text{mix}}\). If we ignore $P$-$V$ effects, then \(\Delta H_{\text{mix}} \approx \Delta U_{\text{mix}}=X_B\left(X_B-1\right)\mathcal{W}\) in the regular solution approximation. 
+Therefore, \(X_B\left(X_B-1\right)\mathcal{W}\) represents the enthalpy change upon mixing A and B together in a random solution. A positive heat
+of mixing therefore corresponds to unfavorable bonding (the enthalpy/internal energy \textit{rises} upon mixing), whereas a negative heat of mixing
+corresponds to a favorable pairwise interation. Although the form of the heat of mixing is different outside of the regular soluton model, it is general that a release of enthalpy upon mixing (i.e. an \textit{exothermic mixing}) corresponds to more favorable interactions in the mixed state
+than in the unmixed state, and the opposite for endothermic mixing.\par
+In class, we made a distinction between \textbf{mixing quantities} and \textbf{excess quantities of mixing}. The difference between these two is the
+reference state. In the case of the mixing quantities, they are defined as the difference between an extensive variable, $Y$, in the mixed state and
+those of the pure references:
+\begin{equation}
+\Delta Y_{\text{mix}}=Y_{\text{mixed}}-\underset{i}{\Sigma }x_iY_i^{\text{ref}}\end{equation}
+Excess quantities of mixing are defined as the difference between an extensive variable, $Y$, in the mixed state and that of the ideally mixed solution.
+The excess quantities of mixing are thus the deviations from purely random mixing:
+\begin{equation}
+\text{$\Delta $Y}_{\text{mix}}^{\text{XS}}=Y_{\text{mixed}}-Y_{\text{mixed}}^{\text{ideal}}
+\end{equation}
+In the regular solution approximation, \(\Delta S_{\text{mixed}}=\Delta S_{\text{mixed}}^{\text{ideal}}\) so \(\Delta S_{\text{mix}}^{\text{XS}}=0\).
+Note that in ideal solutions, the extensive variables which are unrelated to the entropy (ex: volume, magnetization, etc) are assumed to be linear
+superpositions of the pure reference states (\(Y_{\text{mixed}}^{\text{ideal}}\)=\(\underset{i}{\Sigma }x_iY_i^{\text{ref}}\)), so \(\Delta
+Y_{\text{mix}}^{\text{XS}}=\Delta Y_{\text{mix}}\) for extensive quantities other than the entropy and related quantities, like $G$.\footnote{$G$ being related to the entropy by $G=H-TS$, of course.}
+
+\subsection{Illustrating the common tangent construction using regular solution theory with positive heat of mixing systems}
+
+The assumptions of pairwise bonding can be easily simulated on a computer.  Fig \ref{RegSolnMC} shows such simulations for a positive heat of mixing solution at different compositions and temperatures, with solute atoms in black and solvent atoms in green.\footnote{The simulations were performed by Tongjai Chookajorn using Monte Carlo, a formalism based on statistical mechanics.} At low temperatures, the system doesn't form a homogeneous solution. Instead, it phase separates. At high enough temperatures, the phases are driven to dissolve by configurational entropy. We can explain this with the free energy curves from the regular solution model.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{regularsolutionsandBraggwilliamsnotes_gr1}
+\caption{A visual phase diagram for phase separation: snapshots of solute distributions from Monte Carlo simulations of positive heat of mixing systems showing phase seperation at low temperatures, clustered solid solutions at intermediate temperatures, and fully random solutions at high temperatures.}
+\label{RegSolnMC}
+\end{figure}
+
+The free energy curves for the same positive heat of mixing solution as a function of composition under the regular solution approximation are shown in Fig. \ref{RegSolnCurves}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{regularsolutionsandBraggwilliamsnotes_gr2}
+\caption{Free energy curves for the regular solution model with a heat of mixing of 30 kJ/mol at various temperatures.}
+\label{RegSolnCurves}
+\end{figure}
+Imprtantly, the molar Gibbs free energy of a combination of two solutions with different compositions, \(X_1\)and \(X_2\) is just given by adding up the free energies of the two solutions times their volume fractions, \(\mathit{f}_1\) and \(\mathit{f}_2\):
+\begin{equation}
+G_{\text{two solutions at } X_1\text{ and } X_2}=\mathit{f}_1 G_{X_1}+\mathit{f}_2G_{X_2}=\mathit{f}_1 G_{X_1}+\left(1-\mathit{f}_1\right)G_{X_2}
+\end{equation}
+You can think of this as taking linear superpositions of the free energies of two separate solutions. This means that there are points on this curve
+(marked with squares) where \textbf{the solution can lower its free energy by decomposing into two solutions of differnent composition}. This is exactly the condition for when phase separation will occur at equilibrium: two macroscopic systems would spontaneously form with measurably different thermodynamic properties. This is illusrated by the dotted lines on the figure above. \par
+Thus, the endpoints of these \textbf{common tangents} between the curves represent phase boundaries: the unfavorable interactions between A and B cause immiscibility between these endpoints. Solving for these endpoints as a function of temperature gives a phase boundary: the miscibility gap. Fig. \ref{solutionToMiscGap} shows the solution to the phase boundary in regular solution theory along with microstructures corresponding to each numbered point.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{regularsolutionsandBraggwilliamsnotes_gr3}
+\caption{A comparison of the miscibility gap from regular solution theory to Monte Carlo results.}
+\label{solutionToMiscGap}
+\end{figure}
+
+You may notice that the phase boundaries in the simulation seem to be depressed relative to the predictions from regular solution theory (i.e. the microstructures don't quite match up with what you would expect from the phase diagram). This is because of the approximations inherent in the
+regular solution approximation that are not needed to perform a Monte Carlo simulation. In particular, the solutions exhibit \textbf{short range ordering}.
+Short range order (SRO) is defined statistically: it is a \textit{correlation} between the site occupation at one site and the site occupation at
+another site (note: random mixing means no correlations between sites, so solutions with SRO are not random).\footnote{We'll define short range order more rigorously soon.} In this case, the black atoms prefer
+to be next to each other energetically, so they tend to appear next to each other, even once the precipitates dissolve; they form clusters. \par
+Unsurprisingly, this type of short range order is called \textbf{clustering}, and is typical of positive heat of mixing systems. Clustering permits the solution to lower its free energy relative to random mixing. This stabilizes solutions to lower temperatures compared to the regular solution's ideal mixing-based estimate. However, clustering, like other forms of SRO, decreases the entropy of a solution, and thus the degree of clustering
+should decrease with increasing temperature. If you compare the solutions at 1400K and 1600K in the first figure, you can actually see the degree
+of clustering in the solution decrease at higher temperatures: there are real `clusters' of solute atoms just above the miscibility gap, and
+they go away when you heat the solution up more.\par
+In class, we showed that there is a critical temperature, \(T_{\text{crit}}\), at which we have full miscibility (a.k.a. the top of the miscibility gap, also called the \textit{upper consolute temperature} by people who like to use big words to sound smart). This is occurs when no part of your
+curve is concave down anymore. In the regular solution model, the $X = 0.5$ point is the last point to remain conave down as a function of temperature
+(you can see it in the figure above). Solving for the temperature at which \(\frac{\partial ^2G}{\partial X^2}=0\) at $X = 0.5$ gives \(T_{\text{crit}}\)
+as a function of the regular solution parameter, $\mathcal{W}$. \\
+\textbf{Exercise}: Solve for \(T_{\text{crit}}\) in  the regular solution model.
+
+\subsection{Negative heat of mixing systems: Taking compound formation into account}
+
+What happens if the interactions between A and B atoms are \textit{favorable} instead of unfavorable (i.e. \(\mathcal{W}<0\) such that \begin{equation*}
+\Delta H_{\text{mix}}=X_B \left(X_B-1\right)\mathcal{W}<0?
+\end{equation*}
+Well, the regular solution in its orginal form isn't that informative, as both entropy and enhtalpy favor mixing. You would simply conclude
+that A and B are miscible in all proportions. This is most of the story for polymers, for which it is extremely difficult kinetically to form ordered compounds. However, most other materials systems can form ordered compounds. For example, ordered oxide, semiconductor, and metallic
+compounds are all extremely common. An \textbf{ordered compound} in the regular solution view of things is simply a material which introduces \textbf{long-range order} such that it maximizes the number of favorable A-B bonds. The difference between an ordered compond and a solid solution is shown in Fig \ref{orderedVsCompounds} for the case of a 2D square lattice.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{regularsolutionsandBraggwilliamsnotes_gr4}
+\caption{A schematic of ordered compounds versus solid solutions.}
+\label{orderedVsCompounds}
+\end{figure}
+
+\subsection{Short-range versus longe-range order}
+
+Both short range order and long range order are defined in terms of being able to predict the environment of an atom. Crystals all possess long range order: if I know the position of one atom (and the orientation of the crystal's axes), I know the position of all atoms in the crystal: you just
+start repeating the unit cell through space. The range over which I can predict atomic prositions thus only limited by the size of the defect-free crystal. You could represent this correlation by plotting the radial distribution function (RDF, http://en.wikipedia.org/wiki/Radial$\_$distribution$\_$function)
+of a crystal. For a perfect crystal, you just get a series of Dirac $\delta $ functions at the nearest neighbor distances, as all the atomic distances
+are perfectly defined. More realistically, for a crystal at non-zero temperature, the RDF{'}s $\delta $ functions get {`}smeared{'} out by atomic
+vibrations. The black line in Fig. \ref{liquidAndCrystallineRDF} is a realistic RDF for FCC Au at 300 K.
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=10cm]{regularsolutionsandBraggwilliamsnotes_gr5}
+% \caption{A comparison of radial distribution funcitons representing short range and long range order in solid (black) and liquid (red) Au. (\href{source}{http://people.virginia.edu/\~lz2n/mse627/notes/Correlations.pdf})}
+% \label{crystallineRDF}
+% \end{figure}
+Long range order may be considered in contrast to \textbf{short range order}, which is defined as when knowing the position of one atom gives you information on the positions
+of atoms nearby, but not necesarily those far away.\footnote{Most rigorously, the \emph{correlation length} for longe range order is infinite (or the size of you crystal), whereas for SRO the correlation length is finite (usually a small number of nearest neighbor shells).} Short range order is usually characteristic of liquids. For example, taking the same element,
+Au, in the liquid state yields a very different RDF, shown in red over the crystalline RDF (same source). Notice how the length over which the correlation
+is not equal to one (called the correlation length of the RDF) is much smaller in the liquid state compared to the solid state: the atomic ordering is \textit{short-ranged!} \par
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{regularsolutionsandBraggwilliamsnotes_gr6}
+\caption{A comparison of radial distribution funcitons representing short range and long range order in solid (black) and liquid (red) Au. (\href{http://people.virginia.edu/\~lz2n/mse627/notes/Correlations.pdf}{source})}
+\label{liquidAndCrystallineRDF}
+\end{figure}
+Generally, the key distinction is that long range order is a result of crystallogrpahy; order in the crystal is inherently long-ranged. Short range order, on the other hand, is only defined only \textit{probabilistically}, and usually over limited length scales on the order of a few atomic distances. Both of these concepts apply to solid solutions and ordered compounds as well. \par
+\textit{Compound formation} is thus defined crystallographically; it is defined by the existence of preferred sites in the unit cell for
+each element. There is thus a long range order associated with the positions of the different alloying elements, and the correlation length between
+the positions of the A and B atoms is thus on the order of the length scale of the defect-free crystal. Short range order for alloys, on the other
+hand, is usually only discussed for solutions. In this case, there are no preferred sites for A or B atoms, but knowing that an A atom sits at one
+site likely gives you information about the atoms surrounding that atom, as the A atom likely has an energetic preference for the chemical identity
+of its nearest neighbors. You could quantify this in a similar manner by comparing the radial distribution functions for A and B atoms, and then
+backing out nearest neighbor porbabilities, etc.
+\subsection{Negative heat of mixing systems and ordering}
+The problem before us then became to determine when a material wants to form an ordered compound as opposed to a solid solution. However,
+the appearance of ordering does not mean that the regular solution appromation ceases to have utility for negative heat of mixing couples which form
+compounds. How do we extend regular solution theory to ordered compounds? Well, we do this with sublattices, which can have different concentrations. Fig \ref{sublattices} shows an example of two rectangular sublattices forming a face-centered lattice.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{regularsolutionsandBraggwilliamsnotes_gr7}
+\caption{Two sub-lattices forming a new lattice (modified from \href{http://home.iitk.ac.in/\~anandh/E-book/sublattice.ppt}{here}).}
+\label{sublattices}
+\end{figure}
+
+Usually, one sub-lattice is very A-rich, and the other is very B-rich, and each sublattice is primarily or completely bonded to the other sub-lattice.
+Hence, the partitioning of the elements to the different sublattices maximizes the number of favorable A-B bonds, and is enthalpically favored. However,
+if the concentrations of A and B on their respective sublattices are near unity, then the configurational entropy on each sublattice is approximately zero, so increased order comes with an entropic penalty. \par
+\emph{There should thus be a balance in the competition between the enthalpically favorable and entropically unfavorable
+constributions to the free energy from the ordering process.} \par
+The degree of ordering was quantified by assuming a random solution on each sublattice and defining an
+order parameter, $\eta $, such that when $\eta $ = 1 the superlattice is maxmially ordered, and when $\eta $ = 0, the lattice is just one homogeneous solution. The free energy at a given temperature and composition is minimal with respect to changes in the degree of ordering at equilbrium: \(\left(\frac{\partial
+G}{\partial \eta }\right)_{T,P,\mu _i}=0\). Another way of saying this is that there is an equilibrium amount of order for a given temperature, pressure,
+and composition of a phase. This is the same concept as there being an equilibrium amount of vacancies at a given temperature; in this case we are
+just considering the formation of a different kind of defect (antisite defects) as opposed to vacancies. This allows one to plot (or measure experimentally)
+the equilibrium order parameter as a function of $T$.\footnote{FYI, the model presented in class is the Bragg-Williams model, and is usually used for BCC order-disorder transitions. There is a \textit{Mathematica} notebook from Profesor Emeritus Sam Allen which I have uploaded to Stellar which goes through this model in detail. The Bragg-Williams model is another classical example of the competition between entropy and enthalpy in determining phase behavior as a function of temperature.}
+
+
 \section{The Physical Basis of Mixing}
 This section was heavily influenced by Professor Gerbrand Ceder's lectures on mixing. A lot of credit for the structure and insight in this section goes to him.\\
 \\
@@ -2563,9 +2722,16 @@ The effects of atomic size are not limited to metals; similar size-based argumen
 
 \subsubsection{Is electronegativity a good predictor of mixing behavior?}
 Of all the heuristics commonly discussed in the literature, electronegativity differences have the largest effects on mixing.
-It is generally true that larger differences in electronegativity between two elements, are correlated with a greater the tendency for compound formation. Further, $|\chi_A - \chi_B|$ is correlated with more negative the enthalpies of formation. 
+It is generally true that larger differences in electronegativity between two elements, are correlated with a greater the tendency for compound formation. Further, $|\chi_A - \chi_B|$ is correlated with more negative the enthalpies of formation, as shown in Fig. \ref{electronegativityCorrelation}. 
 
-(Eventually put in a plot of the enthalpy of formation of the all compounds versus the electronegativity difference here)
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{electronegativityDifCorrelation}
+\caption{
+	Elemental compound formation energies per atom (the energy to form the compound from the pure constituents), versus the difference in electronegativies for the constituent elements, $|\chi_A - \chi_B|$. Data from the \href{https://www.materialsproject.org/}{the materials project}, via their \href{http://dx.doi.org/10.1016/j.commatsci.2014.05.014}{RESTful interface}. (Figure original to these notes, do not distribute.)
+}
+\label{electronegativityCorrelation}
+\end{figure}
 
 There are actually two mechanisms at work in explaining why electronegativity differences are correlated with compound formation. We can explain the mechanism with a bit of band theory and an understanding of what electronegativity means physically. Intuitively, electronegativity is the tendency of an element to pull electrons from its neighboring elements. What this means physically is that a highly electronegative element has low energy, empty states above its Fermi level. Ignoring the effects of hybridization between energy levels, electrons from other elements with higher Fermi levels could lower their energy by occupy those lower energy states. Therefore, when another, less electronegative element (with a higher Fermi level) is brought into contact with a more electronegative one, the electrons from the less electronegative element are transfered to the more electronegative element. This process is shown in Fig. \ref{chargeTransfer}.This charge transfer is essentially what happens in ionic bonding; the electrons from one element are transfered to the other, filling the lower-energy band up, and emptying the higher energy band.
 
