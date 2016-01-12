@@ -4,11 +4,12 @@ A collaboration for the creation of class notes for 3.20: Materials at Equilibri
 ##Description
 This is a repository where we share changes to (primarily) LaTeX files for the class notes for Materials At Equilibrium (3.20 at MIT)
 
-The notes are currently being edited but should be available in final form by Fall 2015.
+The notes are a work in progress but are 
 
 Collaborators Include:
-* DerekK88
 * Michael A Gibson (michaelagibson)
+* DerekK88
+* dkitch
 * Antoine Allanore
 
 ##License
