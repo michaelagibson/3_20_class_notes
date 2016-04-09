@@ -1,0 +1,125 @@
+\BOOKMARK [0][-]{part.1}{I Classical Thermodynamics}{}% 1
+\BOOKMARK [1][-]{section.1}{Preliminaries, Vocab, Energy, and Forces}{part.1}% 2
+\BOOKMARK [1][-]{section.1}{Preliminaries, Vocab, Energy, and Forces}{part.1}% 3
+\BOOKMARK [2][-]{subsection.1.1}{Definitions}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{Energy and Forces}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Heat, Work, and Path Dependence}{part.1}% 6
+\BOOKMARK [1][-]{section.2}{Heat, Work, and Path Dependence}{part.1}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Two examples of work}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.2}{Practice with Differentials}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Heat}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Heat Capacities, Enthalpy}{part.1}% 11
+\BOOKMARK [1][-]{section.3}{Heat Capacities, Enthalpy}{part.1}% 12
+\BOOKMARK [2][-]{subsection.3.1}{We need another energy function}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Choice of Systems, The Second Law I}{part.1}% 14
+\BOOKMARK [1][-]{section.4}{Choice of Systems, The Second Law I}{part.1}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Throttling processes}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Quasistatic Piston}{section.4}% 17
+\BOOKMARK [1][-]{section.5}{Second Law II, The Third Law}{part.1}% 18
+\BOOKMARK [1][-]{section.5}{Second Law II, The Third Law}{part.1}% 19
+\BOOKMARK [2][-]{subsection.5.1}{Consequences of the 2nd law:}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.2}{The 3rd law}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{The Fundamental Equation, Properties of U, Equilibrium Conditions}{part.1}% 22
+\BOOKMARK [1][-]{section.6}{The Fundamental Equation, Properties of U, Equilibrium Conditions}{part.1}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Mathematical Properties of U}{section.6}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.1}{U is first order homogeneous of the extensive variables, as is S}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.2}{U can be defined in terms of a sum of the conjugate pairs}{subsection.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.6.1.3}{The Gibbs-Duhem equation: The intensive variables are not independent}{subsection.6.1}% 27
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Equations of state contain partial information about U}{subsection.6.1}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Equilibrium and evolution of isolated systems}{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Thermal Equilibrium}{subsection.6.2}% 30
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Mechanical Equilibrium}{subsection.6.2}% 31
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Chemical Equilibrium from Mass Flow}{subsection.6.2}% 32
+\BOOKMARK [1][-]{section.7}{Legendre Transforms}{part.1}% 33
+\BOOKMARK [1][-]{section.7}{Legendre Transforms}{part.1}% 34
+\BOOKMARK [2][-]{subsection.7.1}{Legendre Transforms}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.2}{Named Free Energies}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.3}{A First Look at Manipulating Thermodynamic Functions}{section.7}% 37
+\BOOKMARK [1][-]{section.8}{Maxwell Relations, Manipulating Potentials}{part.1}% 38
+\BOOKMARK [1][-]{section.8}{Maxwell Relations, Manipulating Potentials}{part.1}% 39
+\BOOKMARK [2][-]{subsubsection.8.0.1}{Maxwell relations for an Ideal Gas}{section.8}% 40
+\BOOKMARK [3][-]{subsubsection.8.0.2}{Magnetic Maxwell relations}{subsubsection.8.0.1}% 41
+\BOOKMARK [2][-]{subsection.8.1}{How to perform thermodynamic derivations}{section.8}% 42
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Very useful relationships of f\(x,y\)}{subsection.8.1}% 43
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Strategy to reduce variables}{subsection.8.1}% 44
+\BOOKMARK [3][-]{subsubsection.8.1.3}{Example: A rod under tension}{subsection.8.1}% 45
+\BOOKMARK [2][-]{subsection.8.2}{Natural Variables}{section.8}% 46
+\BOOKMARK [2][-]{subsection.8.3}{A systematic way to think about derivatives}{section.8}% 47
+\BOOKMARK [1][-]{section.9}{Practice Derivations, Phase Rule, Phase Stability}{part.1}% 48
+\BOOKMARK [1][-]{section.9}{Practice Derivations, Phase Rule, Phase Stability}{part.1}% 49
+\BOOKMARK [2][-]{subsection.9.1}{Check in: What you should be able to do by now}{section.9}% 50
+\BOOKMARK [2][-]{subsection.9.2}{Equilibrium Conditions for Multicomponent Systems}{section.9}% 51
+\BOOKMARK [2][-]{subsection.9.3}{Constraints from equilibrium of heterogeneous systems: the Gibbs phase rule}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.4}{Stability Conditions on the free energy}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.5}{Phase stability}{section.9}% 54
+\BOOKMARK [1][-]{section.10}{Phase Transitions, Phase Diagrams, Clausius-Clapeyron}{part.1}% 55
+\BOOKMARK [1][-]{section.10}{Phase Transitions, Phase Diagrams, Clausius-Clapeyron}{part.1}% 56
+\BOOKMARK [2][-]{subsection.10.1}{Ehrenfest classification of phase transitions}{section.10}% 57
+\BOOKMARK [2][-]{subsection.10.2}{Elemental Phase Diagrams}{section.10}% 58
+\BOOKMARK [2][-]{subsection.10.3}{Determining Phase Diagrams}{section.10}% 59
+\BOOKMARK [2][-]{subsection.10.4}{Example: solid to liquid transition}{section.10}% 60
+\BOOKMARK [1][-]{section.11}{General Clapeyron Relations, Le Chatelier-Braun Principle}{part.1}% 61
+\BOOKMARK [1][-]{section.11}{General Clapeyron Relations, Le Chatelier-Braun Principle}{part.1}% 62
+\BOOKMARK [2][-]{subsection.11.1}{Le Chatelier-Braun principle}{section.11}% 63
+\BOOKMARK [2][-]{subsection.11.2}{Generalization of Clausius-Clapeyron}{section.11}% 64
+\BOOKMARK [2][-]{subsection.11.3}{Magnetic-induced phase transformation}{section.11}% 65
+\BOOKMARK [2][-]{subsection.11.4}{Thermoelasticity}{section.11}% 66
+\BOOKMARK [2][-]{subsection.11.5}{Chemical Clausis-Clapeyron relationships}{section.11}% 67
+\BOOKMARK [1][-]{section.12}{Introduction to Solution Theory}{part.1}% 68
+\BOOKMARK [1][-]{section.12}{Introduction to Solution Theory}{part.1}% 69
+\BOOKMARK [2][-]{subsection.12.1}{Adding composition as a work term in G}{section.12}% 70
+\BOOKMARK [2][-]{subsection.12.2}{Solutions, Molar Quantities, and Partial Molar Quantities}{section.12}% 71
+\BOOKMARK [2][-]{subsection.12.3}{Ex: Partial Molar Volumes}{section.12}% 72
+\BOOKMARK [2][-]{subsection.12.4}{General properties of partial molar quantities}{section.12}% 73
+\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{part.1}% 74
+\BOOKMARK [1][-]{section.13}{Review of Exam 1 materials}{part.1}% 75
+\BOOKMARK [2][-]{subsection.13.1}{Definitions}{section.13}% 76
+\BOOKMARK [2][-]{subsection.13.2}{Thermodynamic Laws}{section.13}% 77
+\BOOKMARK [2][-]{subsection.13.3}{All the heat capacities, expansion coefficients, etc.}{section.13}% 78
+\BOOKMARK [2][-]{subsection.13.4}{Maxwell Relations}{section.13}% 79
+\BOOKMARK [2][-]{subsection.13.5}{Gibbs-Duhem}{section.13}% 80
+\BOOKMARK [2][-]{subsection.13.6}{Internal energy U, enthalpy H, Helmholtz F, and Gibbs G}{section.13}% 81
+\BOOKMARK [2][-]{subsection.13.7}{Legendre Transforms:}{section.13}% 82
+\BOOKMARK [2][-]{subsection.13.8}{Some useful math identities:}{section.13}% 83
+\BOOKMARK [2][-]{subsection.13.9}{Carnot Engines:}{section.13}% 84
+\BOOKMARK [2][-]{subsection.13.10}{Le Chatelier-Braun principle}{section.13}% 85
+\BOOKMARK [2][-]{subsection.13.11}{Clausius-Clapeyron}{section.13}% 86
+\BOOKMARK [2][-]{subsection.13.12}{Raoult's Law:}{section.13}% 87
+\BOOKMARK [2][-]{subsection.13.13}{Phase changes:}{section.13}% 88
+\BOOKMARK [2][-]{subsection.13.14}{Joule-Thompson Expansion \(Throttling\)}{section.13}% 89
+\BOOKMARK [2][-]{subsection.13.15}{Material Properties \(useful 2nd derivatives of energy functions\):}{section.13}% 90
+\BOOKMARK [2][-]{subsection.13.16}{Random constants we may need to know:}{section.13}% 91
+\BOOKMARK [0][-]{part.2}{II Statistical Mechanics}{}% 92
+\BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{part.2}% 93
+\BOOKMARK [1][-]{section.14}{Introduction to Statistical Mechanics}{part.2}% 94
+\BOOKMARK [0][-]{part.3}{III Chemical Thermodynamics}{}% 95
+\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{part.3}% 96
+\BOOKMARK [1][-]{section.15}{Chemical potential as a function of composition}{part.3}% 97
+\BOOKMARK [2][-]{subsection.15.1}{Motivation}{section.15}% 98
+\BOOKMARK [2][-]{subsection.15.2}{Chemical Potential of ideal gases}{section.15}% 99
+\BOOKMARK [3][-]{subsubsection.15.2.1}{ in a single component ideal gas}{subsection.15.2}% 100
+\BOOKMARK [3][-]{subsubsection.15.2.2}{ in a multicomponent ideal gas}{subsection.15.2}% 101
+\BOOKMARK [2][-]{subsection.15.3}{Fugacity and dealing with non-ideal gases}{section.15}% 102
+\BOOKMARK [2][-]{subsection.15.4}{Activity: adapting the fugacity formalism to condensed phases}{section.15}% 103
+\BOOKMARK [2][-]{subsection.15.5}{Models for activity}{section.15}% 104
+\BOOKMARK [1][-]{section.16}{Regular Solutions}{part.3}% 105
+\BOOKMARK [1][-]{section.16}{Regular Solutions}{part.3}% 106
+\BOOKMARK [2][-]{subsection.16.1}{The fundamental quantities in solution theory illustrated with Regular solution theory.}{section.16}% 107
+\BOOKMARK [2][-]{subsection.16.2}{Illustrating the common tangent construction using regular solution theory with positive heat of mixing systems}{section.16}% 108
+\BOOKMARK [2][-]{subsection.16.3}{Negative heat of mixing systems: Taking compound formation into account}{section.16}% 109
+\BOOKMARK [2][-]{subsection.16.4}{Short-range versus longe-range order}{section.16}% 110
+\BOOKMARK [2][-]{subsection.16.5}{Negative heat of mixing systems and ordering}{section.16}% 111
+\BOOKMARK [1][-]{section.17}{The Physical Basis of Mixing}{part.3}% 112
+\BOOKMARK [1][-]{section.17}{The Physical Basis of Mixing}{part.3}% 113
+\BOOKMARK [2][-]{subsection.17.1}{Energetic Effects on Mixing}{section.17}% 114
+\BOOKMARK [3][-]{subsubsection.17.1.1}{Is size a good predictor of mixing behavior?}{subsection.17.1}% 115
+\BOOKMARK [3][-]{subsubsection.17.1.2}{Is electronegativity a good predictor of mixing behavior?}{subsection.17.1}% 116
+\BOOKMARK [3][-]{subsubsection.17.1.3}{Is Valency a good predictor of mixing behavior?}{subsection.17.1}% 117
+\BOOKMARK [2][-]{subsection.17.2}{Entropic Effects on Mixing}{section.17}% 118
+\BOOKMARK [3][-]{subsubsection.17.2.1}{Configurational Entropy}{subsection.17.2}% 119
+\BOOKMARK [3][-]{subsubsection.17.2.2}{Vibrational Entropy}{subsection.17.2}% 120
+\BOOKMARK [3][-]{subsubsection.17.2.3}{Electronic Entropy}{subsection.17.2}% 121
+\BOOKMARK [1][-]{section.18}{Bonus Topic: Chemical thermodynamics of polymers}{part.3}% 122
+\BOOKMARK [1][-]{section.18}{Bonus Topic: Chemical thermodynamics of polymers}{part.3}% 123
+\BOOKMARK [2][-]{subsection.18.1}{Why don't polymers mix when we heat them up?}{section.18}% 124
+\BOOKMARK [2][-]{subsection.18.2}{Why do miscible blends phase separate at high temperatures?}{section.18}% 125
